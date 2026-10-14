@@ -1,5 +1,6 @@
 # Calma Café · Fase 1
 
+https://josemarrero3012.github.io/CalmaCafe/
 Web en español, inglés, alemán y neerlandés con cuatro páginas independientes —Inicio, Carta, Calma y Visítanos—, realizada con Astro estático, CSS propio y JavaScript vanilla. Fotografías del local; ningún recurso de stock. El fondo del hero es una imagen aportada aparte cuyo origen está por confirmar (ver `docs/PENDIENTES.md`).
 
 ## Arrancar

@@ -1,10 +1,10 @@
 import { defineConfig } from 'astro/config';
 
-// GitHub Pages sirve el sitio en https://josemarrero3012.github.io/TheFragrancerBar/
+// GitHub Pages sirve el sitio en https://josemarrero3012.github.io/CalmaCafe/
 // Con dominio propio: quitar `base` y poner el dominio en `site`.
 export default defineConfig({
   site: 'https://josemarrero3012.github.io',
-  base: '/TheFragrancerBar',
+  base: '/CalmaCafe',
   output: 'static',
   build: { inlineStylesheets: 'always' },
   devToolbar: { enabled: false },

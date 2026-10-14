@@ -136,11 +136,19 @@ if (tabs.length) {
 
   // Resaltar en el índice la sección que se está leyendo. Se calcula al desplazar (no con un observador
   // de banda fina): en móvil, al pulsar un acceso la sección queda arriba y el observador no la veía.
+  // La sección nueva se centra moviendo solo la barra, y solo cuando cambia: scrollIntoView movía también
+  // la página y, llamado en cada fotograma, en móvil peleaba con el desplazamiento y la pantalla temblaba.
   const markCurrent = (menuId: string, id: string | null) => {
-    document.querySelectorAll<HTMLAnchorElement>(`[data-sections="${menuId}"] [data-index]`).forEach(link => {
+    const nav = document.querySelector<HTMLElement>(`[data-sections="${menuId}"]`)!;
+    nav.querySelectorAll<HTMLAnchorElement>('[data-index]').forEach(link => {
       const current = link.dataset.index === id;
+      const changed = link.classList.contains('is-current') !== current;
       link.classList.toggle('is-current', current);
-      if (current && link.closest('.carta-sections')!.scrollWidth > link.closest('.carta-sections')!.clientWidth) link.scrollIntoView({ block: 'nearest', inline: 'center' });
+      if (current && changed && nav.scrollWidth > nav.clientWidth) {
+        const navBox = nav.getBoundingClientRect();
+        const box = link.getBoundingClientRect();
+        nav.scrollTo({ left: nav.scrollLeft + box.left - navBox.left - (navBox.width - box.width) / 2, behavior: reducedMotion.matches ? 'auto' : 'smooth' });
+      }
     });
   };
   const bar = document.querySelector<HTMLElement>('.carta-index-bar');

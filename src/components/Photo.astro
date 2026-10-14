@@ -1,0 +1,12 @@
+---
+import media from '../data/media.json';
+import alts from '../data/fotos.json';
+interface Props { name: keyof typeof alts; sizes?: string; class?: string; eager?: boolean; priority?: boolean; decorative?: boolean; lang?: 'es' | 'en' | 'de' | 'nl'; }
+const { name, sizes = '(max-width: 600px) 90vw, 30vw', class: className, eager = false, priority = false, decorative = false, lang = 'es' } = Astro.props;
+const item = media[name as keyof typeof media];
+const srcset = (ext: string) => item.widths.map((w: number) => `/media/${name}-${w}.${ext} ${w}w`).join(', ');
+---
+<picture class={className}>
+  <source type="image/avif" srcset={srcset('avif')} sizes={sizes} />
+  <img src={`/media/${name}-${item.widths.includes(720) ? 720 : item.widths.at(-1)}.webp`} srcset={srcset('webp')} sizes={sizes} width={item.width} height={item.height} alt={decorative ? '' : alts[name][lang]} loading={eager ? 'eager' : 'lazy'} fetchpriority={priority ? 'high' : 'auto'} decoding="async" />
+</picture>

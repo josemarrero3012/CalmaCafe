@@ -1,0 +1,128 @@
+/* Carta completa: pestañas por menú, grupos editoriales con foto en arco y lista tipográfica */
+.carta-hero{padding-bottom:44px;background:var(--papel)}
+.carta-hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:48px;align-items:center}
+.carta-hero .eyebrow{margin-bottom:18px}
+.carta-hero-text{max-width:440px;margin-top:24px;font-size:15px;color:var(--muted);line-height:1.8}
+/* Dibujo de «la carta» a la derecha del titular */
+.carta-illustration{display:block;width:min(100%,460px);height:auto;justify-self:end;margin-block:-20px -10px}
+.carta-note{grid-column:1/-1;justify-self:start;display:inline-flex;gap:10px;align-items:center;margin-top:8px;padding:10px 16px;border:1px solid var(--line);border-radius:40px;font-size:13px;font-weight:600;color:var(--verde-tinta);background:#fffdf8}
+.carta-note span{color:var(--mostaza)}
+
+
+/* Cada menú; con JavaScript solo se ve el activo */
+.carta-body{--header-h:97px;--bar-h:62px}
+.carta-menu{padding-bottom:40px;scroll-margin-top:calc(var(--header-h) + var(--bar-h) - 30px)}
+.js .carta-menu:not(.is-active){display:none}
+.js .carta-menu.is-active{animation:page-enter .8s var(--ease) both}
+.carta-index-bar{position:sticky;top:var(--header-h);z-index:10;background:rgba(250,246,239,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+.carta-index{display:flex;align-items:center;gap:8px;padding-block:12px}
+/* Menús a la izquierda, secciones del menú activo a la derecha */
+.carta-switch,.carta-sections{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
+.carta-switch::-webkit-scrollbar,.carta-sections::-webkit-scrollbar{display:none}
+.carta-switch{flex-shrink:0;padding-right:16px;margin-right:8px;border-right:1px solid var(--line)}
+.carta-switch a[aria-selected=true]{color:var(--pizarra);border-color:var(--pizarra)}
+.js .carta-sections:not(.is-active),html:not(.js) .carta-sections{display:none}
+.carta-index a{flex-shrink:0;padding:8px 15px;border:1px solid transparent;border-radius:40px;font-size:12px;font-weight:550;color:var(--muted);transition:color .3s var(--ease),border-color .3s var(--ease),background .3s var(--ease)}
+@media(hover:hover){.carta-index a:hover{color:var(--pizarra);border-color:var(--line)}}
+.carta-index a.is-current{background:var(--pizarra);color:var(--papel)}
+.carta-menu-head{display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:baseline;padding-block:58px 10px}
+.carta-menu-head h2{font-size:clamp(30px,2.8vw,40px)}
+.carta-menu-head p{font-size:14px;color:var(--muted)}
+.carta-menu-head .eyebrow{color:var(--madera)}
+
+/* Grupo: foto en arco fija a un lado y la lista al otro */
+.carta-group{display:grid;grid-template-columns:minmax(280px,.8fr) 1.35fr;gap:clamp(40px,6vw,96px);padding-block:56px;border-top:1px solid var(--line);scroll-margin-top:calc(var(--header-h) + var(--bar-h) + 14px)}
+.carta-menu-head+.carta-group{border-top:0}
+.carta-group--flip .carta-group-aside{order:2}
+.carta-group-aside{position:sticky;top:calc(var(--header-h) + 72px);align-self:start}
+.carta-group-title{display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:baseline}
+.carta-group-n{font:500 30px/1 var(--hand);color:var(--madera)}
+.carta-group-title h3{font-size:clamp(34px,3.4vw,50px);letter-spacing:-.045em;line-height:1.02}
+.carta-group-count{grid-column:2;margin-top:8px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+/* La foto fija se adapta a la altura de la pantalla para que siempre se vea entera, con su pie */
+.carta-feature{margin-top:24px;width:min(100%,420px,calc((100svh - var(--header-h) - 250px) / 1.2));min-width:220px}
+.carta-feature-arch{position:relative;aspect-ratio:4/4.8;overflow:hidden;border-radius:999px 999px 6px 6px;background:var(--salvia)}
+.carta-feature-arch picture,.carta-feature-arch img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.carta-feature-arch img.is-incoming{opacity:0;transition:opacity .55s var(--ease)}
+.carta-feature-arch img.is-incoming.is-shown{opacity:1}
+.carta-feature figcaption{margin-top:10px;font-size:25px;color:var(--madera);transform:rotate(-3deg);transform-origin:left;min-height:30px}
+
+/* Lista de platos */
+.carta-list{list-style:none;margin:0;padding:0}
+.dish{padding-block:20px;border-bottom:1px solid var(--line)}
+.dish:first-child{padding-top:4px}
+.dish-line{display:flex;align-items:baseline;gap:10px}
+.dish-name{font:430 clamp(19px,1.55vw,22px)/1.25 var(--serif);letter-spacing:-.025em;text-align:left;color:var(--pizarra)}
+button.dish-name{display:inline;padding:0;cursor:pointer;background-image:linear-gradient(currentColor,currentColor);background-size:0 1px;background-repeat:no-repeat;background-position:0 100%;transition:background-size .5s var(--ease),color .3s var(--ease)}
+button.dish-name:hover,.dish.is-previewed button.dish-name{background-size:100% 1px;color:var(--verde-tinta)}
+.dish-camera{display:inline-block;width:15px;height:11px;margin-left:9px;vertical-align:1px;border:1.4px solid var(--madera);border-radius:3px;position:relative;opacity:.75}
+.dish-camera::after{content:'';position:absolute;width:5px;height:5px;border:1.4px solid var(--madera);border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%)}
+.dish-diet{flex-shrink:0;align-self:center;padding:3px 8px;border-radius:20px;font-size:11px;font-weight:650;letter-spacing:.1em;text-transform:uppercase}
+.dish-diet--vegano{background:#DCE8DF;color:var(--verde-tinta)}
+.dish-diet--vegetariano{background:#EFE6CF;color:#6B5320}
+.dish-dots{flex:1;min-width:24px;border-bottom:1.5px dotted rgba(30,26,26,.32);transform:translateY(-5px)}
+.dish-price{flex-shrink:0;font:450 clamp(18px,1.4vw,20px)/1 var(--serif);letter-spacing:-.02em;font-variant-numeric:tabular-nums lining-nums;white-space:nowrap}
+.dish-desc{margin-top:6px;max-width:560px;font-size:13px;line-height:1.7;color:#5C554C}
+.dish-note{margin-top:6px;font:500 21px/1.15 var(--hand);color:var(--madera)}
+.dish-options,.dish-extras,.dish-allergens{margin-top:8px;font-size:12px;line-height:1.75;color:#5C554C;max-width:600px}
+.dish-options>span,.dish-extras>span,.dish-allergens>span{margin-right:6px;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--pizarra)}
+.dish-extras b{font-weight:600;color:var(--madera);white-space:nowrap}
+.dish-allergens{font-size:12px;color:var(--muted)}
+
+/* Pie de la carta */
+.carta-allergy{margin-top:30px;margin-bottom:90px;padding-top:34px;border-top:1px solid var(--pizarra);display:grid;grid-template-columns:220px 1fr;gap:12px 40px}
+.carta-allergy h2{margin-top:4px;font-family:var(--sans);font-weight:650;line-height:1.5}
+.carta-allergy>p:not(.carta-source){font-size:14px;max-width:640px;color:#514C45}
+.carta-source{grid-column:2;font-size:12px;color:var(--muted);display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px}
+.carta-source .text-link{font-size:12px;gap:12px}
+
+/* Foto ampliada de un plato */
+.dish-dialog{width:min(620px,calc(100vw - 32px));max-height:calc(100dvh - 32px);padding:0;border:0;border-radius:6px;overflow:auto;box-shadow:0 24px 80px #0004}
+.dish-dialog[open]{animation:dish-in .45s var(--ease) both}
+@keyframes dish-in{from{opacity:0;translate:0 18px;scale:.98}}
+.dish-dialog-close{position:absolute;top:12px;right:12px;z-index:2;background:var(--papel);border-radius:50%;box-shadow:0 3px 12px #0002}
+.dish-dialog-photo{aspect-ratio:4/3;background:var(--salvia)}
+.dish-dialog-photo img{width:100%;height:100%;object-fit:cover}
+.dish-dialog-body{padding:26px 30px 32px}
+.dish-dialog-head{display:flex;justify-content:space-between;align-items:baseline;gap:20px}
+.dish-dialog-head h2{font-size:clamp(26px,4vw,34px);letter-spacing:-.04em}
+.dish-dialog-body .dish-price{font-size:22px}
+.dish-dialog-body .dish-desc{font-size:14px}
+
+@media(max-width:999px){
+  .carta-body{--header-h:83px}
+  .carta-hero-grid{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px}
+  .carta-menu-head{grid-template-columns:1fr;gap:8px}
+  .carta-group{grid-template-columns:1fr;gap:30px;padding-block:44px}
+  .carta-group--flip .carta-group-aside{order:0}
+  .carta-group-aside{position:static;display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:end}
+  .carta-feature{margin-top:0;width:auto;min-width:0}
+  .carta-feature-arch{aspect-ratio:4/3.4}
+}
+@media(max-width:699px){
+  /* Sin la franja de horario la cabecera móvil mide 78 px; con ella, 104 px */
+  .carta-body{--header-h:78px;--bar-h:96px}
+  .carta-hero{padding-bottom:30px}
+  .carta-hero-grid{grid-template-columns:1fr;gap:8px}
+  .carta-hero-text{font-size:14px}
+  .carta-illustration{width:min(78%,300px);justify-self:center;margin-block:4px -6px}
+  .carta-index{flex-direction:column;align-items:stretch;gap:6px;padding-block:8px}
+  .carta-switch{padding:0;margin:0;border:0}
+  .carta-switch a{padding:6px 12px}
+  .carta-sections{-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent)}
+  .carta-menu-head{padding-top:40px}
+  .carta-group-aside{grid-template-columns:1fr;gap:22px}
+  .carta-feature-arch{aspect-ratio:16/9;border-radius:160px 160px 6px 6px}
+  .carta-feature figcaption{font-size:20px}
+  .carta-group-title h3{font-size:36px}
+  .dish{padding-block:17px}
+  .dish-line{flex-wrap:wrap;row-gap:6px}
+  .dish-name{flex:1 1 60%}
+  .dish-dots{display:none}
+  .dish-diet{order:3}
+  .dish-price{margin-left:auto}
+  .carta-allergy{grid-template-columns:1fr;margin-bottom:60px}
+  .carta-source{grid-column:1}
+  .dish-dialog-body{padding:22px 22px 28px}
+}
+@media(prefers-reduced-motion:reduce){.js .carta-menu.is-active,.dish-dialog[open]{animation:none}.carta-feature-arch img.is-incoming{transition:none}}

@@ -1,0 +1,18 @@
+---
+// Versiones en inglés, alemán y neerlandés: mismas vistas que en español, con rutas traducidas.
+import Home from '../../views/Home.astro';
+import Carta from '../../views/Carta.astro';
+import Calma from '../../views/Calma.astro';
+import Visit from '../../views/Visit.astro';
+import { langs, routes, type Lang, type Page } from '../../i18n/ui';
+export function getStaticPaths() {
+  return langs.filter(lang => lang !== 'es').flatMap(lang => (Object.entries(routes[lang]) as [Page, string][]).map(([page, path]) => ({
+    params: { lang, slug: path.split('/').filter(Boolean).slice(1).join('/') || undefined },
+    props: { lang, page },
+  })));
+}
+interface Props { lang: Lang; page: Page; }
+const { lang, page } = Astro.props;
+const View = { inicio: Home, carta: Carta, calma: Calma, visitanos: Visit }[page];
+---
+<View lang={lang} />

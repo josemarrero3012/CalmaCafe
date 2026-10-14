@@ -1,0 +1,27 @@
+---
+// Página de error 404. Astro la genera como /404.html y el hosting la sirve para cualquier ruta
+// que no exista, en cualquier idioma: por eso va en español y enlaza al inicio de los otros tres.
+import Icon from '../components/Icon.astro';
+import Layout from '../layouts/Layout.astro';
+import Lotus from '../components/Lotus.astro';
+import ScriptWord from '../components/ScriptWord.astro';
+import { langs, locale, routes, ui } from '../i18n/ui';
+const t = ui.es;
+const n = t.notFound;
+---
+<Layout lang="es" title={`${n.title} · Calma Café`} description={n.intro}>
+  <section class="not-found manifesto page-top wrap" aria-labelledby="not-found-title">
+    <p class="eyebrow enter">Error 404</p>
+    <h1 id="not-found-title" class="enter enter-2" set:html={n.h1} />
+    <div class="manifesto-bottom enter enter-3"><Lotus /><p>{n.intro}</p></div>
+    <div class="not-found-actions enter enter-4">
+      <a class="button" href={routes.es.inicio}>{t.backHome} <span aria-hidden="true"><Icon name="arrow-right" /></span></a>
+      <a class="text-link" href={routes.es.carta}>{t.home.seeMenu}</a>
+      <a class="text-link" href={routes.es.visitanos}>{t.directions}</a>
+      <ScriptWord text="Come as you are" class="script-not-found" />
+    </div>
+    <ul class="not-found-langs enter enter-4">
+      {langs.filter(lang => lang !== 'es').map(lang => <li lang={locale[lang].html}><span>{ui[lang].notFound.title}</span><a href={routes[lang].inicio} hreflang={locale[lang].html}>{ui[lang].backHome} <Icon name="arrow-right" /></a></li>)}
+    </ul>
+  </section>
+</Layout>

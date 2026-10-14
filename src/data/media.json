@@ -1,0 +1,199 @@
+{
+  "mango-matcha": {
+    "width": 1170,
+    "height": 1460,
+    "widths": [
+      320,
+      480,
+      720,
+      960,
+      1170
+    ]
+  },
+  "pizarra-yawn": {
+    "width": 1170,
+    "height": 1450,
+    "widths": [
+      320,
+      480,
+      720,
+      960,
+      1170
+    ]
+  },
+  "berry-pancakes": {
+    "width": 1170,
+    "height": 1560,
+    "widths": [
+      320,
+      480,
+      720,
+      960,
+      1170
+    ]
+  },
+  "plato-plancha": {
+    "width": 1170,
+    "height": 1560,
+    "widths": [
+      320,
+      480,
+      720,
+      960,
+      1170
+    ]
+  },
+  "coffee-o-matcha": {
+    "width": 1170,
+    "height": 1560,
+    "widths": [
+      320,
+      480,
+      720,
+      960,
+      1170
+    ]
+  },
+  "tortitas-fruta": {
+    "width": 1170,
+    "height": 1560,
+    "widths": [
+      320,
+      480,
+      720,
+      960,
+      1170
+    ]
+  },
+  "calma-gambita": {
+    "width": 1170,
+    "height": 1170,
+    "widths": [
+      320,
+      480,
+      720,
+      960,
+      1170
+    ]
+  },
+  "calma-roastbeef": {
+    "width": 1170,
+    "height": 1560,
+    "widths": [
+      320,
+      480,
+      720,
+      960,
+      1170
+    ]
+  },
+  "interior-barra": {
+    "width": 720,
+    "height": 1280,
+    "widths": [
+      320,
+      480,
+      720
+    ]
+  },
+  "interior-ventanal": {
+    "width": 720,
+    "height": 1280,
+    "widths": [
+      320,
+      480,
+      720
+    ]
+  },
+  "interior-notas": {
+    "width": 720,
+    "height": 1280,
+    "widths": [
+      320,
+      480,
+      720
+    ]
+  },
+  "interior-mesa": {
+    "width": 720,
+    "height": 1280,
+    "widths": [
+      320,
+      480,
+      720
+    ]
+  },
+  "interior-cuadros": {
+    "width": 720,
+    "height": 1280,
+    "widths": [
+      320,
+      480,
+      720
+    ]
+  },
+  "interior-tapiz": {
+    "width": 720,
+    "height": 1280,
+    "widths": [
+      320,
+      480,
+      720
+    ]
+  },
+  "interior-luces": {
+    "width": 720,
+    "height": 1280,
+    "widths": [
+      320,
+      480,
+      720
+    ]
+  },
+  "interior-cojines": {
+    "width": 720,
+    "height": 1280,
+    "widths": [
+      320,
+      480,
+      720
+    ]
+  },
+  "interior-galeria": {
+    "width": 720,
+    "height": 1280,
+    "widths": [
+      320,
+      480,
+      720
+    ]
+  },
+  "interior-pizarra": {
+    "width": 720,
+    "height": 1280,
+    "widths": [
+      320,
+      480,
+      720
+    ]
+  },
+  "interior-poster": {
+    "width": 720,
+    "height": 1280,
+    "widths": [
+      320,
+      480,
+      720
+    ]
+  },
+  "hero-fondo": {
+    "width": 1706,
+    "height": 922,
+    "widths": [
+      640,
+      960,
+      1280,
+      1706
+    ]
+  }
+}

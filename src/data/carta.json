@@ -1,0 +1,2847 @@
+{
+  "fuente": "https://calma.buenacarta.com/",
+  "consultada": "2026-10-07",
+  "local": {
+    "direccion": "Avda. de Tirajana 3, Apt Aloe, Maspalomas (Las Palmas)",
+    "telefono": "681667917",
+    "whatsapp": "https://wa.me/34681667917"
+  },
+  "menus": [
+    {
+      "id": "carta",
+      "nombre": "Carta",
+      "nota": [],
+      "grupos": [
+        {
+          "id": "carta-brunch",
+          "nombre": "Brunch",
+          "platos": [
+            {
+              "id": "93766",
+              "nombre": "Granola Bowl con fruta",
+              "descripcion": "Yogur griego con miel, fruta y granola",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "7,50 €",
+              "alergenos": [
+                "Gluten",
+                "Lácteos",
+                "Frutos de cáscara",
+                "Semillas de sésamo"
+              ],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/93766",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "624046",
+              "nombre": "Granola Cacahuete",
+              "descripcion": "Yogur griego, granola, crema de cacahuete, chocolate negro, plátano",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "7,50 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/624046",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "89630",
+              "nombre": "Calma Especial",
+              "descripcion": "Triassant (mezcla de croissant y pan de cereales) con huevos revueltos, aguacate, bacon y verduras",
+              "extras": [],
+              "opciones": [],
+              "notas": [
+                "Guacamole en vez de aguacate"
+              ],
+              "precio": "12,50 €",
+              "alergenos": [
+                "Gluten",
+                "Huevos",
+                "Lácteos",
+                "Semillas de sésamo"
+              ],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/89630",
+                "width": 800,
+                "height": 599,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "89632",
+              "nombre": "Calma Salmón",
+              "descripcion": "Salmón ahumado, huevos revueltos, aguacate y vegetales servido en un Triassant (mezcla de croissant y pan de cereales) y con salsa de eneldo",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "14,50 €",
+              "alergenos": [
+                "Gluten",
+                "Huevos",
+                "Pescado",
+                "Lácteos",
+                "Mostaza",
+                "Semillas de sésamo"
+              ],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/89632",
+                "width": 800,
+                "height": 599,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "93764",
+              "nombre": "Atún picante y huevo",
+              "descripcion": "Servido en un Triassant (mezcla de croissant y pan de cereales) con vegetales y chili alioli",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "10,50 €",
+              "alergenos": [
+                "Gluten",
+                "Huevos",
+                "Pescado",
+                "Lácteos",
+                "Semillas de sésamo"
+              ],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/93764",
+                "width": 800,
+                "height": 598,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "89634",
+              "nombre": "Mozzarella, Serrano y pesto",
+              "descripcion": "Servido en un Triassant (mezcla de croissant y pan de cereales) con vegetales",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "10,50 €",
+              "alergenos": [
+                "Gluten",
+                "Huevos",
+                "Lácteos",
+                "Semillas de sésamo"
+              ],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/89634",
+                "width": 800,
+                "height": 599,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "94255",
+              "nombre": "Tosta huevos revueltos y bacon",
+              "descripcion": "Añádele aguacate, hummus…",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "7,50 €",
+              "alergenos": [
+                "Gluten",
+                "Lácteos",
+                "Frutos de cáscara",
+                "Semillas de sésamo"
+              ],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/94255",
+                "width": 800,
+                "height": 599,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "94249",
+              "nombre": "Tosta Tumaca",
+              "descripcion": "Con aceite y semillas. Añádele hummus, huevo, aguacate…",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "5,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/94249",
+                "width": 800,
+                "height": 599,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "702773",
+              "nombre": "Tosta Caesar",
+              "descripcion": "Con pollo y bacon",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "11,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/702773",
+                "width": 800,
+                "height": 599,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "94246",
+              "nombre": "Tosta Serrano",
+              "descripcion": "Con mozzarella y pesto",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "8,50 €",
+              "alergenos": [
+                "Gluten",
+                "Lácteos"
+              ],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/94246",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "94247",
+              "nombre": "Tosta Salmón",
+              "descripcion": "Con huevo revuelto, aguacate y salsa de eneldo",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "11,00 €",
+              "alergenos": [
+                "Gluten",
+                "Lácteos",
+                "Frutos de cáscara",
+                "Semillas de sésamo"
+              ],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/94247",
+                "width": 800,
+                "height": 599,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "94250",
+              "nombre": "Tosta Brie",
+              "descripcion": "Con nueces y miel",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "7,50 €",
+              "alergenos": [
+                "Gluten",
+                "Huevos",
+                "Lácteos",
+                "Semillas de sésamo"
+              ],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/94250",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "624049",
+              "nombre": "Tosta Cacahuete",
+              "descripcion": "Crema de cacahuete, mermelada, plátano",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "7,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/624049",
+                "width": 800,
+                "height": 601,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "422600",
+              "nombre": "Pancakes",
+              "descripcion": null,
+              "extras": [
+                {
+                  "nombre": "Nutella",
+                  "precio": "2,00 €"
+                },
+                {
+                  "nombre": "Dulce de leche",
+                  "precio": "3,00 €"
+                },
+                {
+                  "nombre": "Crema de frambuesa",
+                  "precio": "2,80 €"
+                },
+                {
+                  "nombre": "Crema de pistacho",
+                  "precio": "3,00 €"
+                },
+                {
+                  "nombre": "Fruta",
+                  "precio": "3,50 €"
+                },
+                {
+                  "nombre": "Nata montada",
+                  "precio": "1,50 €"
+                },
+                {
+                  "nombre": "Pancake",
+                  "precio": "3,00 €"
+                }
+              ],
+              "opciones": [],
+              "notas": [],
+              "precio": "8,00 €",
+              "alergenos": [
+                "Gluten",
+                "Huevos",
+                "Lácteos"
+              ],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/422600",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "621656",
+              "nombre": "Pancakes estilo Americano",
+              "descripcion": "Dos pancakes con huevos revueltos, bacon y Jarabe de arce",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "12,50 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/621656",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            }
+          ],
+          "portada": "93766"
+        },
+        {
+          "id": "carta-brunch-tardio-mas",
+          "nombre": "Brunch tardío & más",
+          "platos": [
+            {
+              "id": "93767",
+              "nombre": "Sándwich Brie y Bacon",
+              "descripcion": null,
+              "extras": [
+                {
+                  "nombre": "Una ensaladita o papas ajillo horneadas",
+                  "precio": "2,00 €"
+                }
+              ],
+              "opciones": [],
+              "notas": [],
+              "precio": "9,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": null
+            },
+            {
+              "id": "93768",
+              "nombre": "Sándwich Pollo y pesto",
+              "descripcion": null,
+              "extras": [
+                {
+                  "nombre": "Una ensaladita o papas ajillo horneadas",
+                  "precio": "2,00 €"
+                }
+              ],
+              "opciones": [],
+              "notas": [],
+              "precio": "9,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/93768",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "164072",
+              "nombre": "Sándwich Atún picante",
+              "descripcion": null,
+              "extras": [
+                {
+                  "nombre": "Una ensaladita o papas ajillo horneadas",
+                  "precio": "2,00 €"
+                }
+              ],
+              "opciones": [],
+              "notas": [],
+              "precio": "9,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/164072",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "93770",
+              "nombre": "Ensalada Caesar",
+              "descripcion": "Salsa Caesar casera, pollo y bacon",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "14,50 €",
+              "alergenos": [
+                "Gluten",
+                "Huevos",
+                "Soja",
+                "Lácteos",
+                "Frutos de cáscara",
+                "Semillas de sésamo"
+              ],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/93770",
+                "width": 800,
+                "height": 599,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "93772",
+              "nombre": "Ensalada de atún picante & huevo",
+              "descripcion": "Ensalada mixta, tomate, rabanitos, cebolla, salsa casera, atún y huevo frito. Acompañado de pan",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "13,50 €",
+              "alergenos": [
+                "Gluten",
+                "Huevos",
+                "Soja",
+                "Lácteos",
+                "Frutos de cáscara",
+                "Semillas de sésamo"
+              ],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/93772",
+                "width": 767,
+                "height": 575,
+                "widths": [
+                  160,
+                  480,
+                  767
+                ]
+              }
+            },
+            {
+              "id": "93773",
+              "nombre": "Ensalada de Quinoa y pollo",
+              "descripcion": "Mezcla de ensalada, tomate, rábano, cebolla, quinoa y pollo",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "13,50 €",
+              "alergenos": [
+                "Gluten",
+                "Huevos",
+                "Cacahuetes",
+                "Lácteos",
+                "Frutos de cáscara",
+                "Semillas de sésamo"
+              ],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/93773",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "93782",
+              "nombre": "Fajita Caesar",
+              "descripcion": "Con salsa Caesar casera, pollo y bacon",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "13,00 €",
+              "alergenos": [
+                "Gluten",
+                "Huevos",
+                "Cacahuetes",
+                "Soja",
+                "Frutos de cáscara",
+                "Semillas de sésamo"
+              ],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/93782",
+                "width": 800,
+                "height": 599,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "93784",
+              "nombre": "Fajita Desayuno",
+              "descripcion": "Fajita con huevos revueltos, hummus y vegetales. Añade bacon, pollo…",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "11,00 €",
+              "alergenos": [
+                "Gluten",
+                "Huevos",
+                "Lácteos",
+                "Frutos de cáscara",
+                "Semillas de sésamo"
+              ],
+              "dieta": null,
+              "foto": null
+            },
+            {
+              "id": "93787",
+              "nombre": "Fajita Salmón",
+              "descripcion": "Con huevos revueltos y salsa de eneldo",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "14,50 €",
+              "alergenos": [
+                "Gluten",
+                "Huevos",
+                "Soja",
+                "Lácteos",
+                "Frutos de cáscara",
+                "Semillas de sésamo"
+              ],
+              "dieta": null,
+              "foto": null
+            },
+            {
+              "id": "93769",
+              "nombre": "Sándwich Guacamole y champiñones",
+              "descripcion": null,
+              "extras": [
+                {
+                  "nombre": "Una ensaladita o papas ajillo horneadas",
+                  "precio": "2,00 €"
+                }
+              ],
+              "opciones": [],
+              "notas": [],
+              "precio": "9,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/93769",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            }
+          ],
+          "portada": "93768"
+        },
+        {
+          "id": "carta-extras",
+          "nombre": "Extras",
+          "platos": [
+            {
+              "id": "93779",
+              "nombre": "Papas ajillo al horno",
+              "descripcion": "Servido con chili alioli",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "4,50 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/93779",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "104950",
+              "nombre": "Aguacate",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "3,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": null
+            },
+            {
+              "id": "164074",
+              "nombre": "Hummus",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "2,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": null
+            },
+            {
+              "id": "105720",
+              "nombre": "Guacamole",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "2,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": null
+            },
+            {
+              "id": "188882",
+              "nombre": "Huevo",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "1,50 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": null
+            },
+            {
+              "id": "93780",
+              "nombre": "Queso o jamón",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "1,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": null
+            },
+            {
+              "id": "93778",
+              "nombre": "Pollo, bacon o serrano",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "2,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": null
+            },
+            {
+              "id": "105721",
+              "nombre": "Mozzarella",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "2,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": null
+            },
+            {
+              "id": "93781",
+              "nombre": "Salmón ahumado",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "3,00 €",
+              "alergenos": [
+                "Pescado"
+              ],
+              "dieta": null,
+              "foto": null
+            }
+          ],
+          "portada": "93779"
+        },
+        {
+          "id": "carta-algo-dulce",
+          "nombre": "¡Algo dulce!",
+          "platos": [
+            {
+              "id": "721404",
+              "nombre": "Pregunta por nuestros dulces caseros",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "5,50 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/721404",
+                "width": 600,
+                "height": 450,
+                "widths": [
+                  160,
+                  480,
+                  600
+                ]
+              }
+            },
+            {
+              "id": "721403",
+              "nombre": "Rollito de Canela",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "4,50 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/721403",
+                "width": 600,
+                "height": 450,
+                "widths": [
+                  160,
+                  480,
+                  600
+                ]
+              }
+            },
+            {
+              "id": "721407",
+              "nombre": "Gofre",
+              "descripcion": null,
+              "extras": [
+                {
+                  "nombre": "Nutella",
+                  "precio": "1,50 €"
+                },
+                {
+                  "nombre": "Dulce de leche",
+                  "precio": "2,00 €"
+                },
+                {
+                  "nombre": "Crema de frambuesa",
+                  "precio": "2,00 €"
+                },
+                {
+                  "nombre": "Crema de pistacho",
+                  "precio": "2,00 €"
+                },
+                {
+                  "nombre": "Fruta",
+                  "precio": "3,50 €"
+                },
+                {
+                  "nombre": "Nata montada",
+                  "precio": "1,00 €"
+                }
+              ],
+              "opciones": [],
+              "notas": [],
+              "precio": "3,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/721407",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "721405",
+              "nombre": "Cookies",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "3,80 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/721405",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "721678",
+              "nombre": "Mini Brookie",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "2,50 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/721678",
+                "width": 799,
+                "height": 599,
+                "widths": [
+                  160,
+                  480,
+                  799
+                ]
+              }
+            },
+            {
+              "id": "721406",
+              "nombre": "Pancakes",
+              "descripcion": null,
+              "extras": [
+                {
+                  "nombre": "Nutella",
+                  "precio": "2,00 €"
+                },
+                {
+                  "nombre": "Dulce de leche",
+                  "precio": "3,00 €"
+                },
+                {
+                  "nombre": "Crema de frambuesa",
+                  "precio": "2,80 €"
+                },
+                {
+                  "nombre": "Crema de pistacho",
+                  "precio": "3,00 €"
+                },
+                {
+                  "nombre": "Fruta",
+                  "precio": "3,50 €"
+                },
+                {
+                  "nombre": "Nata montada",
+                  "precio": "1,00 €"
+                },
+                {
+                  "nombre": "Pancake",
+                  "precio": "3,00 €"
+                }
+              ],
+              "opciones": [],
+              "notas": [],
+              "precio": "8,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/721406",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            }
+          ],
+          "portada": "721404"
+        },
+        {
+          "id": "carta-para-los-ninos",
+          "nombre": "Para los niños",
+          "platos": [
+            {
+              "id": "94240",
+              "nombre": "Mixto niños",
+              "descripcion": "Sándwich jamón y queso",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "4,20 €",
+              "alergenos": [
+                "Gluten",
+                "Huevos",
+                "Lácteos",
+                "Frutos de cáscara",
+                "Semillas de sésamo"
+              ],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/94240",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "486019",
+              "nombre": "Gofre con mermelada o Nutella",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "4,50 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/486019",
+                "width": 800,
+                "height": 599,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "594936",
+              "nombre": "Sándwich pollo y queso a la plancha",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "6,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": null
+            },
+            {
+              "id": "94241",
+              "nombre": "Pan con…",
+              "descripcion": "Mermelada, jamón, queso o Nutella",
+              "extras": [],
+              "opciones": [],
+              "notas": [
+                "Pan integral o de molde"
+              ],
+              "precio": "3,00 €",
+              "alergenos": [
+                "Gluten",
+                "Huevos",
+                "Soja",
+                "Lácteos",
+                "Frutos de cáscara",
+                "Semillas de sésamo"
+              ],
+              "dieta": null,
+              "foto": null
+            },
+            {
+              "id": "247422",
+              "nombre": "Tosta solo huevos",
+              "descripcion": "Huevos revueltos",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "4,50 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": null
+            },
+            {
+              "id": "247444",
+              "nombre": "Yogur con fruta",
+              "descripcion": null,
+              "extras": [
+                {
+                  "nombre": "Granola",
+                  "precio": "1,30 €"
+                }
+              ],
+              "opciones": [],
+              "notas": [],
+              "precio": "5,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": null
+            }
+          ],
+          "portada": "94240"
+        }
+      ]
+    },
+    {
+      "id": "vegetariano",
+      "nombre": "Vegetariano",
+      "nota": [
+        "¡Toda la carta se puede hacer sin gluten!"
+      ],
+      "grupos": [
+        {
+          "id": "vegetariano-brunch",
+          "nombre": "Brunch",
+          "platos": [
+            {
+              "id": "94225",
+              "nombre": "Granola Bowl con fruta",
+              "descripcion": "Yogur griego con miel, fruta y granola",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "7,20 €",
+              "alergenos": [
+                "Gluten",
+                "Lácteos"
+              ],
+              "dieta": "vegetariano",
+              "foto": {
+                "src": "/media/carta/94225",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "94220",
+              "nombre": "Calma Vegetariano",
+              "descripcion": "Triassant (mezcla de croissant y pan de cereales) con lechuga, rabanitos, huevos revueltos y aguacate",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "12,00 €",
+              "alergenos": [
+                "Gluten",
+                "Huevos",
+                "Lácteos",
+                "Semillas de sésamo"
+              ],
+              "dieta": "vegetariano",
+              "foto": {
+                "src": "/media/carta/94220",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "94222",
+              "nombre": "Mozzarella y pesto",
+              "descripcion": "Triassant (mezcla de croissant y pan de cereales) con lechuga y rabanitos",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "10,00 €",
+              "alergenos": [
+                "Gluten",
+                "Huevos",
+                "Lácteos",
+                "Semillas de sésamo"
+              ],
+              "dieta": "vegetariano",
+              "foto": null
+            },
+            {
+              "id": "164026",
+              "nombre": "Tosta huevos revueltos",
+              "descripcion": "Con tomate y cebolla",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "5,00 €",
+              "alergenos": [
+                "Gluten",
+                "Lácteos",
+                "Semillas de sésamo"
+              ],
+              "dieta": "vegetariano",
+              "foto": {
+                "src": "/media/carta/164026",
+                "width": 800,
+                "height": 601,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "105722",
+              "nombre": "Tosta Tumaca",
+              "descripcion": "Con aceite y semillas",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "5,00 €",
+              "alergenos": [
+                "Gluten",
+                "Semillas de sésamo"
+              ],
+              "dieta": "vegetariano",
+              "foto": {
+                "src": "/media/carta/105722",
+                "width": 800,
+                "height": 599,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "164025",
+              "nombre": "Tosta Brie",
+              "descripcion": "Con nueces y miel",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "7,50 €",
+              "alergenos": [
+                "Gluten",
+                "Lácteos",
+                "Semillas de sésamo"
+              ],
+              "dieta": "vegetariano",
+              "foto": {
+                "src": "/media/carta/164025",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "426921",
+              "nombre": "Pancakes",
+              "descripcion": null,
+              "extras": [
+                {
+                  "nombre": "Nutella",
+                  "precio": "2,00 €"
+                },
+                {
+                  "nombre": "Crema de frambuesa",
+                  "precio": "2,80 €"
+                },
+                {
+                  "nombre": "Dulce de leche",
+                  "precio": "3,00 €"
+                },
+                {
+                  "nombre": "Crema de pistacho",
+                  "precio": "3,00 €"
+                },
+                {
+                  "nombre": "Fruta",
+                  "precio": "3,50 €"
+                },
+                {
+                  "nombre": "Nata montada",
+                  "precio": "1,50 €"
+                },
+                {
+                  "nombre": "Pancake",
+                  "precio": "3,00 €"
+                }
+              ],
+              "opciones": [],
+              "notas": [],
+              "precio": "8,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/426921",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "652415",
+              "nombre": "Granola Cacahuete",
+              "descripcion": "Crema de cacahuete, chocolate, plátano",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "7,20 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/652415",
+                "width": 800,
+                "height": 599,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            }
+          ],
+          "portada": "94225"
+        },
+        {
+          "id": "vegetariano-brunch-tardio-mas",
+          "nombre": "Brunch tardío & más",
+          "platos": [
+            {
+              "id": "164037",
+              "nombre": "Fajita Vegetariana",
+              "descripcion": "Con hummus, guacamole y champiñones",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "11,00 €",
+              "alergenos": [
+                "Gluten",
+                "Lácteos",
+                "Semillas de sésamo"
+              ],
+              "dieta": "vegetariano",
+              "foto": null
+            },
+            {
+              "id": "94227",
+              "nombre": "Fajita Desayuno",
+              "descripcion": "Huevos revueltos, ensalada, tomate, rabanitos, salsa",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "11,00 €",
+              "alergenos": [
+                "Gluten",
+                "Lácteos",
+                "Semillas de sésamo"
+              ],
+              "dieta": "vegetariano",
+              "foto": null
+            },
+            {
+              "id": "94234",
+              "nombre": "Ensalada vegetariana de Quinoa, verduras & aguacate",
+              "descripcion": "Mezcla de ensalada, tomate, rábano, cebolla y quinoa, con pan",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "13,50 €",
+              "alergenos": [
+                "Gluten",
+                "Lácteos",
+                "Semillas de sésamo"
+              ],
+              "dieta": "vegetariano",
+              "foto": {
+                "src": "/media/carta/94234",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            }
+          ],
+          "portada": "94234"
+        },
+        {
+          "id": "vegetariano-algo-dulce",
+          "nombre": "¡Algo dulce!",
+          "platos": [
+            {
+              "id": "721667",
+              "nombre": "Pregunta por nuestros dulces caseros",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "5,50 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/721667",
+                "width": 600,
+                "height": 450,
+                "widths": [
+                  160,
+                  480,
+                  600
+                ]
+              }
+            },
+            {
+              "id": "721671",
+              "nombre": "Rollito de Canela",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "4,50 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/721671",
+                "width": 600,
+                "height": 450,
+                "widths": [
+                  160,
+                  480,
+                  600
+                ]
+              }
+            },
+            {
+              "id": "721670",
+              "nombre": "Cookies",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "3,80 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/721670",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "721668",
+              "nombre": "Gofre",
+              "descripcion": null,
+              "extras": [
+                {
+                  "nombre": "Nutella",
+                  "precio": "1,50 €"
+                },
+                {
+                  "nombre": "Dulce de leche",
+                  "precio": "2,00 €"
+                },
+                {
+                  "nombre": "Crema de frambuesa",
+                  "precio": "2,00 €"
+                },
+                {
+                  "nombre": "Crema de pistacho",
+                  "precio": "2,00 €"
+                },
+                {
+                  "nombre": "Fruta",
+                  "precio": "3,50 €"
+                },
+                {
+                  "nombre": "Nata montada",
+                  "precio": "1,00 €"
+                },
+                {
+                  "nombre": "Mermelada",
+                  "precio": "1,50 €"
+                }
+              ],
+              "opciones": [],
+              "notas": [],
+              "precio": "3,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/721668",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "721681",
+              "nombre": "Mini Brookie",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "2,50 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/721681",
+                "width": 799,
+                "height": 599,
+                "widths": [
+                  160,
+                  480,
+                  799
+                ]
+              }
+            },
+            {
+              "id": "721669",
+              "nombre": "Pancakes",
+              "descripcion": null,
+              "extras": [
+                {
+                  "nombre": "Nutella",
+                  "precio": "2,00 €"
+                },
+                {
+                  "nombre": "Dulce de leche",
+                  "precio": "3,00 €"
+                },
+                {
+                  "nombre": "Crema de frambuesa",
+                  "precio": "2,80 €"
+                },
+                {
+                  "nombre": "Crema de pistacho",
+                  "precio": "3,00 €"
+                },
+                {
+                  "nombre": "Fruta",
+                  "precio": "3,50 €"
+                },
+                {
+                  "nombre": "Nata montada",
+                  "precio": "1,00 €"
+                },
+                {
+                  "nombre": "Pancake",
+                  "precio": "3,00 €"
+                }
+              ],
+              "opciones": [],
+              "notas": [],
+              "precio": "8,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/721669",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            }
+          ],
+          "portada": "721667"
+        },
+        {
+          "id": "vegetariano-extras",
+          "nombre": "Extras",
+          "platos": [
+            {
+              "id": "94239",
+              "nombre": "Papas ajillo al horno",
+              "descripcion": "Con chili alioli",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "4,50 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/94239",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "510788",
+              "nombre": "Guacamole",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "2,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": null
+            },
+            {
+              "id": "164030",
+              "nombre": "Aguacate",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "3,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": null
+            },
+            {
+              "id": "164068",
+              "nombre": "Hummus",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "2,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": null
+            },
+            {
+              "id": "164033",
+              "nombre": "Huevo",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "1,50 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": null
+            },
+            {
+              "id": "164031",
+              "nombre": "Queso",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "1,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": null
+            },
+            {
+              "id": "164032",
+              "nombre": "Champiñones",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "2,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": null
+            },
+            {
+              "id": "164035",
+              "nombre": "Extra salsa",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "1,50 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": null
+            }
+          ],
+          "portada": "94239"
+        }
+      ]
+    },
+    {
+      "id": "vegano",
+      "nombre": "Vegano",
+      "nota": [
+        "¡Toda la carta se puede hacer sin gluten!"
+      ],
+      "grupos": [
+        {
+          "id": "vegano-brunch",
+          "nombre": "Brunch",
+          "platos": [
+            {
+              "id": "188886",
+              "nombre": "Granola Bowl Vegano con fruta",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "7,80 €",
+              "alergenos": [],
+              "dieta": "vegano",
+              "foto": {
+                "src": "/media/carta/188886",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "520830",
+              "nombre": "Calma Vegano",
+              "descripcion": "Triassant (mezcla de croissant y cereales) con lechuga, revuelto de tofu y aguacate",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "12,50 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/520830",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "164049",
+              "nombre": "Tosta Tumaca",
+              "descripcion": "Con aceite y semillas",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "5,00 €",
+              "alergenos": [],
+              "dieta": "vegano",
+              "foto": {
+                "src": "/media/carta/164049",
+                "width": 800,
+                "height": 599,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "164039",
+              "nombre": "Triassant con tomate, aceite y semillas",
+              "descripcion": "Triassant (mezcla de croissant y pan de cereales)",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "6,00 €",
+              "alergenos": [
+                "Gluten"
+              ],
+              "dieta": "vegano",
+              "foto": null
+            },
+            {
+              "id": "520829",
+              "nombre": "Tosta tofu revuelto",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [
+                "Añade aguacate"
+              ],
+              "precio": "7,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/520829",
+                "width": 800,
+                "height": 601,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "652414",
+              "nombre": "Tosta Cacahuete",
+              "descripcion": "Con crema de cacahuete, plátano y mermelada",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "7,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/652414",
+                "width": 800,
+                "height": 599,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "164050",
+              "nombre": "Tosta guacamole & champiñones",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "8,50 €",
+              "alergenos": [],
+              "dieta": "vegano",
+              "foto": null
+            },
+            {
+              "id": "581391",
+              "nombre": "Gofre Vegano",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "4,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/581391",
+                "width": 800,
+                "height": 599,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "557987",
+              "nombre": "Rollito de Canela Vegano",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [
+                "Avisa al llegar: tarda entre 10 y 15 minutos en prepararse"
+              ],
+              "precio": "4,50 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/557987",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "652412",
+              "nombre": "Granola Cacahuete Vegano",
+              "descripcion": "Con crema de cacahuete, plátano y chocolate",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "7,80 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/652412",
+                "width": 800,
+                "height": 599,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "429056",
+              "nombre": "Pancakes Veganos",
+              "descripcion": null,
+              "extras": [
+                {
+                  "nombre": "Crema de frambuesa",
+                  "precio": "2,80 €"
+                },
+                {
+                  "nombre": "Crema de cacahuetes",
+                  "precio": "2,80 €"
+                },
+                {
+                  "nombre": "Fruta",
+                  "precio": "3,50 €"
+                },
+                {
+                  "nombre": "Jarabe de arce",
+                  "precio": "2,00 €"
+                }
+              ],
+              "opciones": [],
+              "notas": [],
+              "precio": "8,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/429056",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            }
+          ],
+          "portada": "188886"
+        },
+        {
+          "id": "vegano-brunch-tardio-mas",
+          "nombre": "Brunch tardío & más",
+          "platos": [
+            {
+              "id": "164067",
+              "nombre": "Fajita Vegana",
+              "descripcion": "Hummus, guacamole y champiñones",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "11,00 €",
+              "alergenos": [],
+              "dieta": "vegano",
+              "foto": null
+            },
+            {
+              "id": "94189",
+              "nombre": "Ensalada Vegana de Quinoa & garbanzos",
+              "descripcion": "Ensalada, quinoa, verduras, aguacate y pan de acompañamiento",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "13,50 €",
+              "alergenos": [],
+              "dieta": "vegano",
+              "foto": {
+                "src": "/media/carta/94189",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            }
+          ],
+          "portada": "94189"
+        },
+        {
+          "id": "vegano-algo-dulce",
+          "nombre": "¡Algo dulce!",
+          "platos": [
+            {
+              "id": "721673",
+              "nombre": "Rollito de Canela",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "4,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/721673",
+                "width": 600,
+                "height": 450,
+                "widths": [
+                  160,
+                  480,
+                  600
+                ]
+              }
+            },
+            {
+              "id": "721675",
+              "nombre": "Gofre",
+              "descripcion": null,
+              "extras": [
+                {
+                  "nombre": "Crema de frambuesa",
+                  "precio": "2,00 €"
+                },
+                {
+                  "nombre": "Fruta",
+                  "precio": "3,50 €"
+                },
+                {
+                  "nombre": "Mermelada",
+                  "precio": "1,50 €"
+                },
+                {
+                  "nombre": "Agave",
+                  "precio": "1,50 €"
+                }
+              ],
+              "opciones": [],
+              "notas": [],
+              "precio": "3,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/721675",
+                "width": 799,
+                "height": 599,
+                "widths": [
+                  160,
+                  480,
+                  799
+                ]
+              }
+            },
+            {
+              "id": "721674",
+              "nombre": "Pancakes",
+              "descripcion": null,
+              "extras": [
+                {
+                  "nombre": "Crema de frambuesa",
+                  "precio": "2,80 €"
+                },
+                {
+                  "nombre": "Fruta",
+                  "precio": "3,50 €"
+                },
+                {
+                  "nombre": "Pancake",
+                  "precio": "3,00 €"
+                },
+                {
+                  "nombre": "Agave",
+                  "precio": "1,50 €"
+                }
+              ],
+              "opciones": [],
+              "notas": [],
+              "precio": "8,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/721674",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            }
+          ],
+          "portada": "721673"
+        },
+        {
+          "id": "vegano-extras",
+          "nombre": "Extras",
+          "platos": [
+            {
+              "id": "701345",
+              "nombre": "Tofu",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "3,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": null
+            },
+            {
+              "id": "164058",
+              "nombre": "Papas ajillo al horno",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "4,50 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/164058",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "510789",
+              "nombre": "Guacamole",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "2,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": null
+            },
+            {
+              "id": "164052",
+              "nombre": "Aguacate",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "3,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": null
+            },
+            {
+              "id": "164053",
+              "nombre": "Queso vegano",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "1,50 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": null
+            },
+            {
+              "id": "164056",
+              "nombre": "Hummus",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "2,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": null
+            },
+            {
+              "id": "164054",
+              "nombre": "Champiñones",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "2,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": null
+            }
+          ],
+          "portada": "164058"
+        }
+      ]
+    },
+    {
+      "id": "bebidas",
+      "nombre": "Bebidas",
+      "nota": [],
+      "grupos": [
+        {
+          "id": "bebidas-bebidas-frias",
+          "nombre": "Bebidas frías",
+          "platos": [
+            {
+              "id": "93790",
+              "nombre": "Smoothies",
+              "descripcion": "Fruta natural mezclado con zumo de manzana",
+              "extras": [],
+              "opciones": [
+                "Mango, maracuyá y piña",
+                "Frutos del bosque y plátano",
+                "Espinaca, plátano, brócoli y piña"
+              ],
+              "notas": [],
+              "precio": "5,50 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/93790",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "93793",
+              "nombre": "Agua",
+              "descripcion": "33 cl",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "2,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/93793",
+                "width": 800,
+                "height": 599,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "93789",
+              "nombre": "Zumo natural naranja",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "4,20 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/93789",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "93792",
+              "nombre": "Zumo manzana",
+              "descripcion": "De botella",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "2,20 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/93792",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "93791",
+              "nombre": "Nestea",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "3,50 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/93791",
+                "width": 500,
+                "height": 375,
+                "widths": [
+                  160,
+                  480,
+                  500
+                ]
+              }
+            },
+            {
+              "id": "717878",
+              "nombre": "Refresco",
+              "descripcion": "Coca-Cola, Coca-Cola Zero o Fanta, en botella de 33 cl",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "2,50 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/717878",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "93803",
+              "nombre": "Latte congelado",
+              "descripcion": "Doble espresso con hielo picado y leche",
+              "extras": [
+                {
+                  "nombre": "Sirope",
+                  "precio": "0,50 €"
+                },
+                {
+                  "nombre": "Dulce de leche",
+                  "precio": "2,00 €"
+                },
+                {
+                  "nombre": "Pistacho",
+                  "precio": "2,00 €"
+                },
+                {
+                  "nombre": "Nutella",
+                  "precio": "1,50 €"
+                }
+              ],
+              "opciones": [],
+              "notas": [],
+              "precio": "5,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/93803",
+                "width": 800,
+                "height": 601,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "723815",
+              "nombre": "Calma Ice Latte",
+              "descripcion": "Pistacho, Nutella, dulce de leche",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "7,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/723815",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "492937",
+              "nombre": "Matcha Latte Congelado",
+              "descripcion": "El matcha es un té verde japonés en polvo, con cafeína y rico en antioxidantes",
+              "extras": [
+                {
+                  "nombre": "Puré de fresa o mango",
+                  "precio": "2,00 €"
+                },
+                {
+                  "nombre": "Sirope de vainilla",
+                  "precio": "0,50 €"
+                }
+              ],
+              "opciones": [],
+              "notas": [],
+              "precio": "5,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/492937",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "701627",
+              "nombre": "Ube Ice Latte",
+              "descripcion": "El ube es una batata lila de Filipinas. Tiene un sabor dulce parecido a la vainilla y es conocido como un superalimento",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "5,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/701627",
+                "width": 800,
+                "height": 601,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "716251",
+              "nombre": "Matcha Naranja",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "6,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": null
+            },
+            {
+              "id": "589448",
+              "nombre": "Margarita congelada",
+              "descripcion": "Fruta, tequila y Cointreau",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "8,50 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/589448",
+                "width": 800,
+                "height": 599,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "93795",
+              "nombre": "Cerveza",
+              "descripcion": "Tropical, 33 cl",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "2,50 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/93795",
+                "width": 400,
+                "height": 300,
+                "widths": [
+                  160,
+                  400
+                ]
+              }
+            },
+            {
+              "id": "93794",
+              "nombre": "Vino",
+              "descripcion": "Tinto, blanco, rosado",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "4,50 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/93794",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "93798",
+              "nombre": "Cava piccolo",
+              "descripcion": "Botellín de 20 cl",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "5,50 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/93798",
+                "width": 800,
+                "height": 599,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "93797",
+              "nombre": "Aperol Spritz",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "7,50 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/93797",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "701340",
+              "nombre": "Mimosa",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "5,80 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/701340",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "701626",
+              "nombre": "Fresa Mimosa",
+              "descripcion": "Cava, zumo natural y puré de fresa",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "7,80 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/701626",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            }
+          ],
+          "portada": "93790"
+        },
+        {
+          "id": "bebidas-bebidas-calientes",
+          "nombre": "Bebidas calientes",
+          "platos": [
+            {
+              "id": "188821",
+              "nombre": "Espresso",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "1,60 €",
+              "alergenos": [
+                "Lácteos"
+              ],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/188821",
+                "width": 400,
+                "height": 300,
+                "widths": [
+                  160,
+                  400
+                ]
+              }
+            },
+            {
+              "id": "93788",
+              "nombre": "Americano",
+              "descripcion": "Café Lavazza",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "1,80 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/93788",
+                "width": 380,
+                "height": 285,
+                "widths": [
+                  160,
+                  380
+                ]
+              }
+            },
+            {
+              "id": "93800",
+              "nombre": "Cappuccino",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "2,20 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/93800",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "93799",
+              "nombre": "Café con leche o cortado largo",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "2,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/93799",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "188822",
+              "nombre": "Leche & leche",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "2,20 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": null
+            },
+            {
+              "id": "93801",
+              "nombre": "Latte Macchiato",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "4,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": null
+            },
+            {
+              "id": "551544",
+              "nombre": "Calma Latte",
+              "descripcion": "Pistacho, Nutella, dulce de leche",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "6,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/551544",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "492936",
+              "nombre": "Matcha Latte",
+              "descripcion": "Té matcha",
+              "extras": [
+                {
+                  "nombre": "Tamaño XL",
+                  "precio": "1,00 €"
+                }
+              ],
+              "opciones": [],
+              "notas": [],
+              "precio": "5,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/492936",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "701629",
+              "nombre": "Ube Latte",
+              "descripcion": "El ube es una batata lila de Filipinas. Tiene un sabor dulce parecido a la vainilla y es conocido como un superalimento",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "4,20 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/701629",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "93806",
+              "nombre": "Té",
+              "descripcion": "Menta, té negro, té verde o manzanilla",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "2,50 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/93806",
+                "width": 800,
+                "height": 599,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "188863",
+              "nombre": "Chocolate caliente",
+              "descripcion": null,
+              "extras": [
+                {
+                  "nombre": "Nata",
+                  "precio": "0,80 €"
+                }
+              ],
+              "opciones": [],
+              "notas": [],
+              "precio": "3,50 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/188863",
+                "width": 800,
+                "height": 599,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "93804",
+              "nombre": "Extra espresso",
+              "descripcion": "Si te gusta el café fuerte, pídelo doble",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "0,90 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": null
+            }
+          ],
+          "portada": "188821"
+        }
+      ]
+    }
+  ]
+}

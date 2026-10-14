@@ -1,0 +1,15 @@
+---
+// Iconos de trazo propios (sustituyen glifos Unicode que en móvil se pintan como emoji de color).
+interface Props { name: 'phone' | 'arrow-up-right' | 'arrow-right' | 'arrow-up' | 'sun' | 'spark' | 'close'; class?: string; }
+const { name, class: className } = Astro.props;
+const paths = {
+  'phone': '<path d="M6.6 3.5h3l1.3 3.6-1.9 1.3a11 11 0 0 0 5.6 5.6l1.3-1.9 3.6 1.3v3a2 2 0 0 1-2.2 2A14.5 14.5 0 0 1 4.6 5.7a2 2 0 0 1 2-2.2Z"/>',
+  'arrow-up-right': '<path d="M7 17 17 7M8.5 7H17v8.5"/>',
+  'arrow-right': '<path d="M4 12h16M14 6l6 6-6 6"/>',
+  'arrow-up': '<path d="M12 20V4M6 10l6-6 6 6"/>',
+  'sun': '<circle cx="12" cy="12" r="4"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M18.7 5.3l-2.1 2.1M7.4 16.6l-2.1 2.1"/>',
+  'spark': '<path d="M12 3c.6 4.6 1.9 7.9 9 9-7.1 1.1-8.4 4.4-9 9-.6-4.6-1.9-7.9-9-9 7.1-1.1 8.4-4.4 9-9Z"/>',
+  'close': '<path d="M6 6l12 12M18 6 6 18"/>',
+};
+---
+<svg class:list={['icon', className]} viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false" set:html={paths[name]} />

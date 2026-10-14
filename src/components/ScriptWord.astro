@@ -1,0 +1,16 @@
+---
+// Palabra caligráfica (Waterfall) que se escribe sola detrás de un titular: una máscara
+// de trazos ordenados va destapando la tipografía real. Datos: npm run caligrafia.
+import caligrafia from '../data/caligrafia.json';
+interface Props { text: keyof typeof caligrafia; class?: string; }
+const { text, class: className } = Astro.props;
+const { viewBox, ink, maskWidth, strokes } = caligrafia[text];
+const id = `script-${text.toLowerCase().replace(/\W+/g, '-')}`;
+const [x, y, width, height] = viewBox.split(' ');
+---
+<svg class:list={['script-word', className]} viewBox={viewBox} aria-hidden="true" focusable="false">
+  <mask id={id} maskUnits="userSpaceOnUse" x={x} y={y} width={width} height={height}>
+    <g stroke-width={maskWidth}>{strokes.map(stroke => <path d={stroke.d} pathLength="1" style={`--d:${stroke.delay}s;--t:${stroke.duration}s`} />)}</g>
+  </mask>
+  <path class="script-ink" d={ink} mask={`url(#${id})`} />
+</svg>

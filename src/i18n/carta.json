@@ -1,0 +1,998 @@
+{
+ "_nota": "Traducciones de la carta oficial. Clave: el texto exacto de src/data/carta.json. La carta española manda: si cambia un texto, tests/carta-i18n.test.mjs avisa de lo que falta traducir.",
+ "Carta": {
+  "en": "Main menu",
+  "de": "Speisekarte",
+  "nl": "Menukaart"
+ },
+ "Vegetariano": {
+  "en": "Vegetarian",
+  "de": "Vegetarisch",
+  "nl": "Vegetarisch"
+ },
+ "Vegano": {
+  "en": "Vegan",
+  "de": "Vegan",
+  "nl": "Veganistisch"
+ },
+ "Bebidas": {
+  "en": "Drinks",
+  "de": "Getränke",
+  "nl": "Dranken"
+ },
+ "¡Toda la carta se puede hacer sin gluten!": {
+  "en": "The whole menu can be made gluten-free!",
+  "de": "Alle Gerichte gibt es auch glutenfrei!",
+  "nl": "Het hele menu kan glutenvrij worden bereid!"
+ },
+ "Brunch": {
+  "en": "Brunch",
+  "de": "Brunch",
+  "nl": "Brunch"
+ },
+ "Brunch tardío & más": {
+  "en": "Late brunch & more",
+  "de": "Später Brunch & mehr",
+  "nl": "Late brunch & meer"
+ },
+ "Extras": {
+  "en": "Extras",
+  "de": "Extras",
+  "nl": "Extra's"
+ },
+ "¡Algo dulce!": {
+  "en": "Something sweet!",
+  "de": "Etwas Süßes!",
+  "nl": "Iets zoets!"
+ },
+ "Para los niños": {
+  "en": "For kids",
+  "de": "Für Kinder",
+  "nl": "Voor kinderen"
+ },
+ "Bebidas frías": {
+  "en": "Cold drinks",
+  "de": "Kalte Getränke",
+  "nl": "Koude dranken"
+ },
+ "Bebidas calientes": {
+  "en": "Hot drinks",
+  "de": "Heiße Getränke",
+  "nl": "Warme dranken"
+ },
+ "Gluten": {
+  "en": "Gluten",
+  "de": "Gluten",
+  "nl": "Gluten"
+ },
+ "Lácteos": {
+  "en": "Dairy",
+  "de": "Milchprodukte",
+  "nl": "Zuivel"
+ },
+ "Frutos de cáscara": {
+  "en": "Tree nuts",
+  "de": "Schalenfrüchte",
+  "nl": "Noten"
+ },
+ "Semillas de sésamo": {
+  "en": "Sesame",
+  "de": "Sesam",
+  "nl": "Sesamzaad"
+ },
+ "Huevos": {
+  "en": "Eggs",
+  "de": "Eier",
+  "nl": "Eieren"
+ },
+ "Pescado": {
+  "en": "Fish",
+  "de": "Fisch",
+  "nl": "Vis"
+ },
+ "Mostaza": {
+  "en": "Mustard",
+  "de": "Senf",
+  "nl": "Mosterd"
+ },
+ "Soja": {
+  "en": "Soy",
+  "de": "Soja",
+  "nl": "Soja"
+ },
+ "Cacahuetes": {
+  "en": "Peanuts",
+  "de": "Erdnüsse",
+  "nl": "Pinda's"
+ },
+ "Granola Bowl con fruta": {
+  "en": "Granola bowl with fruit",
+  "de": "Granola-Bowl mit Obst",
+  "nl": "Granolabowl met fruit"
+ },
+ "Yogur griego con miel, fruta y granola": {
+  "en": "Greek yoghurt with honey, fruit and granola",
+  "de": "Griechischer Joghurt mit Honig, Obst und Granola",
+  "nl": "Griekse yoghurt met honing, fruit en granola"
+ },
+ "Granola Cacahuete": {
+  "en": "Peanut butter granola bowl",
+  "de": "Erdnuss-Granola-Bowl",
+  "nl": "Granolabowl met pindakaas"
+ },
+ "Yogur griego, granola, crema de cacahuete, chocolate negro, plátano": {
+  "en": "Greek yoghurt, granola, peanut butter, dark chocolate and banana",
+  "de": "Griechischer Joghurt, Granola, Erdnusscreme, Zartbitterschokolade und Banane",
+  "nl": "Griekse yoghurt, granola, pindakaas, pure chocolade en banaan"
+ },
+ "Calma Especial": {
+  "en": "Calma Special",
+  "de": "Calma Special",
+  "nl": "Calma Special"
+ },
+ "Triassant (mezcla de croissant y pan de cereales) con huevos revueltos, aguacate, bacon y verduras": {
+  "en": "Triassant (a cross between a croissant and multigrain bread) with scrambled eggs, avocado, bacon and vegetables",
+  "de": "Triassant (eine Mischung aus Croissant und Mehrkornbrot) mit Rührei, Avocado, Bacon und Gemüse",
+  "nl": "Triassant (een mix van croissant en meergranenbrood) met roerei, avocado, bacon en groenten"
+ },
+ "Guacamole en vez de aguacate": {
+  "en": "Guacamole instead of avocado",
+  "de": "Guacamole statt Avocado",
+  "nl": "Guacamole in plaats van avocado"
+ },
+ "Calma Salmón": {
+  "en": "Calma Salmon",
+  "de": "Calma Lachs",
+  "nl": "Calma Zalm"
+ },
+ "Salmón ahumado, huevos revueltos, aguacate y vegetales servido en un Triassant (mezcla de croissant y pan de cereales) y con salsa de eneldo": {
+  "en": "Smoked salmon, scrambled eggs, avocado and vegetables on a Triassant (a cross between a croissant and multigrain bread), with dill sauce",
+  "de": "Räucherlachs, Rührei, Avocado und Gemüse im Triassant (eine Mischung aus Croissant und Mehrkornbrot), mit Dillsauce",
+  "nl": "Gerookte zalm, roerei, avocado en groenten op een Triassant (een mix van croissant en meergranenbrood), met dillesaus"
+ },
+ "Atún picante y huevo": {
+  "en": "Spicy tuna and egg",
+  "de": "Scharfer Thunfisch mit Ei",
+  "nl": "Pittige tonijn met ei"
+ },
+ "Servido en un Triassant (mezcla de croissant y pan de cereales) con vegetales y chili alioli": {
+  "en": "Served on a Triassant (a cross between a croissant and multigrain bread) with vegetables and chilli aioli",
+  "de": "Im Triassant (eine Mischung aus Croissant und Mehrkornbrot) mit Gemüse und Chili-Aioli",
+  "nl": "Op een Triassant (een mix van croissant en meergranenbrood) met groenten en chili-aioli"
+ },
+ "Mozzarella, Serrano y pesto": {
+  "en": "Mozzarella, Serrano ham and pesto",
+  "de": "Mozzarella, Serranoschinken und Pesto",
+  "nl": "Mozzarella, serranoham en pesto"
+ },
+ "Servido en un Triassant (mezcla de croissant y pan de cereales) con vegetales": {
+  "en": "Served on a Triassant (a cross between a croissant and multigrain bread) with vegetables",
+  "de": "Im Triassant (eine Mischung aus Croissant und Mehrkornbrot) mit Gemüse",
+  "nl": "Op een Triassant (een mix van croissant en meergranenbrood) met groenten"
+ },
+ "Tosta huevos revueltos y bacon": {
+  "en": "Scrambled egg and bacon toast",
+  "de": "Toast mit Rührei und Bacon",
+  "nl": "Toast met roerei en bacon"
+ },
+ "Añádele aguacate, hummus…": {
+  "en": "Add avocado, hummus…",
+  "de": "Dazu gern Avocado, Hummus…",
+  "nl": "Voeg er avocado, hummus… aan toe"
+ },
+ "Tosta Tumaca": {
+  "en": "Tumaca toast (grated tomato)",
+  "de": "Tumaca-Toast (geriebene Tomate)",
+  "nl": "Tumacatoast (geraspte tomaat)"
+ },
+ "Con aceite y semillas. Añádele hummus, huevo, aguacate…": {
+  "en": "With oil and seeds. Add hummus, egg, avocado…",
+  "de": "Mit Öl und Saaten. Dazu gern Hummus, Ei, Avocado…",
+  "nl": "Met olie en zaden. Voeg er hummus, ei, avocado… aan toe"
+ },
+ "Tosta Caesar": {
+  "en": "Caesar toast",
+  "de": "Caesar-Toast",
+  "nl": "Caesartoast"
+ },
+ "Con pollo y bacon": {
+  "en": "With chicken and bacon",
+  "de": "Mit Hähnchen und Bacon",
+  "nl": "Met kip en bacon"
+ },
+ "Tosta Serrano": {
+  "en": "Serrano ham toast",
+  "de": "Toast mit Serranoschinken",
+  "nl": "Toast met serranoham"
+ },
+ "Con mozzarella y pesto": {
+  "en": "With mozzarella and pesto",
+  "de": "Mit Mozzarella und Pesto",
+  "nl": "Met mozzarella en pesto"
+ },
+ "Tosta Salmón": {
+  "en": "Salmon toast",
+  "de": "Toast mit Lachs",
+  "nl": "Toast met zalm"
+ },
+ "Con huevo revuelto, aguacate y salsa de eneldo": {
+  "en": "With scrambled egg, avocado and dill sauce",
+  "de": "Mit Rührei, Avocado und Dillsauce",
+  "nl": "Met roerei, avocado en dillesaus"
+ },
+ "Tosta Brie": {
+  "en": "Brie toast",
+  "de": "Toast mit Brie",
+  "nl": "Toast met brie"
+ },
+ "Con nueces y miel": {
+  "en": "With walnuts and honey",
+  "de": "Mit Walnüssen und Honig",
+  "nl": "Met walnoten en honing"
+ },
+ "Tosta Cacahuete": {
+  "en": "Peanut butter toast",
+  "de": "Toast mit Erdnusscreme",
+  "nl": "Toast met pindakaas"
+ },
+ "Crema de cacahuete, mermelada, plátano": {
+  "en": "Peanut butter, jam and banana",
+  "de": "Erdnusscreme, Marmelade und Banane",
+  "nl": "Pindakaas, jam en banaan"
+ },
+ "Pancakes": {
+  "en": "Pancakes",
+  "de": "Pancakes",
+  "nl": "Pancakes"
+ },
+ "Nutella": {
+  "en": "Nutella",
+  "de": "Nutella",
+  "nl": "Nutella"
+ },
+ "Dulce de leche": {
+  "en": "Dulce de leche",
+  "de": "Dulce de Leche",
+  "nl": "Dulce de leche"
+ },
+ "Crema de frambuesa": {
+  "en": "Raspberry cream",
+  "de": "Himbeercreme",
+  "nl": "Frambozencrème"
+ },
+ "Crema de pistacho": {
+  "en": "Pistachio cream",
+  "de": "Pistaziencreme",
+  "nl": "Pistachecrème"
+ },
+ "Fruta": {
+  "en": "Fruit",
+  "de": "Obst",
+  "nl": "Fruit"
+ },
+ "Nata montada": {
+  "en": "Whipped cream",
+  "de": "Schlagsahne",
+  "nl": "Slagroom"
+ },
+ "Pancake": {
+  "en": "Extra pancake",
+  "de": "Zusätzlicher Pancake",
+  "nl": "Extra pancake"
+ },
+ "Pancakes estilo Americano": {
+  "en": "American-style pancakes",
+  "de": "Pancakes nach amerikanischer Art",
+  "nl": "Amerikaanse pancakes"
+ },
+ "Dos pancakes con huevos revueltos, bacon y Jarabe de arce": {
+  "en": "Two pancakes with scrambled eggs, bacon and maple syrup",
+  "de": "Zwei Pancakes mit Rührei, Bacon und Ahornsirup",
+  "nl": "Twee pancakes met roerei, bacon en ahornsiroop"
+ },
+ "Sándwich Brie y Bacon": {
+  "en": "Brie and bacon sandwich",
+  "de": "Sandwich mit Brie und Bacon",
+  "nl": "Sandwich met brie en bacon"
+ },
+ "Una ensaladita o papas ajillo horneadas": {
+  "en": "A side salad or oven-baked garlic potatoes",
+  "de": "Kleiner Salat oder Knoblauch-Ofenkartoffeln",
+  "nl": "Een salade of ovengebakken knoflookaardappeltjes"
+ },
+ "Sándwich Pollo y pesto": {
+  "en": "Chicken and pesto sandwich",
+  "de": "Sandwich mit Hähnchen und Pesto",
+  "nl": "Sandwich met kip en pesto"
+ },
+ "Sándwich Atún picante": {
+  "en": "Spicy tuna sandwich",
+  "de": "Sandwich mit scharfem Thunfisch",
+  "nl": "Sandwich met pittige tonijn"
+ },
+ "Ensalada Caesar": {
+  "en": "Caesar salad",
+  "de": "Caesar-Salat",
+  "nl": "Caesarsalade"
+ },
+ "Salsa Caesar casera, pollo y bacon": {
+  "en": "Homemade Caesar dressing, chicken and bacon",
+  "de": "Hausgemachtes Caesar-Dressing, Hähnchen und Bacon",
+  "nl": "Huisgemaakte caesardressing, kip en bacon"
+ },
+ "Ensalada de atún picante & huevo": {
+  "en": "Spicy tuna and egg salad",
+  "de": "Salat mit scharfem Thunfisch und Ei",
+  "nl": "Salade met pittige tonijn en ei"
+ },
+ "Ensalada mixta, tomate, rabanitos, cebolla, salsa casera, atún y huevo frito. Acompañado de pan": {
+  "en": "Mixed salad, tomato, radishes, onion, homemade dressing, tuna and a fried egg. Served with bread",
+  "de": "Gemischter Salat, Tomate, Radieschen, Zwiebel, hausgemachtes Dressing, Thunfisch und Spiegelei. Mit Brot",
+  "nl": "Gemengde salade, tomaat, radijsjes, ui, huisgemaakte dressing, tonijn en een gebakken ei. Met brood"
+ },
+ "Ensalada de Quinoa y pollo": {
+  "en": "Quinoa and chicken salad",
+  "de": "Quinoa-Salat mit Hähnchen",
+  "nl": "Quinoasalade met kip"
+ },
+ "Mezcla de ensalada, tomate, rábano, cebolla, quinoa y pollo": {
+  "en": "Mixed leaves, tomato, radish, onion, quinoa and chicken",
+  "de": "Blattsalat, Tomate, Radieschen, Zwiebel, Quinoa und Hähnchen",
+  "nl": "Gemengde sla, tomaat, radijs, ui, quinoa en kip"
+ },
+ "Fajita Caesar": {
+  "en": "Caesar wrap",
+  "de": "Caesar-Wrap",
+  "nl": "Caesarwrap"
+ },
+ "Con salsa Caesar casera, pollo y bacon": {
+  "en": "With homemade Caesar dressing, chicken and bacon",
+  "de": "Mit hausgemachtem Caesar-Dressing, Hähnchen und Bacon",
+  "nl": "Met huisgemaakte caesardressing, kip en bacon"
+ },
+ "Fajita Desayuno": {
+  "en": "Breakfast wrap",
+  "de": "Frühstücks-Wrap",
+  "nl": "Ontbijtwrap"
+ },
+ "Fajita con huevos revueltos, hummus y vegetales. Añade bacon, pollo…": {
+  "en": "Wrap with scrambled eggs, hummus and vegetables. Add bacon, chicken…",
+  "de": "Wrap mit Rührei, Hummus und Gemüse. Dazu gern Bacon, Hähnchen…",
+  "nl": "Wrap met roerei, hummus en groenten. Voeg er bacon, kip… aan toe"
+ },
+ "Fajita Salmón": {
+  "en": "Salmon wrap",
+  "de": "Lachs-Wrap",
+  "nl": "Zalmwrap"
+ },
+ "Con huevos revueltos y salsa de eneldo": {
+  "en": "With scrambled eggs and dill sauce",
+  "de": "Mit Rührei und Dillsauce",
+  "nl": "Met roerei en dillesaus"
+ },
+ "Sándwich Guacamole y champiñones": {
+  "en": "Guacamole and mushroom sandwich",
+  "de": "Sandwich mit Guacamole und Champignons",
+  "nl": "Sandwich met guacamole en champignons"
+ },
+ "Papas ajillo al horno": {
+  "en": "Oven-baked garlic potatoes",
+  "de": "Knoblauch-Ofenkartoffeln",
+  "nl": "Ovengebakken knoflookaardappeltjes"
+ },
+ "Servido con chili alioli": {
+  "en": "Served with chilli aioli",
+  "de": "Mit Chili-Aioli",
+  "nl": "Met chili-aioli"
+ },
+ "Aguacate": {
+  "en": "Avocado",
+  "de": "Avocado",
+  "nl": "Avocado"
+ },
+ "Hummus": {
+  "en": "Hummus",
+  "de": "Hummus",
+  "nl": "Hummus"
+ },
+ "Guacamole": {
+  "en": "Guacamole",
+  "de": "Guacamole",
+  "nl": "Guacamole"
+ },
+ "Huevo": {
+  "en": "Egg",
+  "de": "Ei",
+  "nl": "Ei"
+ },
+ "Queso o jamón": {
+  "en": "Cheese or ham",
+  "de": "Käse oder Schinken",
+  "nl": "Kaas of ham"
+ },
+ "Pollo, bacon o serrano": {
+  "en": "Chicken, bacon or Serrano ham",
+  "de": "Hähnchen, Bacon oder Serranoschinken",
+  "nl": "Kip, bacon of serranoham"
+ },
+ "Mozzarella": {
+  "en": "Mozzarella",
+  "de": "Mozzarella",
+  "nl": "Mozzarella"
+ },
+ "Salmón ahumado": {
+  "en": "Smoked salmon",
+  "de": "Räucherlachs",
+  "nl": "Gerookte zalm"
+ },
+ "Pregunta por nuestros dulces caseros": {
+  "en": "Ask about our homemade cakes",
+  "de": "Frag nach unseren hausgemachten Kuchen",
+  "nl": "Vraag naar ons huisgemaakte gebak"
+ },
+ "Rollito de Canela": {
+  "en": "Cinnamon roll",
+  "de": "Zimtschnecke",
+  "nl": "Kaneelbroodje"
+ },
+ "Gofre": {
+  "en": "Waffle",
+  "de": "Waffel",
+  "nl": "Wafel"
+ },
+ "Cookies": {
+  "en": "Cookies",
+  "de": "Cookies",
+  "nl": "Cookies"
+ },
+ "Mini Brookie": {
+  "en": "Mini brookie",
+  "de": "Mini-Brookie",
+  "nl": "Mini-brookie"
+ },
+ "Mixto niños": {
+  "en": "Kids' ham and cheese toastie",
+  "de": "Schinken-Käse-Toast für Kinder",
+  "nl": "Tosti ham-kaas voor kinderen"
+ },
+ "Sándwich jamón y queso": {
+  "en": "Ham and cheese sandwich",
+  "de": "Sandwich mit Schinken und Käse",
+  "nl": "Sandwich met ham en kaas"
+ },
+ "Gofre con mermelada o Nutella": {
+  "en": "Waffle with jam or Nutella",
+  "de": "Waffel mit Marmelade oder Nutella",
+  "nl": "Wafel met jam of Nutella"
+ },
+ "Sándwich pollo y queso a la plancha": {
+  "en": "Grilled chicken and cheese sandwich",
+  "de": "Gegrilltes Sandwich mit Hähnchen und Käse",
+  "nl": "Gegrilde sandwich met kip en kaas"
+ },
+ "Pan con…": {
+  "en": "Bread with…",
+  "de": "Brot mit…",
+  "nl": "Brood met…"
+ },
+ "Mermelada, jamón, queso o Nutella": {
+  "en": "Jam, ham, cheese or Nutella",
+  "de": "Marmelade, Schinken, Käse oder Nutella",
+  "nl": "Jam, ham, kaas of Nutella"
+ },
+ "Pan integral o de molde": {
+  "en": "Wholemeal or white sliced bread",
+  "de": "Vollkorn- oder Toastbrot",
+  "nl": "Volkoren- of witbrood"
+ },
+ "Tosta solo huevos": {
+  "en": "Toast with scrambled eggs",
+  "de": "Toast mit Rührei",
+  "nl": "Toast met roerei"
+ },
+ "Huevos revueltos": {
+  "en": "Scrambled eggs",
+  "de": "Rührei",
+  "nl": "Roerei"
+ },
+ "Yogur con fruta": {
+  "en": "Yoghurt with fruit",
+  "de": "Joghurt mit Obst",
+  "nl": "Yoghurt met fruit"
+ },
+ "Granola": {
+  "en": "Granola",
+  "de": "Granola",
+  "nl": "Granola"
+ },
+ "Calma Vegetariano": {
+  "en": "Calma Vegetarian",
+  "de": "Calma Vegetarisch",
+  "nl": "Calma Vegetarisch"
+ },
+ "Triassant (mezcla de croissant y pan de cereales) con lechuga, rabanitos, huevos revueltos y aguacate": {
+  "en": "Triassant (a cross between a croissant and multigrain bread) with lettuce, radishes, scrambled eggs and avocado",
+  "de": "Triassant (eine Mischung aus Croissant und Mehrkornbrot) mit Blattsalat, Radieschen, Rührei und Avocado",
+  "nl": "Triassant (een mix van croissant en meergranenbrood) met sla, radijsjes, roerei en avocado"
+ },
+ "Mozzarella y pesto": {
+  "en": "Mozzarella and pesto",
+  "de": "Mozzarella und Pesto",
+  "nl": "Mozzarella en pesto"
+ },
+ "Triassant (mezcla de croissant y pan de cereales) con lechuga y rabanitos": {
+  "en": "Triassant (a cross between a croissant and multigrain bread) with lettuce and radishes",
+  "de": "Triassant (eine Mischung aus Croissant und Mehrkornbrot) mit Blattsalat und Radieschen",
+  "nl": "Triassant (een mix van croissant en meergranenbrood) met sla en radijsjes"
+ },
+ "Tosta huevos revueltos": {
+  "en": "Scrambled egg toast",
+  "de": "Toast mit Rührei",
+  "nl": "Toast met roerei"
+ },
+ "Con tomate y cebolla": {
+  "en": "With tomato and onion",
+  "de": "Mit Tomate und Zwiebel",
+  "nl": "Met tomaat en ui"
+ },
+ "Con aceite y semillas": {
+  "en": "With oil and seeds",
+  "de": "Mit Öl und Saaten",
+  "nl": "Met olie en zaden"
+ },
+ "Crema de cacahuete, chocolate, plátano": {
+  "en": "Peanut butter, chocolate and banana",
+  "de": "Erdnusscreme, Schokolade und Banane",
+  "nl": "Pindakaas, chocolade en banaan"
+ },
+ "Fajita Vegetariana": {
+  "en": "Vegetarian wrap",
+  "de": "Vegetarischer Wrap",
+  "nl": "Vegetarische wrap"
+ },
+ "Con hummus, guacamole y champiñones": {
+  "en": "With hummus, guacamole and mushrooms",
+  "de": "Mit Hummus, Guacamole und Champignons",
+  "nl": "Met hummus, guacamole en champignons"
+ },
+ "Huevos revueltos, ensalada, tomate, rabanitos, salsa": {
+  "en": "Scrambled eggs, salad, tomato, radishes and dressing",
+  "de": "Rührei, Salat, Tomate, Radieschen und Dressing",
+  "nl": "Roerei, salade, tomaat, radijsjes en dressing"
+ },
+ "Ensalada vegetariana de Quinoa, verduras & aguacate": {
+  "en": "Vegetarian quinoa salad with vegetables and avocado",
+  "de": "Vegetarischer Quinoa-Salat mit Gemüse und Avocado",
+  "nl": "Vegetarische quinoasalade met groenten en avocado"
+ },
+ "Mezcla de ensalada, tomate, rábano, cebolla y quinoa, con pan": {
+  "en": "Mixed leaves, tomato, radish, onion and quinoa, with bread",
+  "de": "Blattsalat, Tomate, Radieschen, Zwiebel und Quinoa, mit Brot",
+  "nl": "Gemengde sla, tomaat, radijs, ui en quinoa, met brood"
+ },
+ "Mermelada": {
+  "en": "Jam",
+  "de": "Marmelade",
+  "nl": "Jam"
+ },
+ "Con chili alioli": {
+  "en": "With chilli aioli",
+  "de": "Mit Chili-Aioli",
+  "nl": "Met chili-aioli"
+ },
+ "Queso": {
+  "en": "Cheese",
+  "de": "Käse",
+  "nl": "Kaas"
+ },
+ "Champiñones": {
+  "en": "Mushrooms",
+  "de": "Champignons",
+  "nl": "Champignons"
+ },
+ "Extra salsa": {
+  "en": "Extra sauce",
+  "de": "Extra Sauce",
+  "nl": "Extra saus"
+ },
+ "Granola Bowl Vegano con fruta": {
+  "en": "Vegan granola bowl with fruit",
+  "de": "Vegane Granola-Bowl mit Obst",
+  "nl": "Veganistische granolabowl met fruit"
+ },
+ "Calma Vegano": {
+  "en": "Calma Vegan",
+  "de": "Calma Vegan",
+  "nl": "Calma Vegan"
+ },
+ "Triassant (mezcla de croissant y cereales) con lechuga, revuelto de tofu y aguacate": {
+  "en": "Triassant (a cross between a croissant and multigrain bread) with lettuce, scrambled tofu and avocado",
+  "de": "Triassant (eine Mischung aus Croissant und Mehrkornbrot) mit Blattsalat, Rührtofu und Avocado",
+  "nl": "Triassant (een mix van croissant en meergranenbrood) met sla, tofuroerei en avocado"
+ },
+ "Triassant con tomate, aceite y semillas": {
+  "en": "Triassant with tomato, oil and seeds",
+  "de": "Triassant mit Tomate, Öl und Saaten",
+  "nl": "Triassant met tomaat, olie en zaden"
+ },
+ "Triassant (mezcla de croissant y pan de cereales)": {
+  "en": "Triassant (a cross between a croissant and multigrain bread)",
+  "de": "Triassant (eine Mischung aus Croissant und Mehrkornbrot)",
+  "nl": "Triassant (een mix van croissant en meergranenbrood)"
+ },
+ "Tosta tofu revuelto": {
+  "en": "Scrambled tofu toast",
+  "de": "Toast mit Rührtofu",
+  "nl": "Toast met tofuroerei"
+ },
+ "Añade aguacate": {
+  "en": "Add avocado",
+  "de": "Dazu gern Avocado",
+  "nl": "Voeg er avocado aan toe"
+ },
+ "Con crema de cacahuete, plátano y mermelada": {
+  "en": "With peanut butter, banana and jam",
+  "de": "Mit Erdnusscreme, Banane und Marmelade",
+  "nl": "Met pindakaas, banaan en jam"
+ },
+ "Tosta guacamole & champiñones": {
+  "en": "Guacamole and mushroom toast",
+  "de": "Toast mit Guacamole und Champignons",
+  "nl": "Toast met guacamole en champignons"
+ },
+ "Gofre Vegano": {
+  "en": "Vegan waffle",
+  "de": "Vegane Waffel",
+  "nl": "Veganistische wafel"
+ },
+ "Rollito de Canela Vegano": {
+  "en": "Vegan cinnamon roll",
+  "de": "Vegane Zimtschnecke",
+  "nl": "Veganistisch kaneelbroodje"
+ },
+ "Avisa al llegar: tarda entre 10 y 15 minutos en prepararse": {
+  "en": "Let us know when you arrive: it takes 10 to 15 minutes to prepare",
+  "de": "Sag uns gleich bei der Ankunft Bescheid: Die Zubereitung dauert 10 bis 15 Minuten",
+  "nl": "Laat het ons weten als je binnenkomt: de bereiding duurt 10 tot 15 minuten"
+ },
+ "Granola Cacahuete Vegano": {
+  "en": "Vegan peanut butter granola bowl",
+  "de": "Vegane Erdnuss-Granola-Bowl",
+  "nl": "Veganistische granolabowl met pindakaas"
+ },
+ "Con crema de cacahuete, plátano y chocolate": {
+  "en": "With peanut butter, banana and chocolate",
+  "de": "Mit Erdnusscreme, Banane und Schokolade",
+  "nl": "Met pindakaas, banaan en chocolade"
+ },
+ "Pancakes Veganos": {
+  "en": "Vegan pancakes",
+  "de": "Vegane Pancakes",
+  "nl": "Veganistische pancakes"
+ },
+ "Crema de cacahuetes": {
+  "en": "Peanut butter",
+  "de": "Erdnusscreme",
+  "nl": "Pindakaas"
+ },
+ "Jarabe de arce": {
+  "en": "Maple syrup",
+  "de": "Ahornsirup",
+  "nl": "Ahornsiroop"
+ },
+ "Fajita Vegana": {
+  "en": "Vegan wrap",
+  "de": "Veganer Wrap",
+  "nl": "Veganistische wrap"
+ },
+ "Hummus, guacamole y champiñones": {
+  "en": "Hummus, guacamole and mushrooms",
+  "de": "Hummus, Guacamole und Champignons",
+  "nl": "Hummus, guacamole en champignons"
+ },
+ "Ensalada Vegana de Quinoa & garbanzos": {
+  "en": "Vegan quinoa and chickpea salad",
+  "de": "Veganer Quinoa-Salat mit Kichererbsen",
+  "nl": "Veganistische quinoasalade met kikkererwten"
+ },
+ "Ensalada, quinoa, verduras, aguacate y pan de acompañamiento": {
+  "en": "Salad, quinoa, vegetables and avocado, with bread on the side",
+  "de": "Salat, Quinoa, Gemüse und Avocado, dazu Brot",
+  "nl": "Salade, quinoa, groenten en avocado, met brood erbij"
+ },
+ "Agave": {
+  "en": "Agave syrup",
+  "de": "Agavendicksaft",
+  "nl": "Agavesiroop"
+ },
+ "Tofu": {
+  "en": "Tofu",
+  "de": "Tofu",
+  "nl": "Tofu"
+ },
+ "Queso vegano": {
+  "en": "Vegan cheese",
+  "de": "Veganer Käse",
+  "nl": "Veganistische kaas"
+ },
+ "Smoothies": {
+  "en": "Smoothies",
+  "de": "Smoothies",
+  "nl": "Smoothies"
+ },
+ "Fruta natural mezclado con zumo de manzana": {
+  "en": "Fresh fruit blended with apple juice",
+  "de": "Frisches Obst, gemixt mit Apfelsaft",
+  "nl": "Vers fruit gemixt met appelsap"
+ },
+ "Mango, maracuyá y piña": {
+  "en": "Mango, passion fruit and pineapple",
+  "de": "Mango, Maracuja und Ananas",
+  "nl": "Mango, passievrucht en ananas"
+ },
+ "Frutos del bosque y plátano": {
+  "en": "Berries and banana",
+  "de": "Waldbeeren und Banane",
+  "nl": "Bosvruchten en banaan"
+ },
+ "Espinaca, plátano, brócoli y piña": {
+  "en": "Spinach, banana, broccoli and pineapple",
+  "de": "Spinat, Banane, Brokkoli und Ananas",
+  "nl": "Spinazie, banaan, broccoli en ananas"
+ },
+ "Agua": {
+  "en": "Water",
+  "de": "Wasser",
+  "nl": "Water"
+ },
+ "33 cl": {
+  "en": "33 cl",
+  "de": "0,33 l",
+  "nl": "33 cl"
+ },
+ "Zumo natural naranja": {
+  "en": "Fresh orange juice",
+  "de": "Frisch gepresster Orangensaft",
+  "nl": "Verse jus d'orange"
+ },
+ "Zumo manzana": {
+  "en": "Apple juice",
+  "de": "Apfelsaft",
+  "nl": "Appelsap"
+ },
+ "De botella": {
+  "en": "Bottled",
+  "de": "Aus der Flasche",
+  "nl": "Uit de fles"
+ },
+ "Nestea": {
+  "en": "Nestea",
+  "de": "Nestea",
+  "nl": "Nestea"
+ },
+ "Refresco": {
+  "en": "Soft drink",
+  "de": "Softdrink",
+  "nl": "Frisdrank"
+ },
+ "Coca-Cola, Coca-Cola Zero o Fanta, en botella de 33 cl": {
+  "en": "Coca-Cola, Coca-Cola Zero or Fanta, 33 cl bottle",
+  "de": "Coca-Cola, Coca-Cola Zero oder Fanta, 0,33-l-Flasche",
+  "nl": "Coca-Cola, Coca-Cola Zero of Fanta, flesje van 33 cl"
+ },
+ "Latte congelado": {
+  "en": "Frozen latte",
+  "de": "Frozen Latte",
+  "nl": "Frozen latte"
+ },
+ "Doble espresso con hielo picado y leche": {
+  "en": "Double espresso with crushed ice and milk",
+  "de": "Doppelter Espresso mit Crushed Ice und Milch",
+  "nl": "Dubbele espresso met crushed ice en melk"
+ },
+ "Sirope": {
+  "en": "Syrup",
+  "de": "Sirup",
+  "nl": "Siroop"
+ },
+ "Pistacho": {
+  "en": "Pistachio",
+  "de": "Pistazie",
+  "nl": "Pistache"
+ },
+ "Calma Ice Latte": {
+  "en": "Calma Ice Latte",
+  "de": "Calma Ice Latte",
+  "nl": "Calma Ice Latte"
+ },
+ "Pistacho, Nutella, dulce de leche": {
+  "en": "Pistachio, Nutella, dulce de leche",
+  "de": "Pistazie, Nutella, Dulce de Leche",
+  "nl": "Pistache, Nutella, dulce de leche"
+ },
+ "Matcha Latte Congelado": {
+  "en": "Frozen matcha latte",
+  "de": "Frozen Matcha Latte",
+  "nl": "Frozen matcha latte"
+ },
+ "El matcha es un té verde japonés en polvo, con cafeína y rico en antioxidantes": {
+  "en": "Matcha is a Japanese powdered green tea, with caffeine and rich in antioxidants",
+  "de": "Matcha ist ein japanischer Grüntee in Pulverform, koffeinhaltig und reich an Antioxidantien",
+  "nl": "Matcha is Japanse groene thee in poedervorm, met cafeïne en rijk aan antioxidanten"
+ },
+ "Puré de fresa o mango": {
+  "en": "Strawberry or mango purée",
+  "de": "Erdbeer- oder Mangopüree",
+  "nl": "Aardbeien- of mangopuree"
+ },
+ "Sirope de vainilla": {
+  "en": "Vanilla syrup",
+  "de": "Vanillesirup",
+  "nl": "Vanillesiroop"
+ },
+ "Ube Ice Latte": {
+  "en": "Ube Ice Latte",
+  "de": "Ube Ice Latte",
+  "nl": "Ube Ice Latte"
+ },
+ "El ube es una batata lila de Filipinas. Tiene un sabor dulce parecido a la vainilla y es conocido como un superalimento": {
+  "en": "Ube is a purple sweet potato from the Philippines. It has a sweet, vanilla-like flavour and is known as a superfood",
+  "de": "Ube ist eine violette Süßkartoffel von den Philippinen. Sie schmeckt süß, ähnlich wie Vanille, und gilt als Superfood",
+  "nl": "Ube is een paarse zoete aardappel uit de Filipijnen. Hij smaakt zoet, een beetje als vanille, en staat bekend als superfood"
+ },
+ "Matcha Naranja": {
+  "en": "Matcha orange",
+  "de": "Matcha Orange",
+  "nl": "Matcha-sinaasappel"
+ },
+ "Margarita congelada": {
+  "en": "Frozen margarita",
+  "de": "Frozen Margarita",
+  "nl": "Frozen margarita"
+ },
+ "Fruta, tequila y Cointreau": {
+  "en": "Fruit, tequila and Cointreau",
+  "de": "Frucht, Tequila und Cointreau",
+  "nl": "Fruit, tequila en Cointreau"
+ },
+ "Cerveza": {
+  "en": "Beer",
+  "de": "Bier",
+  "nl": "Bier"
+ },
+ "Tropical, 33 cl": {
+  "en": "Tropical, 33 cl",
+  "de": "Tropical, 0,33 l",
+  "nl": "Tropical, 33 cl"
+ },
+ "Vino": {
+  "en": "Wine",
+  "de": "Wein",
+  "nl": "Wijn"
+ },
+ "Tinto, blanco, rosado": {
+  "en": "Red, white or rosé",
+  "de": "Rot, weiß oder rosé",
+  "nl": "Rood, wit of rosé"
+ },
+ "Cava piccolo": {
+  "en": "Cava piccolo",
+  "de": "Cava piccolo",
+  "nl": "Cava piccolo"
+ },
+ "Botellín de 20 cl": {
+  "en": "20 cl bottle",
+  "de": "0,2-l-Flasche",
+  "nl": "Flesje van 20 cl"
+ },
+ "Aperol Spritz": {
+  "en": "Aperol Spritz",
+  "de": "Aperol Spritz",
+  "nl": "Aperol Spritz"
+ },
+ "Mimosa": {
+  "en": "Mimosa",
+  "de": "Mimosa",
+  "nl": "Mimosa"
+ },
+ "Fresa Mimosa": {
+  "en": "Strawberry mimosa",
+  "de": "Erdbeer-Mimosa",
+  "nl": "Aardbeienmimosa"
+ },
+ "Cava, zumo natural y puré de fresa": {
+  "en": "Cava, fresh juice and strawberry purée",
+  "de": "Cava, frischer Saft und Erdbeerpüree",
+  "nl": "Cava, vers sap en aardbeienpuree"
+ },
+ "Espresso": {
+  "en": "Espresso",
+  "de": "Espresso",
+  "nl": "Espresso"
+ },
+ "Americano": {
+  "en": "Americano",
+  "de": "Americano",
+  "nl": "Americano"
+ },
+ "Café Lavazza": {
+  "en": "Lavazza coffee",
+  "de": "Lavazza-Kaffee",
+  "nl": "Lavazza-koffie"
+ },
+ "Cappuccino": {
+  "en": "Cappuccino",
+  "de": "Cappuccino",
+  "nl": "Cappuccino"
+ },
+ "Café con leche o cortado largo": {
+  "en": "Coffee with milk or long cortado",
+  "de": "Milchkaffee oder großer Cortado",
+  "nl": "Koffie verkeerd of grote cortado"
+ },
+ "Leche & leche": {
+  "en": "Leche & leche",
+  "de": "Leche & leche",
+  "nl": "Leche & leche"
+ },
+ "Latte Macchiato": {
+  "en": "Latte macchiato",
+  "de": "Latte macchiato",
+  "nl": "Latte macchiato"
+ },
+ "Calma Latte": {
+  "en": "Calma Latte",
+  "de": "Calma Latte",
+  "nl": "Calma Latte"
+ },
+ "Matcha Latte": {
+  "en": "Matcha latte",
+  "de": "Matcha Latte",
+  "nl": "Matcha latte"
+ },
+ "Té matcha": {
+  "en": "Matcha tea",
+  "de": "Matcha-Tee",
+  "nl": "Matchathee"
+ },
+ "Tamaño XL": {
+  "en": "XL size",
+  "de": "Größe XL",
+  "nl": "XL-formaat"
+ },
+ "Ube Latte": {
+  "en": "Ube Latte",
+  "de": "Ube Latte",
+  "nl": "Ube Latte"
+ },
+ "Té": {
+  "en": "Tea",
+  "de": "Tee",
+  "nl": "Thee"
+ },
+ "Menta, té negro, té verde o manzanilla": {
+  "en": "Mint, black tea, green tea or camomile",
+  "de": "Minze, Schwarztee, Grüntee oder Kamille",
+  "nl": "Munt, zwarte thee, groene thee of kamille"
+ },
+ "Chocolate caliente": {
+  "en": "Hot chocolate",
+  "de": "Heiße Schokolade",
+  "nl": "Warme chocolademelk"
+ },
+ "Nata": {
+  "en": "Whipped cream",
+  "de": "Sahne",
+  "nl": "Slagroom"
+ },
+ "Extra espresso": {
+  "en": "Extra espresso shot",
+  "de": "Extra Espresso",
+  "nl": "Extra espresso"
+ },
+ "Si te gusta el café fuerte, pídelo doble": {
+  "en": "If you like your coffee strong, make it a double",
+  "de": "Wenn du deinen Kaffee stark magst, bestell ihn doppelt",
+  "nl": "Hou je van sterke koffie? Bestel hem dubbel"
+ }
+}

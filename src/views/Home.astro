@@ -1,0 +1,106 @@
+---
+import Icon from '../components/Icon.astro';
+import Layout from '../layouts/Layout.astro';
+import Photo from '../components/Photo.astro';
+import DishPhoto from '../components/DishPhoto.astro';
+import Lotus from '../components/Lotus.astro';
+import Seal from '../components/Seal.astro';
+import ScriptWord from '../components/ScriptWord.astro';
+import negocio from '../data/negocio.json';
+import carta from '../data/carta.json';
+import { phone, price, routes, tc, ui, type Lang } from '../i18n/ui';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = ui[lang];
+const h = t.home;
+// Solo se destacan platos y bebidas que están en la carta oficial.
+interface Plato { id: string; nombre: string; precio: string; descripcion: string | null; foto: { src: string; width: number; height: number; widths: number[] } | null; }
+const platos = carta.menus.flatMap(menu => menu.grupos.flatMap(grupo => grupo.platos as unknown as Plato[]));
+const plato = (id: string) => {
+  const found = platos.find(p => p.id === id);
+  if (!found?.foto) throw new Error(`Plato ${id} sin foto en carta.json`);
+  return found as Plato & { foto: NonNullable<Plato['foto']> };
+};
+const pancakes = plato('422600');
+const especial = plato('89630');
+const matchaFrio = plato('492937');
+const bebidas = {
+  coffee: ['723815', '93803', '93800'].map(plato),
+  matcha: ['492937', '492936', '701627'].map(plato),
+};
+const fill = (text: string) => text.replace('{n}', String(platos.length)).replace('{calle}', negocio.direccion.calle).replace('{tel}', phone(lang, negocio.telefono.texto));
+const doors = [
+  { href: routes[lang].carta, dish: especial, text: h.doors.carta },
+  { href: routes[lang].calma, photo: 'interior-cojines', text: h.doors.calma },
+  { href: routes[lang].visitanos, photo: 'interior-ventanal', text: h.doors.visit },
+] as const;
+---
+<Layout lang={lang} current="inicio" title={h.title} description={h.description}>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-bg"><Photo name="hero-fondo" lang={lang} sizes="100vw" eager priority decorative /></div>
+    <div class="hero-inner wrap">
+      <div class="hero-copy">
+        <p class="eyebrow enter"><span class="little-sun" aria-hidden="true"><Icon name="sun" /></span> {h.place}</p>
+        <h1 id="hero-title" class="enter enter-2" set:html={h.h1} />
+        <div class="hero-script enter enter-2">
+          <ScriptWord text="Feed your soul" class="script-hero" />
+          <svg class="hero-flourish" viewBox="0 0 520 36" aria-hidden="true" focusable="false"><path d="M4 31 C 130 17 320 8 516 3 C 322 13 140 25 12 35 C 7 35 3 33 4 31 Z" /></svg>
+        </div>
+        <p class="hero-intro enter enter-3">{h.intro}</p>
+        <div class="hero-buttons enter enter-3"><a class="button button-green" href={routes[lang].carta}>{h.seeMenu} <span aria-hidden="true"><Icon name="arrow-right" /></span></a><a class="text-link hero-directions" href={negocio.mapas.url} target="_blank" rel="noopener noreferrer">{t.directions} <span aria-hidden="true"><Icon name="arrow-up-right" /></span></a><a class="text-link hero-hours" href={negocio.mapas.url} target="_blank" rel="noopener noreferrer">{t.visit.hoursLink} <span aria-hidden="true"><Icon name="arrow-up-right" /></span></a></div>
+      </div>
+      <div class="hero-visual enter enter-visual">
+        <Seal />
+        <figure class="hero-photo"><DishPhoto foto={pancakes.foto} alt={h.pancakesAlt} sizes="(max-width: 699px) 250px, 330px" eager /><figcaption class="handwritten">{tc(lang, pancakes.nombre)} · {price(lang, pancakes.precio)}</figcaption></figure>
+        <button class="video-open" type="button" aria-haspopup="dialog" aria-controls="video-dialog" aria-label={t.video.play}><span aria-hidden="true">▶︎</span> {t.video.playShort}</button>
+      </div>
+    </div>
+  </section>
+
+  <dialog id="video-dialog" class="video-dialog" aria-label={t.video.label}>
+    <button class="icon-button video-dialog-close" data-close aria-label={t.close}><Icon name="close" /></button>
+    <video id="interior-video" controls muted loop playsinline preload="none" poster="/media/interior-poster-480.webp" width="432" height="768">
+      <source data-src="/media/interior.webm" type="video/webm" /><source data-src="/media/interior.mp4" type="video/mp4" />
+    </video>
+  </dialog>
+
+  {/* Cinta en movimiento: dos mitades idénticas que se desplazan un 50 % para enlazar sin saltos */}
+  <div class="welcome-strip" aria-hidden="true"><div class="welcome-track">
+    {[0, 1].map(() => <div class="welcome-half">{[0, 1, 2].flatMap(() => h.strip).map(item => <Fragment><span>{item}</span><Lotus light /></Fragment>)}</div>)}
+  </div></div>
+
+  <section id="descubre" class="doors section" aria-labelledby="doors-title">
+    <div class="wrap">
+      <div class="section-heading" data-reveal><h2 id="doors-title" set:html={h.doorsTitle} /></div>
+      <div class="doors-grid">
+        {doors.map((door, i) => <a class="door" href={door.href} data-reveal>
+          <div class="door-image">{'dish' in door ? <DishPhoto foto={door.dish.foto} alt="" sizes="(max-width: 699px) 88vw, 30vw" /> : <Photo name={door.photo} lang={lang} sizes="(max-width: 699px) 88vw, 30vw" decorative />}<span class="food-number">0{i + 1}</span></div>
+          <h3>{door.text[0]}</h3><p>{fill(door.text[1])}</p><span class="text-link">{door.text[2]} <span aria-hidden="true"><Icon name="arrow-right" /></span></span>
+        </a>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="team-section section" aria-labelledby="team-title">
+    <div class="wrap team-grid">
+      <div class="team-photos" data-reveal><div class="team-main"><Photo name="coffee-o-matcha" lang={lang} sizes="(max-width: 600px) 70vw, 350px" /></div><div class="team-secondary"><DishPhoto foto={matchaFrio.foto} alt={tc(lang, matchaFrio.nombre)} sizes="(max-width: 600px) 38vw, 230px" /></div></div>
+      <div class="team-copy" data-reveal><p class="eyebrow">{h.drinksEyebrow}</p><h2 id="team-title" set:html={h.drinksTitle} /><p>{h.drinksIntro}</p>
+        <div class="team-choices" role="group" aria-label={h.chooseDrink}><button type="button" class="team-choice" data-team="coffee" aria-pressed="true">{h.coffee}</button><button type="button" class="team-choice" data-team="matcha" aria-pressed="false">{h.matcha}</button></div>
+        {Object.entries(bebidas).map(([team, lista]) => <ul class="team-result" data-team-panel={team} hidden={team !== 'coffee'}>
+          {lista.map(b => <li><span>{tc(lang, b.nombre)}{b.descripcion && b.descripcion.length < 40 && <small>{tc(lang, b.descripcion)}</small>}</span><b>{price(lang, b.precio)}</b></li>)}
+        </ul>)}
+        <a class="text-link team-link" href={`${routes[lang].carta}#bebidas`}>{h.allDrinks} <span aria-hidden="true"><Icon name="arrow-right" /></span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="visit-band section" aria-labelledby="visit-band-title"><div class="wrap visit-band-grid">
+    <div data-reveal><p class="eyebrow">{t.whereWeAre}</p><h2 id="visit-band-title">{negocio.direccion.calle}</h2><p>{negocio.direccion.edificio} · {negocio.localidad}, {negocio.isla}. {h.tables}</p></div>
+    <div class="visit-band-actions" data-reveal>
+      <a class="button" href={negocio.mapas.url} target="_blank" rel="noopener noreferrer">{t.directions} <span aria-hidden="true"><Icon name="arrow-up-right" /></span></a>
+      <a class="text-link" href={negocio.telefono.enlace}>{fill(h.callNumber)}</a>
+      <a class="text-link" href={negocio.whatsapp.url} target="_blank" rel="noopener noreferrer">WhatsApp <span aria-hidden="true"><Icon name="arrow-up-right" /></span></a>
+      <a class="text-link" href={negocio.mapas.url} target="_blank" rel="noopener noreferrer">{h.reviews} <span aria-hidden="true"><Icon name="arrow-up-right" /></span></a>
+    </div>
+  </div></section>
+</Layout>

@@ -1,0 +1,30 @@
+---
+import Icon from '../components/Icon.astro';
+import Layout from '../layouts/Layout.astro';
+import Photo from '../components/Photo.astro';
+import Lotus from '../components/Lotus.astro';
+import negocio from '../data/negocio.json';
+import { ui, type Lang } from '../i18n/ui';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const c = ui[lang].calma;
+const photos = ['interior-ventanal', 'interior-cojines', 'interior-notas', 'interior-barra', 'interior-tapiz', 'interior-cuadros', 'interior-luces', 'interior-mesa'] as const;
+---
+<Layout lang={lang} current="calma" title={c.title} description={c.description}>
+  <section class="manifesto section page-top wrap" aria-labelledby="manifesto-title">
+    <p class="eyebrow enter">Hola. Hello. Hei. Hoi.</p>
+    <h1 id="manifesto-title" class="page-title enter enter-2" set:html={c.h1} />
+    <div class="manifesto-bottom enter enter-3"><Lotus /><p>{c.intro}</p></div>
+  </section>
+
+  <section class="chalkboard section" aria-labelledby="chalk-title">
+    <div class="wrap chalk-grid"><div class="chalk-copy" data-reveal><p class="eyebrow">{c.chalkEyebrow}</p><h2 id="chalk-title" class="handwritten chalk-write" lang="en">“Life is too<br />short to say<br />no to <span>cake!</span>”</h2><Lotus light /></div><figure class="chalk-photo" data-reveal><Photo name="pizarra-yawn" lang={lang} sizes="(max-width: 600px) 76vw, 340px" /><figcaption class="handwritten">{c.otherBoard}</figcaption></figure></div>
+  </section>
+
+  <section class="details-section section" aria-labelledby="details-title">
+    <div class="wrap"><div class="details-heading" data-reveal><p class="eyebrow">{c.detailsEyebrow}</p><h2 id="details-title" set:html={c.detailsTitle} /><p set:html={c.detailsText} /></div>
+      <div class="noticeboard">{photos.map((name, i) => <figure class={`polaroid polaroid-${i + 1}`} data-reveal><Photo name={name} lang={lang} sizes="(max-width: 599px) 40vw, (max-width: 999px) 28vw, 245px" /><figcaption class="handwritten">{c.captions[i]}</figcaption></figure>)}</div>
+      <div class="instagram-line"><span>{c.instagram}</span><a class="text-link" href={negocio.instagram.url} target="_blank" rel="noopener noreferrer">{negocio.instagram.usuario} <span aria-hidden="true"><Icon name="arrow-up-right" /></span></a></div>
+    </div>
+  </section>
+</Layout>

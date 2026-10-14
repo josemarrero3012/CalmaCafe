@@ -1,0 +1,35 @@
+{
+  "fecha": "2026-10-05T15:15:06.703Z",
+  "url": "http://localhost:4322/",
+  "lighthouse": "13.5.0",
+  "configuracion": {
+    "formFactor": "mobile",
+    "throttling": {
+      "rttMs": 150,
+      "throughputKbps": 1638.4,
+      "requestLatencyMs": 562.5,
+      "downloadThroughputKbps": 1474.5600000000002,
+      "uploadThroughputKbps": 675,
+      "cpuSlowdownMultiplier": 4
+    },
+    "screenEmulation": {
+      "mobile": true,
+      "width": 412,
+      "height": 823,
+      "deviceScaleFactor": 1.75,
+      "disabled": false
+    }
+  },
+  "puntuaciones": {
+    "performance": 97,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100
+  },
+  "metricas": {
+    "LCP_ms": 2479.5638,
+    "FCP_ms": 1354.5638,
+    "CLS": 0,
+    "TBT_ms": 0
+  }
+}

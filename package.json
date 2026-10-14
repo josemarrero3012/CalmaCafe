@@ -1,0 +1,39 @@
+{
+  "name": "calma-cafe",
+  "version": "1.0.0",
+  "description": "Calma Café · Feed your soul · Demo fase 1",
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev --host 0.0.0.0",
+    "build": "astro check && astro build",
+    "preview": "astro preview --host 0.0.0.0",
+    "assets": "node scripts/prepare-assets.mjs",
+    "caligrafia": "node scripts/prepare-script.mjs",
+    "carta": "node scripts/prepare-carta.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "qa": "node scripts/qa.mjs"
+  },
+  "private": true,
+  "overrides": {
+    "phin": "3.7.1"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@fontsource-variable/caveat": "^5.3.0",
+    "@fontsource-variable/dm-sans": "^5.3.0",
+    "@fontsource-variable/fraunces": "^5.3.0",
+    "astro": "^7.3.5",
+    "sharp": "^0.35.5",
+    "typescript": "^6.0.3"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
+    "lighthouse": "^13.5.0",
+    "opentype.js": "^2.0.0",
+    "playwright": "^1.63.0",
+    "potrace": "^2.1.8"
+  }
+}

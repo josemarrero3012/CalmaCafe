@@ -1,0 +1,104 @@
+---
+import Icon from '../components/Icon.astro';
+import Layout from '../layouts/Layout.astro';
+import DishPhoto from '../components/DishPhoto.astro';
+import MenuIllustration from '../components/MenuIllustration.astro';
+import carta from '../data/carta.json';
+import { locale, price, tc, ui, type Lang } from '../i18n/ui';
+import '../styles/carta.css';
+interface Props { lang: Lang; }
+const { lang } = Astro.props;
+const t = ui[lang];
+const c = t.carta;
+const tr = (es: string) => tc(lang, es);
+const total = (menu: (typeof carta.menus)[number]) => menu.grupos.reduce((n, g) => n + g.platos.length, 0);
+const unit = (menuId: string, n: number) => (menuId === 'bebidas' ? c.drink(n) : c.dish(n));
+const totalPlatos = carta.menus.reduce((n, menu) => n + total(menu), 0);
+const consultada = new Intl.DateTimeFormat(locale[lang].intl, { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(carta.consultada));
+---
+<Layout lang={lang} current="carta" title={c.title} description={c.description}>
+  <section class="carta-hero page-top" aria-labelledby="carta-title">
+    <div class="wrap carta-hero-grid">
+      <div class="carta-hero-copy">
+        <p class="eyebrow enter">{c.eyebrow(totalPlatos)}</p>
+        <h1 id="carta-title" class="page-title enter enter-2" set:html={c.h1} />
+        <p class="carta-hero-text enter enter-3">{c.aside}</p>
+      </div>
+      <MenuIllustration label={t.nav.carta} class="carta-illustration enter enter-visual" />
+    </div>
+  </section>
+
+  <div class="carta-body">
+  <div class="carta-index-bar enter enter-4">
+    <div class="carta-index wrap">
+      <div class="carta-switch" role="tablist" aria-label={c.tabs}>
+        {carta.menus.map((menu, i) => <a role="tab" href={`#menu-${menu.id}`} id={`tab-${menu.id}`} aria-controls={`menu-${menu.id}`} aria-selected={i === 0 ? 'true' : 'false'} data-tab={menu.id}>{tr(menu.nombre)}</a>)}
+      </div>
+      {carta.menus.map((menu, mi) => <nav class:list={['carta-sections', { 'is-active': mi === 0 }]} data-sections={menu.id} aria-label={c.sections(tr(menu.nombre))}>
+        {menu.grupos.map(grupo => <a href={`#${grupo.id}`} data-index={grupo.id}>{tr(grupo.nombre)}</a>)}
+      </nav>)}
+    </div>
+  </div>
+
+  {carta.menus.map((menu, mi) => <section class:list={['carta-menu', { 'is-active': mi === 0 }]} id={`menu-${menu.id}`} role="tabpanel" aria-labelledby={`tab-${menu.id}`} data-menu={menu.id}>
+    <div class="wrap">
+      <header class="carta-menu-head">
+        <h2>{menu.id === 'carta' && lang === 'es' ? 'La carta' : tr(menu.nombre)}</h2>
+        <p>{c.intros[menu.id]}</p>
+        <span class="eyebrow">{unit(menu.id, total(menu))}</span>
+        {menu.nota.map(nota => <p class="carta-note"><span aria-hidden="true"><Icon name="spark" /></span> {tr(nota)}</p>)}
+      </header>
+      {menu.grupos.map((grupo, gi) => {
+        const portada = grupo.platos.find(p => p.id === grupo.portada);
+        return <section class:list={['carta-group', { 'carta-group--flip': gi % 2 === 1 }]} id={grupo.id} aria-labelledby={`${grupo.id}-t`}>
+          <div class="carta-group-aside">
+            <div class="carta-group-title">
+              <span class="carta-group-n">{String(gi + 1).padStart(2, '0')}</span>
+              <h3 id={`${grupo.id}-t`}>{tr(grupo.nombre)}</h3>
+              <span class="carta-group-count">{unit(menu.id, grupo.platos.length)}</span>
+            </div>
+            {portada?.foto && <figure class="carta-feature" data-feature>
+              <div class="carta-feature-arch"><DishPhoto foto={portada.foto} alt={tr(portada.nombre)} sizes="(max-width: 699px) 88vw, (max-width: 999px) 38vw, 420px" /></div>
+              <figcaption class="handwritten" data-feature-caption>{tr(portada.nombre)}</figcaption>
+            </figure>}
+          </div>
+          <ul class="carta-list">
+            {grupo.platos.map(plato => <li class="dish" data-photo={plato.foto ? plato.foto.src : undefined} data-photo-widths={plato.foto ? plato.foto.widths.join(',') : undefined} data-name={tr(plato.nombre)}>
+              <p class="dish-line">
+                {plato.foto
+                  ? <button type="button" class="dish-name" data-dish-open>{tr(plato.nombre)}<span class="visually-hidden"> — {c.photo}</span><span class="dish-camera" aria-hidden="true"></span></button>
+                  : <span class="dish-name">{tr(plato.nombre)}</span>}
+                {plato.dieta && <span class={`dish-diet dish-diet--${plato.dieta}`}>{plato.dieta === 'vegano' ? c.vegan : c.vegetarian}</span>}
+                <span class="dish-dots" aria-hidden="true"></span>
+                <span class="dish-price">{price(lang, plato.precio)}</span>
+              </p>
+              {plato.descripcion && <p class="dish-desc">{tr(plato.descripcion)}</p>}
+              {plato.opciones.length > 0 && <p class="dish-options"><span>{c.choose}</span> {plato.opciones.map(tr).join(' · ')}</p>}
+              {plato.notas.map(nota => <p class="dish-note">{tr(nota)}</p>)}
+              {plato.extras.length > 0 && <p class="dish-extras"><span>{c.add}</span> {plato.extras.map((extra, i) => <Fragment>{i > 0 && ' · '}{`${tr(extra.nombre)} `}<b>+{price(lang, extra.precio)}</b></Fragment>)}</p>}
+              {plato.alergenos.length > 0 && <p class="dish-allergens"><span>{c.allergens}</span> {plato.alergenos.map(tr).join(', ')}</p>}
+            </li>)}
+          </ul>
+        </section>;
+      })}
+    </div>
+  </section>)}
+  </div>
+
+  <section class="wrap" aria-labelledby="allergy-title">
+    <div class="carta-allergy">
+      <h2 id="allergy-title" class="eyebrow">{c.allergyTitle}</h2>
+      <p>{c.allergyText}</p>
+      <p class="carta-source">{c.translated && <span>{c.translated}</span>}{c.checked(consultada)} · <a class="text-link" href={carta.fuente} target="_blank" rel="noopener noreferrer">{c.source} <span aria-hidden="true"><Icon name="arrow-up-right" /></span></a></p>
+    </div>
+  </section>
+
+  <dialog id="dish-dialog" class="dish-dialog" aria-labelledby="dish-dialog-title">
+    <button class="icon-button dish-dialog-close" data-close aria-label={t.close}><Icon name="close" /></button>
+    <div class="dish-dialog-photo"><img alt="" data-dish-img /></div>
+    <div class="dish-dialog-body">
+      <div class="dish-dialog-head"><h2 id="dish-dialog-title" data-dish-title></h2><span class="dish-price" data-dish-price></span></div>
+      <div data-dish-details></div>
+    </div>
+  </dialog>
+</Layout>

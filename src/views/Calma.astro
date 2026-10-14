@@ -8,6 +8,7 @@ import { ui, type Lang } from '../i18n/ui';
 interface Props { lang: Lang; }
 const { lang } = Astro.props;
 const c = ui[lang].calma;
+const s = c.story;
 const photos = ['interior-ventanal', 'interior-cojines', 'interior-notas', 'interior-barra', 'interior-tapiz', 'interior-cuadros', 'interior-luces', 'interior-mesa'] as const;
 ---
 <Layout lang={lang} current="calma" title={c.title} description={c.description}>
@@ -15,6 +16,38 @@ const photos = ['interior-ventanal', 'interior-cojines', 'interior-notas', 'inte
     <p class="eyebrow enter">Hola. Hello. Hei. Hoi.</p>
     <h1 id="manifesto-title" class="page-title enter enter-2" set:html={c.h1} />
     <div class="manifesto-bottom enter enter-3"><Lotus /><p>{c.intro}</p></div>
+  </section>
+
+  {/* Historia del local. Sin fotos reales todavía: el sello con la fecha y la animación del nombre hacen de imagen. */}
+  <section class="story section" aria-labelledby="story-title">
+    <div class="wrap">
+      <div class="story-heading" data-reveal><p class="eyebrow">{s.eyebrow}</p><h2 id="story-title" set:html={s.title} /><p class="story-lead">{s.lead}</p></div>
+      <ol class="story-chapters">
+        <li class="story-chapter">
+          <div class="story-copy" data-reveal><p class="eyebrow"><span class="story-number">01</span>{s.dream.label}</p><h3>{s.dream.title}</h3><p>{s.dream.text}</p></div>
+          <figure class="story-visual" data-reveal>
+            <div class="story-stamp">
+              <svg class="seal-text" viewBox="0 0 140 140" aria-hidden="true"><defs><path id="stamp-circle" d="M70,70 m-51,0 a51,51 0 1,1 102,0 a51,51 0 1,1 -102,0" /></defs><text><textPath href="#stamp-circle" textLength="317" lengthAdjust="spacing">MASPALOMAS · GRAN CANARIA · </textPath></text></svg>
+              <time datetime="2019-09-06"><span>6.9.</span><span>2019</span></time>
+            </div>
+            <figcaption class="handwritten">{s.dream.caption}</figcaption>
+          </figure>
+        </li>
+        <li class="story-chapter">
+          <div class="story-copy" data-reveal><p class="eyebrow"><span class="story-number">02</span>{s.name.label}</p><h3>{s.name.title}</h3><p>{s.name.text}</p></div>
+          {/* «Alma» se convierte en «Calma» al verse (site.ts mide las letras). Sin JS o con movimiento reducido se ve «Calma». */}
+          <figure class="story-visual alma-calma" data-reveal data-alma>
+            <div class="alma-card">
+              <p class="alma-word" aria-hidden="true"><span class="aw aw-c">C</span><span class="aw aw-upper">A</span><span class="aw aw-lower">a</span><span class="aw">lma</span></p>
+              <p class="alma-sub" aria-hidden="true">Café · Feed your soul</p>
+              <svg class="alma-flourish" viewBox="0 0 520 36" aria-hidden="true" focusable="false"><path d="M4 31 C 130 17 320 8 516 3 C 322 13 140 25 12 35 C 7 35 3 33 4 31 Z" /></svg>
+              <button class="alma-replay" type="button" aria-label={s.name.replay} title={s.name.replay}><span aria-hidden="true">↻</span></button>
+            </div>
+            <figcaption class="handwritten">{s.name.caption}</figcaption>
+          </figure>
+        </li>
+      </ol>
+    </div>
   </section>
 
   <section class="chalkboard section" aria-labelledby="chalk-title">

@@ -54,6 +54,11 @@ export interface UI {
   calma: {
     title: string; description: string; h1: string; intro: string; chalkEyebrow: string; otherBoard: string;
     detailsEyebrow: string; detailsTitle: string; detailsText: string; captions: string[]; instagram: string;
+    story: {
+      eyebrow: string; title: string; lead: string;
+      dream: { label: string; title: string; text: string; caption: string };
+      name: { label: string; title: string; text: string; caption: string; replay: string };
+    };
   };
   visit: {
     title: string; description: string; eyebrow: string; h1: string; intro: string; address: string; hours: string; hoursLink: string;
@@ -121,6 +126,12 @@ export const ui: Record<Lang, UI> = {
       detailsText: 'Cojines mostaza, un tapiz hecho de tazas, bombillas sobre la barra de madera<br />y un ventanal que da a las palmeras.',
       captions: ['El ventanal', 'Los cojines', 'El tablero de notas', 'La barra', 'El tapiz de tazas', 'Los cuadros', 'Las bombillas', 'Una mesa junto al tablero'],
       instagram: 'Más fotos del local y de la carta en Instagram.',
+      story: {
+        eyebrow: 'Nuestra historia', title: 'Todo empezó con <em>un sueño.</em>',
+        lead: 'Durante unos quince años, Guro imaginó su propia cafetería. Calma es lo que pasó cuando por fin encontró el sitio.',
+        dream: { label: 'El sueño', title: 'Un sueño de quince años abre sus puertas', text: 'Guro había trabajado en cafeterías y cocinas en Noruega antes de instalarse en Gran Canaria. Buscó durante años el espacio adecuado, y el 6 de septiembre de 2019 Calma abrió en Maspalomas.', caption: 'El día que abrimos.' },
+        name: { label: 'El nombre', title: 'De «Alma» nació «Calma»', text: 'Guro buscaba una palabra con alma, y al principio el proyecto iba a llamarse Alma Café. Mientras trabajaban en el logotipo apareció «Calma», y encajaba mejor con todo lo que quería transmitir.', caption: 'Casi se llamó Alma Café.', replay: 'Ver la animación otra vez' },
+      },
     },
     visit: {
       title: 'Visítanos · Calma Café, Maspalomas',
@@ -193,6 +204,12 @@ export const ui: Record<Lang, UI> = {
       detailsText: 'Mustard cushions, a wall hanging made of cups, light bulbs over the wooden counter<br />and a big window looking out onto palm trees.',
       captions: ['The window', 'The cushions', 'The noticeboard', 'The counter', 'The cup wall hanging', 'The paintings', 'The light bulbs', 'A table by the noticeboard'],
       instagram: 'More photos of the café and the food on Instagram.',
+      story: {
+        eyebrow: 'Our story', title: 'It all started with <em>a dream.</em>',
+        lead: 'For about fifteen years, Guro dreamed of opening a café. Calma is what happened when the right place finally came along.',
+        dream: { label: 'The dream', title: 'A fifteen-year dream opens its doors', text: 'Guro had worked in cafés and kitchens in Norway before settling in Gran Canaria. The search for the right space took years, and on 6 September 2019 Calma opened in Maspalomas.', caption: 'The day we opened.' },
+        name: { label: 'The name', title: 'From “Alma” came “Calma”', text: 'Guro was looking for a word with soul (alma means soul in Spanish), and at first the project was going to be called Alma Café. While the logo was being designed, “Calma” came up, and it fitted everything Guro wanted to get across even better.', caption: 'It was almost called Alma Café.', replay: 'Play the animation again' },
+      },
     },
     visit: {
       title: 'Visit us · Calma Café, Maspalomas',
@@ -265,6 +282,12 @@ export const ui: Record<Lang, UI> = {
       detailsText: 'Senfgelbe Kissen, ein Wandteppich aus Tassen, Glühbirnen über der Holztheke<br />und ein großes Fenster mit Blick auf Palmen.',
       captions: ['Das Fenster', 'Die Kissen', 'Die Pinnwand', 'Die Theke', 'Der Tassen-Wandteppich', 'Die Bilder', 'Die Glühbirnen', 'Ein Tisch an der Pinnwand'],
       instagram: 'Mehr Fotos vom Café und vom Essen auf Instagram.',
+      story: {
+        eyebrow: 'Unsere Geschichte', title: 'Alles begann mit <em>einem Traum.</em>',
+        lead: 'Rund fünfzehn Jahre lang träumte Guro von einem eigenen Café. Calma ist das, was passierte, als sich endlich der richtige Ort fand.',
+        dream: { label: 'Der Traum', title: 'Ein Traum von fünfzehn Jahren öffnet seine Türen', text: 'Guro hatte in Norwegen in Cafés und Küchen gearbeitet und sich dann auf Gran Canaria niedergelassen. Die Suche nach dem passenden Raum dauerte Jahre, und am 6. September 2019 öffnete Calma in Maspalomas.', caption: 'Der Tag, an dem wir eröffnet haben.' },
+        name: { label: 'Der Name', title: 'Aus „Alma“ wurde „Calma“', text: 'Guro suchte ein Wort mit Seele (auf Spanisch „alma“), und anfangs sollte das Projekt Alma Café heißen. Bei der Arbeit am Logo tauchte „Calma“ auf, und das passte noch besser zu allem, was Guro vermitteln wollte.', caption: 'Fast hätte es Alma Café geheißen.', replay: 'Animation noch einmal abspielen' },
+      },
     },
     visit: {
       title: 'Besuch · Calma Café, Maspalomas',
@@ -337,6 +360,12 @@ export const ui: Record<Lang, UI> = {
       detailsText: 'Mosterdgele kussens, een wandkleed van kopjes, lampjes boven de houten bar<br />en een groot raam met uitzicht op palmbomen.',
       captions: ['Het raam', 'De kussens', 'Het prikbord', 'De bar', 'Het wandkleed van kopjes', 'De schilderijen', 'De lampjes', 'Een tafeltje bij het prikbord'],
       instagram: 'Meer foto’s van het café en het eten op Instagram.',
+      story: {
+        eyebrow: 'Ons verhaal', title: 'Het begon allemaal met <em>een droom.</em>',
+        lead: 'Zo’n vijftien jaar lang droomde Guro van een eigen café. Calma is wat er gebeurde toen de juiste plek eindelijk gevonden was.',
+        dream: { label: 'De droom', title: 'Een droom van vijftien jaar opent zijn deuren', text: 'Guro had in Noorwegen in cafés en keukens gewerkt en vestigde zich daarna op Gran Canaria. Het zoeken naar de juiste ruimte duurde jaren, en op 6 september 2019 ging Calma open in Maspalomas.', caption: 'De dag dat we opengingen.' },
+        name: { label: 'De naam', title: 'Uit ‘Alma’ ontstond ‘Calma’', text: 'Guro zocht een woord met ziel (‘alma’ in het Spaans), en eerst zou het project Alma Café heten. Tijdens het werk aan het logo dook ‘Calma’ op, en dat paste nog beter bij alles wat Guro wilde uitstralen.', caption: 'Het heette bijna Alma Café.', replay: 'Animatie opnieuw afspelen' },
+      },
     },
     visit: {
       title: 'Bezoek · Calma Café, Maspalomas',

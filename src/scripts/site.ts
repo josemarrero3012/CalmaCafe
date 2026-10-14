@@ -219,6 +219,18 @@ document.querySelectorAll<SVGSVGElement>('.script-word').forEach(word => {
   if (word.getBoundingClientRect().top > window.innerHeight * 0.9) { word.classList.add('script-wait'); scriptObserver.observe(word); }
 });
 
+// Historia (Calma): «Alma» se convierte en «Calma». Cada letra guarda su ancho real (en em,
+// para que valga con cualquier tamaño de letra) y el CSS abre o cierra las ranuras al verse.
+document.querySelectorAll<HTMLElement>('[data-alma]').forEach(figure => {
+  const word = figure.querySelector<HTMLElement>('.alma-word')!;
+  document.fonts.ready.then(() => {
+    const size = parseFloat(getComputedStyle(word).fontSize);
+    word.querySelectorAll<HTMLElement>('.aw').forEach(letter => letter.style.setProperty('--w', `${letter.scrollWidth / size}em`));
+    figure.classList.add('alma-ready');
+  });
+  figure.querySelector('.alma-replay')!.addEventListener('click', () => figure.getAnimations({ subtree: true }).forEach(animation => { animation.cancel(); animation.play(); }));
+});
+
 const revealElements = document.querySelectorAll<HTMLElement>('[data-reveal], .chalk-write');
 if (!reducedMotion.matches) {
   // La pizarra empieza recortada (clip-path) y su área visible es 0: basta con que entre en pantalla.

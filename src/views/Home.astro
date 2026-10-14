@@ -1,4 +1,5 @@
 ---
+import { url } from '../lib/base';
 import Icon from '../components/Icon.astro';
 import Layout from '../layouts/Layout.astro';
 import Photo from '../components/Photo.astro';
@@ -30,9 +31,9 @@ const bebidas = {
 };
 const fill = (text: string) => text.replace('{n}', String(platos.length)).replace('{calle}', negocio.direccion.calle).replace('{tel}', phone(lang, negocio.telefono.texto));
 const doors = [
-  { href: routes[lang].carta, dish: especial, text: h.doors.carta },
-  { href: routes[lang].calma, photo: 'interior-cojines', text: h.doors.calma },
-  { href: routes[lang].visitanos, photo: 'interior-ventanal', text: h.doors.visit },
+  { href: url(routes[lang].carta), dish: especial, text: h.doors.carta },
+  { href: url(routes[lang].calma), photo: 'interior-cojines', text: h.doors.calma },
+  { href: url(routes[lang].visitanos), photo: 'interior-ventanal', text: h.doors.visit },
 ] as const;
 ---
 <Layout lang={lang} current="inicio" title={h.title} description={h.description}>
@@ -47,7 +48,7 @@ const doors = [
           <svg class="hero-flourish" viewBox="0 0 520 36" aria-hidden="true" focusable="false"><path d="M4 31 C 130 17 320 8 516 3 C 322 13 140 25 12 35 C 7 35 3 33 4 31 Z" /></svg>
         </div>
         <p class="hero-intro enter enter-3">{h.intro}</p>
-        <div class="hero-buttons enter enter-3"><a class="button button-green" href={routes[lang].carta}>{h.seeMenu} <span aria-hidden="true"><Icon name="arrow-right" /></span></a><a class="text-link hero-directions" href={negocio.mapas.url} target="_blank" rel="noopener noreferrer">{t.directions} <span aria-hidden="true"><Icon name="arrow-up-right" /></span></a><a class="text-link hero-hours" href={negocio.mapas.url} target="_blank" rel="noopener noreferrer">{t.visit.hoursLink} <span aria-hidden="true"><Icon name="arrow-up-right" /></span></a></div>
+        <div class="hero-buttons enter enter-3"><a class="button button-green" href={url(routes[lang].carta)}>{h.seeMenu} <span aria-hidden="true"><Icon name="arrow-right" /></span></a><a class="text-link hero-directions" href={negocio.mapas.url} target="_blank" rel="noopener noreferrer">{t.directions} <span aria-hidden="true"><Icon name="arrow-up-right" /></span></a><a class="text-link hero-hours" href={negocio.mapas.url} target="_blank" rel="noopener noreferrer">{t.visit.hoursLink} <span aria-hidden="true"><Icon name="arrow-up-right" /></span></a></div>
       </div>
       <div class="hero-visual enter enter-visual">
         <Seal />
@@ -59,8 +60,8 @@ const doors = [
 
   <dialog id="video-dialog" class="video-dialog" aria-label={t.video.label}>
     <button class="icon-button video-dialog-close" data-close aria-label={t.close}><Icon name="close" /></button>
-    <video id="interior-video" controls muted loop playsinline preload="none" poster="/media/interior-poster-480.webp" width="432" height="768">
-      <source data-src="/media/interior.webm" type="video/webm" /><source data-src="/media/interior.mp4" type="video/mp4" />
+    <video id="interior-video" controls muted loop playsinline preload="none" poster={url('/media/interior-poster-480.webp')} width="432" height="768">
+      <source data-src={url('/media/interior.webm')} type="video/webm" /><source data-src={url('/media/interior.mp4')} type="video/mp4" />
     </video>
   </dialog>
 
@@ -89,7 +90,7 @@ const doors = [
         {Object.entries(bebidas).map(([team, lista]) => <ul class="team-result" data-team-panel={team} hidden={team !== 'coffee'}>
           {lista.map(b => <li><span>{tc(lang, b.nombre)}{b.descripcion && b.descripcion.length < 40 && <small>{tc(lang, b.descripcion)}</small>}</span><b>{price(lang, b.precio)}</b></li>)}
         </ul>)}
-        <a class="text-link team-link" href={`${routes[lang].carta}#bebidas`}>{h.allDrinks} <span aria-hidden="true"><Icon name="arrow-right" /></span></a>
+        <a class="text-link team-link" href={`${url(routes[lang].carta)}#bebidas`}>{h.allDrinks} <span aria-hidden="true"><Icon name="arrow-right" /></span></a>
       </div>
     </div>
   </section>

@@ -1,5 +1,6 @@
 ---
+import { url } from '../lib/base';
 interface Props { light?: boolean; class?: string; }
 const { light = false, class: className } = Astro.props;
 ---
-<img class={className} src={`/media/lotus-${light ? 'light' : 'dark'}.svg`} width="44" height="48" alt="" aria-hidden="true" />
+<img class={className} src={url(`/media/lotus-${light ? 'light' : 'dark'}.svg`)} width="44" height="48" alt="" aria-hidden="true" />

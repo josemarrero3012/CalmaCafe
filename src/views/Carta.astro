@@ -1,4 +1,5 @@
 ---
+import { url } from '../lib/base';
 import Icon from '../components/Icon.astro';
 import Layout from '../layouts/Layout.astro';
 import DishPhoto from '../components/DishPhoto.astro';
@@ -63,7 +64,7 @@ const consultada = new Intl.DateTimeFormat(locale[lang].intl, { day: 'numeric', 
             </figure>}
           </div>
           <ul class="carta-list">
-            {grupo.platos.map(plato => <li class="dish" data-photo={plato.foto ? plato.foto.src : undefined} data-photo-widths={plato.foto ? plato.foto.widths.join(',') : undefined} data-name={tr(plato.nombre)}>
+            {grupo.platos.map(plato => <li class="dish" data-photo={plato.foto ? url(plato.foto.src) : undefined} data-photo-widths={plato.foto ? plato.foto.widths.join(',') : undefined} data-name={tr(plato.nombre)}>
               <p class="dish-line">
                 {plato.foto
                   ? <button type="button" class="dish-name" data-dish-open>{tr(plato.nombre)}<span class="visually-hidden"> — {c.photo}</span><span class="dish-camera" aria-hidden="true"></span></button>

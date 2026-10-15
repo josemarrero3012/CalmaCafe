@@ -396,18 +396,18 @@ body[data-page=inicio] .site-header{background:rgba(250,246,239,.78);-webkit-bac
   .hero h1{font-size:clamp(44px,12.4vw,60px);letter-spacing:-.055em}
   .hero-script{width:68%;margin-left:28%}
   .hero-intro{margin-top:22px;font-size:15px;line-height:1.65;text-shadow:0 1px 14px rgba(0,0,0,.55)}
-  .hero-buttons{margin-top:18px;gap:14px 24px}
+  .hero-buttons{margin-top:12px;gap:10px 24px}
   .hero-directions{display:none}
   .hero-hours{display:inline-flex;flex-basis:100%;justify-content:flex-start;gap:6px;font-size:12.5px;line-height:1.3;white-space:nowrap;border-bottom:0;margin-top:-4px;text-shadow:0 1px 12px rgba(0,0,0,.6)}
   .button-green{min-height:52px;padding-inline:22px;font-size:14px}
   .hero .text-link{font-size:14px}
-  .hero-visual{min-height:218px;margin-top:10px}
-  /* El plato y el sello suben justo bajo el titular; el párrafo pasa tras los botones */
+  .hero-visual{min-height:162px;margin-top:6px}
+  /* Los botones suben justo bajo el titular; la firma, el plato y el sello van después y el párrafo cierra */
   .hero-copy{display:contents}
-  .hero-copy>.eyebrow{order:1}.hero h1{order:2}.hero-script{order:3}.hero-visual{order:4}.hero-buttons{order:5}.hero-intro{order:6;margin-top:6px;color:#fffbf3}
-  .seal{width:108px;height:108px;top:6px;right:6px}
-  .hero-photo{left:6px;bottom:4px;width:190px;padding:9px 9px 12px;rotate:-5deg}
-  .hero-photo figcaption{font-size:18px;margin-top:5px}
+  .hero-copy>.eyebrow{order:1}.hero h1{order:2}.hero-buttons{order:3}.hero-script{order:4;margin-top:6px}.hero-visual{order:5}.hero-intro{order:6;margin-top:6px;color:#fffbf3}
+  .seal{width:92px;height:92px;top:4px;right:6px}
+  .hero-photo{left:6px;bottom:4px;width:148px;padding:7px 7px 9px;rotate:-5deg}
+  .hero-photo figcaption{font-size:15px;margin-top:4px}
   .video-open{right:2px;bottom:10px;font-size:13px;padding:8px 14px;min-height:40px;background:rgba(255,251,243,.88);backdrop-filter:blur(6px);gap:8px}
 }
 @media(prefers-reduced-motion:reduce){.hero-flourish{clip-path:none}}

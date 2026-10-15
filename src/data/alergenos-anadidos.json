@@ -1,0 +1,614 @@
+{
+ "_nota": "Alérgenos que Calma Café web añade a los de la carta digital oficial cuando el ingrediente aparece en el nombre o la descripción del plato (o es inherente al plato). Clave: id del plato en la carta oficial. `npm run carta` los aplica; no se quita ninguno de los oficiales. Solo se listan los seguros: lo dudoso está en docs/ALERGENOS.md.",
+ "platos": {
+  "624046": {
+   "menu": "Carta",
+   "nombre": "Granola Cacahuete",
+   "anadir": [
+    "Gluten",
+    "Cacahuetes",
+    "Lácteos"
+   ],
+   "motivo": "Granola (con gluten en el resto de la carta), crema de cacahuete y yogur griego, según su descripción"
+  },
+  "94255": {
+   "menu": "Carta",
+   "nombre": "Tosta huevos revueltos y bacon",
+   "anadir": [
+    "Huevos"
+   ],
+   "motivo": "«huevos revueltos» en el nombre"
+  },
+  "94249": {
+   "menu": "Carta",
+   "nombre": "Tosta Tumaca",
+   "anadir": [
+    "Gluten",
+    "Semillas de sésamo"
+   ],
+   "motivo": "tosta (pan) «con aceite y semillas»; la misma tosta en Vegetariano ya marca Sésamo"
+  },
+  "702773": {
+   "menu": "Carta",
+   "nombre": "Tosta Caesar",
+   "anadir": [
+    "Gluten"
+   ],
+   "motivo": "tosta (pan)"
+  },
+  "668156": {
+   "menu": "Carta",
+   "nombre": "Tosta Remolacha",
+   "anadir": [
+    "Gluten",
+    "Lácteos"
+   ],
+   "motivo": "tosta (pan) con queso feta"
+  },
+  "94247": {
+   "menu": "Carta",
+   "nombre": "Tosta Salmón",
+   "anadir": [
+    "Pescado",
+    "Huevos"
+   ],
+   "motivo": "salmón en el nombre y huevo revuelto en la descripción"
+  },
+  "94250": {
+   "menu": "Carta",
+   "nombre": "Tosta Brie",
+   "anadir": [
+    "Frutos de cáscara"
+   ],
+   "motivo": "«con nueces» en la descripción"
+  },
+  "624049": {
+   "menu": "Carta",
+   "nombre": "Tosta Cacahuete",
+   "anadir": [
+    "Gluten",
+    "Cacahuetes"
+   ],
+   "motivo": "tosta (pan) con crema de cacahuete"
+  },
+  "621656": {
+   "menu": "Carta",
+   "nombre": "Pancakes estilo Americano",
+   "anadir": [
+    "Gluten",
+    "Huevos"
+   ],
+   "motivo": "pancakes con huevos revueltos"
+  },
+  "93767": {
+   "menu": "Carta",
+   "nombre": "Sándwich Brie y Bacon",
+   "anadir": [
+    "Gluten",
+    "Lácteos"
+   ],
+   "motivo": "sándwich (pan) con brie"
+  },
+  "93768": {
+   "menu": "Carta",
+   "nombre": "Sándwich Pollo y pesto",
+   "anadir": [
+    "Gluten"
+   ],
+   "motivo": "sándwich (pan)"
+  },
+  "93769": {
+   "menu": "Carta",
+   "nombre": "Sándwich Guacamole y champiñones",
+   "anadir": [
+    "Gluten"
+   ],
+   "motivo": "sándwich (pan)"
+  },
+  "93772": {
+   "menu": "Carta",
+   "nombre": "Ensalada de atún picante & huevo",
+   "anadir": [
+    "Pescado"
+   ],
+   "motivo": "atún en el nombre"
+  },
+  "93787": {
+   "menu": "Carta",
+   "nombre": "Fajita Salmón",
+   "anadir": [
+    "Pescado"
+   ],
+   "motivo": "salmón en el nombre"
+  },
+  "164074": {
+   "menu": "Carta",
+   "nombre": "Hummus",
+   "anadir": [
+    "Semillas de sésamo"
+   ],
+   "motivo": "el hummus lleva tahini (sésamo)"
+  },
+  "188882": {
+   "menu": "Carta",
+   "nombre": "Huevo",
+   "anadir": [
+    "Huevos"
+   ],
+   "motivo": "huevo"
+  },
+  "93780": {
+   "menu": "Carta",
+   "nombre": "Queso o jamón",
+   "anadir": [
+    "Lácteos"
+   ],
+   "motivo": "queso (o jamón)"
+  },
+  "105721": {
+   "menu": "Carta",
+   "nombre": "Mozzarella",
+   "anadir": [
+    "Lácteos"
+   ],
+   "motivo": "mozzarella"
+  },
+  "721403": {
+   "menu": "Carta",
+   "nombre": "Rollito de Canela",
+   "anadir": [
+    "Gluten"
+   ],
+   "motivo": "masa de harina de trigo"
+  },
+  "721407": {
+   "menu": "Carta",
+   "nombre": "Gofre",
+   "anadir": [
+    "Gluten"
+   ],
+   "motivo": "masa de harina de trigo"
+  },
+  "721405": {
+   "menu": "Carta",
+   "nombre": "Cookies",
+   "anadir": [
+    "Gluten"
+   ],
+   "motivo": "galleta de harina de trigo"
+  },
+  "721678": {
+   "menu": "Carta",
+   "nombre": "Mini Brookie",
+   "anadir": [
+    "Gluten"
+   ],
+   "motivo": "masa de harina de trigo"
+  },
+  "721406": {
+   "menu": "Carta",
+   "nombre": "Pancakes",
+   "anadir": [
+    "Gluten",
+    "Huevos",
+    "Lácteos"
+   ],
+   "motivo": "es el mismo plato «Pancakes» que en Brunch, que ya marca estos tres"
+  },
+  "728477": {
+   "menu": "Carta",
+   "nombre": "Pancake Manzana crumble",
+   "anadir": [
+    "Gluten"
+   ],
+   "motivo": "pancake (harina de trigo)"
+  },
+  "486019": {
+   "menu": "Carta",
+   "nombre": "Gofre con mermelada o Nutella",
+   "anadir": [
+    "Gluten"
+   ],
+   "motivo": "gofre (harina de trigo)"
+  },
+  "594936": {
+   "menu": "Carta",
+   "nombre": "Sándwich pollo y queso a la plancha",
+   "anadir": [
+    "Gluten",
+    "Lácteos"
+   ],
+   "motivo": "sándwich (pan) con queso"
+  },
+  "247422": {
+   "menu": "Carta",
+   "nombre": "Tosta solo huevos",
+   "anadir": [
+    "Gluten",
+    "Huevos"
+   ],
+   "motivo": "tosta (pan) con huevos revueltos"
+  },
+  "247444": {
+   "menu": "Carta",
+   "nombre": "Yogur con fruta",
+   "anadir": [
+    "Lácteos"
+   ],
+   "motivo": "yogur"
+  },
+  "702307": {
+   "menu": "Vegetariano",
+   "nombre": "Tosta Remolacha",
+   "anadir": [
+    "Gluten",
+    "Lácteos"
+   ],
+   "motivo": "tosta (pan) con feta"
+  },
+  "164026": {
+   "menu": "Vegetariano",
+   "nombre": "Tosta huevos revueltos",
+   "anadir": [
+    "Huevos"
+   ],
+   "motivo": "«huevos revueltos» en el nombre"
+  },
+  "164025": {
+   "menu": "Vegetariano",
+   "nombre": "Tosta Brie",
+   "anadir": [
+    "Frutos de cáscara"
+   ],
+   "motivo": "«con nueces» en la descripción"
+  },
+  "426921": {
+   "menu": "Vegetariano",
+   "nombre": "Pancakes",
+   "anadir": [
+    "Gluten",
+    "Huevos",
+    "Lácteos"
+   ],
+   "motivo": "es el mismo plato «Pancakes» de Carta, que ya marca estos tres"
+  },
+  "652415": {
+   "menu": "Vegetariano",
+   "nombre": "Granola Cacahuete",
+   "anadir": [
+    "Gluten",
+    "Cacahuetes"
+   ],
+   "motivo": "granola con crema de cacahuete"
+  },
+  "666128": {
+   "menu": "Vegetariano",
+   "nombre": "Tosta Cacahuete",
+   "anadir": [
+    "Gluten",
+    "Cacahuetes"
+   ],
+   "motivo": "tosta (pan) con crema de cacahuete"
+  },
+  "94227": {
+   "menu": "Vegetariano",
+   "nombre": "Fajita Desayuno",
+   "anadir": [
+    "Huevos"
+   ],
+   "motivo": "«huevos revueltos» en la descripción"
+  },
+  "721669": {
+   "menu": "Vegetariano",
+   "nombre": "Pancakes",
+   "anadir": [
+    "Gluten",
+    "Huevos",
+    "Lácteos"
+   ],
+   "motivo": "es el mismo plato «Pancakes» de Carta, que ya marca estos tres"
+  },
+  "721671": {
+   "menu": "Vegetariano",
+   "nombre": "Rollito de Canela",
+   "anadir": [
+    "Gluten"
+   ],
+   "motivo": "masa de harina de trigo"
+  },
+  "721668": {
+   "menu": "Vegetariano",
+   "nombre": "Gofre",
+   "anadir": [
+    "Gluten"
+   ],
+   "motivo": "masa de harina de trigo"
+  },
+  "721670": {
+   "menu": "Vegetariano",
+   "nombre": "Cookies",
+   "anadir": [
+    "Gluten"
+   ],
+   "motivo": "galleta de harina de trigo"
+  },
+  "721681": {
+   "menu": "Vegetariano",
+   "nombre": "Mini Brookie",
+   "anadir": [
+    "Gluten"
+   ],
+   "motivo": "masa de harina de trigo"
+  },
+  "728478": {
+   "menu": "Vegetariano",
+   "nombre": "Pancake Manzana crumble",
+   "anadir": [
+    "Gluten"
+   ],
+   "motivo": "pancake (harina de trigo)"
+  },
+  "164068": {
+   "menu": "Vegetariano",
+   "nombre": "Hummus",
+   "anadir": [
+    "Semillas de sésamo"
+   ],
+   "motivo": "el hummus lleva tahini (sésamo)"
+  },
+  "164033": {
+   "menu": "Vegetariano",
+   "nombre": "Huevo",
+   "anadir": [
+    "Huevos"
+   ],
+   "motivo": "huevo"
+  },
+  "164031": {
+   "menu": "Vegetariano",
+   "nombre": "Queso",
+   "anadir": [
+    "Lácteos"
+   ],
+   "motivo": "queso"
+  },
+  "188886": {
+   "menu": "Vegano",
+   "nombre": "Granola Bowl Vegano con fruta",
+   "anadir": [
+    "Gluten"
+   ],
+   "motivo": "granola"
+  },
+  "652412": {
+   "menu": "Vegano",
+   "nombre": "Granola Cacahuete Vegano",
+   "anadir": [
+    "Gluten",
+    "Cacahuetes"
+   ],
+   "motivo": "granola con crema de cacahuete"
+  },
+  "520830": {
+   "menu": "Vegano",
+   "nombre": "Calma Vegano",
+   "anadir": [
+    "Gluten",
+    "Soja"
+   ],
+   "motivo": "triassant (pan) con revuelto de tofu"
+  },
+  "676486": {
+   "menu": "Vegano",
+   "nombre": "Tosta Remolacha",
+   "anadir": [
+    "Gluten"
+   ],
+   "motivo": "tosta (pan)"
+  },
+  "164049": {
+   "menu": "Vegano",
+   "nombre": "Tosta Tumaca",
+   "anadir": [
+    "Gluten",
+    "Semillas de sésamo"
+   ],
+   "motivo": "tosta (pan) «con aceite y semillas»; la misma tosta en Vegetariano ya marca Sésamo"
+  },
+  "520829": {
+   "menu": "Vegano",
+   "nombre": "Tosta tofu revuelto",
+   "anadir": [
+    "Gluten",
+    "Soja"
+   ],
+   "motivo": "tosta (pan) con tofu"
+  },
+  "652414": {
+   "menu": "Vegano",
+   "nombre": "Tosta Cacahuete",
+   "anadir": [
+    "Gluten",
+    "Cacahuetes"
+   ],
+   "motivo": "tosta (pan) con crema de cacahuete"
+  },
+  "164050": {
+   "menu": "Vegano",
+   "nombre": "Tosta guacamole & champiñones",
+   "anadir": [
+    "Gluten"
+   ],
+   "motivo": "tosta (pan)"
+  },
+  "581391": {
+   "menu": "Vegano",
+   "nombre": "Gofre Vegano",
+   "anadir": [
+    "Gluten"
+   ],
+   "motivo": "gofre (harina de trigo)"
+  },
+  "557987": {
+   "menu": "Vegano",
+   "nombre": "Rollito de Canela Vegano",
+   "anadir": [
+    "Gluten"
+   ],
+   "motivo": "masa de harina de trigo"
+  },
+  "429056": {
+   "menu": "Vegano",
+   "nombre": "Pancakes Veganos",
+   "anadir": [
+    "Gluten"
+   ],
+   "motivo": "pancakes (harina de trigo)"
+  },
+  "164067": {
+   "menu": "Vegano",
+   "nombre": "Fajita Vegana",
+   "anadir": [
+    "Gluten",
+    "Semillas de sésamo"
+   ],
+   "motivo": "fajita (tortilla de trigo) con hummus (sésamo)"
+  },
+  "94189": {
+   "menu": "Vegano",
+   "nombre": "Ensalada Vegana de Quinoa & garbanzos",
+   "anadir": [
+    "Gluten"
+   ],
+   "motivo": "«pan de acompañamiento»"
+  },
+  "721673": {
+   "menu": "Vegano",
+   "nombre": "Rollito de Canela",
+   "anadir": [
+    "Gluten"
+   ],
+   "motivo": "masa de harina de trigo"
+  },
+  "721675": {
+   "menu": "Vegano",
+   "nombre": "Gofre",
+   "anadir": [
+    "Gluten"
+   ],
+   "motivo": "gofre (harina de trigo)"
+  },
+  "721674": {
+   "menu": "Vegano",
+   "nombre": "Pancakes",
+   "anadir": [
+    "Gluten"
+   ],
+   "motivo": "pancakes (harina de trigo)"
+  },
+  "701345": {
+   "menu": "Vegano",
+   "nombre": "Tofu",
+   "anadir": [
+    "Soja"
+   ],
+   "motivo": "el tofu es de soja"
+  },
+  "164056": {
+   "menu": "Vegano",
+   "nombre": "Hummus",
+   "anadir": [
+    "Semillas de sésamo"
+   ],
+   "motivo": "el hummus lleva tahini (sésamo)"
+  },
+  "93799": {
+   "menu": "Bebidas",
+   "nombre": "Café con leche o cortado largo",
+   "anadir": [
+    "Lácteos"
+   ],
+   "motivo": "«con leche» en el nombre"
+  },
+  "188822": {
+   "menu": "Bebidas",
+   "nombre": "Leche & leche",
+   "anadir": [
+    "Lácteos"
+   ],
+   "motivo": "«leche & leche»"
+  },
+  "93800": {
+   "menu": "Bebidas",
+   "nombre": "Cappuccino",
+   "anadir": [
+    "Lácteos"
+   ],
+   "motivo": "el cappuccino se hace con leche"
+  },
+  "93801": {
+   "menu": "Bebidas",
+   "nombre": "Latte Macchiato",
+   "anadir": [
+    "Lácteos"
+   ],
+   "motivo": "el latte macchiato se hace con leche"
+  },
+  "93803": {
+   "menu": "Bebidas",
+   "nombre": "Latte congelado",
+   "anadir": [
+    "Lácteos"
+   ],
+   "motivo": "«leche» en la descripción"
+  },
+  "93795": {
+   "menu": "Bebidas",
+   "nombre": "Cerveza",
+   "anadir": [
+    "Gluten"
+   ],
+   "motivo": "la cerveza lleva cebada"
+  },
+  "93794": {
+   "menu": "Bebidas",
+   "nombre": "Vino",
+   "anadir": [
+    "Sulfitos"
+   ],
+   "motivo": "el vino lleva sulfitos"
+  },
+  "93798": {
+   "menu": "Bebidas",
+   "nombre": "Cava piccolo",
+   "anadir": [
+    "Sulfitos"
+   ],
+   "motivo": "el cava lleva sulfitos"
+  },
+  "701340": {
+   "menu": "Bebidas",
+   "nombre": "Mimosa",
+   "anadir": [
+    "Sulfitos"
+   ],
+   "motivo": "la mimosa lleva cava"
+  },
+  "701626": {
+   "menu": "Bebidas",
+   "nombre": "Fresa Mimosa",
+   "anadir": [
+    "Sulfitos"
+   ],
+   "motivo": "lleva cava"
+  },
+  "93797": {
+   "menu": "Bebidas",
+   "nombre": "Aperol Spritz",
+   "anadir": [
+    "Sulfitos"
+   ],
+   "motivo": "el Aperol Spritz lleva prosecco"
+  }
+ }
+}

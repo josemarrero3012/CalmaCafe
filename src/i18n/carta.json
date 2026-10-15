@@ -305,11 +305,6 @@
   "de": "Sandwich mit Hähnchen und Pesto",
   "nl": "Sandwich met kip en pesto"
  },
- "Sándwich Atún picante": {
-  "en": "Spicy tuna sandwich",
-  "de": "Sandwich mit scharfem Thunfisch",
-  "nl": "Sandwich met pittige tonijn"
- },
  "Ensalada Caesar": {
   "en": "Caesar salad",
   "de": "Caesar-Salat",
@@ -994,5 +989,45 @@
   "en": "If you like your coffee strong, make it a double",
   "de": "Wenn du deinen Kaffee stark magst, bestell ihn doppelt",
   "nl": "Hou je van sterke koffie? Bestel hem dubbel"
+ },
+ "Tosta Remolacha": {
+  "en": "Beetroot toast",
+  "de": "Toast mit Rote Bete",
+  "nl": "Toast met rode biet"
+ },
+ "Con tomates confitados y queso feta": {
+  "en": "With confit tomatoes and feta cheese",
+  "de": "Mit confierten Tomaten und Feta",
+  "nl": "Met gekonfijte tomaten en feta"
+ },
+ "Con feta y tomates confitados": {
+  "en": "With feta and confit tomatoes",
+  "de": "Mit Feta und confierten Tomaten",
+  "nl": "Met feta en gekonfijte tomaten"
+ },
+ "Con queso y tomates confitados": {
+  "en": "With cheese and confit tomatoes",
+  "de": "Mit Käse und confierten Tomaten",
+  "nl": "Met kaas en gekonfijte tomaten"
+ },
+ "Pancake Manzana crumble": {
+  "en": "Apple crumble pancake",
+  "de": "Pancake mit Apfel-Crumble",
+  "nl": "Pancake met appelcrumble"
+ },
+ "Crema pistacho vegano": {
+  "en": "Vegan pistachio cream",
+  "de": "Vegane Pistaziencreme",
+  "nl": "Veganistische pistachecrème"
+ },
+ "Sulfitos": {
+  "en": "Sulphites",
+  "de": "Sulfite",
+  "nl": "Sulfiet"
+ },
+ "Pumpkin Spice Latte": {
+  "en": "Pumpkin spice latte",
+  "de": "Pumpkin Spice Latte",
+  "nl": "Pumpkin spice latte"
  }
 }

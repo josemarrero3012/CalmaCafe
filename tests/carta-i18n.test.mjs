@@ -25,3 +25,16 @@ test('el glosario no guarda textos que ya no están en la carta', () => {
   const sobran = Object.keys(traducciones).filter(es => es !== '_nota' && !textos.has(es));
   assert.deepEqual(sobran, []);
 });
+
+const anadidos = JSON.parse(await readFile('src/data/alergenos-anadidos.json', 'utf8')).platos;
+const platos = new Map(carta.menus.flatMap(m => m.grupos.flatMap(g => g.platos.map(p => [p.id, { ...p, menu: m.nombre }]))));
+test('los alérgenos añadidos se aplican, no quitan ninguno y apuntan a platos que existen', () => {
+  for (const [id, { menu, nombre, anadir }] of Object.entries(anadidos)) {
+    const plato = platos.get(id);
+    assert.ok(plato, `El plato ${id} (${nombre}) ya no está en la carta: quita su entrada de alergenos-anadidos.json`);
+    assert.equal(plato.menu, menu, `${nombre}: menú distinto`);
+    assert.equal(plato.nombre, nombre, `${id}: el nombre del plato ha cambiado`);
+    for (const alergeno of anadir) assert.ok(plato.alergenos.includes(alergeno), `${nombre}: falta ${alergeno}`);
+    assert.deepEqual(plato.alergenosAnadidos, anadir.filter(a => plato.alergenosAnadidos?.includes(a)), `${nombre}: alergenosAnadidos no coincide con alergenos-anadidos.json`);
+  }
+});

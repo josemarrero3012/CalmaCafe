@@ -1,6 +1,6 @@
 {
   "fuente": "https://calma.buenacarta.com/",
-  "consultada": "2026-10-07",
+  "consultada": "2026-10-15",
   "local": {
     "direccion": "Avda. de Tirajana 3, Apt Aloe, Maspalomas (Las Palmas)",
     "telefono": "681667917",
@@ -50,7 +50,11 @@
               "opciones": [],
               "notas": [],
               "precio": "7,50 €",
-              "alergenos": [],
+              "alergenos": [
+                "Gluten",
+                "Cacahuetes",
+                "Lácteos"
+              ],
               "dieta": null,
               "foto": {
                 "src": "/media/carta/624046",
@@ -61,7 +65,12 @@
                   480,
                   800
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Gluten",
+                "Cacahuetes",
+                "Lácteos"
+              ]
             },
             {
               "id": "89630",
@@ -182,6 +191,7 @@
               "precio": "7,50 €",
               "alergenos": [
                 "Gluten",
+                "Huevos",
                 "Lácteos",
                 "Frutos de cáscara",
                 "Semillas de sésamo"
@@ -196,7 +206,10 @@
                   480,
                   800
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Huevos"
+              ]
             },
             {
               "id": "94249",
@@ -206,7 +219,10 @@
               "opciones": [],
               "notas": [],
               "precio": "5,00 €",
-              "alergenos": [],
+              "alergenos": [
+                "Gluten",
+                "Semillas de sésamo"
+              ],
               "dieta": null,
               "foto": {
                 "src": "/media/carta/94249",
@@ -217,7 +233,11 @@
                   480,
                   800
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Gluten",
+                "Semillas de sésamo"
+              ]
             },
             {
               "id": "702773",
@@ -227,7 +247,9 @@
               "opciones": [],
               "notas": [],
               "precio": "11,00 €",
-              "alergenos": [],
+              "alergenos": [
+                "Gluten"
+              ],
               "dieta": null,
               "foto": {
                 "src": "/media/carta/702773",
@@ -238,7 +260,10 @@
                   480,
                   800
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Gluten"
+              ]
             },
             {
               "id": "94246",
@@ -265,6 +290,34 @@
               }
             },
             {
+              "id": "668156",
+              "nombre": "Tosta Remolacha",
+              "descripcion": "Con tomates confitados y queso feta",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "8,00 €",
+              "alergenos": [
+                "Gluten",
+                "Lácteos"
+              ],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/668156",
+                "width": 800,
+                "height": 599,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              },
+              "alergenosAnadidos": [
+                "Gluten",
+                "Lácteos"
+              ]
+            },
+            {
               "id": "94247",
               "nombre": "Tosta Salmón",
               "descripcion": "Con huevo revuelto, aguacate y salsa de eneldo",
@@ -274,6 +327,8 @@
               "precio": "11,00 €",
               "alergenos": [
                 "Gluten",
+                "Huevos",
+                "Pescado",
                 "Lácteos",
                 "Frutos de cáscara",
                 "Semillas de sésamo"
@@ -288,7 +343,11 @@
                   480,
                   800
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Pescado",
+                "Huevos"
+              ]
             },
             {
               "id": "94250",
@@ -302,6 +361,7 @@
                 "Gluten",
                 "Huevos",
                 "Lácteos",
+                "Frutos de cáscara",
                 "Semillas de sésamo"
               ],
               "dieta": null,
@@ -314,7 +374,10 @@
                   480,
                   800
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Frutos de cáscara"
+              ]
             },
             {
               "id": "624049",
@@ -324,7 +387,10 @@
               "opciones": [],
               "notas": [],
               "precio": "7,00 €",
-              "alergenos": [],
+              "alergenos": [
+                "Gluten",
+                "Cacahuetes"
+              ],
               "dieta": null,
               "foto": {
                 "src": "/media/carta/624049",
@@ -335,7 +401,11 @@
                   480,
                   800
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Gluten",
+                "Cacahuetes"
+              ]
             },
             {
               "id": "422600",
@@ -399,7 +469,10 @@
               "opciones": [],
               "notas": [],
               "precio": "12,50 €",
-              "alergenos": [],
+              "alergenos": [
+                "Gluten",
+                "Huevos"
+              ],
               "dieta": null,
               "foto": {
                 "src": "/media/carta/621656",
@@ -410,7 +483,11 @@
                   480,
                   800
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Gluten",
+                "Huevos"
+              ]
             }
           ],
           "portada": "93766"
@@ -432,9 +509,16 @@
               "opciones": [],
               "notas": [],
               "precio": "9,00 €",
-              "alergenos": [],
+              "alergenos": [
+                "Gluten",
+                "Lácteos"
+              ],
               "dieta": null,
-              "foto": null
+              "foto": null,
+              "alergenosAnadidos": [
+                "Gluten",
+                "Lácteos"
+              ]
             },
             {
               "id": "93768",
@@ -449,7 +533,9 @@
               "opciones": [],
               "notas": [],
               "precio": "9,00 €",
-              "alergenos": [],
+              "alergenos": [
+                "Gluten"
+              ],
               "dieta": null,
               "foto": {
                 "src": "/media/carta/93768",
@@ -460,33 +546,10 @@
                   480,
                   800
                 ]
-              }
-            },
-            {
-              "id": "164072",
-              "nombre": "Sándwich Atún picante",
-              "descripcion": null,
-              "extras": [
-                {
-                  "nombre": "Una ensaladita o papas ajillo horneadas",
-                  "precio": "2,00 €"
-                }
-              ],
-              "opciones": [],
-              "notas": [],
-              "precio": "9,00 €",
-              "alergenos": [],
-              "dieta": null,
-              "foto": {
-                "src": "/media/carta/164072",
-                "width": 800,
-                "height": 600,
-                "widths": [
-                  160,
-                  480,
-                  800
-                ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Gluten"
+              ]
             },
             {
               "id": "93770",
@@ -527,6 +590,7 @@
               "alergenos": [
                 "Gluten",
                 "Huevos",
+                "Pescado",
                 "Soja",
                 "Lácteos",
                 "Frutos de cáscara",
@@ -542,7 +606,10 @@
                   480,
                   767
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Pescado"
+              ]
             },
             {
               "id": "93773",
@@ -629,13 +696,17 @@
               "alergenos": [
                 "Gluten",
                 "Huevos",
+                "Pescado",
                 "Soja",
                 "Lácteos",
                 "Frutos de cáscara",
                 "Semillas de sésamo"
               ],
               "dieta": null,
-              "foto": null
+              "foto": null,
+              "alergenosAnadidos": [
+                "Pescado"
+              ]
             },
             {
               "id": "93769",
@@ -650,7 +721,9 @@
               "opciones": [],
               "notas": [],
               "precio": "9,00 €",
-              "alergenos": [],
+              "alergenos": [
+                "Gluten"
+              ],
               "dieta": null,
               "foto": {
                 "src": "/media/carta/93769",
@@ -661,7 +734,10 @@
                   480,
                   800
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Gluten"
+              ]
             }
           ],
           "portada": "93768"
@@ -711,9 +787,14 @@
               "opciones": [],
               "notas": [],
               "precio": "2,00 €",
-              "alergenos": [],
+              "alergenos": [
+                "Semillas de sésamo"
+              ],
               "dieta": null,
-              "foto": null
+              "foto": null,
+              "alergenosAnadidos": [
+                "Semillas de sésamo"
+              ]
             },
             {
               "id": "105720",
@@ -735,9 +816,14 @@
               "opciones": [],
               "notas": [],
               "precio": "1,50 €",
-              "alergenos": [],
+              "alergenos": [
+                "Huevos"
+              ],
               "dieta": null,
-              "foto": null
+              "foto": null,
+              "alergenosAnadidos": [
+                "Huevos"
+              ]
             },
             {
               "id": "93780",
@@ -747,9 +833,14 @@
               "opciones": [],
               "notas": [],
               "precio": "1,00 €",
-              "alergenos": [],
+              "alergenos": [
+                "Lácteos"
+              ],
               "dieta": null,
-              "foto": null
+              "foto": null,
+              "alergenosAnadidos": [
+                "Lácteos"
+              ]
             },
             {
               "id": "93778",
@@ -771,9 +862,14 @@
               "opciones": [],
               "notas": [],
               "precio": "2,00 €",
-              "alergenos": [],
+              "alergenos": [
+                "Lácteos"
+              ],
               "dieta": null,
-              "foto": null
+              "foto": null,
+              "alergenosAnadidos": [
+                "Lácteos"
+              ]
             },
             {
               "id": "93781",
@@ -825,7 +921,9 @@
               "opciones": [],
               "notas": [],
               "precio": "4,50 €",
-              "alergenos": [],
+              "alergenos": [
+                "Gluten"
+              ],
               "dieta": null,
               "foto": {
                 "src": "/media/carta/721403",
@@ -836,7 +934,10 @@
                   480,
                   600
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Gluten"
+              ]
             },
             {
               "id": "721407",
@@ -871,7 +972,9 @@
               "opciones": [],
               "notas": [],
               "precio": "3,00 €",
-              "alergenos": [],
+              "alergenos": [
+                "Gluten"
+              ],
               "dieta": null,
               "foto": {
                 "src": "/media/carta/721407",
@@ -882,7 +985,10 @@
                   480,
                   800
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Gluten"
+              ]
             },
             {
               "id": "721405",
@@ -892,7 +998,9 @@
               "opciones": [],
               "notas": [],
               "precio": "3,80 €",
-              "alergenos": [],
+              "alergenos": [
+                "Gluten"
+              ],
               "dieta": null,
               "foto": {
                 "src": "/media/carta/721405",
@@ -903,7 +1011,10 @@
                   480,
                   800
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Gluten"
+              ]
             },
             {
               "id": "721678",
@@ -913,7 +1024,9 @@
               "opciones": [],
               "notas": [],
               "precio": "2,50 €",
-              "alergenos": [],
+              "alergenos": [
+                "Gluten"
+              ],
               "dieta": null,
               "foto": {
                 "src": "/media/carta/721678",
@@ -924,7 +1037,10 @@
                   480,
                   799
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Gluten"
+              ]
             },
             {
               "id": "721406",
@@ -963,7 +1079,11 @@
               "opciones": [],
               "notas": [],
               "precio": "8,00 €",
-              "alergenos": [],
+              "alergenos": [
+                "Gluten",
+                "Huevos",
+                "Lácteos"
+              ],
               "dieta": null,
               "foto": {
                 "src": "/media/carta/721406",
@@ -974,7 +1094,39 @@
                   480,
                   800
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Gluten",
+                "Huevos",
+                "Lácteos"
+              ]
+            },
+            {
+              "id": "728477",
+              "nombre": "Pancake Manzana crumble",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "12,50 €",
+              "alergenos": [
+                "Gluten"
+              ],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/728477",
+                "width": 1085,
+                "height": 814,
+                "widths": [
+                  160,
+                  480,
+                  800,
+                  800
+                ]
+              },
+              "alergenosAnadidos": [
+                "Gluten"
+              ]
             }
           ],
           "portada": "721404"
@@ -1018,7 +1170,9 @@
               "opciones": [],
               "notas": [],
               "precio": "4,50 €",
-              "alergenos": [],
+              "alergenos": [
+                "Gluten"
+              ],
               "dieta": null,
               "foto": {
                 "src": "/media/carta/486019",
@@ -1029,7 +1183,10 @@
                   480,
                   800
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Gluten"
+              ]
             },
             {
               "id": "594936",
@@ -1039,9 +1196,16 @@
               "opciones": [],
               "notas": [],
               "precio": "6,00 €",
-              "alergenos": [],
+              "alergenos": [
+                "Gluten",
+                "Lácteos"
+              ],
               "dieta": null,
-              "foto": null
+              "foto": null,
+              "alergenosAnadidos": [
+                "Gluten",
+                "Lácteos"
+              ]
             },
             {
               "id": "94241",
@@ -1072,9 +1236,16 @@
               "opciones": [],
               "notas": [],
               "precio": "4,50 €",
-              "alergenos": [],
+              "alergenos": [
+                "Gluten",
+                "Huevos"
+              ],
               "dieta": null,
-              "foto": null
+              "foto": null,
+              "alergenosAnadidos": [
+                "Gluten",
+                "Huevos"
+              ]
             },
             {
               "id": "247444",
@@ -1089,9 +1260,14 @@
               "opciones": [],
               "notas": [],
               "precio": "5,00 €",
-              "alergenos": [],
+              "alergenos": [
+                "Lácteos"
+              ],
               "dieta": null,
-              "foto": null
+              "foto": null,
+              "alergenosAnadidos": [
+                "Lácteos"
+              ]
             }
           ],
           "portada": "94240"
@@ -1177,6 +1353,34 @@
               "foto": null
             },
             {
+              "id": "702307",
+              "nombre": "Tosta Remolacha",
+              "descripcion": "Con feta y tomates confitados",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "8,00 €",
+              "alergenos": [
+                "Gluten",
+                "Lácteos"
+              ],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/702307",
+                "width": 800,
+                "height": 599,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              },
+              "alergenosAnadidos": [
+                "Gluten",
+                "Lácteos"
+              ]
+            },
+            {
               "id": "164026",
               "nombre": "Tosta huevos revueltos",
               "descripcion": "Con tomate y cebolla",
@@ -1186,6 +1390,7 @@
               "precio": "5,00 €",
               "alergenos": [
                 "Gluten",
+                "Huevos",
                 "Lácteos",
                 "Semillas de sésamo"
               ],
@@ -1199,7 +1404,10 @@
                   480,
                   800
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Huevos"
+              ]
             },
             {
               "id": "105722",
@@ -1236,6 +1444,7 @@
               "alergenos": [
                 "Gluten",
                 "Lácteos",
+                "Frutos de cáscara",
                 "Semillas de sésamo"
               ],
               "dieta": "vegetariano",
@@ -1248,7 +1457,10 @@
                   480,
                   800
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Frutos de cáscara"
+              ]
             },
             {
               "id": "426921",
@@ -1287,7 +1499,11 @@
               "opciones": [],
               "notas": [],
               "precio": "8,00 €",
-              "alergenos": [],
+              "alergenos": [
+                "Gluten",
+                "Huevos",
+                "Lácteos"
+              ],
               "dieta": null,
               "foto": {
                 "src": "/media/carta/426921",
@@ -1298,7 +1514,12 @@
                   480,
                   800
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Gluten",
+                "Huevos",
+                "Lácteos"
+              ]
             },
             {
               "id": "652415",
@@ -1308,7 +1529,10 @@
               "opciones": [],
               "notas": [],
               "precio": "7,20 €",
-              "alergenos": [],
+              "alergenos": [
+                "Gluten",
+                "Cacahuetes"
+              ],
               "dieta": null,
               "foto": {
                 "src": "/media/carta/652415",
@@ -1319,7 +1543,39 @@
                   480,
                   800
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Gluten",
+                "Cacahuetes"
+              ]
+            },
+            {
+              "id": "666128",
+              "nombre": "Tosta Cacahuete",
+              "descripcion": "Con crema de cacahuete, plátano y mermelada",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "7,00 €",
+              "alergenos": [
+                "Gluten",
+                "Cacahuetes"
+              ],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/666128",
+                "width": 800,
+                "height": 599,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              },
+              "alergenosAnadidos": [
+                "Gluten",
+                "Cacahuetes"
+              ]
             }
           ],
           "portada": "94225"
@@ -1354,11 +1610,15 @@
               "precio": "11,00 €",
               "alergenos": [
                 "Gluten",
+                "Huevos",
                 "Lácteos",
                 "Semillas de sésamo"
               ],
               "dieta": "vegetariano",
-              "foto": null
+              "foto": null,
+              "alergenosAnadidos": [
+                "Huevos"
+              ]
             },
             {
               "id": "94234",
@@ -1421,7 +1681,9 @@
               "opciones": [],
               "notas": [],
               "precio": "4,50 €",
-              "alergenos": [],
+              "alergenos": [
+                "Gluten"
+              ],
               "dieta": null,
               "foto": {
                 "src": "/media/carta/721671",
@@ -1432,7 +1694,10 @@
                   480,
                   600
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Gluten"
+              ]
             },
             {
               "id": "721670",
@@ -1442,7 +1707,9 @@
               "opciones": [],
               "notas": [],
               "precio": "3,80 €",
-              "alergenos": [],
+              "alergenos": [
+                "Gluten"
+              ],
               "dieta": null,
               "foto": {
                 "src": "/media/carta/721670",
@@ -1453,7 +1720,10 @@
                   480,
                   800
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Gluten"
+              ]
             },
             {
               "id": "721668",
@@ -1492,7 +1762,9 @@
               "opciones": [],
               "notas": [],
               "precio": "3,00 €",
-              "alergenos": [],
+              "alergenos": [
+                "Gluten"
+              ],
               "dieta": null,
               "foto": {
                 "src": "/media/carta/721668",
@@ -1503,7 +1775,10 @@
                   480,
                   800
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Gluten"
+              ]
             },
             {
               "id": "721681",
@@ -1513,7 +1788,9 @@
               "opciones": [],
               "notas": [],
               "precio": "2,50 €",
-              "alergenos": [],
+              "alergenos": [
+                "Gluten"
+              ],
               "dieta": null,
               "foto": {
                 "src": "/media/carta/721681",
@@ -1524,7 +1801,10 @@
                   480,
                   799
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Gluten"
+              ]
             },
             {
               "id": "721669",
@@ -1563,7 +1843,11 @@
               "opciones": [],
               "notas": [],
               "precio": "8,00 €",
-              "alergenos": [],
+              "alergenos": [
+                "Gluten",
+                "Huevos",
+                "Lácteos"
+              ],
               "dieta": null,
               "foto": {
                 "src": "/media/carta/721669",
@@ -1574,7 +1858,39 @@
                   480,
                   800
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Gluten",
+                "Huevos",
+                "Lácteos"
+              ]
+            },
+            {
+              "id": "728478",
+              "nombre": "Pancake Manzana crumble",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "12,50 €",
+              "alergenos": [
+                "Gluten"
+              ],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/728478",
+                "width": 1085,
+                "height": 814,
+                "widths": [
+                  160,
+                  480,
+                  800,
+                  800
+                ]
+              },
+              "alergenosAnadidos": [
+                "Gluten"
+              ]
             }
           ],
           "portada": "721667"
@@ -1636,9 +1952,14 @@
               "opciones": [],
               "notas": [],
               "precio": "2,00 €",
-              "alergenos": [],
+              "alergenos": [
+                "Semillas de sésamo"
+              ],
               "dieta": null,
-              "foto": null
+              "foto": null,
+              "alergenosAnadidos": [
+                "Semillas de sésamo"
+              ]
             },
             {
               "id": "164033",
@@ -1648,9 +1969,14 @@
               "opciones": [],
               "notas": [],
               "precio": "1,50 €",
-              "alergenos": [],
+              "alergenos": [
+                "Huevos"
+              ],
               "dieta": null,
-              "foto": null
+              "foto": null,
+              "alergenosAnadidos": [
+                "Huevos"
+              ]
             },
             {
               "id": "164031",
@@ -1660,9 +1986,14 @@
               "opciones": [],
               "notas": [],
               "precio": "1,00 €",
-              "alergenos": [],
+              "alergenos": [
+                "Lácteos"
+              ],
               "dieta": null,
-              "foto": null
+              "foto": null,
+              "alergenosAnadidos": [
+                "Lácteos"
+              ]
             },
             {
               "id": "164032",
@@ -1712,7 +2043,9 @@
               "opciones": [],
               "notas": [],
               "precio": "7,80 €",
-              "alergenos": [],
+              "alergenos": [
+                "Gluten"
+              ],
               "dieta": "vegano",
               "foto": {
                 "src": "/media/carta/188886",
@@ -1723,7 +2056,38 @@
                   480,
                   800
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Gluten"
+              ]
+            },
+            {
+              "id": "652412",
+              "nombre": "Granola Cacahuete Vegano",
+              "descripcion": "Con crema de cacahuete, plátano y chocolate",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "7,80 €",
+              "alergenos": [
+                "Gluten",
+                "Cacahuetes"
+              ],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/652412",
+                "width": 800,
+                "height": 599,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              },
+              "alergenosAnadidos": [
+                "Gluten",
+                "Cacahuetes"
+              ]
             },
             {
               "id": "520830",
@@ -1733,7 +2097,10 @@
               "opciones": [],
               "notas": [],
               "precio": "12,50 €",
-              "alergenos": [],
+              "alergenos": [
+                "Gluten",
+                "Soja"
+              ],
               "dieta": null,
               "foto": {
                 "src": "/media/carta/520830",
@@ -1744,7 +2111,37 @@
                   480,
                   800
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Gluten",
+                "Soja"
+              ]
+            },
+            {
+              "id": "676486",
+              "nombre": "Tosta Remolacha",
+              "descripcion": "Con queso y tomates confitados",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "8,00 €",
+              "alergenos": [
+                "Gluten"
+              ],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/676486",
+                "width": 800,
+                "height": 599,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              },
+              "alergenosAnadidos": [
+                "Gluten"
+              ]
             },
             {
               "id": "164049",
@@ -1754,7 +2151,10 @@
               "opciones": [],
               "notas": [],
               "precio": "5,00 €",
-              "alergenos": [],
+              "alergenos": [
+                "Gluten",
+                "Semillas de sésamo"
+              ],
               "dieta": "vegano",
               "foto": {
                 "src": "/media/carta/164049",
@@ -1765,7 +2165,11 @@
                   480,
                   800
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Gluten",
+                "Semillas de sésamo"
+              ]
             },
             {
               "id": "164039",
@@ -1791,7 +2195,10 @@
                 "Añade aguacate"
               ],
               "precio": "7,00 €",
-              "alergenos": [],
+              "alergenos": [
+                "Gluten",
+                "Soja"
+              ],
               "dieta": null,
               "foto": {
                 "src": "/media/carta/520829",
@@ -1802,7 +2209,11 @@
                   480,
                   800
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Gluten",
+                "Soja"
+              ]
             },
             {
               "id": "652414",
@@ -1812,7 +2223,10 @@
               "opciones": [],
               "notas": [],
               "precio": "7,00 €",
-              "alergenos": [],
+              "alergenos": [
+                "Gluten",
+                "Cacahuetes"
+              ],
               "dieta": null,
               "foto": {
                 "src": "/media/carta/652414",
@@ -1823,7 +2237,11 @@
                   480,
                   800
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Gluten",
+                "Cacahuetes"
+              ]
             },
             {
               "id": "164050",
@@ -1833,9 +2251,14 @@
               "opciones": [],
               "notas": [],
               "precio": "8,50 €",
-              "alergenos": [],
+              "alergenos": [
+                "Gluten"
+              ],
               "dieta": "vegano",
-              "foto": null
+              "foto": null,
+              "alergenosAnadidos": [
+                "Gluten"
+              ]
             },
             {
               "id": "581391",
@@ -1845,7 +2268,9 @@
               "opciones": [],
               "notas": [],
               "precio": "4,00 €",
-              "alergenos": [],
+              "alergenos": [
+                "Gluten"
+              ],
               "dieta": null,
               "foto": {
                 "src": "/media/carta/581391",
@@ -1856,7 +2281,10 @@
                   480,
                   800
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Gluten"
+              ]
             },
             {
               "id": "557987",
@@ -1868,7 +2296,9 @@
                 "Avisa al llegar: tarda entre 10 y 15 minutos en prepararse"
               ],
               "precio": "4,50 €",
-              "alergenos": [],
+              "alergenos": [
+                "Gluten"
+              ],
               "dieta": null,
               "foto": {
                 "src": "/media/carta/557987",
@@ -1879,28 +2309,10 @@
                   480,
                   800
                 ]
-              }
-            },
-            {
-              "id": "652412",
-              "nombre": "Granola Cacahuete Vegano",
-              "descripcion": "Con crema de cacahuete, plátano y chocolate",
-              "extras": [],
-              "opciones": [],
-              "notas": [],
-              "precio": "7,80 €",
-              "alergenos": [],
-              "dieta": null,
-              "foto": {
-                "src": "/media/carta/652412",
-                "width": 800,
-                "height": 599,
-                "widths": [
-                  160,
-                  480,
-                  800
-                ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Gluten"
+              ]
             },
             {
               "id": "429056",
@@ -1927,7 +2339,9 @@
               "opciones": [],
               "notas": [],
               "precio": "8,00 €",
-              "alergenos": [],
+              "alergenos": [
+                "Gluten"
+              ],
               "dieta": null,
               "foto": {
                 "src": "/media/carta/429056",
@@ -1938,7 +2352,10 @@
                   480,
                   800
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Gluten"
+              ]
             }
           ],
           "portada": "188886"
@@ -1955,9 +2372,16 @@
               "opciones": [],
               "notas": [],
               "precio": "11,00 €",
-              "alergenos": [],
+              "alergenos": [
+                "Gluten",
+                "Semillas de sésamo"
+              ],
               "dieta": "vegano",
-              "foto": null
+              "foto": null,
+              "alergenosAnadidos": [
+                "Gluten",
+                "Semillas de sésamo"
+              ]
             },
             {
               "id": "94189",
@@ -1967,7 +2391,9 @@
               "opciones": [],
               "notas": [],
               "precio": "13,50 €",
-              "alergenos": [],
+              "alergenos": [
+                "Gluten"
+              ],
               "dieta": "vegano",
               "foto": {
                 "src": "/media/carta/94189",
@@ -1978,7 +2404,10 @@
                   480,
                   800
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Gluten"
+              ]
             }
           ],
           "portada": "94189"
@@ -1995,7 +2424,9 @@
               "opciones": [],
               "notas": [],
               "precio": "4,00 €",
-              "alergenos": [],
+              "alergenos": [
+                "Gluten"
+              ],
               "dieta": null,
               "foto": {
                 "src": "/media/carta/721673",
@@ -2006,7 +2437,10 @@
                   480,
                   600
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Gluten"
+              ]
             },
             {
               "id": "721675",
@@ -2033,7 +2467,9 @@
               "opciones": [],
               "notas": [],
               "precio": "3,00 €",
-              "alergenos": [],
+              "alergenos": [
+                "Gluten"
+              ],
               "dieta": null,
               "foto": {
                 "src": "/media/carta/721675",
@@ -2044,7 +2480,10 @@
                   480,
                   799
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Gluten"
+              ]
             },
             {
               "id": "721674",
@@ -2054,6 +2493,10 @@
                 {
                   "nombre": "Crema de frambuesa",
                   "precio": "2,80 €"
+                },
+                {
+                  "nombre": "Crema pistacho vegano",
+                  "precio": "3,50 €"
                 },
                 {
                   "nombre": "Fruta",
@@ -2071,7 +2514,9 @@
               "opciones": [],
               "notas": [],
               "precio": "8,00 €",
-              "alergenos": [],
+              "alergenos": [
+                "Gluten"
+              ],
               "dieta": null,
               "foto": {
                 "src": "/media/carta/721674",
@@ -2082,7 +2527,10 @@
                   480,
                   800
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Gluten"
+              ]
             }
           ],
           "portada": "721673"
@@ -2099,9 +2547,14 @@
               "opciones": [],
               "notas": [],
               "precio": "3,00 €",
-              "alergenos": [],
+              "alergenos": [
+                "Soja"
+              ],
               "dieta": null,
-              "foto": null
+              "foto": null,
+              "alergenosAnadidos": [
+                "Soja"
+              ]
             },
             {
               "id": "164058",
@@ -2168,9 +2621,14 @@
               "opciones": [],
               "notas": [],
               "precio": "2,00 €",
-              "alergenos": [],
+              "alergenos": [
+                "Semillas de sésamo"
+              ],
               "dieta": null,
-              "foto": null
+              "foto": null,
+              "alergenosAnadidos": [
+                "Semillas de sésamo"
+              ]
             },
             {
               "id": "164054",
@@ -2353,7 +2811,9 @@
               "opciones": [],
               "notas": [],
               "precio": "5,00 €",
-              "alergenos": [],
+              "alergenos": [
+                "Lácteos"
+              ],
               "dieta": null,
               "foto": {
                 "src": "/media/carta/93803",
@@ -2364,7 +2824,10 @@
                   480,
                   800
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Lácteos"
+              ]
             },
             {
               "id": "723815",
@@ -2479,7 +2942,9 @@
               "opciones": [],
               "notas": [],
               "precio": "2,50 €",
-              "alergenos": [],
+              "alergenos": [
+                "Gluten"
+              ],
               "dieta": null,
               "foto": {
                 "src": "/media/carta/93795",
@@ -2489,7 +2954,10 @@
                   160,
                   400
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Gluten"
+              ]
             },
             {
               "id": "93794",
@@ -2499,7 +2967,9 @@
               "opciones": [],
               "notas": [],
               "precio": "4,50 €",
-              "alergenos": [],
+              "alergenos": [
+                "Sulfitos"
+              ],
               "dieta": null,
               "foto": {
                 "src": "/media/carta/93794",
@@ -2510,7 +2980,10 @@
                   480,
                   800
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Sulfitos"
+              ]
             },
             {
               "id": "93798",
@@ -2520,7 +2993,9 @@
               "opciones": [],
               "notas": [],
               "precio": "5,50 €",
-              "alergenos": [],
+              "alergenos": [
+                "Sulfitos"
+              ],
               "dieta": null,
               "foto": {
                 "src": "/media/carta/93798",
@@ -2531,7 +3006,10 @@
                   480,
                   800
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Sulfitos"
+              ]
             },
             {
               "id": "93797",
@@ -2541,7 +3019,9 @@
               "opciones": [],
               "notas": [],
               "precio": "7,50 €",
-              "alergenos": [],
+              "alergenos": [
+                "Sulfitos"
+              ],
               "dieta": null,
               "foto": {
                 "src": "/media/carta/93797",
@@ -2552,7 +3032,10 @@
                   480,
                   800
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Sulfitos"
+              ]
             },
             {
               "id": "701340",
@@ -2562,7 +3045,9 @@
               "opciones": [],
               "notas": [],
               "precio": "5,80 €",
-              "alergenos": [],
+              "alergenos": [
+                "Sulfitos"
+              ],
               "dieta": null,
               "foto": {
                 "src": "/media/carta/701340",
@@ -2573,7 +3058,10 @@
                   480,
                   800
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Sulfitos"
+              ]
             },
             {
               "id": "701626",
@@ -2583,7 +3071,9 @@
               "opciones": [],
               "notas": [],
               "precio": "7,80 €",
-              "alergenos": [],
+              "alergenos": [
+                "Sulfitos"
+              ],
               "dieta": null,
               "foto": {
                 "src": "/media/carta/701626",
@@ -2594,7 +3084,10 @@
                   480,
                   800
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Sulfitos"
+              ]
             }
           ],
           "portada": "93790"
@@ -2653,7 +3146,9 @@
               "opciones": [],
               "notas": [],
               "precio": "2,20 €",
-              "alergenos": [],
+              "alergenos": [
+                "Lácteos"
+              ],
               "dieta": null,
               "foto": {
                 "src": "/media/carta/93800",
@@ -2664,7 +3159,10 @@
                   480,
                   800
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Lácteos"
+              ]
             },
             {
               "id": "93799",
@@ -2674,7 +3172,9 @@
               "opciones": [],
               "notas": [],
               "precio": "2,00 €",
-              "alergenos": [],
+              "alergenos": [
+                "Lácteos"
+              ],
               "dieta": null,
               "foto": {
                 "src": "/media/carta/93799",
@@ -2685,7 +3185,10 @@
                   480,
                   800
                 ]
-              }
+              },
+              "alergenosAnadidos": [
+                "Lácteos"
+              ]
             },
             {
               "id": "188822",
@@ -2695,9 +3198,14 @@
               "opciones": [],
               "notas": [],
               "precio": "2,20 €",
-              "alergenos": [],
+              "alergenos": [
+                "Lácteos"
+              ],
               "dieta": null,
-              "foto": null
+              "foto": null,
+              "alergenosAnadidos": [
+                "Lácteos"
+              ]
             },
             {
               "id": "93801",
@@ -2707,9 +3215,14 @@
               "opciones": [],
               "notas": [],
               "precio": "4,00 €",
-              "alergenos": [],
+              "alergenos": [
+                "Lácteos"
+              ],
               "dieta": null,
-              "foto": null
+              "foto": null,
+              "alergenosAnadidos": [
+                "Lácteos"
+              ]
             },
             {
               "id": "551544",
@@ -2834,6 +3347,18 @@
               "opciones": [],
               "notas": [],
               "precio": "0,90 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": null
+            },
+            {
+              "id": "728482",
+              "nombre": "Pumpkin Spice Latte",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "5,00 €",
               "alergenos": [],
               "dieta": null,
               "foto": null

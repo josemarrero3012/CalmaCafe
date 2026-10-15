@@ -1,10 +1,15 @@
 // Importa la carta oficial de Calma (calma.buenacarta.com) a src/data/carta.json
+// (alérgenos oficiales + los de src/data/alergenos-anadidos.json, que se anotan aparte)
 // y descarga y optimiza las fotos de los platos en public/media/carta/.
 // Uso: npm run carta   (volver a ejecutarlo cuando el local cambie su carta)
 import sharp from 'sharp';
 import { mkdir, writeFile, readFile, access } from 'node:fs/promises';
 
 const SOURCE = 'https://calma.buenacarta.com/';
+// Alérgenos seguros que la carta oficial no marca (ingrediente en el nombre o la descripción). Ver docs/ALERGENOS.md.
+const anadidos = JSON.parse(await readFile('src/data/alergenos-anadidos.json', 'utf8')).platos;
+// Orden de la lista de alérgenos de la UE, que es el que sigue la carta oficial.
+const ordenAlergenos = ['Gluten', 'Crustáceos', 'Huevos', 'Pescado', 'Cacahuetes', 'Soja', 'Lácteos', 'Frutos de cáscara', 'Apio', 'Mostaza', 'Semillas de sésamo', 'Sulfitos', 'Altramuces', 'Moluscos'];
 const originals = 'assets/originals/carta';
 const output = 'public/media/carta';
 const WIDTHS = [160, 480, 800];
@@ -24,7 +29,7 @@ const word = (w, flags = 'g') => new RegExp(`(?<![\\p{L}\\p{N}])${w}(?![\\p{L}\\
 const fixes = [
   [/Triassant\s*\(\s*/g, 'Triassant ('], [word('Yoghurt Griego'), 'Yogur griego'], [word('Salmon'), 'Salmón'],
   [word('Sand?wich'), 'Sándwich'], [/aguacatey/g, 'aguacate y'], [word('aliolo'), 'alioli'], [word('Humus'), 'Hummus'],
-  [word('humus'), 'hummus'], [word('platano'), 'plátano'], [word('jamon'), 'jamón'], [word('([Cc])afe'), '$1afé'],
+  [word('humus'), 'hummus'], [word('platano'), 'plátano'], [word('Pumkin'), 'Pumpkin'], [word('jamon'), 'jamón'], [word('([Cc])afe'), '$1afé'],
   [word('pidelo'), 'pídelo'], [/Añadele,?\s*/g, 'Añádele '], [word('Te'), 'Té'], [word('pure'), 'puré'],
   [/hielo picada/g, 'hielo picado'], [word('maracuya'), 'maracuyá'], [word('fria'), 'fría'], [/Mozarella/g, 'Mozzarella'],
   [word('[Nn]utella'), 'Nutella'], [/Dulce de Leche/g, 'dulce de leche'],
@@ -122,6 +127,11 @@ for (const [, menuId, html] of body.matchAll(/<section class="m-carta" data-vist
         foto: null,
       };
       Object.assign(plato, overrides[rawName] ?? {});
+      const extra = (anadidos[id]?.anadir ?? []).filter(a => !plato.alergenos.includes(a));
+      if (extra.length) {
+        plato.alergenos = [...plato.alergenos, ...extra].sort((a, b) => ordenAlergenos.indexOf(a) - ordenAlergenos.indexOf(b));
+        plato.alergenosAnadidos = extra;
+      }
       if (ficha.foto) plato.foto = await photo(id, ficha.foto);
       grupo.platos.push(plato);
     }
@@ -163,5 +173,6 @@ const local = {
 const carta = { fuente: SOURCE, consultada: new Date().toISOString().slice(0, 10), local, menus };
 await writeFile('src/data/carta.json', JSON.stringify(carta, null, 2) + '\n');
 const count = menus.reduce((n, m) => n + m.grupos.reduce((k, g) => k + g.platos.length, 0), 0);
+for (const id of Object.keys(anadidos)) if (!menus.some(m => m.grupos.some(g => g.platos.some(p => p.id === id)))) console.warn(`Aviso: alergenos-anadidos.json tiene el plato ${id}, que ya no está en la carta`);
 console.log(`Carta importada: ${menus.length} menús, ${count} platos, ${menus.flatMap(m => m.grupos.flatMap(g => g.platos)).filter(p => p.foto).length} con foto.`);
 console.log(local);

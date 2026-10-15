@@ -5,10 +5,13 @@ import Lotus from '../components/Lotus.astro';
 import ScriptWord from '../components/ScriptWord.astro';
 import negocio from '../data/negocio.json';
 import { phone, ui, type Lang } from '../i18n/ui';
+import { closedLabel, dayName, formatRanges, kitchenLabel, weekOrder } from '../lib/hours.mjs';
 interface Props { lang: Lang; }
 const { lang } = Astro.props;
 const t = ui[lang];
 const v = t.visit;
+const semana = negocio.horario.semana as Record<string, string[][]>;
+const cocina = negocio.horario.cocina;
 ---
 <Layout lang={lang} current="visitanos" title={v.title} description={v.description}>
   <section class="visit section page-top" aria-labelledby="visit-title"><div class="wrap visit-grid"><div class="visit-copy">
@@ -16,8 +19,12 @@ const v = t.visit;
     <h1 id="visit-title" class="page-title enter enter-2" set:html={v.h1} />
     <p class="enter enter-3">{v.intro}</p>
     <dl class="visit-info enter enter-3">
-      <div><dt>{v.address}</dt><dd>{negocio.direccion.calle}<span>{negocio.direccion.edificio} · {negocio.localidad}, {negocio.isla}</span></dd></div>
-      <div id="horario"><dt>{v.hours}</dt><dd><a class="visit-link" href={negocio.mapas.url} target="_blank" rel="noopener noreferrer">{v.hoursLink} <Icon name="arrow-up-right" /></a></dd></div>
+      <div><dt>{v.address}</dt><dd>{negocio.direccion.calle}<span>{negocio.direccion.edificio} · {negocio.direccion.codigoPostal} {negocio.localidad}, {negocio.isla}</span></dd></div>
+      <div id="horario"><dt>{v.hours}</dt><dd>
+        <table class="hours-table"><tbody>{weekOrder.map(day => <tr data-day={day}><th scope="row">{dayName(lang, day)}</th><td>{semana[day].length ? formatRanges(semana[day]) : closedLabel(lang)}</td></tr>)}</tbody></table>
+        <p class="hours-kitchen">{kitchenLabel(lang)}: {formatRanges(cocina)}</p>
+        <a class="visit-link" href={negocio.mapas.ficha} target="_blank" rel="noopener noreferrer">{v.hoursLink} <Icon name="arrow-up-right" /></a>
+      </dd></div>
       <div><dt>{v.contact}</dt><dd><a class="visit-link" href={negocio.telefono.enlace}>{phone(lang, negocio.telefono.texto)}</a><a href={negocio.whatsapp.url} target="_blank" rel="noopener noreferrer">WhatsApp <Icon name="arrow-up-right" /></a><a href={negocio.instagram.url} target="_blank" rel="noopener noreferrer">{negocio.instagram.usuario} <Icon name="arrow-up-right" /></a></dd></div>
     </dl>
     <div class="visit-actions enter enter-4"><a class="button" href={negocio.mapas.url} target="_blank" rel="noopener noreferrer">{t.directions} <span aria-hidden="true"><Icon name="arrow-up-right" /></span></a><ScriptWord text="See you soon" class="script-visit" /></div>

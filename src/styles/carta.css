@@ -100,8 +100,8 @@ button.dish-name:hover,.dish.is-previewed button.dish-name{background-size:100% 
   .carta-feature-arch{aspect-ratio:4/3.4}
 }
 @media(max-width:699px){
-  /* Sin la franja de horario la cabecera móvil mide 78 px; con ella, 104 px */
-  .carta-body{--header-h:78px;--bar-h:96px}
+  /* Sin la franja de horario la cabecera móvil mide 78 px; con ella, 107 px (la franja está activa con el horario confirmado) */
+  .carta-body{--header-h:107px;--bar-h:96px}
   .carta-hero{padding-bottom:30px}
   .carta-hero-grid{grid-template-columns:1fr;gap:8px}
   .carta-hero-text{font-size:14px}

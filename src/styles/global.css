@@ -485,3 +485,18 @@ body[data-page=inicio] .site-header{background:rgba(250,246,239,.78);-webkit-bac
   .alma-card{padding:48px 20px 42px}
   .alma-word{font-size:clamp(58px,19vw,84px)}
 }
+
+/* Horario completo: Visítanos y pie */
+.visit-info dd .hours-table{display:table;width:100%;max-width:340px;border-collapse:collapse;font-size:14px}
+.hours-table th,.hours-table td{padding:5px 0;text-align:left;font-weight:400;border-bottom:1px solid var(--line)}
+.hours-table td{text-align:right;color:var(--muted);font-variant-numeric:tabular-nums}
+.hours-table tr.is-today th,.hours-table tr.is-today td{font-weight:650;color:var(--pizarra)}
+.visit-info dd .hours-kitchen{display:block;margin:10px 0 14px;font-size:13px;color:var(--muted)}
+.footer-hours dl{margin:0;display:flex;flex-direction:column;gap:3px;font-size:14px;line-height:1.6}
+.footer-hours dl div{display:flex;gap:12px;justify-content:space-between;max-width:200px}
+.footer-hours dt{text-transform:capitalize}
+.footer-hours dd{margin:0;font-variant-numeric:tabular-nums}
+.footer-top{grid-template-columns:1fr 1.1fr 1.1fr 1.3fr 46px}
+@media(max-width:999px){.footer-top{grid-template-columns:repeat(3,1fr);gap:28px 20px}.footer-top>div:nth-of-type(3){grid-column:span 2}}
+@media(max-width:699px){.footer-top{grid-template-columns:1fr 1fr}.footer-top>div:nth-of-type(3){grid-column:auto}}
+.hours-table th{text-transform:capitalize}

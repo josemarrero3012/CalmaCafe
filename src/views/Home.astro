@@ -48,7 +48,7 @@ const doors = [
           <svg class="hero-flourish" viewBox="0 0 520 36" aria-hidden="true" focusable="false"><path d="M4 31 C 130 17 320 8 516 3 C 322 13 140 25 12 35 C 7 35 3 33 4 31 Z" /></svg>
         </div>
         <p class="hero-intro enter enter-3">{h.intro}</p>
-        <div class="hero-buttons enter enter-3"><a class="button button-green" href={url(routes[lang].carta)}>{h.seeMenu} <span aria-hidden="true"><Icon name="arrow-right" /></span></a><a class="text-link hero-directions" href={negocio.mapas.url} target="_blank" rel="noopener noreferrer">{t.directions} <span aria-hidden="true"><Icon name="arrow-up-right" /></span></a><a class="text-link hero-hours" href={negocio.mapas.url} target="_blank" rel="noopener noreferrer">{t.visit.hoursLink} <span aria-hidden="true"><Icon name="arrow-up-right" /></span></a></div>
+        <div class="hero-buttons enter enter-3"><a class="button button-green" href={url(routes[lang].carta)}>{h.seeMenu} <span aria-hidden="true"><Icon name="arrow-right" /></span></a><a class="text-link hero-directions" href={negocio.mapas.url} target="_blank" rel="noopener noreferrer">{t.directions} <span aria-hidden="true"><Icon name="arrow-up-right" /></span></a><a class="text-link hero-hours" href={`${url(routes[lang].visitanos)}#horario`}>{t.visit.hoursView} <span aria-hidden="true"><Icon name="arrow-right" /></span></a></div>
       </div>
       <div class="hero-visual enter enter-visual">
         <Seal />

@@ -39,7 +39,7 @@ try {
       assert.equal(await page.evaluate(() => document.cookie), '');
       assert.equal(await scriptHidden(page), 0, `${path}: con movimiento reducido la caligrafía se ve completa`);
       // Ningún marcador de demo ni dato de ejemplo a la vista.
-      assert.doesNotMatch(await page.locator('body').innerText(), /PENDIENTE|por confirmar|de ejemplo|Abierto ahora/i, `${path}: marcador visible`);
+      assert.doesNotMatch(await page.locator('body').innerText(), /PENDIENTE|por confirmar|de ejemplo/i, `${path}: marcador visible`);
       assert.equal(await page.locator('.mobile-bottom a[href^="tel:"]').count(), 1, 'Llamar abre el teléfono');
       if (name === 'home') {
         assert.equal(await page.locator('video').evaluate(v => v.paused), true, 'El vídeo no arranca solo');

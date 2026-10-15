@@ -5,6 +5,8 @@ import Lotus from '../components/Lotus.astro';
 import Flag from '../components/Flag.astro';
 import negocio from '../data/negocio.json';
 import { url } from '../lib/base';
+import { scheduleSummary } from '../lib/hours.mjs';
+import { buildSchema } from '../lib/schema.mjs';
 import { langs, locale, phone, routes, ui, type Lang, type Page } from '../i18n/ui';
 // Sin `current` (página 404): no hay versiones traducidas, así que el selector de idioma lleva a cada inicio.
 interface Props { lang: Lang; title: string; description: string; current?: Page; }
@@ -13,9 +15,11 @@ const t = ui[lang];
 const pages = (Object.keys(routes[lang]) as Page[]).map(id => ({ id, href: url(routes[lang][id]), label: t.nav[id] }));
 const ariaCurrent = (id: Page) => (id === current ? 'page' : undefined);
 const langHref = (other: Lang) => url(routes[other][current ?? 'inicio']);
-// El indicador «Abierto/Cerrado» solo aparece con el horario real confirmado (y por ahora solo en español).
-const showHours = negocio.horario.confirmado && lang === 'es';
-const schema = { '@context': 'https://schema.org', '@type': 'CafeOrCoffeeShop', name: negocio.nombre, slogan: negocio.lema, servesCuisine: ['Brunch', 'Coffee'], telephone: negocio.telefono.enlace.replace('tel:', ''), sameAs: [negocio.instagram.url], address: { '@type': 'PostalAddress', streetAddress: `${negocio.direccion.calle}, ${negocio.direccion.edificio}`, addressLocality: negocio.localidad, addressRegion: negocio.isla, addressCountry: 'ES' } };
+// El indicador «Abierto/Cerrado» solo aparece con el horario real confirmado (negocio.json).
+const showHours = negocio.horario.confirmado;
+const footerHours = showHours ? scheduleSummary(negocio.horario.semana, lang) : [];
+const abs = (path: string) => (Astro.site ? new URL(url(path), Astro.site).href : undefined);
+const schema = buildSchema(negocio, { pageUrl: current ? abs(routes[lang][current]) : undefined, menuUrl: abs(routes[lang].carta) });
 ---
 <!doctype html>
 <html lang={locale[lang].html}>
@@ -51,7 +55,7 @@ const schema = { '@context': 'https://schema.org', '@type': 'CafeOrCoffeeShop', 
         </nav>
         <div class="header-actions">
           {showHours
-            ? <a class="hours-indicator" href={`${url(routes[lang].visitanos)}#horario`}><span class="status"><span class="status-dot"></span><span data-hours>{negocio.horario.texto}</span></span></a>
+            ? <a class="hours-indicator" href={`${url(routes[lang].visitanos)}#horario`}><span class="status"><span class="status-dot"></span><span data-hours>{t.visit.hoursView}</span></span></a>
             : <a class="header-phone" href={negocio.telefono.enlace}><span aria-hidden="true"><Icon name="phone" /></span> {phone(lang, negocio.telefono.texto)}</a>}
           <details class="lang-switch">
             <summary aria-label={`${t.language}: ${locale[lang].name}`}><Flag lang={lang} /><span>{lang.toUpperCase()}</span></summary>
@@ -63,7 +67,7 @@ const schema = { '@context': 'https://schema.org', '@type': 'CafeOrCoffeeShop', 
           <button class="menu-toggle" type="button" aria-label={t.openMenu} aria-haspopup="dialog" aria-controls="mobile-menu"><span></span><span></span></button>
         </div>
       </div>
-      {showHours && <a class="mobile-hours" href={`${url(routes[lang].visitanos)}#horario`}><span data-hours>{negocio.horario.texto}</span></a>}
+      {showHours && <a class="mobile-hours" href={`${url(routes[lang].visitanos)}#horario`}><span data-hours>{t.visit.hoursView}</span></a>}
     </header>
     <dialog id="mobile-menu" class="mobile-menu" aria-labelledby="mobile-menu-title">
       <div class="mobile-menu-top"><span id="mobile-menu-title" class="eyebrow">{t.menu}</span><button class="icon-button" data-close aria-label={t.closeMenu}><Icon name="close" /></button></div>
@@ -72,7 +76,7 @@ const schema = { '@context': 'https://schema.org', '@type': 'CafeOrCoffeeShop', 
         {langs.map(other => <li><a href={langHref(other)} hreflang={locale[other].html} lang={locale[other].html} aria-current={other === lang ? 'true' : undefined}><Flag lang={other} />{locale[other].name}</a></li>)}
       </ul>
       <address class="menu-contact">
-        <span>{negocio.direccion.calle} · {negocio.direccion.edificio}<br />{negocio.localidad}, {negocio.isla}</span>
+        <span>{negocio.direccion.calle} · {negocio.direccion.edificio}<br />{negocio.direccion.codigoPostal} {negocio.localidad}, {negocio.isla}</span>
         <a href={negocio.telefono.enlace}>{phone(lang, negocio.telefono.texto)}</a>
         <a href={negocio.whatsapp.url} target="_blank" rel="noopener noreferrer">WhatsApp <Icon name="arrow-up-right" /></a>
         <a href={negocio.instagram.url} target="_blank" rel="noopener noreferrer">{negocio.instagram.usuario} <Icon name="arrow-up-right" /></a>
@@ -86,7 +90,8 @@ const schema = { '@context': 'https://schema.org', '@type': 'CafeOrCoffeeShop', 
     <footer class="site-footer"><div class="tile-border" aria-hidden="true"></div><div class="wrap">
       <div class="footer-top">
         <a class="footer-brand" href={url(routes[lang].inicio)} aria-label={t.backHome}><img src={url('/media/logo-dark.svg')} alt="Calma Café · Feed your soul" width="950" height="540" /></a>
-        <div><span class="eyebrow">{t.whereWeAre}</span><span>{negocio.direccion.calle}<br />{negocio.direccion.edificio}<br />{negocio.localidad}, {negocio.isla}</span><a class="footer-link" href={negocio.mapas.url} target="_blank" rel="noopener noreferrer">{t.directions} <Icon name="arrow-up-right" /></a></div>
+        <div><span class="eyebrow">{t.whereWeAre}</span><span>{negocio.direccion.calle}<br />{negocio.direccion.edificio}<br />{negocio.direccion.codigoPostal} {negocio.localidad}, {negocio.isla}</span><a class="footer-link" href={negocio.mapas.url} target="_blank" rel="noopener noreferrer">{t.directions} <Icon name="arrow-up-right" /></a></div>
+        {showHours && <div class="footer-hours"><span class="eyebrow">{t.visit.hours}</span><dl>{footerHours.map(row => <div><dt>{row.label}</dt><dd>{row.value}</dd></div>)}</dl><a class="footer-link" href={`${url(routes[lang].visitanos)}#horario`}>{t.visit.hoursView}</a></div>}
         <div><span class="eyebrow">{t.contact}</span><a class="footer-link" href={negocio.telefono.enlace}>{phone(lang, negocio.telefono.texto)}</a><a class="footer-link" href={negocio.whatsapp.url} target="_blank" rel="noopener noreferrer">WhatsApp <Icon name="arrow-up-right" /></a><a class="footer-link" href={negocio.instagram.url} target="_blank" rel="noopener noreferrer">{negocio.instagram.usuario} <Icon name="arrow-up-right" /></a></div>
         <a href="#contenido" class="back-top" aria-label={t.backTop}><Icon name="arrow-up" /></a>
       </div>

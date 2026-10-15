@@ -61,7 +61,7 @@ export interface UI {
     };
   };
   visit: {
-    title: string; description: string; eyebrow: string; h1: string; intro: string; address: string; hours: string; hoursLink: string;
+    title: string; description: string; eyebrow: string; h1: string; intro: string; address: string; hours: string; hoursLink: string; hoursView: string;
     contact: string; loadMap: string; mapNote: string; mapCaption: string; mapTitle: string; mapFallback: string;
   };  notFound: { title: string; h1: string; intro: string };
 }
@@ -138,7 +138,7 @@ export const ui: Record<Lang, UI> = {
       description: 'Calma Café está en la Avda. de Tirajana, 3 (Apartamentos Aloe), Maspalomas. Teléfono 681 66 79 17, WhatsApp y cómo llegar.',
       eyebrow: 'Visítanos', h1: 'Dónde <em>estamos.</em>',
       intro: 'Tenemos mesas dentro y fuera. Si quieres preguntar algo antes de venir, llámanos o escríbenos por WhatsApp.',
-      address: 'Dirección', hours: 'Horario', hoursLink: 'Consulta el horario en Google Maps', contact: 'Contacto',
+      address: 'Dirección', hours: 'Horario', hoursLink: 'Ver la ficha en Google Maps', hoursView: 'Ver horario', contact: 'Contacto',
       loadMap: 'Cargar mapa', mapNote: 'Al cargarlo conectarás con Google Maps.', mapCaption: 'Ilustración · el mapa de Google se carga solo si lo pides.',
       mapTitle: 'Calma Café en Google Maps', mapFallback: 'Si el mapa no aparece, usa el botón «Cómo llegar».',
     },
@@ -216,7 +216,7 @@ export const ui: Record<Lang, UI> = {
       description: 'Calma Café is at Avda. de Tirajana, 3 (Apartamentos Aloe), Maspalomas. Phone +34 681 66 79 17, WhatsApp and directions.',
       eyebrow: 'Visit us', h1: 'Where <em>to find us.</em>',
       intro: 'We have tables inside and out. If you have a question before you come, give us a call or send us a WhatsApp.',
-      address: 'Address', hours: 'Opening hours', hoursLink: 'Check our opening hours on Google Maps', contact: 'Contact',
+      address: 'Address', hours: 'Opening hours', hoursLink: 'See our Google Maps listing', hoursView: 'See hours', contact: 'Contact',
       loadMap: 'Load map', mapNote: 'Loading it connects you to Google Maps.', mapCaption: 'Illustration · the Google map only loads if you ask for it.',
       mapTitle: 'Calma Café on Google Maps', mapFallback: 'If the map does not appear, use the “Directions” button.',
     },
@@ -294,7 +294,7 @@ export const ui: Record<Lang, UI> = {
       description: 'Calma Café, Avda. de Tirajana 3 (Apartamentos Aloe), Maspalomas. Telefon +34 681 66 79 17, WhatsApp und Anfahrt.',
       eyebrow: 'Besuch', h1: 'So findest du <em>uns.</em>',
       intro: 'Wir haben Tische drinnen und draußen. Wenn du vorher eine Frage hast, ruf uns an oder schreib uns per WhatsApp.',
-      address: 'Adresse', hours: 'Öffnungszeiten', hoursLink: 'Öffnungszeiten auf Google Maps ansehen', contact: 'Kontakt',
+      address: 'Adresse', hours: 'Öffnungszeiten', hoursLink: 'Eintrag auf Google Maps ansehen', hoursView: 'Öffnungszeiten', contact: 'Kontakt',
       loadMap: 'Karte laden', mapNote: 'Beim Laden wirst du mit Google Maps verbunden.', mapCaption: 'Illustration · die Google-Karte lädt nur, wenn du es möchtest.',
       mapTitle: 'Calma Café auf Google Maps', mapFallback: 'Wenn die Karte nicht erscheint, nutze die Schaltfläche „Route“.',
     },
@@ -372,7 +372,7 @@ export const ui: Record<Lang, UI> = {
       description: 'Calma Café zit aan de Avda. de Tirajana 3 (Apartamentos Aloe), Maspalomas. Telefoon +34 681 66 79 17, WhatsApp en routebeschrijving.',
       eyebrow: 'Bezoek', h1: 'Waar je ons <em>vindt.</em>',
       intro: 'We hebben tafels binnen en buiten. Heb je vooraf een vraag? Bel ons of stuur een WhatsApp.',
-      address: 'Adres', hours: 'Openingstijden', hoursLink: 'Bekijk de openingstijden op Google Maps', contact: 'Contact',
+      address: 'Adres', hours: 'Openingstijden', hoursLink: 'Bekijk ons Google Maps-profiel', hoursView: 'Openingstijden', contact: 'Contact',
       loadMap: 'Kaart laden', mapNote: 'Als je de kaart laadt, maak je verbinding met Google Maps.', mapCaption: 'Illustratie · de kaart van Google laadt alleen als je dat wilt.',
       mapTitle: 'Calma Café op Google Maps', mapFallback: 'Verschijnt de kaart niet? Gebruik dan de knop ‘Route’.',
     },

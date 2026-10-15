@@ -7,24 +7,45 @@
   "direccion": {
     "calle": "Avda. de Tirajana, 3",
     "edificio": "Apartamentos Aloe",
-    "fuente": "Carta digital oficial (calma.buenacarta.com), consultada el 7 de octubre de 2026."
+    "fuente": "Carta digital oficial (calma.buenacarta.com), consultada el 7 de octubre de 2026. Código postal de la ficha de Google, 15 de octubre de 2026.",
+    "codigoPostal": "35100"
   },
-  "telefono": { "texto": "681 66 79 17", "enlace": "tel:+34681667917", "fuente": "Carta digital oficial" },
-  "whatsapp": { "url": "https://wa.me/34681667917", "fuente": "Carta digital oficial" },
+  "telefono": {
+    "texto": "681 66 79 17",
+    "enlace": "tel:+34681667917",
+    "fuente": "Carta digital oficial"
+  },
+  "whatsapp": {
+    "url": "https://wa.me/34681667917",
+    "fuente": "Carta digital oficial"
+  },
   "email": null,
   "dominio": null,
-  "instagram": { "usuario": "@calmacafegc", "url": "https://www.instagram.com/calmacafegc/" },
+  "instagram": {
+    "usuario": "@calmacafegc",
+    "url": "https://www.instagram.com/calmacafegc/"
+  },
   "mapas": {
-    "url": "https://www.google.com/maps/search/?api=1&query=Calma%20Cafe%20Avda.%20de%20Tirajana%203%2C%20Apt%20Aloe%2C%20Maspalomas%20%28Las%20Palmas%29",
+    "ficha": "https://www.google.com/maps/place/Calma+caf%C3%A9/@27.75221,-15.5800429,17z/data=!3m1!4b1!4m6!3m5!1s0xc3f63b288d9587b:0xa7bedf572c209b51!8m2!3d27.75221!4d-15.5774626!16s%2Fg%2F11j00nsg3p",
+    "url": "https://www.google.com/maps/place/Calma+caf%C3%A9/@27.75221,-15.5800429,17z/data=!3m1!4b1!4m6!3m5!1s0xc3f63b288d9587b:0xa7bedf572c209b51!8m2!3d27.75221!4d-15.5774626!16s%2Fg%2F11j00nsg3p",
     "embed": "https://maps.google.com/maps?q=Calma%20Cafe%20Avda.%20de%20Tirajana%203%2C%20Maspalomas&output=embed",
-    "confirmado": false,
-    "TODO": "Es el mismo enlace de «Cómo llegar» que usa su carta digital (búsqueda por nombre y dirección). Sustituir por el enlace de la ficha de Google cuando lo aporten."
+    "confirmado": true,
+    "fuente": "Ficha de Google «Calma café», aportada por el cliente el 15 de octubre de 2026. «Cómo llegar» y los enlaces de horario abren la ficha."
   },
   "horario": {
-    "confirmado": false,
-    "texto": "Consulta el horario en Google Maps",
-    "ejemplo": { "0": [["09:00", "15:00"]], "1": [["09:00", "16:00"]], "2": [["09:00", "16:00"]], "3": [["09:00", "16:00"]], "4": [["09:00", "16:00"]], "5": [["09:00", "16:00"]], "6": [["09:00", "16:00"]] },
-    "TODO": "Mientras confirmado sea false no se muestra el indicador «Abierto/Cerrado» ni el horario de ejemplo. Al confirmarlo: sustituir ejemplo por el horario real, cambiar texto y poner confirmado a true."
+    "confirmado": true,
+    "fuente": "Ficha de Google, 15 de octubre de 2026. Clave 0 = domingo … 6 = sábado; lista vacía = cerrado.",
+    "semana": {
+      "0": [["09:00", "15:00"]],
+      "1": [["09:00", "15:00"]],
+      "2": [],
+      "3": [["09:00", "15:00"]],
+      "4": [["09:00", "15:00"]],
+      "5": [["09:00", "15:00"]],
+      "6": [["09:00", "15:00"]]
+    },
+    "cocina": [["09:00", "14:30"]],
+    "TODO": "Festivos y temporadas: confirmar si cambian el horario habitual."
   },
   "google": {
     "verificado": false,
@@ -32,14 +53,10 @@
     "resenas": []
   },
   "servicios": ["Mesas dentro y fuera", "Opciones veganas y vegetarianas"],
-  "TODO": [
-    "Enlace de la ficha de Google y coordenadas.",
-    "Si atienden por WhatsApp y política de reservas.",
-    "Horario por día, descansos, festivos y servicio de cocina.",
-    "Confirmar carta, precios, alérgenos y el alcance de «¡Toda la carta se puede hacer sin gluten!».",
-    "Validar la valoración de Google y aportar tres reseñas reales.",
-    "Titular legal, NIF, dirección fiscal y correo de contacto para textos legales.",
-    "Dominio definitivo y autorización de uso de las fotografías y el vídeo.",
-    "Confirmar créditos y responsables del diseño y desarrollo."
-  ]
+  "TODO": ["Si atienden por WhatsApp y política de reservas.", "Confirmar carta, precios, alérgenos y el alcance de «¡Toda la carta se puede hacer sin gluten!».", "Validar la valoración de Google y aportar tres reseñas reales.", "Titular legal, NIF, dirección fiscal y correo de contacto para textos legales.", "Dominio definitivo y autorización de uso de las fotografías y el vídeo.", "Confirmar créditos y responsables del diseño y desarrollo."],
+  "geo": {
+    "lat": 27.75221,
+    "lng": -15.5774626,
+    "fuente": "Pin de la ficha de Google (15 de octubre de 2026)."
+  }
 }

@@ -25,3 +25,23 @@ test('cambio de hora de verano a invierno en Canarias', () => {
 test('sin horarios confirmados no se inventa una apertura', () => {
   assert.equal(getOpeningStatus(new Date(), {}).text, 'Horario por confirmar');
 });
+
+import negocio from '../src/data/negocio.json' with { type: 'json' };
+import { groupSchedule, scheduleSummary } from '../src/lib/hours.mjs';
+test('el estado se traduce a los cuatro idiomas', () => {
+  const closed = new Date('2026-01-06T10:00:00Z'); // martes
+  assert.equal(getOpeningStatus(closed, schedule, 'Atlantic/Canary', 'en').text, 'Closed · opens tomorrow at 09:00');
+  assert.equal(getOpeningStatus(closed, schedule, 'Atlantic/Canary', 'de').text, 'Geschlossen · öffnet morgen um 09:00 Uhr');
+  assert.equal(getOpeningStatus(closed, schedule, 'Atlantic/Canary', 'nl').text, 'Gesloten · opent morgen om 09:00');
+  assert.equal(getOpeningStatus(new Date('2026-01-05T16:00:00Z'), schedule, 'Atlantic/Canary', 'de').text, 'Geschlossen · öffnet am Mittwoch um 09:00 Uhr');
+  assert.equal(getOpeningStatus(new Date('2026-01-05T09:00:00Z'), schedule, 'Atlantic/Canary', 'nl').text, 'Nu open');
+});
+test('horario real: 9:00–15:00 todos los días salvo el martes, que cierra', () => {
+  const week = negocio.horario.semana;
+  assert.deepEqual(groupSchedule(week).map(g => g.days), [[1], [2], [3, 4, 5, 6, 0]]);
+  assert.equal(getOpeningStatus(new Date('2026-10-13T10:00:00Z'), week).open, false); // martes
+  assert.equal(getOpeningStatus(new Date('2026-10-13T10:00:00Z'), week).text, 'Cerrado · abre mañana a las 09:00');
+  assert.equal(getOpeningStatus(new Date('2026-10-14T13:59:00Z'), week).open, true); // miércoles 14:59 en Canarias
+  assert.equal(getOpeningStatus(new Date('2026-10-14T14:00:00Z'), week).open, false); // 15:00
+  assert.deepEqual(scheduleSummary(week, 'es').map(r => `${r.label} ${r.value}`), ['lun 9:00–15:00', 'mar Cerrado', 'mié–dom 9:00–15:00']);
+});

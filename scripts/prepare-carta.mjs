@@ -16,7 +16,9 @@ const WIDTHS = [160, 480, 800];
 await mkdir(originals, { recursive: true });
 await mkdir(output, { recursive: true });
 
-const page = await (await fetch(SOURCE, { headers: { 'user-agent': 'Mozilla/5.0 (Calma Café web)' } })).text();
+const res = await fetch(SOURCE, { headers: { 'user-agent': 'Mozilla/5.0 (Calma Café web)' } });
+if (!res.ok) throw new Error(`Carta oficial: HTTP ${res.status}`);
+const page = await res.text();
 const body = page.slice(page.indexOf('<body')).replace(/<svg[\s\S]*?<\/svg>/g, '');
 
 const decode = s => s.replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/&#0?39;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&nbsp;/g, ' ');
@@ -170,9 +172,13 @@ const local = {
   telefono: first(/href="tel:(\d+)"/, body),
   whatsapp: decode(first(/href="(https:\/\/wa\.me\/\d+)"/, body) ?? ''),
 };
+const count = menus.reduce((n, m) => n + m.grupos.reduce((k, g) => k + g.platos.length, 0), 0);
+// Si buenacarta cae o cambia su HTML no se sobrescribe la carta buena con una vacía (la actualización automática la publicaría).
+const anterior = JSON.parse(await readFile('src/data/carta.json', 'utf8').catch(() => '{"menus":[]}'));
+const countAnterior = anterior.menus.reduce((n, m) => n + m.grupos.reduce((k, g) => k + g.platos.length, 0), 0);
+if (!count || count < countAnterior / 2) throw new Error(`Carta sospechosa: ${count} platos (antes ${countAnterior}). No se guarda nada; revisa la web oficial o el script.`);
 const carta = { fuente: SOURCE, consultada: new Date().toISOString().slice(0, 10), local, menus };
 await writeFile('src/data/carta.json', JSON.stringify(carta, null, 2) + '\n');
-const count = menus.reduce((n, m) => n + m.grupos.reduce((k, g) => k + g.platos.length, 0), 0);
 for (const id of Object.keys(anadidos)) if (!menus.some(m => m.grupos.some(g => g.platos.some(p => p.id === id)))) console.warn(`Aviso: alergenos-anadidos.json tiene el plato ${id}, que ya no está en la carta`);
 console.log(`Carta importada: ${menus.length} menús, ${count} platos, ${menus.flatMap(m => m.grupos.flatMap(g => g.platos)).filter(p => p.foto).length} con foto.`);
 console.log(local);

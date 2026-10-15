@@ -1,0 +1,74 @@
+name: Actualizar carta
+
+# Cada mañana importa la carta oficial (npm run carta) y, si ha cambiado, la sube a main y vuelve a publicar la web.
+on:
+  schedule:
+    - cron: '0 5 * * *' # 05:00 UTC: 05:00-06:00 en Canarias, antes de abrir
+  workflow_dispatch:
+
+permissions:
+  contents: write # commit de la carta
+  actions: write  # lanzar deploy.yml (un push con GITHUB_TOKEN no dispara otros workflows)
+
+concurrency:
+  group: carta
+  cancel-in-progress: false
+
+jobs:
+  carta:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      # Fotos originales (assets/originals/ no está en git): se guardan entre ejecuciones para no descargarlas cada día.
+      - uses: actions/cache@v4
+        with:
+          path: assets/originals/carta
+          key: carta-originals-${{ github.run_id }}
+          restore-keys: carta-originals-
+
+      - name: Importar carta oficial
+        run: npm run carta
+
+      - name: ¿Ha cambiado la carta?
+        id: cambios
+        run: |
+          git add src/data/carta.json public/media/carta
+          # Cambiar solo la fecha de consulta no cuenta como cambio.
+          if git diff --cached --quiet -I '"consultada":'; then
+            echo "La carta no ha cambiado." >> "$GITHUB_STEP_SUMMARY"
+            echo "hay=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "hay=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Avisar de textos sin traducir
+        if: steps.cambios.outputs.hay == 'true'
+        run: |
+          if ! npm test > test.log 2>&1; then
+            cat test.log
+            echo "::warning::La carta tiene textos nuevos sin traducir en src/i18n/carta.json (la web los muestra en español hasta que se traduzcan)."
+            { echo '### ⚠️ Textos sin traducir'; echo '```'; grep -A30 'faltan' test.log | head -40; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Commit y push
+        if: steps.cambios.outputs.hay == 'true'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m "Carta actualizada desde calma.buenacarta.com ($(date -u +%F))"
+          git pull --rebase origin main
+          git push origin HEAD:main
+          { echo '### Carta actualizada'; echo '```'; git show --stat --format= HEAD | tail -5; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Publicar la web
+        if: steps.cambios.outputs.hay == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref main

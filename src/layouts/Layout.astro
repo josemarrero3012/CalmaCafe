@@ -67,7 +67,7 @@ const schema = buildSchema(negocio, { pageUrl: current ? abs(routes[lang][curren
           <button class="menu-toggle" type="button" aria-label={t.openMenu} aria-haspopup="dialog" aria-controls="mobile-menu"><span></span><span></span></button>
         </div>
       </div>
-      {showHours && <a class="mobile-hours" href={`${url(routes[lang].visitanos)}#horario`}><span data-hours>{t.visit.hoursView}</span></a>}
+      {showHours && <a class="mobile-hours" href={`${url(routes[lang].visitanos)}#horario`}><span class="status-dot" aria-hidden="true"></span><span data-hours>{t.visit.hoursView}</span></a>}
     </header>
     <dialog id="mobile-menu" class="mobile-menu" aria-labelledby="mobile-menu-title">
       <div class="mobile-menu-top"><span id="mobile-menu-title" class="eyebrow">{t.menu}</span><button class="icon-button" data-close aria-label={t.closeMenu}><Icon name="close" /></button></div>

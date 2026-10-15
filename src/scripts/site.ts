@@ -39,7 +39,7 @@ if (negocio.horario.confirmado && document.querySelector('[data-hours]')) {
   const updateHours = () => {
     const result = getOpeningStatus(new Date(), negocio.horario.semana, negocio.zonaHoraria, document.documentElement.lang);
     document.querySelectorAll('[data-hours]').forEach(el => { el.textContent = result.text; });
-    document.querySelector('.status-dot')?.classList.toggle('is-open', result.open);
+    document.querySelectorAll('.status-dot').forEach(dot => { dot.classList.toggle('is-open', result.open); dot.classList.toggle('is-closed', !result.open); });
     const today = new Intl.DateTimeFormat('en-GB', { timeZone: negocio.zonaHoraria, weekday: 'short' }).format(new Date());
     const index = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(today);
     document.querySelectorAll('.hours-table tr').forEach(row => row.classList.toggle('is-today', Number((row as HTMLElement).dataset.day) === index));

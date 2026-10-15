@@ -88,14 +88,14 @@ document.querySelector<HTMLButtonElement>('#load-map')?.addEventListener('click'
 const video = document.querySelector<HTMLVideoElement>('#interior-video');
 const videoDialog = document.querySelector<HTMLDialogElement>('#video-dialog');
 if (video && videoDialog) {
-  document.querySelector('.video-open')?.addEventListener('click', () => {
+  document.querySelectorAll('.video-open').forEach(button => button.addEventListener('click', () => {
     if (!video.currentSrc) {
       video.querySelectorAll('source').forEach(source => { source.src = source.dataset.src!; });
       video.load();
     }
     openDialog(videoDialog);
     video.play().catch(() => {});
-  });
+  }));
   videoDialog.addEventListener('close', () => video.pause());
 }
 

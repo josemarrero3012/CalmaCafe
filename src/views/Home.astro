@@ -48,11 +48,14 @@ const doors = [
           <svg class="hero-flourish" viewBox="0 0 520 36" aria-hidden="true" focusable="false"><path d="M4 31 C 130 17 320 8 516 3 C 322 13 140 25 12 35 C 7 35 3 33 4 31 Z" /></svg>
         </div>
         <p class="hero-intro enter enter-3">{h.intro}</p>
-        <div class="hero-buttons enter enter-3"><a class="button button-green" href={url(routes[lang].carta)}>{h.seeMenu} <span aria-hidden="true"><Icon name="arrow-right" /></span></a><a class="text-link hero-directions" href={negocio.mapas.url} target="_blank" rel="noopener noreferrer">{t.directions} <span aria-hidden="true"><Icon name="arrow-up-right" /></span></a><a class="text-link hero-hours" href={`${url(routes[lang].visitanos)}#horario`}>{t.visit.hoursView} <span aria-hidden="true"><Icon name="arrow-right" /></span></a></div>
+        <div class="hero-buttons enter enter-3"><a class="button button-green" href={url(routes[lang].carta)}>{h.seeMenu} <span aria-hidden="true"><Icon name="arrow-right" /></span></a><button class="video-open video-open--inline" type="button" aria-haspopup="dialog" aria-controls="video-dialog" aria-label={t.video.play}><span aria-hidden="true">▶︎</span> {t.video.playShort}</button><a class="text-link hero-directions" href={negocio.mapas.url} target="_blank" rel="noopener noreferrer">{t.directions} <span aria-hidden="true"><Icon name="arrow-up-right" /></span></a><a class="text-link hero-hours" href={`${url(routes[lang].visitanos)}#horario`}>{t.visit.hoursView} <span aria-hidden="true"><Icon name="arrow-right" /></span></a></div>
       </div>
       <div class="hero-visual enter enter-visual">
         <Seal />
-        <figure class="hero-photo"><DishPhoto foto={pancakes.foto} alt={h.pancakesAlt} sizes="(max-width: 699px) 250px, 330px" eager /><figcaption class="handwritten">{tc(lang, pancakes.nombre)} · {price(lang, pancakes.precio)}</figcaption></figure>
+        <div class="hero-photos">
+          <figure class="hero-photo"><DishPhoto foto={pancakes.foto} alt={h.pancakesAlt} sizes="(max-width: 699px) 150px, 330px" eager /><figcaption class="handwritten">{tc(lang, pancakes.nombre)} · {price(lang, pancakes.precio)}</figcaption></figure>
+          <figure class="hero-photo hero-photo--salty"><DishPhoto foto={especial.foto} alt={tc(lang, especial.nombre)} sizes="150px" eager /><figcaption class="handwritten">{tc(lang, especial.nombre)} · {price(lang, especial.precio)}</figcaption></figure>
+        </div>
         <button class="video-open" type="button" aria-haspopup="dialog" aria-controls="video-dialog" aria-label={t.video.play}><span aria-hidden="true">▶︎</span> {t.video.playShort}</button>
       </div>
     </div>

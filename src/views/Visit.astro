@@ -5,13 +5,15 @@ import Lotus from '../components/Lotus.astro';
 import ScriptWord from '../components/ScriptWord.astro';
 import negocio from '../data/negocio.json';
 import { phone, ui, type Lang } from '../i18n/ui';
-import { closedLabel, dayName, formatRanges, kitchenLabel, weekOrder } from '../lib/hours.mjs';
+import { closedLabel, dayName, formatRanges, kitchenLabel, scheduleSummary, weekOrder } from '../lib/hours.mjs';
 interface Props { lang: Lang; }
 const { lang } = Astro.props;
 const t = ui[lang];
 const v = t.visit;
 const semana = negocio.horario.semana as Record<string, string[][]>;
 const cocina = negocio.horario.cocina;
+// Respuesta del horario en las preguntas frecuentes, desde el mismo dato que la tabla.
+const horario = `${scheduleSummary(semana, lang).map(({ label, value }) => `${label.charAt(0).toUpperCase()}${label.slice(1)}: ${value.toLowerCase()}`).join(' · ')}. ${kitchenLabel(lang)}: ${formatRanges(cocina)}.`;
 ---
 <Layout lang={lang} current="visitanos" title={v.title} description={v.description}>
   <section class="visit section page-top" aria-labelledby="visit-title"><div class="wrap visit-grid"><div class="visit-copy">
@@ -29,4 +31,8 @@ const cocina = negocio.horario.cocina;
     </dl>
     <div class="visit-actions enter enter-4"><a class="button" href={negocio.mapas.url} target="_blank" rel="noopener noreferrer">{t.directions} <span aria-hidden="true"><Icon name="arrow-up-right" /></span></a><ScriptWord text="See you soon" class="script-visit" /></div>
   </div><div class="visit-map enter enter-visual"><div class="map-placeholder" id="map-container"><div class="map-art" aria-hidden="true"><span class="map-road road-one"></span><span class="map-road road-two"></span><span class="map-road road-three"></span><span class="map-pin"><Lotus /></span></div><div class="map-overlay"><span class="eyebrow">{negocio.direccion.calle}</span><p class="map-place">{negocio.direccion.edificio} · {negocio.localidad}</p><button id="load-map" class="button button-light" type="button" data-map-title={v.mapTitle} data-map-fallback={v.mapFallback}>{v.loadMap} <span aria-hidden="true"><Icon name="arrow-up-right" /></span></button><p class="map-disclosure">{v.mapNote}</p></div></div><p class="map-caption">{v.mapCaption}</p></div></div></section>
+  <section class="visit-faq section" aria-labelledby="faq-title"><div class="wrap">
+    <h2 id="faq-title" data-reveal>{v.faqTitle}</h2>
+    <dl class="faq-list" data-reveal>{v.faq.map(([question, answer]) => <div><dt>{question}</dt><dd>{answer.replace('{horario}', horario)}</dd></div>)}</dl>
+  </div></section>
 </Layout>

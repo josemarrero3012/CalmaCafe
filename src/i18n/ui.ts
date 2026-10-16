@@ -32,7 +32,7 @@ export const price = (lang: Lang, es: string) => {
 
 type Notice = [title: string, text: string];
 export interface UI {
-  skip: string; homeLabel: string; nav: Record<Page, string>; navLabel: string; mobileNavLabel: string;
+  skip: string; ogImageAlt: string; homeLabel: string; nav: Record<Page, string>; navLabel: string; mobileNavLabel: string;
   language: string; directions: string; call: string; openMenu: string; closeMenu: string; menu: string;
   whereWeAre: string; contact: string; backHome: string; backTop: string; legalNav: string; quickActions: string;
   legal: string; privacy: string; cookies: string; proposal: string; close: string; ok: string; onInstagram: string;
@@ -43,11 +43,11 @@ export interface UI {
     strip: [string, string, string, string]; doorsTitle: string;
     doors: { carta: [string, string, string]; calma: [string, string, string]; visit: [string, string, string] };
     drinksEyebrow: string; drinksTitle: string; drinksIntro: string; coffee: string; matcha: string; chooseDrink: string; drinksHint: string; allDrinks: string;
-    tables: string; callNumber: string; reviews: string;
+    tables: string; callNumber: string; reviews: string; rating: (nota: string) => string;
   };
   carta: {
     title: string; description: string; eyebrow: (n: number) => string; h1: string; aside: string; tabs: string; sections: (menu: string) => string;
-    intros: Record<string, string>; dish: (n: number) => string; drink: (n: number) => string; photo: string;
+    intros: Record<string, string>; groupIntros: Record<string, string>; allTab: string; seeIn: (grupo: string) => string; dish: (n: number) => string; drink: (n: number) => string; photo: string;
     vegan: string; vegetarian: string; choose: string; add: string; allergens: string;
     allergyTitle: string; allergyText: string; checked: (date: string) => string; source: string; translated?: string;
   };
@@ -62,13 +62,13 @@ export interface UI {
   };
   visit: {
     title: string; description: string; eyebrow: string; h1: string; intro: string; address: string; hours: string; hoursLink: string; hoursView: string;
-    contact: string; loadMap: string; mapNote: string; mapCaption: string; mapTitle: string; mapFallback: string;
+    contact: string; faqTitle: string; faq: [question: string, answer: string][]; loadMap: string; mapNote: string; mapCaption: string; mapTitle: string; mapFallback: string;
   };  notFound: { title: string; h1: string; intro: string };
 }
 
 export const ui: Record<Lang, UI> = {
   es: {
-    skip: 'Saltar al contenido', homeLabel: 'Calma Café, inicio',
+    skip: 'Saltar al contenido', ogImageAlt: 'Calma Café: la barra de madera con plantas y bombillas, y el logo de Calma', homeLabel: 'Calma Café, inicio',
     nav: { inicio: 'Inicio', carta: 'Carta', calma: 'Calma', visitanos: 'Visítanos' },
     navLabel: 'Navegación principal', mobileNavLabel: 'Navegación móvil', language: 'Idioma',
     directions: 'Cómo llegar', call: 'Llamar', openMenu: 'Abrir menú', closeMenu: 'Cerrar menú', menu: 'Menú',
@@ -84,8 +84,8 @@ export const ui: Record<Lang, UI> = {
     home: {
       title: 'Calma Café · Brunch y café en Maspalomas',
       description: 'Brunch, café Lavazza, matcha y opciones veganas en la avenida de Tirajana, Maspalomas. Carta completa con precios y alérgenos.',
-      place: 'Maspalomas, Gran Canaria', h1: 'Brunch y café<br />en <em>Maspalomas.</em>',
-      intro: 'Granola, pancakes, tostas y el Calma Especial en triassant. Café Lavazza, matcha y ube latte. En la avenida de Tirajana, con mesas dentro y fuera.',
+      place: 'Maspalomas, Gran Canaria', h1: 'Brunch y café <br />en <em>Maspalomas.</em>',
+      intro: 'Granola, pancakes, tostas y el Calma Especial en triassant, mezcla de croissant y pan de cereales. Café Lavazza, matcha y ube latte. En la avenida de Tirajana, con mesas dentro y fuera.',
       seeMenu: 'Ver la carta', pancakesAlt: 'Pancakes de Calma Café con distintos acompañamientos',
       strip: ['Brunch', 'Café Lavazza', 'Matcha y ube', 'Vegano y vegetariano'],
       doorsTitle: 'La carta, el local y <em>cómo llegar.</em>',
@@ -97,7 +97,7 @@ export const ui: Record<Lang, UI> = {
       drinksEyebrow: 'Para beber', drinksTitle: '¿Café o <em>matcha?</em>',
       drinksIntro: 'Café Lavazza, matcha japonés y ube, una batata lila de Filipinas que sabe a vainilla.',
       coffee: 'Café', matcha: 'Matcha y ube', chooseDrink: 'Elige tu bebida', drinksHint: 'Elige el tuyo', allDrinks: 'Todas las bebidas',
-      tables: 'Mesas dentro y fuera.', callNumber: 'Llamar al {tel}', reviews: 'Reseñas en Google',
+      tables: 'Mesas dentro y fuera.', callNumber: 'Llamar al {tel}', reviews: 'Reseñas en Google', rating: nota => `${nota} en Google`,
     },
     carta: {
       title: 'La carta · Calma Café, Maspalomas',
@@ -110,6 +110,7 @@ export const ui: Record<Lang, UI> = {
         vegetariano: 'Sin carne ni pescado.', vegano: 'Sin ingredientes de origen animal.',
         bebidas: 'Café Lavazza, matcha, ube, smoothies, zumos, mimosas y Aperol Spritz.',
       },
+      groupIntros: { 'carta-para-los-ninos': 'Para los más pequeños: sándwiches, gofres, tostas y yogur con fruta.' }, allTab: 'Todo', seeIn: grupo => `en ${grupo}`,
       dish: n => `${n} ${n === 1 ? 'propuesta' : 'propuestas'}`, drink: n => `${n} ${n === 1 ? 'bebida' : 'bebidas'}`, photo: 'ver foto',
       vegan: 'Vegano', vegetarian: 'Vegetariano', choose: 'A elegir', add: 'Añade', allergens: 'Alérgenos',
       allergyTitle: '¿Alergias o intolerancias?',
@@ -117,13 +118,13 @@ export const ui: Record<Lang, UI> = {
       checked: date => `Carta consultada el ${date}`, source: 'Carta digital de Calma',
     },
     calma: {
-      title: 'Calma · Calma Café, Maspalomas',
+      title: 'Café de brunch con plantas en Maspalomas · Calma Café',
       description: 'Calma Café es el café de una pareja noruega y neerlandesa en la avenida de Tirajana, Maspalomas: brunch, café y dulces caseros en un local lleno de plantas y cuadros.',
-      h1: 'De Noruega y los Países Bajos<br />a <em>Maspalomas.</em>',
+      h1: 'De Noruega y los Países Bajos <br />a <em>Maspalomas.</em>',
       intro: 'Calma es el café de una pareja noruega y neerlandesa en la avenida de Tirajana, 3. Servimos brunch, café y dulces caseros en un local con plantas, cojines mostaza y cuadros en las paredes.',
-      chalkEyebrow: 'La pizarra del local', otherBoard: 'La otra pizarra.',
+      chalkEyebrow: 'La pizarra del local', otherBoard: 'Y en la otra pizarra: «A yawn is a silent scream for coffee».',
       detailsEyebrow: 'El local', detailsTitle: 'Por <em>dentro.</em>',
-      detailsText: 'Cojines mostaza, un tapiz hecho de tazas, bombillas sobre la barra de madera<br />y un ventanal que da a las palmeras.',
+      detailsText: 'Cojines mostaza, un tapiz hecho de tazas, bombillas sobre la barra de madera <br />y un ventanal que da a las palmeras.',
       captions: ['El ventanal', 'Los cojines', 'El tablero de notas', 'La barra', 'El tapiz de tazas', 'Los cuadros', 'Las bombillas', 'Una mesa junto al tablero'],
       instagram: 'Más fotos del local y de la carta en Instagram.',
       story: {
@@ -134,18 +135,24 @@ export const ui: Record<Lang, UI> = {
       },
     },
     visit: {
-      title: 'Visítanos · Calma Café, Maspalomas',
+      title: 'Dónde estamos y horario · Calma Café, Avda. de Tirajana (Maspalomas)',
       description: 'Calma Café está en la Avda. de Tirajana, 3 (Apartamentos Aloe), Maspalomas. Teléfono 681 66 79 17, WhatsApp y cómo llegar.',
       eyebrow: 'Visítanos', h1: 'Dónde <em>estamos.</em>',
       intro: 'Tenemos mesas dentro y fuera. Si quieres preguntar algo antes de venir, llámanos o escríbenos por WhatsApp.',
-      address: 'Dirección', hours: 'Horario', hoursLink: 'Ver la ficha en Google Maps', hoursView: 'Ver horario', contact: 'Contacto',
+      address: 'Dirección', hours: 'Horario', hoursLink: 'Ver la ficha en Google Maps', hoursView: 'Ver horario', contact: 'Contacto', faqTitle: 'Preguntas frecuentes',
+      faq: [
+        ['¿Qué horario tenéis?', '{horario}'],
+        ['¿Tenéis opciones veganas o vegetarianas?', 'Sí: la carta tiene un menú vegetariano y otro vegano completos, con precios y alérgenos.'],
+        ['¿Hay menú para niños?', 'Sí, la carta tiene una sección «Para los niños» con sándwiches, gofres, tostas y yogur con fruta.'],
+        ['¿Dónde estáis?', 'En la Avda. de Tirajana, 3, en los Apartamentos Aloe, 35100 Maspalomas (San Bartolomé de Tirajana). Tenemos mesas dentro y fuera.'],
+      ],
       loadMap: 'Cargar mapa', mapNote: 'Al cargarlo conectarás con Google Maps.', mapCaption: 'Ilustración · el mapa de Google se carga solo si lo pides.',
       mapTitle: 'Calma Café en Google Maps', mapFallback: 'Si el mapa no aparece, usa el botón «Cómo llegar».',
     },
     notFound: { title: 'Página no encontrada', h1: 'Esta página no está <em>en la carta.</em>', intro: 'Puede que el enlace esté mal escrito o que la página ya no exista. Desde aquí puedes volver al inicio, ver la carta o saber cómo llegar.' },
   },
   en: {
-    skip: 'Skip to content', homeLabel: 'Calma Café, home',
+    skip: 'Skip to content', ogImageAlt: 'Calma Café: the wooden counter with plants and light bulbs, and the Calma logo', homeLabel: 'Calma Café, home',
     nav: { inicio: 'Home', carta: 'Menu', calma: 'About', visitanos: 'Visit us' },
     navLabel: 'Main navigation', mobileNavLabel: 'Mobile navigation', language: 'Language',
     directions: 'Directions', call: 'Call', openMenu: 'Open menu', closeMenu: 'Close menu', menu: 'Menu',
@@ -161,8 +168,8 @@ export const ui: Record<Lang, UI> = {
     home: {
       title: 'Calma Café · Brunch and coffee in Maspalomas',
       description: 'Brunch, Lavazza coffee, matcha and vegan options on Avenida de Tirajana, Maspalomas. Full menu with prices and allergens.',
-      place: 'Maspalomas, Gran Canaria', h1: 'Brunch and coffee<br />in <em>Maspalomas.</em>',
-      intro: 'Granola, pancakes, toasts and the Calma Special on a triassant. Lavazza coffee, matcha and ube latte. On Avenida de Tirajana, with tables inside and out.',
+      place: 'Maspalomas, Gran Canaria', h1: 'Brunch and coffee <br />in <em>Maspalomas.</em>',
+      intro: 'Granola, pancakes, toasts and the Calma Special on a triassant, a cross between a croissant and multigrain bread. Lavazza coffee, matcha and ube latte. On Avenida de Tirajana, with tables inside and out.',
       seeMenu: 'See the menu', pancakesAlt: 'Calma Café pancakes with different toppings',
       strip: ['Brunch', 'Lavazza coffee', 'Matcha and ube', 'Vegan and vegetarian'],
       doorsTitle: 'The menu, the café and <em>how to find us.</em>',
@@ -174,7 +181,7 @@ export const ui: Record<Lang, UI> = {
       drinksEyebrow: 'To drink', drinksTitle: 'Coffee or <em>matcha?</em>',
       drinksIntro: 'Lavazza coffee, Japanese matcha and ube, a purple sweet potato from the Philippines that tastes of vanilla.',
       coffee: 'Coffee', matcha: 'Matcha and ube', chooseDrink: 'Choose your drink', drinksHint: 'Pick yours', allDrinks: 'All drinks',
-      tables: 'Tables inside and out.', callNumber: 'Call {tel}', reviews: 'Reviews on Google',
+      tables: 'Tables inside and out.', callNumber: 'Call {tel}', reviews: 'Reviews on Google', rating: nota => `${nota} on Google`,
     },
     carta: {
       title: 'Menu · Calma Café, Maspalomas',
@@ -187,6 +194,7 @@ export const ui: Record<Lang, UI> = {
         vegetariano: 'No meat or fish.', vegano: 'No animal products.',
         bebidas: 'Lavazza coffee, matcha, ube, smoothies, juices, mimosas and Aperol Spritz.',
       },
+      groupIntros: { 'carta-para-los-ninos': 'For little ones: sandwiches, waffles, toasts and yoghurt with fruit.' }, allTab: 'All', seeIn: grupo => `in ${grupo}`,
       dish: n => `${n} ${n === 1 ? 'dish' : 'dishes'}`, drink: n => `${n} ${n === 1 ? 'drink' : 'drinks'}`, photo: 'see photo',
       vegan: 'Vegan', vegetarian: 'Vegetarian', choose: 'Choose', add: 'Add', allergens: 'Allergens',
       allergyTitle: 'Allergies or intolerances?',
@@ -195,13 +203,13 @@ export const ui: Record<Lang, UI> = {
       translated: 'Translated from the café’s Spanish menu. Prices and allergens are the same as in the original.',
     },
     calma: {
-      title: 'About · Calma Café, Maspalomas',
+      title: 'Brunch café full of plants in Maspalomas · Calma Café',
       description: 'Calma Café is run by a Norwegian and Dutch couple on Avenida de Tirajana, Maspalomas: brunch, coffee and homemade cakes in a café full of plants and paintings.',
-      h1: 'From Norway and the Netherlands<br />to <em>Maspalomas.</em>',
+      h1: 'From Norway and the Netherlands <br />to <em>Maspalomas.</em>',
       intro: 'Calma is the café of a Norwegian and Dutch couple at Avenida de Tirajana, 3. We serve brunch, coffee and homemade cakes in a room with plants, mustard cushions and paintings on the walls.',
-      chalkEyebrow: 'Our chalkboard', otherBoard: 'The other chalkboard.',
+      chalkEyebrow: 'Our chalkboard', otherBoard: 'And on the other chalkboard: “A yawn is a silent scream for coffee”.',
       detailsEyebrow: 'The café', detailsTitle: 'Take a look <em>inside.</em>',
-      detailsText: 'Mustard cushions, a wall hanging made of cups, light bulbs over the wooden counter<br />and a big window looking out onto palm trees.',
+      detailsText: 'Mustard cushions, a wall hanging made of cups, light bulbs over the wooden counter <br />and a big window looking out onto palm trees.',
       captions: ['The window', 'The cushions', 'The noticeboard', 'The counter', 'The cup wall hanging', 'The paintings', 'The light bulbs', 'A table by the noticeboard'],
       instagram: 'More photos of the café and the food on Instagram.',
       story: {
@@ -212,18 +220,24 @@ export const ui: Record<Lang, UI> = {
       },
     },
     visit: {
-      title: 'Visit us · Calma Café, Maspalomas',
+      title: 'Location and opening hours · Calma Café, Avda. de Tirajana (Maspalomas)',
       description: 'Calma Café is at Avda. de Tirajana, 3 (Apartamentos Aloe), Maspalomas. Phone +34 681 66 79 17, WhatsApp and directions.',
       eyebrow: 'Visit us', h1: 'Where <em>to find us.</em>',
       intro: 'We have tables inside and out. If you have a question before you come, give us a call or send us a WhatsApp.',
-      address: 'Address', hours: 'Opening hours', hoursLink: 'See our Google Maps listing', hoursView: 'See hours', contact: 'Contact',
+      address: 'Address', hours: 'Opening hours', hoursLink: 'See our Google Maps listing', hoursView: 'See hours', contact: 'Contact', faqTitle: 'Frequently asked questions',
+      faq: [
+        ['What are your opening hours?', '{horario}'],
+        ['Do you have vegan or vegetarian options?', 'Yes: the menu has a full vegetarian menu and a full vegan menu, with prices and allergens.'],
+        ['Do you have a kids’ menu?', 'Yes, the menu has a “For kids” section with sandwiches, waffles, toasts and yoghurt with fruit.'],
+        ['Where are you?', 'At Avda. de Tirajana, 3, in the Aloe apartments, 35100 Maspalomas (San Bartolomé de Tirajana). We have tables inside and out.'],
+      ],
       loadMap: 'Load map', mapNote: 'Loading it connects you to Google Maps.', mapCaption: 'Illustration · the Google map only loads if you ask for it.',
       mapTitle: 'Calma Café on Google Maps', mapFallback: 'If the map does not appear, use the “Directions” button.',
     },
     notFound: { title: 'Page not found', h1: 'This page is not <em>on the menu.</em>', intro: 'The link may be mistyped, or the page may no longer exist. From here you can go back home, see the menu or find out how to get here.' },
   },
   de: {
-    skip: 'Zum Inhalt springen', homeLabel: 'Calma Café, Startseite',
+    skip: 'Zum Inhalt springen', ogImageAlt: 'Calma Café: die Holztheke mit Pflanzen und Glühbirnen und das Calma-Logo', homeLabel: 'Calma Café, Startseite',
     nav: { inicio: 'Start', carta: 'Speisekarte', calma: 'Über uns', visitanos: 'Besuch' },
     navLabel: 'Hauptnavigation', mobileNavLabel: 'Mobile Navigation', language: 'Sprache',
     directions: 'Route', call: 'Anrufen', openMenu: 'Menü öffnen', closeMenu: 'Menü schließen', menu: 'Menü',
@@ -239,8 +253,8 @@ export const ui: Record<Lang, UI> = {
     home: {
       title: 'Calma Café · Brunch und Kaffee in Maspalomas',
       description: 'Brunch, Lavazza-Kaffee, Matcha und vegane Gerichte in der Avenida de Tirajana, Maspalomas. Komplette Speisekarte mit Preisen und Allergenen.',
-      place: 'Maspalomas, Gran Canaria', h1: 'Brunch und Kaffee<br />in <em>Maspalomas.</em>',
-      intro: 'Granola, Pancakes, Toasts und das Calma Special im Triassant. Lavazza-Kaffee, Matcha und Ube Latte. In der Avenida de Tirajana, mit Tischen drinnen und draußen.',
+      place: 'Maspalomas, Gran Canaria', h1: 'Brunch und Kaffee <br />in <em>Maspalomas.</em>',
+      intro: 'Granola, Pancakes, Toasts und das Calma Special im Triassant, einer Mischung aus Croissant und Mehrkornbrot. Lavazza-Kaffee, Matcha und Ube Latte. In der Avenida de Tirajana, mit Tischen drinnen und draußen.',
       seeMenu: 'Zur Speisekarte', pancakesAlt: 'Pancakes von Calma Café mit verschiedenen Toppings',
       strip: ['Brunch', 'Lavazza-Kaffee', 'Matcha und Ube', 'Vegan und vegetarisch'],
       doorsTitle: 'Speisekarte, Café und <em>Anfahrt.</em>',
@@ -252,7 +266,7 @@ export const ui: Record<Lang, UI> = {
       drinksEyebrow: 'Zum Trinken', drinksTitle: 'Kaffee oder <em>Matcha?</em>',
       drinksIntro: 'Lavazza-Kaffee, japanischer Matcha und Ube, eine violette Süßkartoffel von den Philippinen, die nach Vanille schmeckt.',
       coffee: 'Kaffee', matcha: 'Matcha und Ube', chooseDrink: 'Wähle dein Getränk', drinksHint: 'Wähl deins', allDrinks: 'Alle Getränke',
-      tables: 'Tische drinnen und draußen.', callNumber: '{tel} anrufen', reviews: 'Bewertungen auf Google',
+      tables: 'Tische drinnen und draußen.', callNumber: '{tel} anrufen', reviews: 'Bewertungen auf Google', rating: nota => `${nota} auf Google`,
     },
     carta: {
       title: 'Speisekarte · Calma Café, Maspalomas',
@@ -265,6 +279,7 @@ export const ui: Record<Lang, UI> = {
         vegetariano: 'Ohne Fleisch und Fisch.', vegano: 'Ohne tierische Zutaten.',
         bebidas: 'Lavazza-Kaffee, Matcha, Ube, Smoothies, Säfte, Mimosas und Aperol Spritz.',
       },
+      groupIntros: { 'carta-para-los-ninos': 'Für die Kleinen: Sandwiches, Waffeln, Toasts und Joghurt mit Obst.' }, allTab: 'Alles', seeIn: grupo => `unter ${grupo}`,
       dish: n => `${n} ${n === 1 ? 'Gericht' : 'Gerichte'}`, drink: n => `${n} ${n === 1 ? 'Getränk' : 'Getränke'}`, photo: 'Foto ansehen',
       vegan: 'Vegan', vegetarian: 'Vegetarisch', choose: 'Zur Auswahl', add: 'Extra', allergens: 'Allergene',
       allergyTitle: 'Allergien oder Unverträglichkeiten?',
@@ -273,13 +288,13 @@ export const ui: Record<Lang, UI> = {
       translated: 'Übersetzt aus der spanischen Speisekarte des Cafés. Preise und Allergene entsprechen dem Original.',
     },
     calma: {
-      title: 'Über uns · Calma Café, Maspalomas',
+      title: 'Brunch-Café voller Pflanzen in Maspalomas · Calma Café',
       description: 'Calma Café wird von einem norwegisch-niederländischen Paar in der Avenida de Tirajana in Maspalomas geführt: Brunch, Kaffee und hausgemachter Kuchen in einem Café voller Pflanzen und Bilder.',
-      h1: 'Aus Norwegen und den Niederlanden<br />nach <em>Maspalomas.</em>',
+      h1: 'Aus Norwegen und den Niederlanden <br />nach <em>Maspalomas.</em>',
       intro: 'Calma ist das Café eines norwegisch-niederländischen Paares in der Avenida de Tirajana 3. Wir servieren Brunch, Kaffee und hausgemachten Kuchen, zwischen Pflanzen, senfgelben Kissen und Bildern an den Wänden.',
-      chalkEyebrow: 'Unsere Kreidetafel', otherBoard: 'Die andere Tafel.',
+      chalkEyebrow: 'Unsere Kreidetafel', otherBoard: 'Und auf der anderen Tafel: „A yawn is a silent scream for coffee“.',
       detailsEyebrow: 'Das Café', detailsTitle: 'Ein Blick <em>hinein.</em>',
-      detailsText: 'Senfgelbe Kissen, ein Wandteppich aus Tassen, Glühbirnen über der Holztheke<br />und ein großes Fenster mit Blick auf Palmen.',
+      detailsText: 'Senfgelbe Kissen, ein Wandteppich aus Tassen, Glühbirnen über der Holztheke <br />und ein großes Fenster mit Blick auf Palmen.',
       captions: ['Das Fenster', 'Die Kissen', 'Die Pinnwand', 'Die Theke', 'Der Tassen-Wandteppich', 'Die Bilder', 'Die Glühbirnen', 'Ein Tisch an der Pinnwand'],
       instagram: 'Mehr Fotos vom Café und vom Essen auf Instagram.',
       story: {
@@ -290,18 +305,24 @@ export const ui: Record<Lang, UI> = {
       },
     },
     visit: {
-      title: 'Besuch · Calma Café, Maspalomas',
+      title: 'Anfahrt und Öffnungszeiten · Calma Café, Avda. de Tirajana (Maspalomas)',
       description: 'Calma Café, Avda. de Tirajana 3 (Apartamentos Aloe), Maspalomas. Telefon +34 681 66 79 17, WhatsApp und Anfahrt.',
       eyebrow: 'Besuch', h1: 'So findest du <em>uns.</em>',
       intro: 'Wir haben Tische drinnen und draußen. Wenn du vorher eine Frage hast, ruf uns an oder schreib uns per WhatsApp.',
-      address: 'Adresse', hours: 'Öffnungszeiten', hoursLink: 'Eintrag auf Google Maps ansehen', hoursView: 'Öffnungszeiten', contact: 'Kontakt',
+      address: 'Adresse', hours: 'Öffnungszeiten', hoursLink: 'Eintrag auf Google Maps ansehen', hoursView: 'Öffnungszeiten', contact: 'Kontakt', faqTitle: 'Häufige Fragen',
+      faq: [
+        ['Wann habt ihr geöffnet?', '{horario}'],
+        ['Gibt es vegane oder vegetarische Gerichte?', 'Ja: Die Karte hat ein komplettes vegetarisches und ein komplettes veganes Menü, mit Preisen und Allergenen.'],
+        ['Gibt es ein Kindermenü?', 'Ja, die Karte hat einen Bereich „Für Kinder“ mit Sandwiches, Waffeln, Toasts und Joghurt mit Obst.'],
+        ['Wo seid ihr?', 'In der Avda. de Tirajana 3, in den Apartamentos Aloe, 35100 Maspalomas (San Bartolomé de Tirajana). Wir haben Tische drinnen und draußen.'],
+      ],
       loadMap: 'Karte laden', mapNote: 'Beim Laden wirst du mit Google Maps verbunden.', mapCaption: 'Illustration · die Google-Karte lädt nur, wenn du es möchtest.',
       mapTitle: 'Calma Café auf Google Maps', mapFallback: 'Wenn die Karte nicht erscheint, nutze die Schaltfläche „Route“.',
     },
     notFound: { title: 'Seite nicht gefunden', h1: 'Diese Seite steht nicht <em>auf der Karte.</em>', intro: 'Vielleicht ist der Link falsch geschrieben oder die Seite gibt es nicht mehr. Von hier aus kommst du zur Startseite, zur Speisekarte oder zur Anfahrt.' },
   },
   nl: {
-    skip: 'Naar de inhoud', homeLabel: 'Calma Café, home',
+    skip: 'Naar de inhoud', ogImageAlt: 'Calma Café: de houten bar met planten en lampjes, en het Calma-logo', homeLabel: 'Calma Café, home',
     nav: { inicio: 'Home', carta: 'Menukaart', calma: 'Over ons', visitanos: 'Bezoek' },
     navLabel: 'Hoofdnavigatie', mobileNavLabel: 'Mobiele navigatie', language: 'Taal',
     directions: 'Route', call: 'Bellen', openMenu: 'Menu openen', closeMenu: 'Menu sluiten', menu: 'Menu',
@@ -317,8 +338,8 @@ export const ui: Record<Lang, UI> = {
     home: {
       title: 'Calma Café · Brunch en koffie in Maspalomas',
       description: 'Brunch, Lavazza-koffie, matcha en veganistische gerechten aan de Avenida de Tirajana, Maspalomas. Volledige menukaart met prijzen en allergenen.',
-      place: 'Maspalomas, Gran Canaria', h1: 'Brunch en koffie<br />in <em>Maspalomas.</em>',
-      intro: 'Granola, pancakes, toast en de Calma Special op een triassant. Lavazza-koffie, matcha en ube latte. Aan de Avenida de Tirajana, met tafels binnen en buiten.',
+      place: 'Maspalomas, Gran Canaria', h1: 'Brunch en koffie <br />in <em>Maspalomas.</em>',
+      intro: 'Granola, pancakes, toast en de Calma Special op een triassant, een mix van croissant en meergranenbrood. Lavazza-koffie, matcha en ube latte. Aan de Avenida de Tirajana, met tafels binnen en buiten.',
       seeMenu: 'Bekijk de menukaart', pancakesAlt: 'Pancakes van Calma Café met verschillende toppings',
       strip: ['Brunch', 'Lavazza-koffie', 'Matcha en ube', 'Veganistisch en vegetarisch'],
       doorsTitle: 'De menukaart, het café en <em>de route.</em>',
@@ -330,7 +351,7 @@ export const ui: Record<Lang, UI> = {
       drinksEyebrow: 'Om te drinken', drinksTitle: 'Koffie of <em>matcha?</em>',
       drinksIntro: 'Lavazza-koffie, Japanse matcha en ube, een paarse zoete aardappel uit de Filipijnen die naar vanille smaakt.',
       coffee: 'Koffie', matcha: 'Matcha en ube', chooseDrink: 'Kies je drankje', drinksHint: 'Kies de jouwe', allDrinks: 'Alle drankjes',
-      tables: 'Tafels binnen en buiten.', callNumber: 'Bel {tel}', reviews: 'Reviews op Google',
+      tables: 'Tafels binnen en buiten.', callNumber: 'Bel {tel}', reviews: 'Reviews op Google', rating: nota => `${nota} op Google`,
     },
     carta: {
       title: 'Menukaart · Calma Café, Maspalomas',
@@ -343,6 +364,7 @@ export const ui: Record<Lang, UI> = {
         vegetariano: 'Zonder vlees of vis.', vegano: 'Zonder dierlijke ingrediënten.',
         bebidas: 'Lavazza-koffie, matcha, ube, smoothies, sappen, mimosa’s en Aperol Spritz.',
       },
+      groupIntros: { 'carta-para-los-ninos': 'Voor de kleintjes: sandwiches, wafels, toast en yoghurt met fruit.' }, allTab: 'Alles', seeIn: grupo => `bij ${grupo}`,
       dish: n => `${n} ${n === 1 ? 'gerecht' : 'gerechten'}`, drink: n => `${n} ${n === 1 ? 'drankje' : 'drankjes'}`, photo: 'bekijk foto',
       vegan: 'Veganistisch', vegetarian: 'Vegetarisch', choose: 'Keuze uit', add: 'Extra', allergens: 'Allergenen',
       allergyTitle: 'Allergieën of intoleranties?',
@@ -351,13 +373,13 @@ export const ui: Record<Lang, UI> = {
       translated: 'Vertaald uit de Spaanse menukaart van het café. Prijzen en allergenen zijn gelijk aan het origineel.',
     },
     calma: {
-      title: 'Over ons · Calma Café, Maspalomas',
+      title: 'Brunchcafé vol planten in Maspalomas · Calma Café',
       description: 'Calma Café is het café van een Noors-Nederlands stel aan de Avenida de Tirajana in Maspalomas: brunch, koffie en huisgemaakt gebak in een café vol planten en schilderijen.',
-      h1: 'Van Noorwegen en Nederland<br />naar <em>Maspalomas.</em>',
+      h1: 'Van Noorwegen en Nederland <br />naar <em>Maspalomas.</em>',
       intro: 'Calma is het café van een Noors-Nederlands stel aan de Avenida de Tirajana 3. We serveren brunch, koffie en huisgemaakt gebak, tussen planten, mosterdgele kussens en schilderijen aan de muur.',
-      chalkEyebrow: 'Ons krijtbord', otherBoard: 'Het andere krijtbord.',
+      chalkEyebrow: 'Ons krijtbord', otherBoard: 'En op het andere krijtbord: ‘A yawn is a silent scream for coffee’.',
       detailsEyebrow: 'Het café', detailsTitle: 'Een kijkje <em>binnen.</em>',
-      detailsText: 'Mosterdgele kussens, een wandkleed van kopjes, lampjes boven de houten bar<br />en een groot raam met uitzicht op palmbomen.',
+      detailsText: 'Mosterdgele kussens, een wandkleed van kopjes, lampjes boven de houten bar <br />en een groot raam met uitzicht op palmbomen.',
       captions: ['Het raam', 'De kussens', 'Het prikbord', 'De bar', 'Het wandkleed van kopjes', 'De schilderijen', 'De lampjes', 'Een tafeltje bij het prikbord'],
       instagram: 'Meer foto’s van het café en het eten op Instagram.',
       story: {
@@ -368,11 +390,17 @@ export const ui: Record<Lang, UI> = {
       },
     },
     visit: {
-      title: 'Bezoek · Calma Café, Maspalomas',
+      title: 'Locatie en openingstijden · Calma Café, Avda. de Tirajana (Maspalomas)',
       description: 'Calma Café zit aan de Avda. de Tirajana 3 (Apartamentos Aloe), Maspalomas. Telefoon +34 681 66 79 17, WhatsApp en routebeschrijving.',
       eyebrow: 'Bezoek', h1: 'Waar je ons <em>vindt.</em>',
       intro: 'We hebben tafels binnen en buiten. Heb je vooraf een vraag? Bel ons of stuur een WhatsApp.',
-      address: 'Adres', hours: 'Openingstijden', hoursLink: 'Bekijk ons Google Maps-profiel', hoursView: 'Openingstijden', contact: 'Contact',
+      address: 'Adres', hours: 'Openingstijden', hoursLink: 'Bekijk ons Google Maps-profiel', hoursView: 'Openingstijden', contact: 'Contact', faqTitle: 'Veelgestelde vragen',
+      faq: [
+        ['Wat zijn jullie openingstijden?', '{horario}'],
+        ['Hebben jullie veganistische of vegetarische opties?', 'Ja: de kaart heeft een volledig vegetarisch en een volledig veganistisch menu, met prijzen en allergenen.'],
+        ['Is er een kindermenu?', 'Ja, de kaart heeft een onderdeel ‘Voor kinderen’ met sandwiches, wafels, toast en yoghurt met fruit.'],
+        ['Waar zitten jullie?', 'Aan de Avda. de Tirajana 3, in de Apartamentos Aloe, 35100 Maspalomas (San Bartolomé de Tirajana). We hebben tafels binnen en buiten.'],
+      ],
       loadMap: 'Kaart laden', mapNote: 'Als je de kaart laadt, maak je verbinding met Google Maps.', mapCaption: 'Illustratie · de kaart van Google laadt alleen als je dat wilt.',
       mapTitle: 'Calma Café op Google Maps', mapFallback: 'Verschijnt de kaart niet? Gebruik dan de knop ‘Route’.',
     },

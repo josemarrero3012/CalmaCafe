@@ -35,6 +35,9 @@ const fixes = [
   [word('pidelo'), 'pídelo'], [/Añadele,?\s*/g, 'Añádele '], [word('Te'), 'Té'], [word('pure'), 'puré'],
   [/hielo picada/g, 'hielo picado'], [word('maracuya'), 'maracuyá'], [word('fria'), 'fría'], [/Mozarella/g, 'Mozzarella'],
   [word('[Nn]utella'), 'Nutella'], [/Dulce de Leche/g, 'dulce de leche'],
+  // Mayúsculas: «Tosta Salmón» o «Fajita Vegana» son nombres de plato; el resto, en minúscula.
+  [/estilo Americano/g, 'estilo americano'], [/de Canela/g, 'de canela'], [/canela Vegano/g, 'canela vegano'], [/Brie y Bacon/g, 'Brie y bacon'],
+  [/de Quinoa/g, 'de quinoa'], [/Ensalada Vegana/g, 'Ensalada vegana'], [/(Granola (?:Bowl|Cacahuete)) Vegano/g, '$1 vegano'], [/Matcha Latte Congelado/g, 'Matcha Latte congelado'],
   [/,\s*\.\.\.\s*/g, '. '], [/\s*\.\.\.\s*etc\b\.?/g, '…'], [/\.\.\./g, '…'], [/\s+([,.!…])/g, '$1'], [/\s{2,}/g, ' '],
 ];
 const fix = s => fixes.reduce((acc, [re, to]) => acc.replace(re, to), s).trim();
@@ -63,6 +66,7 @@ const overrides = {
   'Vegetariano Mozarella, Pesto': { nombre: 'Mozzarella y pesto' },
   'Triassant Tomate, aceite y semillas': { nombre: 'Triassant con tomate, aceite y semillas' },
   'Pan con...': { nombre: 'Pan con…', notas: ['Pan integral o de molde'] },
+  'Pregunta por nuestros dulces caseros': { nombre: 'Dulce casero del día', notas: ['Pregunta por los de hoy'] },
   'Calma Especial': { descripcion: 'Triassant (mezcla de croissant y pan de cereales) con huevos revueltos, aguacate, bacon y verduras' },
   'Fajita Vegana': { descripcion: 'Hummus, guacamole y champiñones' },
   'Rollito de Canela Vegano': { notas: ['Avisa al llegar: tarda entre 10 y 15 minutos en prepararse'] },

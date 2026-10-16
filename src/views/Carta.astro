@@ -6,13 +6,14 @@ import DishPhoto from '../components/DishPhoto.astro';
 import MenuIllustration from '../components/MenuIllustration.astro';
 import carta from '../data/carta.json';
 import { locale, price, tc, ui, type Lang } from '../i18n/ui';
+import { contar, repetidos } from '../lib/carta';
 import '../styles/carta.css';
 interface Props { lang: Lang; }
 const { lang } = Astro.props;
 const t = ui[lang];
 const c = t.carta;
 const tr = (es: string) => tc(lang, es);
-const total = (menu: (typeof carta.menus)[number]) => menu.grupos.reduce((n, g) => n + g.platos.length, 0);
+const total = contar;
 const unit = (menuId: string, n: number) => (menuId === 'bebidas' ? c.drink(n) : c.dish(n));
 const totalPlatos = carta.menus.reduce((n, menu) => n + total(menu), 0);
 const consultada = new Intl.DateTimeFormat(locale[lang].intl, { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(carta.consultada));
@@ -33,7 +34,7 @@ const consultada = new Intl.DateTimeFormat(locale[lang].intl, { day: 'numeric', 
   <div class="carta-index-bar enter enter-4">
     <div class="carta-index wrap">
       <div class="carta-switch" role="tablist" aria-label={c.tabs}>
-        {carta.menus.map((menu, i) => <a role="tab" href={`#menu-${menu.id}`} id={`tab-${menu.id}`} aria-controls={`menu-${menu.id}`} aria-selected={i === 0 ? 'true' : 'false'} data-tab={menu.id}>{tr(menu.nombre)}</a>)}
+        {carta.menus.map((menu, i) => <a role="tab" href={`#menu-${menu.id}`} id={`tab-${menu.id}`} aria-controls={`menu-${menu.id}`} aria-selected={i === 0 ? 'true' : 'false'} data-tab={menu.id}>{menu.id === 'carta' ? c.allTab : tr(menu.nombre)}</a>)}
       </div>
       {carta.menus.map((menu, mi) => <nav class:list={['carta-sections', { 'is-active': mi === 0 }]} data-sections={menu.id} aria-label={c.sections(tr(menu.nombre))}>
         {menu.grupos.map(grupo => <a href={`#${grupo.id}`} data-index={grupo.id}>{tr(grupo.nombre)}</a>)}
@@ -50,21 +51,23 @@ const consultada = new Intl.DateTimeFormat(locale[lang].intl, { day: 'numeric', 
         {menu.nota.map(nota => <p class="carta-note"><span aria-hidden="true"><Icon name="spark" /></span> {tr(nota)}</p>)}
       </header>
       {menu.grupos.map((grupo, gi) => {
+        const refs = repetidos(menu);
         const portada = grupo.platos.find(p => p.id === grupo.portada);
         return <section class:list={['carta-group', { 'carta-group--flip': gi % 2 === 1 }]} id={grupo.id} aria-labelledby={`${grupo.id}-t`}>
           <div class="carta-group-aside">
             <div class="carta-group-title">
               <span class="carta-group-n">{String(gi + 1).padStart(2, '0')}</span>
               <h3 id={`${grupo.id}-t`}>{tr(grupo.nombre)}</h3>
-              <span class="carta-group-count">{unit(menu.id, grupo.platos.length)}</span>
+              <span class="carta-group-count">{unit(menu.id, grupo.platos.filter(p => !refs.has(p.id)).length)}</span>
             </div>
+            {c.groupIntros[grupo.id] && <p class="carta-group-intro">{c.groupIntros[grupo.id]}</p>}
             {portada?.foto && <figure class="carta-feature" data-feature>
               <div class="carta-feature-arch"><DishPhoto foto={portada.foto} alt={tr(portada.nombre)} sizes="(max-width: 699px) 88vw, (max-width: 999px) 38vw, 420px" /></div>
               <figcaption class="handwritten" data-feature-caption>{tr(portada.nombre)}</figcaption>
             </figure>}
           </div>
           <ul class="carta-list">
-            {grupo.platos.map(plato => <li class="dish" data-photo={plato.foto ? url(plato.foto.src) : undefined} data-photo-widths={plato.foto ? plato.foto.widths.join(',') : undefined} data-name={tr(plato.nombre)}>
+            {grupo.platos.map(plato => refs.has(plato.id) ? <li class="dish dish--ref"><p class="dish-line"><span class="dish-name">{tr(plato.nombre)}</span><span class="dish-dots" aria-hidden="true"></span><a class="dish-ref" href={`#${refs.get(plato.id)!.grupoId}`}>{c.seeIn(tr(refs.get(plato.id)!.grupoNombre))} <span aria-hidden="true"><Icon name="arrow-right" /></span></a></p></li> : <li class="dish" data-photo={plato.foto ? url(plato.foto.src) : undefined} data-photo-widths={plato.foto ? plato.foto.widths.join(',') : undefined} data-name={tr(plato.nombre)}>
               <p class="dish-line">
                 {plato.foto
                   ? <button type="button" class="dish-name" data-dish-open>{tr(plato.nombre)}<span class="visually-hidden"> — {c.photo}</span><span class="dish-camera" aria-hidden="true"></span></button>
@@ -98,7 +101,7 @@ const consultada = new Intl.DateTimeFormat(locale[lang].intl, { day: 'numeric', 
     <button class="icon-button dish-dialog-close" data-close aria-label={t.close}><Icon name="close" /></button>
     <div class="dish-dialog-photo"><img alt="" data-dish-img /></div>
     <div class="dish-dialog-body">
-      <div class="dish-dialog-head"><h2 id="dish-dialog-title" data-dish-title></h2><span class="dish-price" data-dish-price></span></div>
+      <div class="dish-dialog-head"><p id="dish-dialog-title" class="dialog-title" data-dish-title></p><span class="dish-price" data-dish-price></span></div>
       <div data-dish-details></div>
     </div>
   </dialog>

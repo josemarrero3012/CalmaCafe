@@ -44,8 +44,8 @@ Se añaden solo cuando el ingrediente aparece en el nombre o la descripción del
 | Tosta Salmón | Pescado, Huevos | salmón en el nombre y huevo revuelto en la descripción |
 | Tosta Brie | Frutos de cáscara | «con nueces» en la descripción |
 | Tosta Cacahuete | Gluten, Cacahuetes | tosta (pan) con crema de cacahuete |
-| Pancakes estilo Americano | Gluten, Huevos | pancakes con huevos revueltos |
-| Sándwich Brie y Bacon | Gluten, Lácteos | sándwich (pan) con brie |
+| Pancakes estilo americano | Gluten, Huevos | pancakes con huevos revueltos |
+| Sándwich Brie y bacon | Gluten, Lácteos | sándwich (pan) con brie |
 | Sándwich Pollo y pesto | Gluten | sándwich (pan) |
 | Sándwich Guacamole y champiñones | Gluten | sándwich (pan) |
 | Ensalada de atún picante & huevo | Pescado | atún en el nombre |
@@ -54,7 +54,7 @@ Se añaden solo cuando el ingrediente aparece en el nombre o la descripción del
 | Huevo | Huevos | huevo |
 | Queso o jamón | Lácteos | queso (o jamón) |
 | Mozzarella | Lácteos | mozzarella |
-| Rollito de Canela | Gluten | masa de harina de trigo |
+| Rollito de canela | Gluten | masa de harina de trigo |
 | Gofre | Gluten | masa de harina de trigo |
 | Cookies | Gluten | galleta de harina de trigo |
 | Mini Brookie | Gluten | masa de harina de trigo |
@@ -77,7 +77,7 @@ Se añaden solo cuando el ingrediente aparece en el nombre o la descripción del
 | Tosta Cacahuete | Gluten, Cacahuetes | tosta (pan) con crema de cacahuete |
 | Fajita Desayuno | Huevos | «huevos revueltos» en la descripción |
 | Pancakes | Gluten, Huevos, Lácteos | es el mismo plato «Pancakes» de Carta, que ya marca estos tres |
-| Rollito de Canela | Gluten | masa de harina de trigo |
+| Rollito de canela | Gluten | masa de harina de trigo |
 | Gofre | Gluten | masa de harina de trigo |
 | Cookies | Gluten | galleta de harina de trigo |
 | Mini Brookie | Gluten | masa de harina de trigo |
@@ -99,11 +99,11 @@ Se añaden solo cuando el ingrediente aparece en el nombre o la descripción del
 | Tosta Cacahuete | Gluten, Cacahuetes | tosta (pan) con crema de cacahuete |
 | Tosta guacamole & champiñones | Gluten | tosta (pan) |
 | Gofre Vegano | Gluten | gofre (harina de trigo) |
-| Rollito de Canela Vegano | Gluten | masa de harina de trigo |
+| Rollito de canela vegano | Gluten | masa de harina de trigo |
 | Pancakes Veganos | Gluten | pancakes (harina de trigo) |
 | Fajita Vegana | Gluten, Semillas de sésamo | fajita (tortilla de trigo) con hummus (sésamo) |
 | Ensalada Vegana de Quinoa & garbanzos | Gluten | «pan de acompañamiento» |
-| Rollito de Canela | Gluten | masa de harina de trigo |
+| Rollito de canela | Gluten | masa de harina de trigo |
 | Gofre | Gluten | gofre (harina de trigo) |
 | Pancakes | Gluten | pancakes (harina de trigo) |
 | Tofu | Soja | el tofu es de soja |
@@ -145,7 +145,7 @@ Esto es lo que habría que confirmar con el local. No se ha aplicado porque no e
 
 **Probables, pero no seguros (no añadidos)**
 - Bebidas con posible leche vegetal: Matcha Latte, Ube Latte, Chocolate caliente, Calma Latte, Calma Ice Latte, Latte de matcha y de ube congelados, Pumpkin Spice Latte. Calma Latte y Calma Ice Latte dicen «Pistacho, Nutella, Dulce de Leche» como opciones: según la elección llevarían Frutos de cáscara y Lácteos.
-- Gofre, Rollito de Canela, Cookies, Mini Brookie y Pancake Manzana crumble: Huevos y Lácteos (existen versiones veganas).
+- Gofre, Rollito de canela, Cookies, Mini Brookie y Pancake Manzana crumble: Huevos y Lácteos (existen versiones veganas).
 - Granola Cacahuete vegetariano: Lácteos si lleva yogur (la descripción no lo dice).
 - Salsa Caesar (Tosta Caesar, Ensalada Caesar, Fajita Caesar): Huevos, Lácteos, Mostaza y Pescado (anchoa).
 - Pesto (Sándwich Pollo y pesto, Tosta Serrano, Mozzarella Serrano y pesto): Lácteos y frutos secos.

@@ -2,6 +2,11 @@
   "nombre": "Calma Café",
   "lema": "Feed your soul",
   "localidad": "Maspalomas",
+  "municipio": "San Bartolomé de Tirajana",
+  "precio": {
+    "rango": "10–20 €",
+    "fuente": "Ficha de Google, 15 de octubre de 2026 (10–20 € por persona)."
+  },
   "isla": "Gran Canaria",
   "zonaHoraria": "Atlantic/Canary",
   "direccion": {
@@ -48,12 +53,13 @@
     "TODO": "Festivos y temporadas: confirmar si cambian el horario habitual."
   },
   "google": {
-    "verificado": false,
-    "VERIFICAR": "No se muestra ninguna nota ni reseña. Para añadirlas: nota y total comprobados en la ficha de Google y tres reseñas reales con autor, fecha y enlace.",
+    "nota": 4.8,
+    "fuente": "Ficha de Google, 15 de octubre de 2026 (4,8 con 909 reseñas). Se muestra solo la nota, con enlace a la ficha: el total cambia cada semana.",
+    "VERIFICAR": "Revisar la nota de vez en cuando. Para mostrar reseñas: tres reseñas reales con autor, fecha, enlace y permiso del local.",
     "resenas": []
   },
   "servicios": ["Mesas dentro y fuera", "Opciones veganas y vegetarianas"],
-  "TODO": ["Si atienden por WhatsApp y política de reservas.", "Confirmar carta, precios, alérgenos y el alcance de «¡Toda la carta se puede hacer sin gluten!».", "Validar la valoración de Google y aportar tres reseñas reales.", "Titular legal, NIF, dirección fiscal y correo de contacto para textos legales.", "Dominio definitivo y autorización de uso de las fotografías y el vídeo.", "Confirmar créditos y responsables del diseño y desarrollo."],
+  "TODO": ["Si atienden por WhatsApp y política de reservas.", "Confirmar carta, precios, alérgenos y el alcance de «¡Toda la carta se puede hacer sin gluten!».", "Aportar tres reseñas reales con permiso (la nota de Google ya se muestra).", "Titular legal, NIF, dirección fiscal y correo de contacto para textos legales.", "Dominio definitivo y autorización de uso de las fotografías y el vídeo.", "Confirmar créditos y responsables del diseño y desarrollo."],
   "geo": {
     "lat": 27.75221,
     "lng": -15.5774626,

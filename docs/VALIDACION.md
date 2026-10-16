@@ -19,7 +19,7 @@ Medición Lighthouse móvil con red simulada (RTT 150 ms, 1.638,4 Kbps) y ralent
 
 [Informe HTML](capturas/lighthouse-mobile.report.html) · [JSON completo](capturas/lighthouse-mobile.report.json) · [Resumen de métricas](lighthouse-summary.json).
 
-La nota SEO evalúa únicamente lo presente en esta Home: el SEO completo, las URLs definitivas, hreflang, sitemap, robots y páginas legales siguen reservados a Fase 3.
+La nota SEO evalúa únicamente lo presente en esta Home. Canonical, hreflang absolutos, Open Graph, sitemap y robots ya están hechos (ver `docs/AUDITORIA.md`); quedan el dominio definitivo y las páginas legales.
 
 ## Comprobaciones
 

@@ -65,6 +65,8 @@ if (quickActions) {
     const y = scrollY;
     if (Math.abs(y - lastY) < 8) return;
     quickActions.classList.toggle('is-tucked', y > lastY && y > 240);
+    // En la carta también se aparta la cabecera, para dejar más pantalla a los platos (solo en móvil, por CSS).
+    document.body.classList.toggle('header-tucked', y > lastY && y > 400);
     lastY = y;
   }, { passive: true });
 }
@@ -147,10 +149,12 @@ if (tabs.length) {
       const current = link.dataset.index === id;
       const changed = link.classList.contains('is-current') !== current;
       link.classList.toggle('is-current', current);
-      if (current && changed && nav.scrollWidth > nav.clientWidth) {
-        const navBox = nav.getBoundingClientRect();
+      // En escritorio se desliza la fila de secciones; en móvil, la fila única de menús y secciones.
+      const row = getComputedStyle(nav).overflowX === 'visible' ? nav.parentElement! : nav;
+      if (current && changed && row.scrollWidth > row.clientWidth) {
+        const rowBox = row.getBoundingClientRect();
         const box = link.getBoundingClientRect();
-        nav.scrollTo({ left: nav.scrollLeft + box.left - navBox.left - (navBox.width - box.width) / 2, behavior: reducedMotion.matches ? 'auto' : 'smooth' });
+        row.scrollTo({ left: row.scrollLeft + box.left - rowBox.left - (rowBox.width - box.width) / 2, behavior: reducedMotion.matches ? 'auto' : 'smooth' });
       }
     });
   };
@@ -244,15 +248,20 @@ document.querySelectorAll<HTMLElement>('[data-alma]').forEach(figure => {
 
 const revealElements = document.querySelectorAll<HTMLElement>('[data-reveal], .chalk-write');
 if (!reducedMotion.matches) {
-  // La pizarra empieza recortada (clip-path) y su área visible es 0: basta con que entre en pantalla.
-  const observer = new IntersectionObserver(entries => entries.forEach(entry => {
-    const enough = entry.intersectionRatio >= 0.08 || entry.target.classList.contains('chalk-write');
-    if (entry.isIntersecting && enough) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
-  }), { threshold: [0, 0.08] });
+  const reveal = (minRatio: number, rootMargin: string) => {
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (entry.isIntersecting && entry.intersectionRatio >= minRatio) { entry.target.classList.add('is-visible'); observer.unobserve(entry.target); }
+    }), { threshold: [0, minRatio || 0.01], rootMargin });
+    return observer;
+  };
+  // Los bloques entran un poco antes de llegar a la pantalla (margen inferior): al bajar rápido no quedan huecos vacíos.
+  const blocks = reveal(0.08, '0px 0px 25% 0px');
+  // La pizarra se escribe a la vista: basta con que entre en pantalla (empieza recortada y su área visible es 0).
+  const chalk = reveal(0, '0px');
   const belowFold = new Map([...revealElements].map(el => [el, el.getBoundingClientRect().top > window.innerHeight]));
   revealElements.forEach(el => {
     if (belowFold.get(el)) el.classList.add('will-reveal');
-    observer.observe(el);
+    (el.classList.contains('chalk-write') ? chalk : blocks).observe(el);
   });
 }
 reducedMotion.addEventListener('change', () => {

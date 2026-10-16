@@ -280,7 +280,7 @@
   "de": "Zusätzlicher Pancake",
   "nl": "Extra pancake"
  },
- "Pancakes estilo Americano": {
+ "Pancakes estilo americano": {
   "en": "American-style pancakes",
   "de": "Pancakes nach amerikanischer Art",
   "nl": "Amerikaanse pancakes"
@@ -290,7 +290,7 @@
   "de": "Zwei Pancakes mit Rührei, Bacon und Ahornsirup",
   "nl": "Twee pancakes met roerei, bacon en ahornsiroop"
  },
- "Sándwich Brie y Bacon": {
+ "Sándwich Brie y bacon": {
   "en": "Brie and bacon sandwich",
   "de": "Sandwich mit Brie und Bacon",
   "nl": "Sandwich met brie en bacon"
@@ -325,7 +325,7 @@
   "de": "Gemischter Salat, Tomate, Radieschen, Zwiebel, hausgemachtes Dressing, Thunfisch und Spiegelei. Mit Brot",
   "nl": "Gemengde salade, tomaat, radijsjes, ui, huisgemaakte dressing, tonijn en een gebakken ei. Met brood"
  },
- "Ensalada de Quinoa y pollo": {
+ "Ensalada de quinoa y pollo": {
   "en": "Quinoa and chicken salad",
   "de": "Quinoa-Salat mit Hähnchen",
   "nl": "Quinoasalade met kip"
@@ -420,12 +420,17 @@
   "de": "Räucherlachs",
   "nl": "Gerookte zalm"
  },
- "Pregunta por nuestros dulces caseros": {
-  "en": "Ask about our homemade cakes",
-  "de": "Frag nach unseren hausgemachten Kuchen",
-  "nl": "Vraag naar ons huisgemaakte gebak"
+ "Dulce casero del día": {
+  "en": "Homemade cake of the day",
+  "de": "Hausgemachter Kuchen des Tages",
+  "nl": "Huisgemaakt gebak van de dag"
  },
- "Rollito de Canela": {
+ "Pregunta por los de hoy": {
+  "en": "Ask what we have today",
+  "de": "Frag, was es heute gibt",
+  "nl": "Vraag wat we vandaag hebben"
+ },
+ "Rollito de canela": {
   "en": "Cinnamon roll",
   "de": "Zimtschnecke",
   "nl": "Kaneelbroodje"
@@ -555,7 +560,7 @@
   "de": "Rührei, Salat, Tomate, Radieschen und Dressing",
   "nl": "Roerei, salade, tomaat, radijsjes en dressing"
  },
- "Ensalada vegetariana de Quinoa, verduras & aguacate": {
+ "Ensalada vegetariana de quinoa, verduras & aguacate": {
   "en": "Vegetarian quinoa salad with vegetables and avocado",
   "de": "Vegetarischer Quinoa-Salat mit Gemüse und Avocado",
   "nl": "Vegetarische quinoasalade met groenten en avocado"
@@ -590,7 +595,7 @@
   "de": "Extra Sauce",
   "nl": "Extra saus"
  },
- "Granola Bowl Vegano con fruta": {
+ "Granola Bowl vegano con fruta": {
   "en": "Vegan granola bowl with fruit",
   "de": "Vegane Granola-Bowl mit Obst",
   "nl": "Veganistische granolabowl met fruit"
@@ -640,7 +645,7 @@
   "de": "Vegane Waffel",
   "nl": "Veganistische wafel"
  },
- "Rollito de Canela Vegano": {
+ "Rollito de canela vegano": {
   "en": "Vegan cinnamon roll",
   "de": "Vegane Zimtschnecke",
   "nl": "Veganistisch kaneelbroodje"
@@ -650,7 +655,7 @@
   "de": "Sag uns gleich bei der Ankunft Bescheid: Die Zubereitung dauert 10 bis 15 Minuten",
   "nl": "Laat het ons weten als je binnenkomt: de bereiding duurt 10 tot 15 minuten"
  },
- "Granola Cacahuete Vegano": {
+ "Granola Cacahuete vegano": {
   "en": "Vegan peanut butter granola bowl",
   "de": "Vegane Erdnuss-Granola-Bowl",
   "nl": "Veganistische granolabowl met pindakaas"
@@ -685,7 +690,7 @@
   "de": "Hummus, Guacamole und Champignons",
   "nl": "Hummus, guacamole en champignons"
  },
- "Ensalada Vegana de Quinoa & garbanzos": {
+ "Ensalada vegana de quinoa & garbanzos": {
   "en": "Vegan quinoa and chickpea salad",
   "de": "Veganer Quinoa-Salat mit Kichererbsen",
   "nl": "Veganistische quinoasalade met kikkererwten"
@@ -805,7 +810,7 @@
   "de": "Pistazie, Nutella, Dulce de Leche",
   "nl": "Pistache, Nutella, dulce de leche"
  },
- "Matcha Latte Congelado": {
+ "Matcha Latte congelado": {
   "en": "Frozen matcha latte",
   "de": "Frozen Matcha Latte",
   "nl": "Frozen matcha latte"

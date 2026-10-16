@@ -42,7 +42,7 @@ export interface UI {
     title: string; description: string; place: string; h1: string; intro: string; seeMenu: string; pancakesAlt: string;
     strip: [string, string, string, string]; doorsTitle: string;
     doors: { carta: [string, string, string]; calma: [string, string, string]; visit: [string, string, string] };
-    drinksEyebrow: string; drinksTitle: string; drinksIntro: string; coffee: string; matcha: string; chooseDrink: string; allDrinks: string;
+    drinksEyebrow: string; drinksTitle: string; drinksIntro: string; coffee: string; matcha: string; chooseDrink: string; drinksHint: string; allDrinks: string;
     tables: string; callNumber: string; reviews: string;
   };
   carta: {
@@ -96,7 +96,7 @@ export const ui: Record<Lang, UI> = {
       },
       drinksEyebrow: 'Para beber', drinksTitle: '¿Café o <em>matcha?</em>',
       drinksIntro: 'Café Lavazza, matcha japonés y ube, una batata lila de Filipinas que sabe a vainilla.',
-      coffee: 'Café', matcha: 'Matcha y ube', chooseDrink: 'Elige tu bebida', allDrinks: 'Todas las bebidas',
+      coffee: 'Café', matcha: 'Matcha y ube', chooseDrink: 'Elige tu bebida', drinksHint: 'Elige el tuyo', allDrinks: 'Todas las bebidas',
       tables: 'Mesas dentro y fuera.', callNumber: 'Llamar al {tel}', reviews: 'Reseñas en Google',
     },
     carta: {
@@ -173,7 +173,7 @@ export const ui: Record<Lang, UI> = {
       },
       drinksEyebrow: 'To drink', drinksTitle: 'Coffee or <em>matcha?</em>',
       drinksIntro: 'Lavazza coffee, Japanese matcha and ube, a purple sweet potato from the Philippines that tastes of vanilla.',
-      coffee: 'Coffee', matcha: 'Matcha and ube', chooseDrink: 'Choose your drink', allDrinks: 'All drinks',
+      coffee: 'Coffee', matcha: 'Matcha and ube', chooseDrink: 'Choose your drink', drinksHint: 'Pick yours', allDrinks: 'All drinks',
       tables: 'Tables inside and out.', callNumber: 'Call {tel}', reviews: 'Reviews on Google',
     },
     carta: {
@@ -251,7 +251,7 @@ export const ui: Record<Lang, UI> = {
       },
       drinksEyebrow: 'Zum Trinken', drinksTitle: 'Kaffee oder <em>Matcha?</em>',
       drinksIntro: 'Lavazza-Kaffee, japanischer Matcha und Ube, eine violette Süßkartoffel von den Philippinen, die nach Vanille schmeckt.',
-      coffee: 'Kaffee', matcha: 'Matcha und Ube', chooseDrink: 'Wähle dein Getränk', allDrinks: 'Alle Getränke',
+      coffee: 'Kaffee', matcha: 'Matcha und Ube', chooseDrink: 'Wähle dein Getränk', drinksHint: 'Wähl deins', allDrinks: 'Alle Getränke',
       tables: 'Tische drinnen und draußen.', callNumber: '{tel} anrufen', reviews: 'Bewertungen auf Google',
     },
     carta: {
@@ -329,7 +329,7 @@ export const ui: Record<Lang, UI> = {
       },
       drinksEyebrow: 'Om te drinken', drinksTitle: 'Koffie of <em>matcha?</em>',
       drinksIntro: 'Lavazza-koffie, Japanse matcha en ube, een paarse zoete aardappel uit de Filipijnen die naar vanille smaakt.',
-      coffee: 'Koffie', matcha: 'Matcha en ube', chooseDrink: 'Kies je drankje', allDrinks: 'Alle drankjes',
+      coffee: 'Koffie', matcha: 'Matcha en ube', chooseDrink: 'Kies je drankje', drinksHint: 'Kies de jouwe', allDrinks: 'Alle drankjes',
       tables: 'Tafels binnen en buiten.', callNumber: 'Bel {tel}', reviews: 'Reviews op Google',
     },
     carta: {

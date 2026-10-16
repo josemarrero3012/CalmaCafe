@@ -49,13 +49,13 @@ if (negocio.horario.confirmado && document.querySelector('[data-hours]')) {
   document.addEventListener('visibilitychange', () => { if (!document.hidden) updateHours(); });
 }
 
-// Inicio: ¿café o matcha? Cada botón muestra su lista de bebidas de la carta.
-document.querySelectorAll<HTMLButtonElement>('[data-team]').forEach(button => button.addEventListener('click', () => {
-  const team = button.dataset.team!;
-  document.querySelectorAll('[data-team]').forEach(el => el.setAttribute('aria-pressed', String(el === button)));
-  document.querySelectorAll<HTMLElement>('[data-team-panel]').forEach(panel => { panel.hidden = panel.dataset.teamPanel !== team; });
-  document.querySelector('.team-photos')?.classList.toggle('matcha-selected', team === 'matcha');
-}));
+// Inicio: ¿café o matcha? Se ven las dos fotos hasta elegir (con el botón o tocando la foto); luego solo la elegida y su lista de bebidas.
+const teamGrid = document.querySelector<HTMLElement>('.team-grid');
+const chooseTeam = (team: string) => {
+  teamGrid!.dataset.choice = team;
+  document.querySelectorAll<HTMLElement>('[data-team]').forEach(el => el.setAttribute('aria-pressed', String(el.dataset.team === team)));
+};
+document.querySelectorAll<HTMLElement>('[data-team], [data-team-pick]').forEach(el => el.addEventListener('click', () => chooseTeam(el.dataset.team ?? el.dataset.teamPick!)));
 
 // Móvil: la barra de acciones se aparta al bajar y vuelve al subir, para dejar sitio al contenido.
 const quickActions = document.querySelector<HTMLElement>('.mobile-bottom');

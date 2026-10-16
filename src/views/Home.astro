@@ -24,7 +24,7 @@ const plato = (id: string) => {
 };
 const pancakes = plato('422600');
 const especial = plato('89630');
-const matchaFrio = plato('492937');
+const latteFrio = plato('93803');
 const bebidas = {
   coffee: ['723815', '93803', '93800'].map(plato),
   matcha: ['492937', '492936', '701627'].map(plato),
@@ -86,13 +86,19 @@ const doors = [
   </section>
 
   <section class="team-section section" aria-labelledby="team-title">
-    <div class="wrap team-grid">
-      <div class="team-photos" data-reveal><div class="team-main"><Photo name="coffee-o-matcha" lang={lang} sizes="(max-width: 600px) 70vw, 350px" /></div><div class="team-secondary"><DishPhoto foto={matchaFrio.foto} alt={tc(lang, matchaFrio.nombre)} sizes="(max-width: 600px) 38vw, 230px" /></div></div>
+    <div class="wrap team-grid" data-choice="none">
+      <div class="team-photos" data-reveal>
+        <figure class="team-card team-card--coffee" data-team-pick="coffee"><DishPhoto foto={latteFrio.foto} alt={tc(lang, latteFrio.nombre)} sizes="(max-width: 600px) 62vw, 340px" /><figcaption class="handwritten">{h.coffee}</figcaption></figure>
+        <figure class="team-card team-card--matcha" data-team-pick="matcha"><Photo name="mango-matcha" lang={lang} sizes="(max-width: 600px) 62vw, 340px" /><figcaption class="handwritten">{h.matcha}</figcaption></figure>
+      </div>
       <div class="team-copy" data-reveal><p class="eyebrow">{h.drinksEyebrow}</p><h2 id="team-title" set:html={h.drinksTitle} /><p>{h.drinksIntro}</p>
-        <div class="team-choices" role="group" aria-label={h.chooseDrink}><button type="button" class="team-choice" data-team="coffee" aria-pressed="true">{h.coffee}</button><button type="button" class="team-choice" data-team="matcha" aria-pressed="false">{h.matcha}</button></div>
-        {Object.entries(bebidas).map(([team, lista]) => <ul class="team-result" data-team-panel={team} hidden={team !== 'coffee'}>
-          {lista.map(b => <li><span>{tc(lang, b.nombre)}{b.descripcion && b.descripcion.length < 40 && <small>{tc(lang, b.descripcion)}</small>}</span><b>{price(lang, b.precio)}</b></li>)}
-        </ul>)}
+        <div class="team-choices" role="group" aria-label={h.chooseDrink}><button type="button" class="team-choice" data-team="coffee" aria-pressed="false">{h.coffee}</button><button type="button" class="team-choice" data-team="matcha" aria-pressed="false">{h.matcha}</button></div>
+        <div class="team-results">
+          <p class="team-hint handwritten"><span aria-hidden="true">↑ </span>{h.drinksHint}</p>
+          {Object.entries(bebidas).map(([team, lista]) => <ul class="team-result" data-team-panel={team}>
+            {lista.map((b, i) => <li style={`--i:${i}`}><span>{tc(lang, b.nombre)}{b.descripcion && b.descripcion.length < 40 && <small>{tc(lang, b.descripcion)}</small>}</span><b>{price(lang, b.precio)}</b></li>)}
+          </ul>)}
+        </div>
         <a class="text-link team-link" href={`${url(routes[lang].carta)}#bebidas`}>{h.allDrinks} <span aria-hidden="true"><Icon name="arrow-right" /></span></a>
       </div>
     </div>

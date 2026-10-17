@@ -1,6 +1,6 @@
 {
   "fuente": "https://calma.buenacarta.com/",
-  "consultada": "2026-10-16",
+  "consultada": "2026-10-17",
   "local": {
     "direccion": "Avda. de Tirajana 3, Apt Aloe, Maspalomas (Las Palmas)",
     "telefono": "681667917",
@@ -2834,29 +2834,8 @@
               ]
             },
             {
-              "id": "723815",
-              "nombre": "Calma Ice Latte",
-              "descripcion": "Pistacho, Nutella, dulce de leche",
-              "extras": [],
-              "opciones": [],
-              "notas": [],
-              "precio": "7,00 €",
-              "alergenos": [],
-              "dieta": null,
-              "foto": {
-                "src": "/media/carta/723815",
-                "width": 800,
-                "height": 600,
-                "widths": [
-                  160,
-                  480,
-                  800
-                ]
-              }
-            },
-            {
               "id": "492937",
-              "nombre": "Matcha Latte congelado",
+              "nombre": "Matcha Congelado",
               "descripcion": "El matcha es un té verde japonés en polvo, con cafeína y rico en antioxidantes",
               "extras": [
                 {

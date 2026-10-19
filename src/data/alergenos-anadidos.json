@@ -71,15 +71,6 @@
    ],
    "motivo": "tosta (pan) con crema de cacahuete"
   },
-  "621656": {
-   "menu": "Carta",
-   "nombre": "Pancakes estilo americano",
-   "anadir": [
-    "Gluten",
-    "Huevos"
-   ],
-   "motivo": "pancakes con huevos revueltos"
-  },
   "93767": {
    "menu": "Carta",
    "nombre": "Sándwich Brie y bacon",
@@ -92,14 +83,6 @@
   "93768": {
    "menu": "Carta",
    "nombre": "Sándwich Pollo y pesto",
-   "anadir": [
-    "Gluten"
-   ],
-   "motivo": "sándwich (pan)"
-  },
-  "93769": {
-   "menu": "Carta",
-   "nombre": "Sándwich Guacamole y champiñones",
    "anadir": [
     "Gluten"
    ],
@@ -185,24 +168,6 @@
    ],
    "motivo": "masa de harina de trigo"
   },
-  "721406": {
-   "menu": "Carta",
-   "nombre": "Pancakes",
-   "anadir": [
-    "Gluten",
-    "Huevos",
-    "Lácteos"
-   ],
-   "motivo": "es el mismo plato «Pancakes» que en Brunch, que ya marca estos tres"
-  },
-  "728477": {
-   "menu": "Carta",
-   "nombre": "Pancake Manzana crumble",
-   "anadir": [
-    "Gluten"
-   ],
-   "motivo": "pancake (harina de trigo)"
-  },
   "486019": {
    "menu": "Carta",
    "nombre": "Gofre con mermelada o Nutella",
@@ -262,16 +227,6 @@
    ],
    "motivo": "«con nueces» en la descripción"
   },
-  "426921": {
-   "menu": "Vegetariano",
-   "nombre": "Pancakes",
-   "anadir": [
-    "Gluten",
-    "Huevos",
-    "Lácteos"
-   ],
-   "motivo": "es el mismo plato «Pancakes» de Carta, que ya marca estos tres"
-  },
   "652415": {
    "menu": "Vegetariano",
    "nombre": "Granola Cacahuete",
@@ -297,16 +252,6 @@
     "Huevos"
    ],
    "motivo": "«huevos revueltos» en la descripción"
-  },
-  "721669": {
-   "menu": "Vegetariano",
-   "nombre": "Pancakes",
-   "anadir": [
-    "Gluten",
-    "Huevos",
-    "Lácteos"
-   ],
-   "motivo": "es el mismo plato «Pancakes» de Carta, que ya marca estos tres"
   },
   "721671": {
    "menu": "Vegetariano",
@@ -339,14 +284,6 @@
     "Gluten"
    ],
    "motivo": "masa de harina de trigo"
-  },
-  "728478": {
-   "menu": "Vegetariano",
-   "nombre": "Pancake Manzana crumble",
-   "anadir": [
-    "Gluten"
-   ],
-   "motivo": "pancake (harina de trigo)"
   },
   "164068": {
    "menu": "Vegetariano",
@@ -457,14 +394,6 @@
    ],
    "motivo": "masa de harina de trigo"
   },
-  "429056": {
-   "menu": "Vegano",
-   "nombre": "Pancakes Veganos",
-   "anadir": [
-    "Gluten"
-   ],
-   "motivo": "pancakes (harina de trigo)"
-  },
   "164067": {
    "menu": "Vegano",
    "nombre": "Fajita Vegana",
@@ -482,14 +411,6 @@
    ],
    "motivo": "«pan de acompañamiento»"
   },
-  "721673": {
-   "menu": "Vegano",
-   "nombre": "Rollito de canela",
-   "anadir": [
-    "Gluten"
-   ],
-   "motivo": "masa de harina de trigo"
-  },
   "721675": {
    "menu": "Vegano",
    "nombre": "Gofre",
@@ -497,14 +418,6 @@
     "Gluten"
    ],
    "motivo": "gofre (harina de trigo)"
-  },
-  "721674": {
-   "menu": "Vegano",
-   "nombre": "Pancakes",
-   "anadir": [
-    "Gluten"
-   ],
-   "motivo": "pancakes (harina de trigo)"
   },
   "701345": {
    "menu": "Vegano",

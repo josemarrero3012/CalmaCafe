@@ -240,11 +240,6 @@
   "de": "Erdnusscreme, Marmelade und Banane",
   "nl": "Pindakaas, jam en banaan"
  },
- "Pancakes": {
-  "en": "Pancakes",
-  "de": "Pancakes",
-  "nl": "Pancakes"
- },
  "Nutella": {
   "en": "Nutella",
   "de": "Nutella",
@@ -275,21 +270,6 @@
   "de": "Schlagsahne",
   "nl": "Slagroom"
  },
- "Pancake": {
-  "en": "Extra pancake",
-  "de": "Zusätzlicher Pancake",
-  "nl": "Extra pancake"
- },
- "Pancakes estilo americano": {
-  "en": "American-style pancakes",
-  "de": "Pancakes nach amerikanischer Art",
-  "nl": "Amerikaanse pancakes"
- },
- "Dos pancakes con huevos revueltos, bacon y Jarabe de arce": {
-  "en": "Two pancakes with scrambled eggs, bacon and maple syrup",
-  "de": "Zwei Pancakes mit Rührei, Bacon und Ahornsirup",
-  "nl": "Twee pancakes met roerei, bacon en ahornsiroop"
- },
  "Sándwich Brie y bacon": {
   "en": "Brie and bacon sandwich",
   "de": "Sandwich mit Brie und Bacon",
@@ -304,6 +284,11 @@
   "en": "Chicken and pesto sandwich",
   "de": "Sandwich mit Hähnchen und Pesto",
   "nl": "Sandwich met kip en pesto"
+ },
+ "Sándwich albondigas y gorgonzola": {
+  "en": "Meatball and gorgonzola sandwich",
+  "de": "Sandwich mit Hackbällchen und Gorgonzola",
+  "nl": "Sandwich met gehaktballetjes en gorgonzola"
  },
  "Ensalada Caesar": {
   "en": "Caesar salad",
@@ -365,11 +350,6 @@
   "de": "Mit Rührei und Dillsauce",
   "nl": "Met roerei en dillesaus"
  },
- "Sándwich Guacamole y champiñones": {
-  "en": "Guacamole and mushroom sandwich",
-  "de": "Sandwich mit Guacamole und Champignons",
-  "nl": "Sandwich met guacamole en champignons"
- },
  "Papas ajillo al horno": {
   "en": "Oven-baked garlic potatoes",
   "de": "Knoblauch-Ofenkartoffeln",
@@ -429,6 +409,11 @@
   "en": "Ask what we have today",
   "de": "Frag, was es heute gibt",
   "nl": "Vraag wat we vandaag hebben"
+ },
+ "Pregunta por nuestros dulces caseros veganos!": {
+  "en": "Ask about our homemade vegan cakes!",
+  "de": "Frag nach unseren hausgemachten veganen Kuchen!",
+  "nl": "Vraag naar ons huisgemaakte veganistische gebak!"
  },
  "Rollito de canela": {
   "en": "Cinnamon roll",
@@ -665,21 +650,6 @@
   "de": "Mit Erdnusscreme, Banane und Schokolade",
   "nl": "Met pindakaas, banaan en chocolade"
  },
- "Pancakes Veganos": {
-  "en": "Vegan pancakes",
-  "de": "Vegane Pancakes",
-  "nl": "Veganistische pancakes"
- },
- "Crema de cacahuetes": {
-  "en": "Peanut butter",
-  "de": "Erdnusscreme",
-  "nl": "Pindakaas"
- },
- "Jarabe de arce": {
-  "en": "Maple syrup",
-  "de": "Ahornsirup",
-  "nl": "Ahornsiroop"
- },
  "Fajita Vegana": {
   "en": "Vegan wrap",
   "de": "Veganer Wrap",
@@ -800,20 +770,15 @@
   "de": "Pistazie",
   "nl": "Pistache"
  },
- "Calma Ice Latte": {
-  "en": "Calma Ice Latte",
-  "de": "Calma Ice Latte",
-  "nl": "Calma Ice Latte"
- },
  "Pistacho, Nutella, dulce de leche": {
   "en": "Pistachio, Nutella, dulce de leche",
   "de": "Pistazie, Nutella, Dulce de Leche",
   "nl": "Pistache, Nutella, dulce de leche"
  },
- "Matcha Latte congelado": {
-  "en": "Frozen matcha latte",
-  "de": "Frozen Matcha Latte",
-  "nl": "Frozen matcha latte"
+ "Matcha Congelado": {
+  "en": "Frozen matcha",
+  "de": "Frozen Matcha",
+  "nl": "Frozen matcha"
  },
  "El matcha es un té verde japonés en polvo, con cafeína y rico en antioxidantes": {
   "en": "Matcha is a Japanese powdered green tea, with caffeine and rich in antioxidants",
@@ -985,6 +950,11 @@
   "de": "Sahne",
   "nl": "Slagroom"
  },
+ "Nata 0.80€": {
+  "en": "Whipped cream €0.80",
+  "de": "Sahne 0,80 €",
+  "nl": "Slagroom € 0,80"
+ },
  "Extra espresso": {
   "en": "Extra espresso shot",
   "de": "Extra Espresso",
@@ -1014,16 +984,6 @@
   "en": "With cheese and confit tomatoes",
   "de": "Mit Käse und confierten Tomaten",
   "nl": "Met kaas en gekonfijte tomaten"
- },
- "Pancake Manzana crumble": {
-  "en": "Apple crumble pancake",
-  "de": "Pancake mit Apfel-Crumble",
-  "nl": "Pancake met appelcrumble"
- },
- "Crema pistacho vegano": {
-  "en": "Vegan pistachio cream",
-  "de": "Vegane Pistaziencreme",
-  "nl": "Veganistische pistachecrème"
  },
  "Sulfitos": {
   "en": "Sulphites",

@@ -10,27 +10,16 @@ import ScriptWord from '../components/ScriptWord.astro';
 import negocio from '../data/negocio.json';
 import carta from '../data/carta.json';
 import { locale, phone, price, routes, tc, ui, type Lang } from '../i18n/ui';
-import { contar } from '../lib/carta';
+import { contar, destacados } from '../lib/carta';
+import { huecos } from '../lib/destacados.mjs';
 interface Props { lang: Lang; }
 const { lang } = Astro.props;
 const t = ui[lang];
 const h = t.home;
-// Solo se destacan platos y bebidas que están en la carta oficial.
-interface Plato { id: string; nombre: string; precio: string; descripcion: string | null; foto: { src: string; width: number; height: number; widths: number[] } | null; }
-const platos = carta.menus.flatMap(menu => menu.grupos.flatMap(grupo => grupo.platos as unknown as Plato[]));
-const plato = (id: string) => {
-  const found = platos.find(p => p.id === id);
-  if (!found?.foto) throw new Error(`Plato ${id} sin foto en carta.json`);
-  return found as Plato & { foto: NonNullable<Plato['foto']> };
-};
-const pancakes = plato('422600');
-const especial = plato('89630');
-const latteFrio = plato('93803');
-const matchaLatte = plato('492936');
-const bebidas = {
-  coffee: ['723815', '93803', '93800'].map(plato),
-  matcha: ['492937', '492936', '701627'].map(plato),
-};
+// Solo se destacan platos y bebidas que están en la carta oficial; si uno desaparece, destacados.mjs elige otro de su sección.
+const { fotos: { dulce, salado: especial, cafe: latteFrio, matcha: matchaLatte }, bebidas } = destacados;
+// El texto alternativo largo describe la foto de los Pancakes; con otro plato basta su nombre.
+const dulceAlt = dulce.id === huecos.dulce.ids[0] ? h.pancakesAlt : tc(lang, dulce.nombre);
 const fill = (text: string) => text.replace('{n}', String(carta.menus.reduce((n, menu) => n + contar(menu), 0))).replace('{calle}', negocio.direccion.calle).replace('{tel}', phone(lang, negocio.telefono.texto));
 const doors = [
   { href: url(routes[lang].carta), dish: especial, text: h.doors.carta },
@@ -55,7 +44,7 @@ const doors = [
       <div class="hero-visual enter enter-visual">
         <Seal />
         <div class="hero-photos">
-          <figure class="hero-photo"><DishPhoto foto={pancakes.foto} alt={h.pancakesAlt} sizes="(max-width: 699px) 150px, 330px" eager /><figcaption class="handwritten">{tc(lang, pancakes.nombre)} · {price(lang, pancakes.precio)}</figcaption></figure>
+          <figure class="hero-photo"><DishPhoto foto={dulce.foto} alt={dulceAlt} sizes="(max-width: 699px) 150px, 330px" eager /><figcaption class="handwritten">{tc(lang, dulce.nombre)} · {price(lang, dulce.precio)}</figcaption></figure>
           <figure class="hero-photo hero-photo--salty"><DishPhoto foto={especial.foto} alt={tc(lang, especial.nombre)} sizes="150px" eager /><figcaption class="handwritten">{tc(lang, especial.nombre)} · {price(lang, especial.precio)}</figcaption></figure>
         </div>
         <button class="video-open" type="button" aria-haspopup="dialog" aria-controls="video-dialog" aria-label={t.video.play}><span aria-hidden="true">▶︎</span> {t.video.playShort}</button>

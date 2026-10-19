@@ -1,7 +1,12 @@
 import carta from '../data/carta.json';
+import { destacados as elegir, type Carta } from './destacados.mjs';
 
 type Menu = (typeof carta.menus)[number];
 type Ref = { grupoId: string; grupoNombre: string };
+
+// Platos de Inicio, elegidos una vez por compilación. En GitHub Actions los avisos salen como anotaciones del run.
+export const destacados = elegir(carta as unknown as Carta);
+for (const aviso of destacados.avisos) console.warn(`${process.env.GITHUB_ACTIONS ? '::warning title=Inicio::' : 'Inicio: '}${aviso}`);
 
 // Platos que la carta oficial repite en otra sección del mismo menú (los Pancakes salen en Brunch y en
 // «¡Algo dulce!», con extras a precios distintos). La web solo muestra el primero; los demás pasan a ser

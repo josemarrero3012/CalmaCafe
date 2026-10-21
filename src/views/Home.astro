@@ -20,6 +20,8 @@ const h = t.home;
 const { fotos: { dulce, salado: especial, cafe: latteFrio, matcha: matchaLatte }, bebidas } = destacados;
 // El texto alternativo largo describe la foto de los Pancakes; con otro plato basta su nombre.
 const dulceAlt = dulce.id === huecos.dulce.ids[0] ? h.pancakesAlt : tc(lang, dulce.nombre);
+// Frase de la cabecera sin el salto de línea ni el punto final: «Brunch y café en Maspalomas»
+const tagline = h.h1.replace(/<[^>]+>/g, '').replace(/\.$/, '');
 const fill = (text: string) => text.replace('{n}', String(carta.menus.reduce((n, menu) => n + contar(menu), 0))).replace('{calle}', negocio.direccion.calle).replace('{tel}', phone(lang, negocio.telefono.texto));
 const doors = [
   { href: url(routes[lang].carta), dish: especial, text: h.doors.carta },
@@ -32,8 +34,8 @@ const doors = [
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero-inner wrap">
       <div class="hero-copy">
-        <p class="eyebrow enter"><span class="little-sun" aria-hidden="true"><Icon name="sun" /></span> {h.place}</p>
-        <h1 id="hero-title" class="enter enter-2" set:html={h.h1} />
+        {/* El nombre del café es el titular; «Brunch y café en Maspalomas» va encima, dentro del mismo h1 para el SEO */}
+        <h1 id="hero-title"><span class="hero-tagline eyebrow enter"><span class="little-sun" aria-hidden="true"><Icon name="sun" /></span> {tagline}</span><span class="hero-name enter enter-2">Calma <em>Café</em></span></h1>
         <div class="hero-script enter enter-2">
           <ScriptWord text="Feed your soul" class="script-hero" />
           <svg class="hero-flourish" viewBox="0 0 520 36" aria-hidden="true" focusable="false"><path d="M4 31 C 130 17 320 8 516 3 C 322 13 140 25 12 35 C 7 35 3 33 4 31 Z" /></svg>

@@ -4,6 +4,8 @@ import Icon from '../components/Icon.astro';
 import Layout from '../layouts/Layout.astro';
 import DishPhoto from '../components/DishPhoto.astro';
 import MenuIllustration from '../components/MenuIllustration.astro';
+import GroupDoodle from '../components/GroupDoodle.astro';
+import Lotus from '../components/Lotus.astro';
 import carta from '../data/carta.json';
 import { locale, price, tc, ui, type Lang } from '../i18n/ui';
 import { contar, repetidos } from '../lib/carta';
@@ -53,16 +55,21 @@ const consultada = new Intl.DateTimeFormat(locale[lang].intl, { day: 'numeric', 
       {menu.grupos.map((grupo, gi) => {
         const refs = repetidos(menu);
         const portada = grupo.platos.find(p => p.id === grupo.portada);
-        return <section class:list={['carta-group', { 'carta-group--flip': gi % 2 === 1 }]} id={grupo.id} aria-labelledby={`${grupo.id}-t`}>
+        const visibles = grupo.platos.filter(p => !refs.has(p.id)).length;
+        // Con pocos platos la foto se hace más baja, para que no quede un hueco bajo la lista.
+        return <Fragment>{gi > 0 && <div class="carta-divider" aria-hidden="true"><Lotus /></div>}<section class:list={['carta-group', { 'carta-group--flip': gi % 2 === 1, 'carta-group--short': visibles <= 5 }]} id={grupo.id} aria-labelledby={`${grupo.id}-t`}>
           <div class="carta-group-aside">
             <div class="carta-group-title">
               <span class="carta-group-n">{String(gi + 1).padStart(2, '0')}</span>
               <h3 id={`${grupo.id}-t`}>{tr(grupo.nombre)}</h3>
-              <span class="carta-group-count">{unit(menu.id, grupo.platos.filter(p => !refs.has(p.id)).length)}</span>
+              <span class="carta-group-count">{unit(menu.id, visibles)}</span>
             </div>
             {c.groupIntros[grupo.id] && <p class="carta-group-intro">{c.groupIntros[grupo.id]}</p>}
             {portada?.foto && <figure class="carta-feature" data-feature>
-              <div class="carta-feature-arch"><DishPhoto foto={portada.foto} alt={tr(portada.nombre)} sizes="(max-width: 699px) 88vw, (max-width: 999px) 38vw, 420px" /></div>
+              <div class="carta-feature-frame">
+                <div class="carta-feature-arch"><DishPhoto foto={portada.foto} alt={tr(portada.nombre)} sizes="(max-width: 699px) 88vw, (max-width: 999px) 38vw, 420px" /></div>
+                <GroupDoodle grupo={grupo.id} />
+              </div>
               <figcaption class="handwritten" data-feature-caption>{tr(portada.nombre)}</figcaption>
             </figure>}
           </div>
@@ -83,7 +90,7 @@ const consultada = new Intl.DateTimeFormat(locale[lang].intl, { day: 'numeric', 
               {plato.alergenos.length > 0 && <p class="dish-allergens"><span>{c.allergens}</span> {plato.alergenos.map(tr).join(', ')}</p>}
             </li>)}
           </ul>
-        </section>;
+        </section></Fragment>;
       })}
     </div>
   </section>)}

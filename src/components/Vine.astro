@@ -1,0 +1,25 @@
+---
+// Enredadera de vine.mjs para dibujar dentro de un <svg> que comparte las coordenadas del arco. Al entrar en pantalla,
+// el tallo crece desde la base (una máscara lo va destapando) y cada hoja se abre cuando el tallo llega a ella.
+// Orden de dibujo: zarcillos y rabitos, hojas, tallo encima de todo y el brote; así las uniones quedan limpias.
+import { LEAF, vine } from '../lib/vine.mjs';
+interface Props { id: string; cx: number; cy: number; r: number; base: number; end?: number; offset?: number; wobble?: number; scale?: number; line?: number; class?: string; }
+const { id, class: className, ...arco } = Astro.props;
+const { stem, leaves, tendrils, bud, grow, scale, line } = vine(arco);
+const ink = '#1E1A1A', green = '#365B52', light = '#4F7D6C', vein = '#AFC7C7';
+---
+<g class:list={['vine', className]} data-reveal>
+  <mask id={id} maskUnits="userSpaceOnUse" x="-1000" y="-1000" width="3000" height="3000">
+    <path class="vine-grow" pathLength="1" d={grow} fill="none" stroke="#fff" stroke-width={70 * scale} />
+  </mask>
+  <g mask={`url(#${id})`} fill="none" stroke={ink} stroke-linecap="round">
+    {tendrils.map(tendril => <path d={tendril.d} transform={tendril.transform} stroke-width={(line * 0.75) / scale} stroke-linejoin="round" />)}
+    {leaves.map(leaf => <path d={leaf.petiole} stroke-width={line * 1.2} />)}
+  </g>
+  {leaves.map(leaf => <g transform={leaf.transform}><g class="vine-leaf" style={`--t:${leaf.t}`}>
+    <path d={LEAF.body} fill={leaf.light ? light : green} stroke={ink} stroke-width={leaf.stroke} stroke-linejoin="round" />
+    <path d={LEAF.veins} fill="none" stroke={vein} stroke-width={leaf.vein} stroke-linecap="round" />
+  </g></g>)}
+  <path d={stem} mask={`url(#${id})`} fill={green} stroke={ink} stroke-width={line * 0.65} stroke-linejoin="round" />
+  <g transform={bud.transform}><path class="vine-leaf" style={`--t:${bud.t}`} d={LEAF.bud} fill={light} stroke={ink} stroke-width={bud.stroke} stroke-linejoin="round" /></g>
+</g>

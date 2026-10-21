@@ -43,7 +43,7 @@ try {
       assert.equal(await page.locator('.mobile-bottom a[href^="tel:"]').count(), 1, 'Llamar abre el teléfono');
       if (name === 'home') {
         assert.equal(await page.locator('video').evaluate(v => v.paused), true, 'El vídeo no arranca solo');
-        assert.ok(await page.locator('.hero-bg img').evaluate(img => img.complete && img.naturalWidth > 0), 'Foto de fondo del hero cargada');
+        assert.ok(await page.locator('.hero-arch img').evaluate(img => img.complete && img.naturalWidth > 0), 'Foto del local en el hero cargada');
         await page.getByRole('button', { name: 'Matcha y ube' }).click();
         assert.equal(await page.getByRole('button', { name: 'Matcha y ube' }).getAttribute('aria-pressed'), 'true');
         assert.equal(await page.locator('[data-team-panel="matcha"]').isVisible(), true);

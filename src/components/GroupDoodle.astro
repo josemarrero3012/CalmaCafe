@@ -1,0 +1,65 @@
+---
+// Dibujo a mano de cada sección de la carta, como una pegatina junto a la foto en arco.
+// La sección se reconoce por el final de su id (carta-brunch, vegano-algo-dulce…); si no hay dibujo, no pinta nada.
+interface Props { grupo: string; class?: string; }
+const { grupo, class: className } = Astro.props;
+const tipos = ['brunch-tardio-mas', 'para-los-ninos', 'algo-dulce', 'bebidas-frias', 'bebidas-calientes', 'extras', 'brunch'] as const;
+const tipo = tipos.find(t => grupo.endsWith(t));
+---
+{tipo && <svg class:list={['group-doodle', className]} viewBox="0 0 120 120" aria-hidden="true" focusable="false" fill="none" stroke="#1E1A1A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="60" cy="60" r="56" fill="#FFFDF7" stroke="none" />
+  <circle cx="60" cy="60" r="50" stroke="#CE9628" stroke-width="1.4" stroke-dasharray="1 6" />
+  {tipo === 'brunch' && <g>
+    {/* Huevo frito con su yema */}
+    <path d="M32 64 C 26 46, 44 34, 58 40 C 70 30, 92 40, 88 58 C 96 72, 80 88, 64 82 C 50 92, 30 82, 32 64 Z" fill="#FFFFFF" />
+    <circle cx="61" cy="61" r="12" fill="#CE9628" />
+    <path d="M55 56 C 57 53, 61 52, 64 53" stroke="#FFFDF7" stroke-width="2.2" />
+  </g>}
+  {tipo === 'brunch-tardio-mas' && <g>
+    {/* Sándwich en triángulo con lechuga */}
+    <path d="M28 80 L 60 30 L 92 80 Z" fill="#E9C98B" />
+    <path d="M34 74 L 60 36 L 86 74" stroke="#7F5A32" stroke-width="1.6" />
+    <path d="M26 82 C 34 76, 40 88, 48 82 C 56 76, 62 88, 70 82 C 78 76, 86 88, 94 82" stroke="#365B52" stroke-width="3.4" />
+    <path d="M28 88 H 92" />
+  </g>}
+  {tipo === 'extras' && <g>
+    {/* Medio aguacate */}
+    <path d="M60 26 C 76 26, 84 50, 86 66 C 88 84, 76 96, 60 96 C 44 96, 32 84, 34 66 C 36 50, 44 26, 60 26 Z" fill="#365B52" />
+    <path d="M60 34 C 72 34, 78 54, 79 67 C 80 81, 72 89, 60 89 C 48 89, 40 81, 41 67 C 42 54, 48 34, 60 34 Z" fill="#D8E3A8" stroke-width="1.6" />
+    <circle cx="60" cy="70" r="11" fill="#7F5A32" />
+  </g>}
+  {tipo === 'algo-dulce' && <g>
+    {/* Torre de pancakes con sirope y una fresa */}
+    <path d="M30 82 C 30 76, 90 76, 90 82 C 90 88, 30 88, 30 82 Z" fill="#E9C98B" />
+    <path d="M32 70 C 32 64, 88 64, 88 70 C 88 76, 32 76, 32 70 Z" fill="#E9C98B" />
+    <path d="M34 58 C 34 52, 86 52, 86 58 C 86 64, 34 64, 34 58 Z" fill="#E9C98B" />
+    <path d="M40 54 C 50 50, 72 50, 80 55 C 80 62, 76 64, 74 70 M48 56 C 48 62, 46 64, 46 68" stroke="#7F5A32" stroke-width="3" />
+    <path d="M58 46 C 52 40, 56 32, 62 34 C 68 32, 70 40, 64 46 Z" fill="#C9808C" />
+    <path d="M60 34 L 58 28 M60 34 L 65 30" stroke="#365B52" />
+    <path d="M24 92 H 96" />
+  </g>}
+  {tipo === 'para-los-ninos' && <g>
+    {/* Globo con su cordel */}
+    <path d="M60 22 C 78 22, 86 38, 84 50 C 82 64, 70 72, 60 74 C 50 72, 38 64, 36 50 C 34 38, 42 22, 60 22 Z" fill="#C9808C" />
+    <path d="M48 34 C 52 30, 56 29, 60 29" stroke="#FFFDF7" stroke-width="2.4" />
+    <path d="M56 74 L 64 74 L 60 80 Z" fill="#C9808C" />
+    <path d="M60 80 C 52 88, 68 92, 58 100" stroke-width="1.8" />
+  </g>}
+  {tipo === 'bebidas-frias' && <g>
+    {/* Vaso con hielo y pajita */}
+    <path d="M40 36 H 80 L 74 94 H 46 Z" fill="#AFC7C7" fill-opacity=".55" />
+    <path d="M43 56 H 77 L 74 94 H 46 Z" fill="#E9C98B" stroke="none" opacity=".85" />
+    <path d="M40 36 H 80 L 74 94 H 46 Z" />
+    <rect x="48" y="44" width="11" height="11" rx="2" fill="#FFFDF7" stroke-width="1.6" transform="rotate(-12 53 49)" />
+    <rect x="62" y="48" width="10" height="10" rx="2" fill="#FFFDF7" stroke-width="1.6" transform="rotate(10 67 53)" />
+    <path d="M66 36 L 74 18 H 86" stroke="#C9808C" stroke-width="3.4" />
+  </g>}
+  {tipo === 'bebidas-calientes' && <g>
+    {/* Taza humeante */}
+    <path d="M34 54 H 80 V 72 C 80 84, 70 92, 57 92 C 44 92, 34 84, 34 72 Z" fill="#FFFFFF" />
+    <path d="M80 60 C 92 60, 92 76, 79 76" />
+    <path d="M38 58 H 76" stroke="#7F5A32" stroke-width="4" />
+    <path d="M26 96 H 90" />
+    <path d="M48 46 C 44 40, 52 36, 48 28 M58 46 C 54 40, 62 36, 58 28 M68 46 C 64 40, 72 36, 68 28" stroke="#CE9628" stroke-width="2.2" />
+  </g>}
+</svg>}

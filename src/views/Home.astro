@@ -28,8 +28,8 @@ const doors = [
 ] as const;
 ---
 <Layout lang={lang} current="inicio" title={h.title} description={h.description}>
+  {/* Hero editorial sobre papel: el texto a la izquierda y el local dentro de un arco, como las fotos de la carta */}
   <section class="hero" aria-labelledby="hero-title">
-    <div class="hero-bg"><Photo name="hero-fondo" lang={lang} sizes="100vw" eager priority /></div>
     <div class="hero-inner wrap">
       <div class="hero-copy">
         <p class="eyebrow enter"><span class="little-sun" aria-hidden="true"><Icon name="sun" /></span> {h.place}</p>
@@ -39,15 +39,14 @@ const doors = [
           <svg class="hero-flourish" viewBox="0 0 520 36" aria-hidden="true" focusable="false"><path d="M4 31 C 130 17 320 8 516 3 C 322 13 140 25 12 35 C 7 35 3 33 4 31 Z" /></svg>
         </div>
         <p class="hero-intro enter enter-3">{h.intro}</p>
-        <div class="hero-buttons enter enter-3"><a class="button button-green" href={url(routes[lang].carta)}>{h.seeMenu} <span aria-hidden="true"><Icon name="arrow-right" /></span></a><button class="video-open video-open--inline" type="button" aria-haspopup="dialog" aria-controls="video-dialog" aria-label={t.video.play}><span aria-hidden="true">▶︎</span> {t.video.playShort}</button><a class="text-link hero-directions" href={negocio.mapas.url} target="_blank" rel="noopener noreferrer">{t.directions} <span aria-hidden="true"><Icon name="arrow-up-right" /></span></a><a class="text-link hero-hours" href={`${url(routes[lang].visitanos)}#horario`}>{t.visit.hoursView} <span aria-hidden="true"><Icon name="arrow-right" /></span></a></div>
+        <div class="hero-buttons enter enter-3"><a class="button button-green" href={url(routes[lang].carta)}>{h.seeMenu} <span aria-hidden="true"><Icon name="arrow-right" /></span></a><button class="video-open" type="button" aria-haspopup="dialog" aria-controls="video-dialog" aria-label={t.video.play}><span aria-hidden="true">▶︎</span> {t.video.playShort}</button><a class="text-link hero-directions" href={negocio.mapas.url} target="_blank" rel="noopener noreferrer">{t.directions} <span aria-hidden="true"><Icon name="arrow-up-right" /></span></a></div>
+        {negocio.google.nota && <a class="hero-rating enter enter-3" href={negocio.mapas.ficha} target="_blank" rel="noopener noreferrer"><span class="hero-stars" aria-hidden="true">★★★★★</span> {h.rating(new Intl.NumberFormat(locale[lang].intl, { minimumFractionDigits: 1 }).format(negocio.google.nota))} <span aria-hidden="true"><Icon name="arrow-up-right" /></span></a>}
       </div>
       <div class="hero-visual enter enter-visual">
+        <div class="hero-arch"><Photo name="interior-barra" lang={lang} sizes="(max-width: 699px) 80vw, 460px" eager priority /></div>
         <Seal />
-        <div class="hero-photos">
-          <figure class="hero-photo"><DishPhoto foto={dulce.foto} alt={dulceAlt} sizes="(max-width: 699px) 150px, 330px" eager /><figcaption class="handwritten">{tc(lang, dulce.nombre)} · {price(lang, dulce.precio)}</figcaption></figure>
-          <figure class="hero-photo hero-photo--salty"><DishPhoto foto={especial.foto} alt={tc(lang, especial.nombre)} sizes="150px" eager /><figcaption class="handwritten">{tc(lang, especial.nombre)} · {price(lang, especial.precio)}</figcaption></figure>
-        </div>
-        <button class="video-open" type="button" aria-haspopup="dialog" aria-controls="video-dialog" aria-label={t.video.play}><span aria-hidden="true">▶︎</span> {t.video.playShort}</button>
+        <figure class="hero-photo"><DishPhoto foto={dulce.foto} alt={dulceAlt} sizes="(max-width: 699px) 150px, 260px" eager /><figcaption class="handwritten">{tc(lang, dulce.nombre)} · {price(lang, dulce.precio)}</figcaption></figure>
+        <figure class="hero-photo hero-photo--salty"><DishPhoto foto={especial.foto} alt={tc(lang, especial.nombre)} sizes="(max-width: 699px) 130px, 200px" eager /><figcaption class="handwritten">{tc(lang, especial.nombre)} · {price(lang, especial.precio)}</figcaption></figure>
       </div>
     </div>
   </section>

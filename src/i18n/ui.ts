@@ -74,7 +74,7 @@ export const ui: Record<Lang, UI> = {
     directions: 'Cómo llegar', call: 'Llamar', openMenu: 'Abrir menú', closeMenu: 'Cerrar menú', menu: 'Menú',
     whereWeAre: 'Dónde estamos', contact: 'Contacto', backHome: 'Volver al inicio', backTop: 'Volver arriba',
     legalNav: 'Información legal', quickActions: 'Acciones rápidas', legal: 'Aviso legal', privacy: 'Privacidad', cookies: 'Cookies',
-    proposal: 'Propuesta de diseño web · octubre de 2026', close: 'Cerrar', ok: 'Entendido', onInstagram: 'en Instagram',
+    proposal: 'Diseño web y SEO por', close: 'Cerrar', ok: 'Entendido', onInstagram: 'en Instagram',
     notices: {
       legal: ['Aviso legal', 'Esta es una demo. Los datos del titular y el aviso legal se incorporarán antes de publicar la web.'],
       privacy: ['Privacidad', 'Esta demo no contiene formularios ni analítica. La política de privacidad completa se incorporará cuando se confirmen los datos del titular. Los enlaces externos y el mapa cargado voluntariamente llevan a servicios de terceros.'],
@@ -158,7 +158,7 @@ export const ui: Record<Lang, UI> = {
     directions: 'Directions', call: 'Call', openMenu: 'Open menu', closeMenu: 'Close menu', menu: 'Menu',
     whereWeAre: 'Find us', contact: 'Contact', backHome: 'Back to home', backTop: 'Back to top',
     legalNav: 'Legal information', quickActions: 'Quick actions', legal: 'Legal notice', privacy: 'Privacy', cookies: 'Cookies',
-    proposal: 'Website design proposal · October 2026', close: 'Close', ok: 'OK', onInstagram: 'on Instagram',
+    proposal: 'Web design and SEO by', close: 'Close', ok: 'OK', onInstagram: 'on Instagram',
     notices: {
       legal: ['Legal notice', 'This is a demo. The owner’s details and the legal notice will be added before the website goes live.'],
       privacy: ['Privacy', 'This demo has no forms and no analytics. The full privacy policy will be added once the owner’s details are confirmed. External links and the map, if you choose to load it, lead to third-party services.'],
@@ -243,7 +243,7 @@ export const ui: Record<Lang, UI> = {
     directions: 'Route', call: 'Anrufen', openMenu: 'Menü öffnen', closeMenu: 'Menü schließen', menu: 'Menü',
     whereWeAre: 'So findest du uns', contact: 'Kontakt', backHome: 'Zur Startseite', backTop: 'Nach oben',
     legalNav: 'Rechtliche Hinweise', quickActions: 'Schnellzugriff', legal: 'Impressum', privacy: 'Datenschutz', cookies: 'Cookies',
-    proposal: 'Website-Entwurf · Oktober 2026', close: 'Schließen', ok: 'Verstanden', onInstagram: 'auf Instagram',
+    proposal: 'Webdesign und SEO von', close: 'Schließen', ok: 'Verstanden', onInstagram: 'auf Instagram',
     notices: {
       legal: ['Impressum', 'Dies ist eine Demo. Die Angaben zum Inhaber und das Impressum werden vor der Veröffentlichung ergänzt.'],
       privacy: ['Datenschutz', 'Diese Demo enthält keine Formulare und keine Analyse-Tools. Die vollständige Datenschutzerklärung folgt, sobald die Angaben zum Inhaber bestätigt sind. Externe Links und die Karte, wenn du sie lädst, führen zu Diensten Dritter.'],
@@ -328,7 +328,7 @@ export const ui: Record<Lang, UI> = {
     directions: 'Route', call: 'Bellen', openMenu: 'Menu openen', closeMenu: 'Menu sluiten', menu: 'Menu',
     whereWeAre: 'Waar we zitten', contact: 'Contact', backHome: 'Terug naar home', backTop: 'Terug naar boven',
     legalNav: 'Juridische informatie', quickActions: 'Snelle acties', legal: 'Juridische informatie', privacy: 'Privacy', cookies: 'Cookies',
-    proposal: 'Ontwerpvoorstel website · oktober 2026', close: 'Sluiten', ok: 'Oké', onInstagram: 'op Instagram',
+    proposal: 'Webdesign en SEO door', close: 'Sluiten', ok: 'Oké', onInstagram: 'op Instagram',
     notices: {
       legal: ['Juridische informatie', 'Dit is een demo. De gegevens van de eigenaar en de juridische informatie worden toegevoegd voordat de website live gaat.'],
       privacy: ['Privacy', 'Deze demo heeft geen formulieren en geen analytics. Het volledige privacybeleid volgt zodra de gegevens van de eigenaar bevestigd zijn. Externe links en de kaart, als je die laadt, leiden naar diensten van derden.'],

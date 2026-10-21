@@ -6,6 +6,7 @@ import DishPhoto from '../components/DishPhoto.astro';
 import MenuIllustration from '../components/MenuIllustration.astro';
 import GroupDoodle from '../components/GroupDoodle.astro';
 import Lotus from '../components/Lotus.astro';
+import Branch from '../components/Branch.astro';
 import carta from '../data/carta.json';
 import { locale, price, tc, ui, type Lang } from '../i18n/ui';
 import { contar, repetidos } from '../lib/carta';
@@ -28,7 +29,8 @@ const consultada = new Intl.DateTimeFormat(locale[lang].intl, { day: 'numeric', 
         <h1 id="carta-title" class="page-title enter enter-2" set:html={c.h1} />
         <p class="carta-hero-text enter enter-3">{c.aside}</p>
       </div>
-      <MenuIllustration label={t.nav.carta} class="carta-illustration enter enter-visual" />
+      {/* La rama crece desde detrás del dibujo, dentro de su columna, para no pisar el titular en ningún idioma */}
+      <div class="carta-art enter enter-visual"><Branch class="carta-branch" flip /><MenuIllustration label={t.nav.carta} class="carta-illustration" /></div>
     </div>
   </section>
 

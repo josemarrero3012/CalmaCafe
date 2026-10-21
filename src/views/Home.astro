@@ -5,6 +5,7 @@ import Layout from '../layouts/Layout.astro';
 import Photo from '../components/Photo.astro';
 import DishPhoto from '../components/DishPhoto.astro';
 import Lotus from '../components/Lotus.astro';
+import Branch from '../components/Branch.astro';
 import Seal from '../components/Seal.astro';
 import ScriptWord from '../components/ScriptWord.astro';
 import negocio from '../data/negocio.json';
@@ -45,6 +46,7 @@ const doors = [
         {negocio.google.nota && <a class="hero-rating enter enter-3" href={negocio.mapas.ficha} target="_blank" rel="noopener noreferrer"><span class="hero-stars" aria-hidden="true">★★★★★</span> {h.rating(new Intl.NumberFormat(locale[lang].intl, { minimumFractionDigits: 1 }).format(negocio.google.nota))} <span aria-hidden="true"><Icon name="arrow-up-right" /></span></a>}
       </div>
       <div class="hero-visual enter enter-visual">
+        <Branch class="hero-branch" flip />
         <div class="hero-arch"><Photo name="interior-barra" lang={lang} sizes="(max-width: 699px) 80vw, 460px" eager priority /></div>
         <Seal />
         <figure class="hero-photo"><DishPhoto foto={dulce.foto} alt={dulceAlt} sizes="(max-width: 699px) 150px, 260px" eager /><figcaption class="handwritten">{tc(lang, dulce.nombre)} · {price(lang, dulce.precio)}</figcaption></figure>

@@ -193,6 +193,8 @@ button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:3px solid 
 .footer-bottom{border-top:1px solid #1e1a1a33;padding-block:22px 25px;display:flex;justify-content:space-between;gap:24px;font-size:14px}
 .footer-bottom nav{display:flex;gap:20px}
 .footer-bottom nav button{text-decoration:underline;text-underline-offset:4px}
+.footer-credit a{font-weight:650;text-decoration:underline;text-underline-offset:4px}
+.footer-credit a:hover{color:var(--marino)}
 .mobile-bottom{display:none;view-transition-name:quick-actions}
 .mobile-hours{display:none}
 dialog{color:var(--pizarra);background:var(--papel);border:1px solid var(--line)}
@@ -449,6 +451,25 @@ main{overflow-x:clip}
   .hero-rating{justify-content:center;margin-top:18px}
 }
 @media(prefers-reduced-motion:reduce){.hero-flourish{clip-path:none}}
+/* Rama decorativa (Branch.astro): se dibuja sola al entrar en pantalla */
+.branch{display:block;height:auto;overflow:visible;pointer-events:none}
+.branch--flip{scale:-1 1}
+.branch-stem,.branch-twig{stroke-dasharray:1}
+@media(prefers-reduced-motion:no-preference){
+  .js .branch:not(.is-visible) :is(.branch-stem,.branch-twig){stroke-dashoffset:1}
+  .js .branch:not(.is-visible) :is(.branch-leaf,.branch-node){opacity:0}
+  .branch.is-visible .branch-stem{animation:branch-draw 1.8s var(--ease) .3s both}
+  .branch.is-visible .branch-twig{animation:branch-draw 1.1s var(--ease) calc(.9s + var(--i) * .14s) both}
+  .branch.is-visible .branch-leaf{animation:branch-pop .7s var(--ease) calc(1.2s + var(--i) * .12s) both}
+  .branch.is-visible .branch-node{animation:branch-pop .5s var(--ease) calc(1.7s + var(--i) * .14s) both}
+}
+@keyframes branch-draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@keyframes branch-pop{from{opacity:0}}
+/* En Inicio la rama sale de detrás del arco hacia el titular */
+.hero-branch{position:absolute;z-index:-1;right:68%;top:4%;width:min(80%,330px)}
+/* Por debajo de 1280 px no hay sitio entre el texto y el arco */
+@media(max-width:1279px){.hero-branch{display:none}}
+@media(min-width:1700px){.hero-branch{right:72%;top:12%;width:250px}}
 /* Inicio: cinta de bienvenida en movimiento sobre banda verde */
 .welcome-strip{position:relative;z-index:1;overflow:hidden;background:var(--verde-tinta);color:var(--papel);border-block:1px solid #2B4A42}
 .welcome-track{display:flex;width:max-content;animation:welcome-marquee 42s linear infinite}

@@ -6,6 +6,7 @@ import Photo from '../components/Photo.astro';
 import DishPhoto from '../components/DishPhoto.astro';
 import Lotus from '../components/Lotus.astro';
 import Seal from '../components/Seal.astro';
+import Vine from '../components/Vine.astro';
 import ScriptWord from '../components/ScriptWord.astro';
 import negocio from '../data/negocio.json';
 import carta from '../data/carta.json';
@@ -46,6 +47,8 @@ const doors = [
       </div>
       <div class="hero-visual enter enter-visual">
         <div class="hero-arch"><Photo name="interior-barra" lang={lang} sizes="(max-width: 699px) 80vw, 460px" eager priority /></div>
+        {/* Enredadera que trepa por el arco: mismas proporciones que el arco (400 × 530), así encaja a cualquier tamaño */}
+        <svg class="hero-vine" viewBox="0 0 400 530" aria-hidden="true" focusable="false"><Vine id="hero-vine" cx={200} cy={200} r={200} base={470} /></svg>
         <Seal />
         <figure class="hero-photo"><DishPhoto foto={dulce.foto} alt={dulceAlt} sizes="(max-width: 699px) 150px, 260px" eager /><figcaption class="handwritten">{tc(lang, dulce.nombre)} · {price(lang, dulce.precio)}</figcaption></figure>
         <figure class="hero-photo hero-photo--salty"><DishPhoto foto={especial.foto} alt={tc(lang, especial.nombre)} sizes="(max-width: 699px) 130px, 200px" eager /><figcaption class="handwritten">{tc(lang, especial.nombre)} · {price(lang, especial.precio)}</figcaption></figure>

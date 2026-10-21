@@ -193,6 +193,8 @@ button:focus-visible,a:focus-visible,[tabindex]:focus-visible{outline:3px solid 
 .footer-bottom{border-top:1px solid #1e1a1a33;padding-block:22px 25px;display:flex;justify-content:space-between;gap:24px;font-size:14px}
 .footer-bottom nav{display:flex;gap:20px}
 .footer-bottom nav button{text-decoration:underline;text-underline-offset:4px}
+.footer-credit a{font-weight:650;text-decoration:underline;text-underline-offset:4px}
+.footer-credit a:hover{color:var(--marino)}
 .mobile-bottom{display:none;view-transition-name:quick-actions}
 .mobile-hours{display:none}
 dialog{color:var(--pizarra);background:var(--papel);border:1px solid var(--line)}
@@ -380,14 +382,14 @@ main{overflow-x:clip}
 .hero-rating{display:inline-flex;align-items:center;gap:10px;margin-top:clamp(14px,2.8svh,30px);font-size:14px;font-weight:600;color:var(--pizarra)}
 .hero-stars{color:var(--mostaza);font-size:16px;letter-spacing:2px}
 .hero-rating:hover{color:var(--verde-tinta)}
-/* El arco con el local; el arco de azulejo asoma detrás, desplazado */
-.hero-visual{position:relative;justify-self:center;width:min(100%,460px,calc((var(--hero-h) - 120px) * .76));margin-right:4%}
+/* El arco con el local; el arco de azulejo asoma detrás, desplazado. Baja un poco para que la enredadera, que asoma por encima, no roce la cabecera */
+.hero-visual{position:relative;justify-self:center;width:min(100%,460px,calc((var(--hero-h) - 120px) * .76));margin:clamp(0px,4svh,40px) 4% 0 0}
 .hero-arch{position:relative;aspect-ratio:4/5.3;border-radius:999px 999px 8px 8px;overflow:hidden;background:var(--salvia);box-shadow:0 30px 60px -30px rgba(30,26,26,.45)}
 .hero-arch picture,.hero-arch img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
 .hero-visual::before{content:'';position:absolute;inset:0;z-index:-1;translate:26px 22px;border-radius:999px 999px 8px 8px;background-color:var(--salvia);background-image:repeating-linear-gradient(45deg,transparent 0 17px,rgba(250,246,239,.75) 17px 18.5px),repeating-linear-gradient(-45deg,transparent 0 17px,rgba(250,246,239,.75) 17px 18.5px)}
 .hero-visual .seal{top:-6px;right:-46px;width:150px;height:150px;z-index:2}
 .hero-photo{position:absolute;z-index:2;left:-26%;bottom:9%;width:58%;padding:10px 10px 14px;background:#FFFDF7;box-shadow:0 22px 40px -12px rgba(30,26,26,.45);rotate:-7deg}
-.hero-photo--salty{left:auto;right:-16%;bottom:-7%;width:42%;rotate:6deg}
+.hero-photo--salty{left:auto;right:-16%;bottom:-4%;width:42%;rotate:6deg}
 .hero-photo picture{aspect-ratio:4/3.3;overflow:hidden}
 .hero-photo figcaption{margin-top:8px;color:var(--pizarra);font-size:24px;text-align:center;white-space:nowrap;rotate:-2deg}
 .hero-photo--salty figcaption{font-size:19px}
@@ -411,8 +413,9 @@ main{overflow-x:clip}
 .video-dialog-close{position:absolute;top:10px;right:10px;z-index:2;background:var(--papel);border-radius:50%}
 @media(max-width:1199px){
   .hero-intro{font-size:16px}
+  .hero-visual{width:min(82%,460px,calc((var(--hero-h) - 120px) * .76));justify-self:end}
   .hero-visual .seal{width:124px;height:124px;right:-30px}
-  .hero-photo{left:-8%}
+  .hero-photo{left:-18%}
   .hero-photo--salty{display:none}
   .hero-photo figcaption{font-size:21px}
   .hero-photo--salty figcaption{font-size:17px}
@@ -420,7 +423,9 @@ main{overflow-x:clip}
 @media(max-width:999px){
   :root{--site-header-h:84px}
   .hero-inner{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:28px;min-height:0}
-  .hero-photo{left:-2%;bottom:6%;width:50%}
+  .hero-photo{bottom:6%;width:54%}
+  .hero-photo figcaption{font-size:18px;white-space:normal;line-height:1.15}
+  .hero-intro{max-width:92%}
 }
 @media(max-width:699px){
   :root{--site-header-h:79px}
@@ -434,7 +439,7 @@ main{overflow-x:clip}
   .hero-script{width:62%;margin:0 auto}
   /* Orden en móvil: titular, firma, el arco con las fotos, botones, texto y nota */
   .hero h1{order:2}.hero-script{order:3}.hero-visual{order:4}.hero-buttons{order:5}.hero-intro{order:6}.hero-rating{order:7}
-  .hero-visual{width:min(74%,300px);margin:34px auto 30px;justify-self:center}
+  .hero-visual{width:min(74%,300px);margin:64px auto 30px;justify-self:center}
   .hero-visual::before{translate:14px 12px}
   .hero-visual .seal{width:78px;height:78px;top:-10px;right:-30px;box-shadow:0 8px 22px rgba(0,0,0,.28),inset 0 0 0 3px var(--mostaza),inset 0 0 0 4px rgba(30,26,26,.35)}
   .hero-visual .seal .seal-text{font-size:13px}
@@ -449,6 +454,18 @@ main{overflow-x:clip}
   .hero-rating{justify-content:center;margin-top:18px}
 }
 @media(prefers-reduced-motion:reduce){.hero-flourish{clip-path:none}}
+/* Enredadera (Vine.astro): el tallo crece desde la base y cada hoja se abre desde su rabito cuando el tallo llega a ella */
+.vine-grow{stroke-dasharray:1}
+@media(prefers-reduced-motion:no-preference){
+  .js .vine:not(.is-visible) .vine-grow{stroke-dashoffset:1}
+  .js .vine:not(.is-visible) .vine-leaf{scale:0}
+  .vine.is-visible .vine-grow{animation:vine-grow 2.4s linear .9s both}
+  .vine.is-visible .vine-leaf{animation:vine-leaf .7s var(--ease) calc(.8s + var(--t) * 2.4s) both}
+}
+@keyframes vine-grow{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@keyframes vine-leaf{from{scale:0}}
+/* En Inicio la enredadera va pegada al arco: misma caja y mismas proporciones, por encima de la foto y por debajo del sello y las polaroids */
+.hero-vine{position:absolute;left:0;top:0;z-index:1;width:100%;height:auto;aspect-ratio:4/5.3;overflow:visible;pointer-events:none}
 /* Inicio: cinta de bienvenida en movimiento sobre banda verde */
 .welcome-strip{position:relative;z-index:1;overflow:hidden;background:var(--verde-tinta);color:var(--papel);border-block:1px solid #2B4A42}
 .welcome-track{display:flex;width:max-content;animation:welcome-marquee 42s linear infinite}

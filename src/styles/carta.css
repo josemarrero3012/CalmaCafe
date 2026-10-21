@@ -8,9 +8,7 @@
 .carta-hero .eyebrow{margin-bottom:18px}
 .carta-hero-text{max-width:560px;margin-top:24px;font-size:16px;color:var(--muted);line-height:1.8}
 /* Dibujo de «la carta» a la derecha del titular */
-.carta-art{position:relative}
-.carta-branch{position:absolute;left:-4%;top:2%;width:52%}
-.carta-illustration{position:relative;display:block;width:100%;height:auto;justify-self:end;margin-block:-10px -6px}
+.carta-illustration{display:block;width:100%;height:auto;justify-self:end;margin-block:-10px -6px}
 .carta-note{grid-column:1/-1;justify-self:start;display:inline-flex;gap:10px;align-items:center;margin-top:8px;padding:10px 16px;border:1px solid var(--line);border-radius:40px;font-size:14px;font-weight:600;color:var(--verde-tinta);background:#fffdf8}
 .carta-note span{color:var(--mostaza)}
 
@@ -129,7 +127,7 @@ button.dish-name:hover,.dish.is-previewed button.dish-name{background-size:100% 
   .carta-hero-grid{grid-template-columns:1fr;gap:8px}
   .carta-hero-text{font-size:16px}
   /* En móvil la ilustración solo empujaba la carta hacia abajo. */
-  .carta-art{display:none}
+  .carta-illustration{display:none}
   /* Menús y secciones en una sola fila deslizable; el degradado de la derecha avisa de que sigue. */
   .carta-index{gap:6px;padding-block:8px;overflow-x:auto;scrollbar-width:none;-webkit-mask-image:linear-gradient(90deg,#000 82%,transparent);mask-image:linear-gradient(90deg,#000 82%,transparent)}
   .carta-index::-webkit-scrollbar{display:none}

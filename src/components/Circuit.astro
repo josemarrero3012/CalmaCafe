@@ -1,0 +1,12 @@
+---
+// Rama tipo circuito para dibujar dentro de un <svg>: un tronco que sigue el contorno de un arco
+// y ramas con tramos rectos y a 45°, cada una acabada en un nodo. Se dibuja sola al entrar en pantalla.
+// Las coordenadas van en las unidades del <svg> que la contiene.
+interface Props { trunk: string; sprouts: string[]; nodes: [number, number][]; width?: number; class?: string; }
+const { trunk, sprouts, nodes, width = 1.6, class: className } = Astro.props;
+---
+<g class:list={['circuit', className]} fill="none" stroke-linecap="round" stroke-linejoin="round" data-reveal>
+  <path class="circuit-trunk" pathLength="1" d={trunk} stroke="var(--verde-tinta)" stroke-width={width} />
+  {sprouts.map((d, i) => <path class="circuit-sprout" pathLength="1" d={d} stroke="var(--verde-tinta)" stroke-width={width} style={`--i:${i}`} />)}
+  {nodes.map(([x, y], i) => <g class="circuit-node" style={`--i:${i}`}><circle cx={x} cy={y} r={width * 3.4} fill="var(--papel)" stroke="var(--mostaza)" stroke-width={width} /><circle cx={x} cy={y} r={width * 1.3} fill="var(--mostaza)" stroke="none" /></g>)}
+</g>

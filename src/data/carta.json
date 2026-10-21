@@ -1,6 +1,6 @@
 {
   "fuente": "https://calma.buenacarta.com/",
-  "consultada": "2026-10-19",
+  "consultada": "2026-10-21",
   "local": {
     "direccion": "Avda. de Tirajana 3, Apt Aloe, Maspalomas (Las Palmas)",
     "telefono": "681667917",
@@ -240,32 +240,6 @@
               ]
             },
             {
-              "id": "702773",
-              "nombre": "Tosta Caesar",
-              "descripcion": "Con pollo y bacon",
-              "extras": [],
-              "opciones": [],
-              "notas": [],
-              "precio": "11,00 €",
-              "alergenos": [
-                "Gluten"
-              ],
-              "dieta": null,
-              "foto": {
-                "src": "/media/carta/702773",
-                "width": 800,
-                "height": 599,
-                "widths": [
-                  160,
-                  480,
-                  800
-                ]
-              },
-              "alergenosAnadidos": [
-                "Gluten"
-              ]
-            },
-            {
               "id": "94246",
               "nombre": "Tosta Serrano",
               "descripcion": "Con mozzarella y pesto",
@@ -406,6 +380,81 @@
                 "Gluten",
                 "Cacahuetes"
               ]
+            },
+            {
+              "id": "422600",
+              "nombre": "Pancakes",
+              "descripcion": null,
+              "extras": [
+                {
+                  "nombre": "Nutella",
+                  "precio": "2,00 €"
+                },
+                {
+                  "nombre": "Dulce de leche",
+                  "precio": "3,00 €"
+                },
+                {
+                  "nombre": "Crema de frambuesa",
+                  "precio": "2,80 €"
+                },
+                {
+                  "nombre": "Crema de pistacho",
+                  "precio": "3,00 €"
+                },
+                {
+                  "nombre": "Fruta",
+                  "precio": "3,50 €"
+                },
+                {
+                  "nombre": "Nata montada",
+                  "precio": "1,50 €"
+                },
+                {
+                  "nombre": "Pancake",
+                  "precio": "3,00 €"
+                }
+              ],
+              "opciones": [],
+              "notas": [],
+              "precio": "8,00 €",
+              "alergenos": [
+                "Gluten",
+                "Huevos",
+                "Lácteos"
+              ],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/422600",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "621656",
+              "nombre": "Pancakes estilo americano",
+              "descripcion": "Dos pancakes con huevos revueltos, bacon y Jarabe de arce",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "12,50 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/621656",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
             }
           ],
           "portada": "93766"
@@ -436,37 +485,6 @@
               "alergenosAnadidos": [
                 "Gluten",
                 "Lácteos"
-              ]
-            },
-            {
-              "id": "93768",
-              "nombre": "Sándwich Pollo y pesto",
-              "descripcion": null,
-              "extras": [
-                {
-                  "nombre": "Una ensaladita o papas ajillo horneadas",
-                  "precio": "2,00 €"
-                }
-              ],
-              "opciones": [],
-              "notas": [],
-              "precio": "9,00 €",
-              "alergenos": [
-                "Gluten"
-              ],
-              "dieta": null,
-              "foto": {
-                "src": "/media/carta/93768",
-                "width": 800,
-                "height": 600,
-                "widths": [
-                  160,
-                  480,
-                  800
-                ]
-              },
-              "alergenosAnadidos": [
-                "Gluten"
               ]
             },
             {
@@ -571,34 +589,6 @@
               "foto": null
             },
             {
-              "id": "93782",
-              "nombre": "Fajita Caesar",
-              "descripcion": "Con salsa Caesar casera, pollo y bacon",
-              "extras": [],
-              "opciones": [],
-              "notas": [],
-              "precio": "13,00 €",
-              "alergenos": [
-                "Gluten",
-                "Huevos",
-                "Cacahuetes",
-                "Soja",
-                "Frutos de cáscara",
-                "Semillas de sésamo"
-              ],
-              "dieta": null,
-              "foto": {
-                "src": "/media/carta/93782",
-                "width": 800,
-                "height": 599,
-                "widths": [
-                  160,
-                  480,
-                  800
-                ]
-              }
-            },
-            {
               "id": "93784",
               "nombre": "Fajita Desayuno",
               "descripcion": "Fajita con huevos revueltos, hummus y vegetales. Añade bacon, pollo…",
@@ -640,7 +630,7 @@
               ]
             }
           ],
-          "portada": "93768"
+          "portada": "729805"
         },
         {
           "id": "carta-extras",
@@ -943,6 +933,78 @@
               "alergenosAnadidos": [
                 "Gluten"
               ]
+            },
+            {
+              "id": "721406",
+              "nombre": "Pancakes",
+              "descripcion": null,
+              "extras": [
+                {
+                  "nombre": "Nutella",
+                  "precio": "2,00 €"
+                },
+                {
+                  "nombre": "Dulce de leche",
+                  "precio": "3,00 €"
+                },
+                {
+                  "nombre": "Crema de frambuesa",
+                  "precio": "2,80 €"
+                },
+                {
+                  "nombre": "Crema de pistacho",
+                  "precio": "3,00 €"
+                },
+                {
+                  "nombre": "Fruta",
+                  "precio": "3,50 €"
+                },
+                {
+                  "nombre": "Nata montada",
+                  "precio": "1,00 €"
+                },
+                {
+                  "nombre": "Pancake",
+                  "precio": "3,00 €"
+                }
+              ],
+              "opciones": [],
+              "notas": [],
+              "precio": "8,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/721406",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "728477",
+              "nombre": "Pancake Manzana crumble",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "12,50 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/728477",
+                "width": 1085,
+                "height": 814,
+                "widths": [
+                  160,
+                  480,
+                  800,
+                  800
+                ]
+              }
             }
           ],
           "portada": "721404"
@@ -1564,6 +1626,78 @@
               "alergenosAnadidos": [
                 "Gluten"
               ]
+            },
+            {
+              "id": "721669",
+              "nombre": "Pancakes",
+              "descripcion": null,
+              "extras": [
+                {
+                  "nombre": "Nutella",
+                  "precio": "2,00 €"
+                },
+                {
+                  "nombre": "Dulce de leche",
+                  "precio": "3,00 €"
+                },
+                {
+                  "nombre": "Crema de frambuesa",
+                  "precio": "2,80 €"
+                },
+                {
+                  "nombre": "Crema de pistacho",
+                  "precio": "3,00 €"
+                },
+                {
+                  "nombre": "Fruta",
+                  "precio": "3,50 €"
+                },
+                {
+                  "nombre": "Nata montada",
+                  "precio": "1,00 €"
+                },
+                {
+                  "nombre": "Pancake",
+                  "precio": "3,00 €"
+                }
+              ],
+              "opciones": [],
+              "notas": [],
+              "precio": "8,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/721669",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "728478",
+              "nombre": "Pancake Manzana crumble",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "12,50 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/728478",
+                "width": 1085,
+                "height": 814,
+                "widths": [
+                  160,
+                  480,
+                  800,
+                  800
+                ]
+              }
             }
           ],
           "portada": "721667"
@@ -2038,6 +2172,22 @@
               "alergenosAnadidos": [
                 "Gluten"
               ]
+            },
+            {
+              "id": "94187",
+              "nombre": "Sándwich Vegano",
+              "descripcion": "Con guacamole y champiñones. Añade una ensaladita o papas ajillo horneadas por 2€",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "9,00 €",
+              "alergenos": [
+                "Gluten",
+                "Frutos de cáscara",
+                "Semillas de sésamo"
+              ],
+              "dieta": "vegano",
+              "foto": null
             }
           ],
           "portada": "94189"
@@ -2100,6 +2250,69 @@
               "alergenosAnadidos": [
                 "Gluten"
               ]
+            },
+            {
+              "id": "721674",
+              "nombre": "Pancakes",
+              "descripcion": null,
+              "extras": [
+                {
+                  "nombre": "Crema de frambuesa",
+                  "precio": "2,80 €"
+                },
+                {
+                  "nombre": "Crema pistacho vegano",
+                  "precio": "3,50 €"
+                },
+                {
+                  "nombre": "Fruta",
+                  "precio": "3,50 €"
+                },
+                {
+                  "nombre": "Pancake",
+                  "precio": "3,00 €"
+                },
+                {
+                  "nombre": "Agave",
+                  "precio": "1,50 €"
+                }
+              ],
+              "opciones": [],
+              "notas": [],
+              "precio": "8,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/721674",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
+            },
+            {
+              "id": "721673",
+              "nombre": "Rollito de canela",
+              "descripcion": null,
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "4,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/721673",
+                "width": 600,
+                "height": 450,
+                "widths": [
+                  160,
+                  480,
+                  600
+                ]
+              }
             }
           ],
           "portada": "721675"

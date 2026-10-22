@@ -1,6 +1,6 @@
 {
   "fuente": "https://calma.buenacarta.com/",
-  "consultada": "2026-10-21",
+  "consultada": "2026-10-22",
   "local": {
     "direccion": "Avda. de Tirajana 3, Apt Aloe, Maspalomas (Las Palmas)",
     "telefono": "681667917",
@@ -237,6 +237,32 @@
               "alergenosAnadidos": [
                 "Gluten",
                 "Semillas de sésamo"
+              ]
+            },
+            {
+              "id": "702773",
+              "nombre": "Tosta Caesar",
+              "descripcion": "Con pollo y bacon",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "11,00 €",
+              "alergenos": [
+                "Gluten"
+              ],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/702773",
+                "width": 800,
+                "height": 599,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              },
+              "alergenosAnadidos": [
+                "Gluten"
               ]
             },
             {
@@ -587,6 +613,34 @@
               ],
               "dieta": null,
               "foto": null
+            },
+            {
+              "id": "93782",
+              "nombre": "Fajita Caesar",
+              "descripcion": "Con salsa Caesar casera, pollo y bacon",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "13,00 €",
+              "alergenos": [
+                "Gluten",
+                "Huevos",
+                "Cacahuetes",
+                "Soja",
+                "Frutos de cáscara",
+                "Semillas de sésamo"
+              ],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/93782",
+                "width": 800,
+                "height": 599,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
             },
             {
               "id": "93784",

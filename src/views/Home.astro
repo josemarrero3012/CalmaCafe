@@ -7,6 +7,7 @@ import DishPhoto from '../components/DishPhoto.astro';
 import Lotus from '../components/Lotus.astro';
 import Seal from '../components/Seal.astro';
 import Vine from '../components/Vine.astro';
+import Sparkle from '../components/Sparkle.astro';
 import ScriptWord from '../components/ScriptWord.astro';
 import negocio from '../data/negocio.json';
 import carta from '../data/carta.json';
@@ -36,7 +37,7 @@ const doors = [
     <div class="hero-inner wrap">
       <div class="hero-copy">
         {/* El nombre del café es el titular; «Brunch y café en Maspalomas» va encima, dentro del mismo h1 para el SEO */}
-        <h1 id="hero-title"><span class="hero-tagline eyebrow enter"><span class="little-sun" aria-hidden="true"><Icon name="sun" /></span> {tagline}</span><span class="hero-name enter enter-2">Calma <em>Café</em></span></h1>
+        <h1 id="hero-title"><span class="hero-tagline eyebrow enter"><span class="little-sun" aria-hidden="true"><Icon name="sun" /></span> {tagline}</span><span class="hero-name enter enter-2">Calma <em>Café</em><Sparkle class="hero-sparkle" /><Sparkle class="hero-sparkle hero-sparkle--small" /></span></h1>
         <div class="hero-script enter enter-2">
           <ScriptWord text="Feed your soul" class="script-hero" />
           <svg class="hero-flourish" viewBox="0 0 520 36" aria-hidden="true" focusable="false"><path d="M4 31 C 130 17 320 8 516 3 C 322 13 140 25 12 35 C 7 35 3 33 4 31 Z" /></svg>
@@ -49,6 +50,7 @@ const doors = [
         <div class="hero-arch"><Photo name="interior-barra" lang={lang} sizes="(max-width: 699px) 80vw, 460px" eager priority /></div>
         {/* Enredadera que trepa por el arco: mismas proporciones que el arco (400 × 530), así encaja a cualquier tamaño */}
         <svg class="hero-vine" viewBox="0 0 400 530" aria-hidden="true" focusable="false"><Vine id="hero-vine" cx={200} cy={200} r={200} base={470} /></svg>
+        <svg class="hero-vine" viewBox="0 0 400 530" aria-hidden="true" focusable="false"><g transform="translate(400 0) scale(-1 1)"><Vine id="hero-vine-right" cx={200} cy={200} r={200} base={500} end={44} scale={0.8} offset={16} leaves={11} pairs={[3, 8]} tendrils={[6]} still /></g></svg>
         <Seal />
         <figure class="hero-photo"><DishPhoto foto={dulce.foto} alt={dulceAlt} sizes="(max-width: 699px) 150px, 260px" eager /><figcaption class="handwritten">{tc(lang, dulce.nombre)} · {price(lang, dulce.precio)}</figcaption></figure>
         <figure class="hero-photo hero-photo--salty"><DishPhoto foto={especial.foto} alt={tc(lang, especial.nombre)} sizes="(max-width: 699px) 130px, 200px" eager /><figcaption class="handwritten">{tc(lang, especial.nombre)} · {price(lang, especial.precio)}</figcaption></figure>
@@ -83,6 +85,7 @@ const doors = [
   <section class="team-section section" aria-labelledby="team-title">
     <div class="wrap team-grid" data-choice="none">
       <div class="team-photos" data-reveal>
+        <svg class="team-vine" viewBox="0 0 555 510" aria-hidden="true" focusable="false"><Vine id="team-vine" cx={300} cy={250} r={215} base={520} end={128} scale={0.78} line={2} still /></svg>
         <figure class="team-card team-card--coffee" data-team-pick="coffee"><DishPhoto foto={latteFrio.foto} alt={tc(lang, latteFrio.nombre)} sizes="(max-width: 600px) 62vw, 340px" /><figcaption class="handwritten">{h.coffee}</figcaption></figure>
         <figure class="team-card team-card--matcha" data-team-pick="matcha"><DishPhoto foto={matchaLatte.foto} alt={tc(lang, matchaLatte.nombre)} sizes="(max-width: 600px) 62vw, 340px" /><figcaption class="handwritten">{h.matcha}</figcaption></figure>
       </div>

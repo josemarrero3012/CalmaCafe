@@ -365,7 +365,10 @@ main{overflow-x:clip}
 .hero-inner{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(32px,5vw,80px);align-items:center;min-height:min(var(--hero-h),860px);padding-block:clamp(24px,4svh,56px) clamp(40px,6svh,72px)}
 .hero h1{display:flex;flex-direction:column;font-size:inherit;line-height:1}
 .hero-tagline{display:flex;align-items:center;gap:12px;margin-bottom:clamp(10px,2svh,20px);font-family:var(--sans);font-size:13px;letter-spacing:.2em;color:var(--madera)}
-.hero-name{font:450 min(7vw,13svh,116px)/.95 var(--serif);letter-spacing:-.055em}
+.hero-name{position:relative;width:fit-content;font:450 min(7vw,13svh,116px)/.95 var(--serif);letter-spacing:-.055em}
+/* Dos destellos dorados junto a «Café», como los de la ilustración de la carta */
+.hero-sparkle{position:absolute;right:-.42em;top:-.12em;width:.34em;height:auto}
+.hero-sparkle--small{right:-.62em;top:.3em;width:.18em}
 .little-sun{font-size:30px;font-weight:400;line-height:1;color:var(--mostaza)}
 .hero-name em{white-space:nowrap}
 .hero-script{position:relative;width:min(420px,72%,52svh);margin:min(1svh,8px) 0 0 22%}
@@ -457,8 +460,8 @@ main{overflow-x:clip}
 /* Enredadera (Vine.astro): el tallo crece desde la base y cada hoja se abre desde su rabito cuando el tallo llega a ella */
 .vine-grow{stroke-dasharray:1}
 @media(prefers-reduced-motion:no-preference){
-  .js .vine:not(.is-visible) .vine-grow{stroke-dashoffset:1}
-  .js .vine:not(.is-visible) .vine-leaf{scale:0}
+  .js .vine[data-reveal]:not(.is-visible) .vine-grow{stroke-dashoffset:1}
+  .js .vine[data-reveal]:not(.is-visible) .vine-leaf{scale:0}
   .vine.is-visible .vine-grow{animation:vine-grow 2.4s linear .9s both}
   .vine.is-visible .vine-leaf{animation:vine-leaf .7s var(--ease) calc(.8s + var(--t) * 2.4s) both}
 }
@@ -466,6 +469,15 @@ main{overflow-x:clip}
 @keyframes vine-leaf{from{scale:0}}
 /* En Inicio la enredadera va pegada al arco: misma caja y mismas proporciones, por encima de la foto y por debajo del sello y las polaroids */
 .hero-vine{position:absolute;left:0;top:0;z-index:1;width:100%;height:auto;aspect-ratio:4/5.3;overflow:visible;pointer-events:none}
+/* Cinta adhesiva en las polaroids: mostaza o salvia en Inicio, papel en las de bebidas */
+.hero-photo::before,.team-card::before{content:'';position:absolute;z-index:3;top:-13px;left:50%;width:92px;height:26px;translate:-50% 0;rotate:-5deg;background:rgba(206,150,40,.55);clip-path:polygon(0 8%,4% 0,8% 10%,12% 0,88% 0,92% 9%,96% 0,100% 10%,100% 92%,96% 100%,92% 90%,88% 100%,12% 100%,8% 92%,4% 100%,0 90%);pointer-events:none}
+.hero-photo--salty::before{rotate:6deg;background:rgba(175,199,199,.75)}
+.team-card::before{background:rgba(250,246,239,.6)}
+.team-card--matcha::before{rotate:4deg}
+/* Enredadera fija detrás de las polaroids de bebidas */
+.team-vine{position:absolute;inset:-6% -4% auto -10%;width:118%;height:auto;overflow:visible;pointer-events:none}
+/* En móvil hay texto justo encima y debajo de las fotos: la enredadera baja un poco y se encoge para no rozarlo */
+@media(max-width:699px){.team-vine{top:4%;left:-6%;width:108%}}
 /* Inicio: cinta de bienvenida en movimiento sobre banda verde */
 .welcome-strip{position:relative;z-index:1;overflow:hidden;background:var(--verde-tinta);color:var(--papel);border-block:1px solid #2B4A42}
 .welcome-track{display:flex;width:max-content;animation:welcome-marquee 42s linear infinite}

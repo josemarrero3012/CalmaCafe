@@ -1,0 +1,6 @@
+---
+// Destello dorado de cuatro puntas, como los de la ilustración de la carta.
+interface Props { class?: string; }
+const { class: className } = Astro.props;
+---
+<svg class:list={['sparkle', className]} viewBox="0 0 40 40" aria-hidden="true" focusable="false"><path d="M20 0 C 22 13, 27 18, 40 20 C 27 22, 22 27, 20 40 C 18 27, 13 22, 0 20 C 13 18, 18 13, 20 0 Z" fill="#CE9628" /></svg>

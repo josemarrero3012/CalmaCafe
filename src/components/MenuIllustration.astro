@@ -1,86 +1,21 @@
 ---
-import Vine from './Vine.astro';
-// Dibujo de «la carta» para la cabecera de la Carta: una carta en arco con renglones y precios,
-// una taza humeante, pancakes con sirope y una hoja tropical. Trazo a mano y colores de la marca.
+import { url } from '../lib/base';
+// Dibujo de «la carta» para la cabecera de la Carta: una carta en arco sobre azulejo salvia, pancakes, una taza
+// humeante y una hoja. En español se usa el dibujo con la palabra «Carta» a mano; en los otros idiomas, la misma
+// imagen sin la palabra y el nombre escrito encima con la letra manuscrita de la web.
 interface Props { label: string; class?: string; }
 const { label, class: className } = Astro.props;
-// Los nombres largos («Speisekarte») se escriben algo más pequeños para caber en la carta.
-const titleSize = label.length > 8 ? 30 : 40;
-// Renglones de la carta: largo del plato y del precio.
-const rows = [[64, 18], [48, 16], [72, 18], [40, 16], [58, 18]];
+const version = label === 'Carta' ? 'carta-es' : 'carta-blank';
+const widths = [400, 800, 1200];
+const srcset = (ext: string) => widths.map(w => `${url(`/media/dibujos/${version}-${w}.${ext}`)} ${w}w`).join(', ');
+const sizes = '400px';
+// Tamaño en % del ancho del dibujo: las palabras largas («Speisekarte») se escriben más pequeñas para caber en la carta.
+const fontSize = Math.min(10, 62 / label.length);
 ---
-<svg class:list={['menu-illustration', className]} viewBox="0 0 520 440" aria-hidden="true" focusable="false">
-  <defs>
-    <pattern id="menu-tile" width="22" height="22" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
-      <rect width="22" height="22" fill="#AFC7C7" />
-      <path d="M11 3 L19 11 L11 19 L3 11 Z" fill="none" stroke="#FAF6EF" stroke-width="1.4" />
-    </pattern>
-  </defs>
-
-  <!-- Fondo: arco salvia con el patrón de azulejo, como las fotos en arco de la web -->
-  <path d="M96 420 V200 A164 164 0 0 1 424 200 V420 Z" fill="url(#menu-tile)" opacity=".55" />
-
-  <!-- Enredadera que trepa por el arco, como la del inicio -->
-  <Vine id="menu-vine" cx={260} cy={200} r={164} base={410} scale={0.82} line={2.2} />
-
-  <!-- Hoja tropical detrás de la carta -->
-  <g class="mi-leaf" stroke="#1E1A1A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M372 236 C 392 156, 452 98, 500 84 C 492 150, 450 214, 372 236 Z" fill="#365B52" />
-    <path d="M372 236 C 412 186, 452 136, 494 92" fill="none" stroke="#AFC7C7" stroke-width="1.6" />
-    <path d="M404 196 L 428 188 M420 172 L 446 166 M436 150 L 462 144 M398 210 L 410 222 M414 186 L 426 200 M430 164 L 442 178" fill="none" stroke="#AFC7C7" stroke-width="1.4" />
-  </g>
-
-  <!-- La carta en arco -->
-  <g transform="rotate(-5 260 230)">
-    <path d="M168 392 V160 A92 92 0 0 1 352 160 V392 Z" fill="#000" opacity=".12" transform="translate(9 10)" />
-    <path d="M168 392 V160 A92 92 0 0 1 352 160 V392 Z" fill="#FFFDF7" stroke="#1E1A1A" stroke-width="2.6" stroke-linejoin="round" />
-    <path d="M184 384 V164 A76 76 0 0 1 336 164 V384 Z" fill="none" stroke="#CE9628" stroke-width="1.4" stroke-dasharray="2 5" stroke-linecap="round" />
-    <!-- Loto de la marca -->
-    <g transform="translate(260 112)" fill="none" stroke="#CE9628" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M0 10 C -6 2, -6 -8, 0 -14 C 6 -8, 6 2, 0 10 Z" fill="#CE9628" fill-opacity=".25" />
-      <path d="M0 10 C -10 8, -17 0, -18 -8 C -10 -8, -3 -2, 0 10" />
-      <path d="M0 10 C 10 8, 17 0, 18 -8 C 10 -8, 3 -2, 0 10" />
-      <path d="M-22 12 H 22" />
-    </g>
-    <text x="260" y="176" text-anchor="middle" font-family="Caveat, cursive" font-weight="600" font-size={titleSize} fill="#1E1A1A">{label}</text>
-    <path d="M214 190 C 240 186, 282 186, 306 190" fill="none" stroke="#CE9628" stroke-width="2.4" stroke-linecap="round" />
-    {rows.map(([dish, priceWidth], i) => {
-      const y = 222 + i * 32;
-      return <g stroke-linecap="round">
-        <circle cx="200" cy={y} r="2.6" fill={i % 2 ? '#C9808C' : '#CE9628'} />
-        <path d={`M210 ${y} H ${210 + dish}`} stroke="#1E1A1A" stroke-width="2.4" />
-        <path d={`M${216 + dish} ${y + 1} H 300`} stroke="#1E1A1A" stroke-width="1.6" stroke-dasharray="0.1 6" opacity=".55" />
-        <path d={`M${320 - priceWidth} ${y} H 320`} stroke="#7F5A32" stroke-width="2.4" />
-        <path d={`M210 ${y + 9} H ${190 + dish}`} stroke="#1E1A1A" stroke-width="1.2" opacity=".3" />
-      </g>;
-    })}
-  </g>
-
-  <!-- Pancakes con sirope y frambuesa -->
-  <g stroke="#1E1A1A" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round">
-    <ellipse cx="118" cy="402" rx="74" ry="14" fill="#FAF6EF" />
-    <path d="M62 384 C 62 374, 174 374, 174 384 L 174 392 C 174 402, 62 402, 62 392 Z" fill="#E9C27A" />
-    <path d="M66 368 C 66 358, 170 358, 170 368 L 170 376 C 170 386, 66 386, 66 376 Z" fill="#F0CF8E" />
-    <path d="M70 352 C 70 342, 166 342, 166 352 L 166 360 C 166 370, 70 370, 70 360 Z" fill="#E9C27A" />
-    <path d="M78 350 C 92 340, 146 340, 158 350 C 154 356, 150 366, 146 360 C 140 354, 132 356, 128 364 C 124 372, 116 368, 114 360 C 110 352, 98 354, 94 362 C 90 368, 82 362, 78 350 Z" fill="#7F5A32" />
-    <circle cx="118" cy="336" r="9" fill="#C9808C" />
-    <path d="M114 330 l2 2 M121 332 l1 2 M117 339 l2 1" stroke-width="1.4" />
-    <path d="M124 326 C 128 318, 136 316, 140 320" fill="none" stroke="#365B52" />
-  </g>
-
-  <!-- Taza de café con vapor -->
-  <g stroke="#1E1A1A" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round">
-    <ellipse cx="404" cy="408" rx="62" ry="12" fill="#FAF6EF" />
-    <path d="M362 342 H 446 L 438 394 C 436 404, 372 404, 370 394 Z" fill="#FFFDF7" />
-    <path d="M366 362 H 442" fill="none" stroke="#365B52" stroke-width="5" />
-    <path d="M444 354 C 472 350, 474 384, 440 382" fill="none" />
-    <ellipse cx="404" cy="342" rx="42" ry="7" fill="#7F5A32" />
-    <path class="mi-steam" d="M390 326 C 382 314, 398 306, 390 292 M410 324 C 402 310, 420 302, 410 286" fill="none" stroke="#7F5A32" stroke-width="2" opacity=".7" />
-  </g>
-
-  <!-- Destellos -->
-  <g fill="#CE9628">
-    <path d="M454 290 l3 7 l7 3 l-7 3 l-3 7 l-3 -7 l-7 -3 l7 -3 Z" />
-    <path d="M140 132 l2.5 6 l6 2.5 l-6 2.5 l-2.5 6 l-2.5 -6 l-6 -2.5 l6 -2.5 Z" />
-  </g>
-</svg>
+<div class:list={['menu-illustration', className]} aria-hidden="true">
+  <picture>
+    <source type="image/avif" srcset={srcset('avif')} sizes={sizes} />
+    <img src={url(`/media/dibujos/${version}-800.webp`)} srcset={srcset('webp')} sizes={sizes} width="1305" height="969" alt="" decoding="async" fetchpriority="high" />
+  </picture>
+  {version === 'carta-blank' && <span class="menu-illustration-label" style={`font-size:${fontSize}cqw`}>{label}</span>}
+</div>

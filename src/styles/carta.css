@@ -8,7 +8,11 @@
 .carta-hero .eyebrow{margin-bottom:18px}
 .carta-hero-text{max-width:560px;margin-top:24px;font-size:16px;color:var(--muted);line-height:1.8}
 /* Dibujo de «la carta» a la derecha del titular */
-.carta-illustration{display:block;width:100%;height:auto;justify-self:end;margin-block:-10px -6px;overflow:visible}
+.carta-illustration{display:block;width:100%;justify-self:end;margin-block:-10px -6px}
+.menu-illustration{position:relative;container-type:inline-size}
+.menu-illustration img{display:block;width:100%;height:auto}
+/* Nombre de la carta en los otros idiomas, sobre el hueco del dibujo; la carta está girada unos grados */
+.menu-illustration-label{position:absolute;left:48.6%;top:33.6%;translate:-50% -50%;rotate:-3deg;font:500 10cqw/1 var(--hand);color:var(--pizarra);white-space:nowrap}
 .carta-note{grid-column:1/-1;justify-self:start;display:inline-flex;gap:10px;align-items:center;margin-top:8px;padding:10px 16px;border:1px solid var(--line);border-radius:40px;font-size:14px;font-weight:600;color:var(--verde-tinta);background:#fffdf8}
 .carta-note span{color:var(--mostaza)}
 

@@ -1,6 +1,8 @@
 ---
+import { url } from '../lib/base';
 // Dibujo a mano de cada sección de la carta, como una pegatina junto a la foto en arco.
 // La sección se reconoce por el final de su id (carta-brunch, vegano-algo-dulce…); si no hay dibujo, no pinta nada.
+// El sándwich es una ilustración aparte (public/media/dibujos), metida en la misma pegatina.
 interface Props { grupo: string; class?: string; }
 const { grupo, class: className } = Astro.props;
 const tipos = ['brunch-tardio-mas', 'para-los-ninos', 'algo-dulce', 'bebidas-frias', 'bebidas-calientes', 'extras', 'brunch'] as const;
@@ -15,13 +17,7 @@ const tipo = tipos.find(t => grupo.endsWith(t));
     <circle cx="61" cy="61" r="12" fill="#CE9628" />
     <path d="M55 56 C 57 53, 61 52, 64 53" stroke="#FFFDF7" stroke-width="2.2" />
   </g>}
-  {tipo === 'brunch-tardio-mas' && <g>
-    {/* Sándwich en triángulo con lechuga */}
-    <path d="M28 80 L 60 30 L 92 80 Z" fill="#E9C98B" />
-    <path d="M34 74 L 60 36 L 86 74" stroke="#7F5A32" stroke-width="1.6" />
-    <path d="M26 82 C 34 76, 40 88, 48 82 C 56 76, 62 88, 70 82 C 78 76, 86 88, 94 82" stroke="#365B52" stroke-width="3.4" />
-    <path d="M28 88 H 92" />
-  </g>}
+  {tipo === 'brunch-tardio-mas' && <image href={url('/media/dibujos/sandwich-240.webp')} x="17" y="27" width="86" height="66" />}
   {tipo === 'extras' && <g>
     {/* Medio aguacate */}
     <path d="M60 26 C 76 26, 84 50, 86 66 C 88 84, 76 96, 60 96 C 44 96, 32 84, 34 66 C 36 50, 44 26, 60 26 Z" fill="#365B52" />

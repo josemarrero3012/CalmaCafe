@@ -2,39 +2,49 @@
 import Icon from '../components/Icon.astro';
 import Layout from '../layouts/Layout.astro';
 import Photo from '../components/Photo.astro';
+import PhotoSlot from '../components/PhotoSlot.astro';
 import Lotus from '../components/Lotus.astro';
+import PolaroidLineCarousel from '../components/ui/polaroid-line-carousel';
 import negocio from '../data/negocio.json';
+import alts from '../data/fotos.json';
+import { url } from '../lib/base';
 import { ui, type Lang } from '../i18n/ui';
 interface Props { lang: Lang; }
 const { lang } = Astro.props;
 const c = ui[lang].calma;
 const s = c.story;
-const photos = ['interior-ventanal', 'interior-cojines', 'interior-notas', 'interior-barra', 'interior-tapiz', 'interior-cuadros', 'interior-luces', 'interior-mesa'] as const;
+// Fotos del local colgadas del hilo, en el orden de c.captions
+const photos = ['interior-ventanal', 'interior-cojines', 'interior-notas', 'interior-galeria', 'interior-tapiz', 'interior-cuadros', 'interior-luces', 'interior-mesa'] as const;
+const slides = photos.map((name, i) => ({ image: url(`/media/${name}-720.webp`), title: c.captions[i], alt: alts[name][lang] }));
 ---
 <Layout lang={lang} current="calma" title={c.title} description={c.description}>
-  <section class="manifesto section page-top wrap" aria-labelledby="manifesto-title">
-    <p class="eyebrow enter">Hola. Hello. Hei. Hoi.</p>
-    <h1 id="manifesto-title" class="page-title enter enter-2" set:html={c.h1} />
-    <div class="manifesto-bottom enter enter-3"><Lotus /><p>{c.intro}</p></div>
+  {/* Cabecera: quiénes son, con el hueco para la foto de la pareja */}
+  <section class="manifesto section page-top" aria-labelledby="manifesto-title">
+    <div class="wrap manifesto-grid">
+      <div class="manifesto-copy">
+        <p class="eyebrow enter">Hola. Hello. Hei. Hoi.</p>
+        <h1 id="manifesto-title" class="page-title enter enter-2" set:html={c.h1} />
+        <div class="manifesto-bottom enter enter-3"><Lotus /><p>{c.intro}</p></div>
+      </div>
+      <PhotoSlot shape="arch" label={c.slotLabel} note={c.ownersNote} class="manifesto-photo enter enter-visual" />
+    </div>
   </section>
 
-  {/* Historia del local. Sin fotos reales todavía: el sello con la fecha y la animación del nombre hacen de imagen. */}
+  {/* Historia del local como una línea del tiempo. Donde aún no hay fotos queda el hueco con una nota para el local. */}
   <section class="story section" aria-labelledby="story-title">
     <div class="wrap">
       <div class="story-heading" data-reveal><p class="eyebrow">{s.eyebrow}</p><h2 id="story-title" set:html={s.title} /><p class="story-lead">{s.lead}</p></div>
-      <ol class="story-chapters">
-        <li class="story-chapter">
-          <div class="story-copy" data-reveal><p class="eyebrow"><span class="story-number">01</span>{s.dream.label}</p><h3>{s.dream.title}</h3><p>{s.dream.text}</p></div>
-          <figure class="story-visual" data-reveal>
-            <div class="story-stamp">
-              <svg class="seal-text" viewBox="0 0 140 140" aria-hidden="true"><defs><path id="stamp-circle" d="M70,70 m-51,0 a51,51 0 1,1 102,0 a51,51 0 1,1 -102,0" /></defs><text><textPath href="#stamp-circle" textLength="317" lengthAdjust="spacing">MASPALOMAS · GRAN CANARIA · </textPath></text></svg>
-              <time datetime="2019-09-06"><span>6.9.</span><span>2019</span></time>
-            </div>
-            <figcaption class="handwritten">{s.dream.caption}</figcaption>
-          </figure>
+      <ol class="timeline">
+        <li class="timeline-item">
+          <div class="story-copy" data-reveal><p class="eyebrow"><span class="story-number">01</span>{s.craft.label}</p><h3>{s.craft.title}</h3><p>{s.craft.text}</p></div>
+          <div class="story-visual" data-reveal><PhotoSlot label={c.slotLabel} note={s.craft.note} class="timeline-slot" /></div>
         </li>
-        <li class="story-chapter">
-          <div class="story-copy" data-reveal><p class="eyebrow"><span class="story-number">02</span>{s.name.label}</p><h3>{s.name.title}</h3><p>{s.name.text}</p></div>
+        <li class="timeline-item">
+          <div class="story-copy" data-reveal><p class="eyebrow"><span class="story-number">02</span>{s.search.label}</p><h3>{s.search.title}</h3><p>{s.search.text}</p></div>
+          <div class="story-visual" data-reveal><PhotoSlot label={c.slotLabel} note={s.search.note} class="timeline-slot timeline-slot--right" /></div>
+        </li>
+        <li class="timeline-item">
+          <div class="story-copy" data-reveal><p class="eyebrow"><span class="story-number">03</span>{s.name.label}</p><h3>{s.name.title}</h3><p>{s.name.text}</p></div>
           {/* «Alma» se convierte en «Calma» al verse (site.ts mide las letras). Sin JS o con movimiento reducido se ve «Calma». */}
           <figure class="story-visual alma-calma" data-reveal data-alma>
             <div class="alma-card">
@@ -46,18 +56,37 @@ const photos = ['interior-ventanal', 'interior-cojines', 'interior-notas', 'inte
             <figcaption class="handwritten">{s.name.caption}</figcaption>
           </figure>
         </li>
+        <li class="timeline-item">
+          <div class="story-copy" data-reveal><p class="eyebrow"><span class="story-number">04</span>{s.opening.label}</p><h3>{s.opening.title}</h3><p>{s.opening.text}</p></div>
+          {/* El sello con la fecha, pegado a la esquina del hueco para la foto de la inauguración */}
+          <figure class="story-visual opening-visual" data-reveal>
+            <PhotoSlot label={c.slotLabel} note={s.opening.note} class="timeline-slot" />
+            <div class="story-stamp">
+              <svg class="seal-text" viewBox="0 0 140 140" aria-hidden="true"><defs><path id="stamp-circle" d="M70,70 m-51,0 a51,51 0 1,1 102,0 a51,51 0 1,1 -102,0" /></defs><text><textPath href="#stamp-circle" textLength="317" lengthAdjust="spacing">MASPALOMAS · GRAN CANARIA · </textPath></text></svg>
+              <time datetime="2019-09-06"><span>6.9.</span><span>2019</span></time>
+            </div>
+            <figcaption class="handwritten">{s.opening.caption}</figcaption>
+          </figure>
+        </li>
+        <li class="timeline-item">
+          <div class="story-copy" data-reveal><p class="eyebrow"><span class="story-number">05</span>{s.today.label}</p><h3>{s.today.title}</h3><p>{s.today.text}</p></div>
+          <figure class="story-visual timeline-photo" data-reveal><Photo name="interior-barra" lang={lang} sizes="(max-width: 699px) 70vw, 300px" /><figcaption class="handwritten">{s.today.caption}</figcaption></figure>
+        </li>
       </ol>
+    </div>
+  </section>
+
+  {/* El local, foto a foto: polaroids colgadas de un hilo (componente de React, se carga al llegar a la sección) */}
+  <section class="details-section section" aria-labelledby="details-title">
+    <div class="wrap"><div class="details-heading" data-reveal><p class="eyebrow">{c.detailsEyebrow}</p><h2 id="details-title" set:html={c.detailsTitle} /><p set:html={c.detailsText} /></div></div>
+    <PolaroidLineCarousel client:visible slides={slides} height="clamp(560px, 82svh, 700px)" cardWidth={280} sag={40} autoplay={5000} string="#7F5A32" background="transparent" ink="#1E1A1A" ariaLabel={c.gallery.label} labels={{ previous: c.gallery.previous, next: c.gallery.next, item: c.gallery.item }} className="calma-line" />
+    <div class="wrap">
+      <p class="calma-line-hint handwritten">{c.gallery.hint}</p>
+      <div class="instagram-line"><span>{c.instagram}</span><a class="text-link" href={negocio.instagram.url} target="_blank" rel="noopener noreferrer">{negocio.instagram.usuario} <span aria-hidden="true"><Icon name="arrow-up-right" /></span></a></div>
     </div>
   </section>
 
   <section class="chalkboard section" aria-labelledby="chalk-title">
     <div class="wrap chalk-grid"><div class="chalk-copy" data-reveal><p class="eyebrow">{c.chalkEyebrow}</p><h2 id="chalk-title" class="handwritten chalk-write" lang="en">“Life is too <br />short to say <br />no to <span>cake!</span>”</h2><Lotus light /></div><figure class="chalk-photo" data-reveal><Photo name="pizarra-yawn" lang={lang} sizes="(max-width: 600px) 76vw, 340px" /><figcaption class="handwritten">{c.otherBoard}</figcaption></figure></div>
-  </section>
-
-  <section class="details-section section" aria-labelledby="details-title">
-    <div class="wrap"><div class="details-heading" data-reveal><p class="eyebrow">{c.detailsEyebrow}</p><h2 id="details-title" set:html={c.detailsTitle} /><p set:html={c.detailsText} /></div>
-      <div class="noticeboard">{photos.map((name, i) => <figure class={`polaroid polaroid-${i + 1}`} data-reveal><Photo name={name} lang={lang} sizes="(max-width: 599px) 40vw, (max-width: 999px) 28vw, 245px" /><figcaption class="handwritten">{c.captions[i]}</figcaption></figure>)}</div>
-      <div class="instagram-line"><span>{c.instagram}</span><a class="text-link" href={negocio.instagram.url} target="_blank" rel="noopener noreferrer">{negocio.instagram.usuario} <span aria-hidden="true"><Icon name="arrow-up-right" /></span></a></div>
-    </div>
   </section>
 </Layout>

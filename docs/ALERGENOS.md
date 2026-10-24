@@ -21,7 +21,7 @@ Platos nuevos (7 entradas, 4 platos distintos):
 | Tosta Cacahuete | Vegetariano | 7,00 € | sí |
 | Pumpkin Spice Latte | Bebidas | 5,00 € | no |
 
-- **Retirado:** «Sándwich Atún picante» (9,00 €, Carta). Ya no está en la oficial. Si fue un error suyo, habrá que volver a añadirlo.
+- **Retirado y recuperado:** «Sándwich Atún picante» (9,00 €, Carta) desapareció de la oficial y volvió con la importación del 24 de octubre de 2026, junto con los Pancakes, el Sándwich Vegetariano y el Vegano. Sus traducciones y alérgenos añadidos se recuperaron entonces (se añade Gluten y Pescado al de atún, y Gluten y Lácteos al Sándwich albóndigas y gorgonzola).
 - **Extra nuevo:** «Crema de pistacho vegana» (+3,50 €) en los Pancakes de «Algo dulce» del menú Vegano.
 - **Nombre corregido:** «Pumkin Spice Latte» → «Pumpkin Spice Latte» (errata de la oficial; el resto de nombres ya pasaba por las correcciones de forma del script).
 - Los textos nuevos están traducidos al inglés, alemán y neerlandés en `src/i18n/carta.json`, incluido el alérgeno «Sulfitos».

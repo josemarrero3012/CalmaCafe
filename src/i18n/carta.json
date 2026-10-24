@@ -994,5 +994,75 @@
   "en": "Pumpkin spice latte",
   "de": "Pumpkin Spice Latte",
   "nl": "Pumpkin spice latte"
+ },
+ "Pancakes": {
+  "en": "Pancakes",
+  "de": "Pancakes",
+  "nl": "Pancakes"
+ },
+ "Pancake": {
+  "en": "Extra pancake",
+  "de": "Zusätzlicher Pancake",
+  "nl": "Extra pancake"
+ },
+ "Pancakes estilo americano": {
+  "en": "American-style pancakes",
+  "de": "Pancakes nach amerikanischer Art",
+  "nl": "Amerikaanse pancakes"
+ },
+ "Dos pancakes con huevos revueltos, bacon y Jarabe de arce": {
+  "en": "Two pancakes with scrambled eggs, bacon and maple syrup",
+  "de": "Zwei Pancakes mit Rührei, Bacon und Ahornsirup",
+  "nl": "Twee pancakes met roerei, bacon en ahornsiroop"
+ },
+ "Pancake Manzana crumble": {
+  "en": "Apple crumble pancake",
+  "de": "Pancake mit Apfel-Crumble",
+  "nl": "Pancake met appelcrumble"
+ },
+ "Pancakes Veganos": {
+  "en": "Vegan pancakes",
+  "de": "Vegane Pancakes",
+  "nl": "Veganistische pancakes"
+ },
+ "Crema de cacahuetes": {
+  "en": "Peanut butter",
+  "de": "Erdnusscreme",
+  "nl": "Pindakaas"
+ },
+ "Jarabe de arce": {
+  "en": "Maple syrup",
+  "de": "Ahornsirup",
+  "nl": "Ahornsiroop"
+ },
+ "Crema pistacho vegano": {
+  "en": "Vegan pistachio cream",
+  "de": "Vegane Pistaziencreme",
+  "nl": "Veganistische pistachecrème"
+ },
+ "Sándwich Atún picante": {
+  "en": "Spicy tuna sandwich",
+  "de": "Sandwich mit scharfem Thunfisch",
+  "nl": "Sandwich met pittige tonijn"
+ },
+ "Sándwich Vegetariano": {
+  "en": "Vegetarian sandwich",
+  "de": "Vegetarisches Sandwich",
+  "nl": "Vegetarische sandwich"
+ },
+ "Sándwich Vegano": {
+  "en": "Vegan sandwich",
+  "de": "Veganes Sandwich",
+  "nl": "Veganistische sandwich"
+ },
+ "Con guacamole champiñones. Añade una ensaladita o papas ajillo horneadas por 2€": {
+  "en": "With guacamole and mushrooms. Add a side salad or oven-baked garlic potatoes for €2",
+  "de": "Mit Guacamole und Champignons. Dazu gibt es für 2 € einen kleinen Salat oder Knoblauch-Ofenkartoffeln",
+  "nl": "Met guacamole en champignons. Voor € 2 extra met een salade of ovengebakken knoflookaardappeltjes"
+ },
+ "Con guacamole y champiñones. Añade una ensaladita o papas ajillo horneadas por 2€": {
+  "en": "With guacamole and mushrooms. Add a side salad or oven-baked garlic potatoes for €2",
+  "de": "Mit Guacamole und Champignons. Dazu gibt es für 2 € einen kleinen Salat oder Knoblauch-Ofenkartoffeln",
+  "nl": "Met guacamole en champignons. Voor € 2 extra met een salade of ovengebakken knoflookaardappeltjes"
  }
 }

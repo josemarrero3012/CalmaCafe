@@ -1,0 +1,23 @@
+---
+// Guirnalda de bombillas de filamento, como la del ventanal del local: un cable que cuelga en `swags` tramos
+// (enganchado arriba en cada extremo) con `per` bombillas por tramo. Se dibuja a `width` × 120 y escala con el ancho.
+interface Props { width: number; swags: number; per?: number; sag?: number; class?: string; }
+const { width, swags, per = 3, sag = 40, class: className } = Astro.props;
+const seg = width / swags;
+const cable = 'M0 8 ' + Array.from({ length: swags }, (_, i) => `Q${(i + 0.5) * seg} ${8 + sag * 2} ${(i + 1) * seg} 8`).join(' ');
+// Punto del tramo i a la fracción t: la curva cuadrática baja `sag` en el centro.
+const bulbs = Array.from({ length: swags }, (_, i) => Array.from({ length: per }, (_, k) => {
+  const t = (k + 1) / (per + 1);
+  return { x: +(i * seg + seg * t).toFixed(1), y: +(8 + 4 * sag * t * (1 - t)).toFixed(1), n: i * per + k };
+})).flat();
+---
+<svg class:list={['guirnalda', className]} viewBox={`0 0 ${width} 120`} aria-hidden="true" focusable="false">
+  <path d={cable} fill="none" stroke="#1E1A1A" stroke-width="1.6" />
+  {bulbs.map(b => <g transform={`translate(${b.x} ${b.y}) scale(1.7)`}>
+    <path d="M0 0v8" stroke="#1E1A1A" stroke-width="1.4" />
+    <rect x="-3.5" y="7" width="7" height="6" rx="1" fill="#2B2724" />
+    <circle class="guirnalda-glow" style={`--n:${b.n % 5}`} cx="0" cy="20" r="14" fill="url(#guirnalda-halo)" />
+    <ellipse cx="0" cy="20" rx="5.6" ry="7" fill="url(#guirnalda-bulb)" stroke="#fff9" stroke-width=".6" />
+    <path d="M-1.6 16q1.6 4 0 7M1.6 16q-1.6 4 0 7" stroke="#B36B10" stroke-width=".6" fill="none" />
+  </g>)}
+</svg>

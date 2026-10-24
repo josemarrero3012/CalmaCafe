@@ -291,7 +291,58 @@ main{overflow-x:clip}
 .visit-band .eyebrow{margin-bottom:18px}
 .visit-band h2+p{margin-top:16px;font-size:16px;color:var(--muted)}
 .visit-band-actions{display:flex;flex-wrap:wrap;align-items:center;gap:18px 28px}
-.visit-band-actions .button{width:100%;justify-content:space-between}
+/* Inicio: la pared negra del local, con su frase a tiza, el aplique y la pizarra de platos */
+.wall{position:relative;overflow:hidden;background:#1D1C1B;color:#F3EFE6}
+.wall::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(60% 40% at 18% 30%,#ffffff0d,transparent 70%),radial-gradient(40% 30% at 80% 75%,#ffffff0a,transparent 70%),radial-gradient(34% 30% at 50% 0,#ffc46e2e,#ffc46e0d 50%,transparent 75%)}
+.wall::after{content:'';position:absolute;inset:0;pointer-events:none;opacity:.13;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' opacity='.6' filter='url(%23n)'/%3E%3C/svg%3E")}
+.wall :focus-visible{outline-color:var(--papel)}
+.wall-defs{position:absolute;width:0;height:0;overflow:hidden}
+.tiza{filter:url(#tiza)}
+.wall-lamp{position:absolute;z-index:1;left:50%;top:26px;width:46px;height:56px}
+.wall-lamp::before{content:'';position:absolute;left:0;top:6px;width:12px;height:40px;background:#0D0D0D;border-radius:2px;box-shadow:inset -2px 0 #2A2A2A}
+.wall-lamp::after{content:'';position:absolute;left:12px;top:22px;width:12px;height:4px;background:#0D0D0D}
+.wall-lamp span{position:absolute;left:22px;top:12px;width:24px;height:28px;border-radius:46% 46% 50% 50%;background:radial-gradient(circle at 50% 55%,#FFF6D8 0 18%,#FFCF73 40%,#E9A540 75%);box-shadow:0 0 18px 6px #ffbe5a8c}
+.wall-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(40px,6vw,110px);align-items:center}
+.wall-copy .eyebrow{color:#D9C79D;margin-bottom:26px}
+.wall-quote{font-family:var(--hand);font-weight:500;line-height:1;letter-spacing:0}
+.wall-big{display:block;font:500 clamp(84px,9vw,140px)/.9 var(--serif);letter-spacing:-.03em;color:transparent;-webkit-text-stroke:2px #F3EFE6;font-variation-settings:'SOFT' 100,'WONK' 1}
+.wall-rest{display:block;font-size:clamp(38px,3.6vw,56px);margin-top:14px;padding-left:8%}
+.wall-rest em{color:#F2C565}
+.wall-underline{display:block;width:clamp(230px,23vw,330px);height:16px;margin-top:10px;fill:none;stroke:#F2C565;stroke-linecap:round;stroke-width:3}
+.wall-underline path+path{stroke-width:2;opacity:.7}
+.wall-hearts{display:flex;align-items:center;gap:18px;margin-top:18px}
+.wall-hearts svg{width:34px;height:34px;fill:none;stroke:#F3EFE6;stroke-width:2.3;stroke-linecap:round;rotate:-12deg}
+.wall-hearts svg+svg{width:24px;height:24px;rotate:14deg}
+.wall-hearts svg:last-child{width:18px;height:18px;rotate:-4deg}
+.wall-note{max-width:430px;margin-top:30px;color:#CFC8BB;font-size:16px}
+.wall-board{position:relative;padding:40px 40px 34px;border:2px solid #f3efe68c;border-radius:6px;text-align:center}
+.wall-board h3{font:600 44px/1 var(--hand);letter-spacing:0;margin-bottom:6px}
+.wall-board-sub{font:500 22px/1 var(--hand);color:#D9C79D;margin-bottom:24px}
+.wall-board ul{list-style:none;margin:0;padding:0;text-align:left}
+.wall-board li{display:flex;align-items:baseline;gap:10px;font:500 31px/1.15 var(--hand);padding-block:9px}
+.wall-board li i{flex:1;min-width:24px;border-bottom:2px dotted #f3efe680;translate:0 -6px}
+.wall-board li b{font-weight:600;color:#F2C565;white-space:nowrap}
+.wall-link{display:inline-block;margin-top:22px;font:600 30px/1 var(--hand);border-bottom:2px solid #F2C565;padding-bottom:4px;transition:color .3s var(--ease)}
+.wall-link:hover{color:#F2C565}
+/* Cartel «More amor por favor», como el que cuelga en la pared del local */
+.amor-sign{position:absolute;right:-34px;top:-56px;width:120px;padding:16px 16px 14px;background:#E9A874 linear-gradient(105deg,#ffffff12,transparent 40%);color:#FFF8EF;font:900 25px/.95 var(--sans);text-transform:uppercase;text-align:center;border-radius:2px;box-shadow:0 10px 22px #00000073;rotate:-3deg}
+.amor-sign span{display:block}
+.amor-sign span:nth-child(2){rotate:-2deg}
+.amor-sign span:nth-child(4){rotate:2deg}
+/* Toldo mostaza ondulado del ventanal y su guirnalda sobre «Dónde estamos» */
+.visit-band{position:relative;padding-top:clamp(170px,15vw,220px)}
+.awning{position:absolute;inset:0 0 auto;height:74px;background:repeating-linear-gradient(90deg,#ffffff12 0 56px,#00000009 56px 112px),linear-gradient(#D99A2B,#E8AD3B 70%);box-shadow:inset 0 -10px 18px #78460021}
+.awning::after{content:'';position:absolute;left:0;right:0;bottom:-27px;height:28px;background:radial-gradient(circle at 28px 0,#E8AD3B 27px,transparent 28px) 0 0/56px 28px repeat-x;filter:drop-shadow(0 6px 5px #50320038)}
+.guirnalda{position:absolute;left:0;top:92px;width:100%;height:auto;pointer-events:none}
+.guirnalda--narrow{display:none}
+.guirnalda-glow{animation:glow 3.2s ease-in-out calc(var(--n) * -.7s) infinite alternate}
+@keyframes glow{to{opacity:.55}}
+.wood-sign{display:inline-flex;align-items:center;gap:16px;min-height:52px;padding:14px 22px 14px 24px;background:#3A2A1D repeating-linear-gradient(0deg,#ffffff09 0 2px,transparent 2px 7px);color:#F6EAD4;border-radius:7px;font-size:15px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;box-shadow:0 8px 18px #1e140a40,inset 0 0 0 3px #4B3726,inset 0 0 0 4px #2A1D13;transition:translate .4s var(--ease),box-shadow .4s var(--ease)}
+.wood-sign svg{width:44px;height:22px;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;transition:translate .4s var(--ease)}
+.wood-sign:hover{translate:0 -2px;box-shadow:0 12px 22px #1e140a4d,inset 0 0 0 3px #4B3726,inset 0 0 0 4px #2A1D13}
+.wood-sign:hover svg{translate:4px 0}
+@media(max-width:999px){.wall-grid{grid-template-columns:1fr;gap:80px}.wall-board{max-width:560px;justify-self:center;width:100%}.amor-sign{right:-10px}}
+@media(max-width:699px){.wall-lamp{left:22px;top:22px}.wall::before{background:radial-gradient(60% 40% at 18% 30%,#ffffff0d,transparent 70%),radial-gradient(70% 22% at 10% 0,#ffc46e2e,#ffc46e0d 50%,transparent 75%)}.wall-copy{padding-top:40px}.wall-rest{padding-left:0}.wall-grid{gap:64px}.wall-board{padding:30px 22px 26px}.wall-board h3{font-size:40px}.wall-board li{font-size:24px;gap:8px}.wall-board li i{min-width:16px}.wall-link{font-size:27px}.amor-sign{right:-6px;top:-62px;width:96px;padding:12px;font-size:19px}.guirnalda--wide{display:none}.guirnalda--narrow{display:block}.visit-band{padding-top:200px}}
 /* Menú móvil y pie: contacto real */
 .menu-contact{margin-top:36px;display:flex;flex-direction:column;gap:12px;font-style:normal;font-size:15px}
 .menu-contact span{color:var(--muted);font-size:14px;line-height:1.6}

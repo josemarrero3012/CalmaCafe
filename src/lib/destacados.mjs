@@ -20,11 +20,13 @@ export const listas = {
   matcha: ['492937', '492936', '701627', '701629'],
 };
 const LARGO = 3;
+// Pizarra de Inicio: cuatro platos de Brunch, sin foto; si falta alguno, se completa con los siguientes de la sección.
+export const pizarra = { ids: ['89630', '422600', '93766', '94249'], grupo: 'carta-brunch', largo: 4 };
 
 /**
  * Elige los platos de Inicio y anota en `avisos` cada preferido que falta, para verlo en el log de la compilación.
  * @param {Carta} carta
- * @returns {{ fotos: Record<keyof typeof huecos, Plato & { foto: Foto }>, bebidas: Record<keyof typeof listas, Plato[]>, avisos: string[] }}
+ * @returns {{ fotos: Record<keyof typeof huecos, Plato & { foto: Foto }>, bebidas: Record<keyof typeof listas, Plato[]>, tiza: Plato[], avisos: string[] }}
  */
 export function destacados(carta) {
   const grupos = carta.menus.flatMap(menu => menu.grupos);
@@ -49,5 +51,9 @@ export function destacados(carta) {
     if (faltan.length) avisos.push(`faltan en la carta ${faltan.join(', ')}; la lista «${team}» se completa con las siguientes.`);
     bebidas[team] = ids.flatMap(id => porId.get(id) ?? []).slice(0, LARGO);
   }
-  return { fotos, bebidas, avisos };
+  const faltan = pizarra.ids.filter(id => !porId.has(id));
+  if (faltan.length) avisos.push(`faltan en la carta ${faltan.join(', ')}; la pizarra se completa con otros platos de «${pizarra.grupo}».`);
+  const delGrupo = grupos.find(g => g.id === pizarra.grupo)?.platos ?? [];
+  const tiza = [...new Map([...pizarra.ids.flatMap(id => porId.get(id) ?? []), ...delGrupo].map(p => [p.id, p])).values()].slice(0, pizarra.largo);
+  return { fotos, bebidas, tiza, avisos };
 }

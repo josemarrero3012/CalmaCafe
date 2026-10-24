@@ -43,6 +43,7 @@ export interface UI {
     strip: [string, string, string, string]; doorsTitle: string;
     doors: { carta: [string, string, string]; calma: [string, string, string]; visit: [string, string, string] };
     drinksEyebrow: string; drinksTitle: string; drinksIntro: string; coffee: string; matcha: string; chooseDrink: string; drinksHint: string; allDrinks: string;
+    wallEyebrow: string; wallNote: string; boardTitle: string; boardSub: string; boardLink: string;
     tables: string; callNumber: string; reviews: string; rating: (nota: string) => string;
   };
   carta: {
@@ -103,6 +104,7 @@ export const ui: Record<Lang, UI> = {
       drinksEyebrow: 'Para beber', drinksTitle: '¿Café o <em>matcha?</em>',
       drinksIntro: 'Café Lavazza, matcha japonés y ube. Si no conoces el ube, es una batata morada de Filipinas que recuerda a la vainilla.',
       coffee: 'Café', matcha: 'Matcha y ube', chooseDrink: 'Elige tu bebida', drinksHint: 'Elige el tuyo', allDrinks: 'Todas las bebidas',
+      wallEyebrow: 'La pared del local', wallNote: 'Lo tenemos escrito a tiza en la pared negra del local, junto a la mesa redonda.', boardTitle: 'Hoy en la pizarra', boardSub: 'platos de la carta de hoy', boardLink: 'Ver la carta entera',
       tables: 'Mesas dentro y fuera.', callNumber: 'Llamar al {tel}', reviews: 'Reseñas en Google', rating: nota => `${nota} en Google`,
     },
     carta: {
@@ -192,6 +194,7 @@ export const ui: Record<Lang, UI> = {
       drinksEyebrow: 'To drink', drinksTitle: 'Coffee or <em>matcha?</em>',
       drinksIntro: 'Lavazza coffee, Japanese matcha and ube. If you haven’t tried ube, it’s a purple sweet potato from the Philippines that tastes a little like vanilla.',
       coffee: 'Coffee', matcha: 'Matcha and ube', chooseDrink: 'Choose your drink', drinksHint: 'Pick yours', allDrinks: 'All drinks',
+      wallEyebrow: 'Our café wall', wallNote: 'It’s chalked on the black wall inside the café, right by the round table.', boardTitle: 'On the board today', boardSub: 'dishes from today’s menu', boardLink: 'See the whole menu',
       tables: 'Tables inside and out.', callNumber: 'Call {tel}', reviews: 'Reviews on Google', rating: nota => `${nota} on Google`,
     },
     carta: {
@@ -282,6 +285,7 @@ export const ui: Record<Lang, UI> = {
       drinksEyebrow: 'Zum Trinken', drinksTitle: 'Kaffee oder <em>Matcha?</em>',
       drinksIntro: 'Lavazza-Kaffee, japanischer Matcha und Ube. Falls du Ube nicht kennst: eine violette Süßkartoffel von den Philippinen, die ein bisschen nach Vanille schmeckt.',
       coffee: 'Kaffee', matcha: 'Matcha und Ube', chooseDrink: 'Wähle dein Getränk', drinksHint: 'Wähl deins', allDrinks: 'Alle Getränke',
+      wallEyebrow: 'Unsere Wand im Café', wallNote: 'So steht es mit Kreide an der schwarzen Wand im Café, gleich beim runden Tisch.', boardTitle: 'Heute an der Tafel', boardSub: 'Gerichte von der heutigen Karte', boardLink: 'Zur ganzen Karte',
       tables: 'Tische drinnen und draußen.', callNumber: '{tel} anrufen', reviews: 'Bewertungen auf Google', rating: nota => `${nota} auf Google`,
     },
     carta: {
@@ -372,6 +376,7 @@ export const ui: Record<Lang, UI> = {
       drinksEyebrow: 'Om te drinken', drinksTitle: 'Koffie of <em>matcha?</em>',
       drinksIntro: 'Lavazza-koffie, Japanse matcha en ube. Ken je ube nog niet? Het is een paarse zoete aardappel uit de Filipijnen die een beetje naar vanille smaakt.',
       coffee: 'Koffie', matcha: 'Matcha en ube', chooseDrink: 'Kies je drankje', drinksHint: 'Kies de jouwe', allDrinks: 'Alle drankjes',
+      wallEyebrow: 'Onze muur in het café', wallNote: 'Zo staat het met krijt op de zwarte muur in het café, vlak bij de ronde tafel.', boardTitle: 'Vandaag op het bord', boardSub: 'gerechten van de kaart van vandaag', boardLink: 'Bekijk de hele kaart',
       tables: 'Tafels binnen en buiten.', callNumber: 'Bel {tel}', reviews: 'Reviews op Google', rating: nota => `${nota} op Google`,
     },
     carta: {

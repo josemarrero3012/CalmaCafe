@@ -57,6 +57,8 @@ const schema = buildSchema(negocio, { pageUrl: current ? abs(routes[lang][curren
     <script is:inline>document.documentElement.classList.add('js')</script>
   </head>
   <body data-page={current ?? 'error'}>
+    {/* Compartidos: filtro de tiza (pared negra de Inicio y pie) y degradados de las bombillas de la guirnalda */}
+    <svg class="svg-defs" aria-hidden="true" focusable="false"><filter id="tiza" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="3" result="t" /><feDisplacementMap in="SourceGraphic" in2="t" scale="2.6" xChannelSelector="R" yChannelSelector="G" result="d" /><feTurbulence type="fractalNoise" baseFrequency="1.7" seed="8" result="p" /><feColorMatrix in="p" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -2.2 1.75" result="m" /><feComposite in="d" in2="m" operator="in" /></filter><radialGradient id="guirnalda-bulb" cx=".45" cy=".4" r=".7"><stop offset="0" stop-color="#FFFBE9" /><stop offset=".5" stop-color="#FFE2A0" /><stop offset="1" stop-color="#F0B450" /></radialGradient><radialGradient id="guirnalda-halo"><stop offset="0" stop-color="#FFD27A" stop-opacity=".55" /><stop offset="1" stop-color="#FFD27A" stop-opacity="0" /></radialGradient></svg>
     <a href="#contenido" class="skip-link">{t.skip}</a>
     <header class="site-header">
       <div class="header-inner wrap">
@@ -66,7 +68,7 @@ const schema = buildSchema(negocio, { pageUrl: current ? abs(routes[lang][curren
         </nav>
         <div class="header-actions">
           {showHours
-            ? <a class="hours-indicator" href={`${url(routes[lang].visitanos)}#horario`}><span class="status"><span class="status-dot"></span><span data-hours>{t.visit.hoursView}</span></span></a>
+            ? <a class="hours-indicator" href={`${url(routes[lang].visitanos)}#horario`}>{/* Cartel de madera colgado de un clavo, como los carteles del local */}<span class="hours-sign"><span class="hours-board"><b class="status"><span class="status-dot"></span><span data-hours-state>{t.visit.hoursView}</span></b><span class="hours-next" data-hours-next></span></span></span></a>
             : <a class="header-phone" href={negocio.telefono.enlace}><span aria-hidden="true"><Icon name="phone" /></span> {phone(lang, negocio.telefono.texto)}</a>}
           <details class="lang-switch">
             <summary aria-label={`${t.language}: ${locale[lang].name}`}><Flag lang={lang} /><span>{lang.toUpperCase()}</span></summary>
@@ -98,9 +100,14 @@ const schema = buildSchema(negocio, { pageUrl: current ? abs(routes[lang][curren
       <slot />
     </main>
 
+    {/* Pie en la pared negra del local, con el cartel «More amor por favor» y una despedida a tiza */}
     <footer class="site-footer"><div class="tile-border" aria-hidden="true"></div><div class="wrap">
+      <div class="footer-amor">
+        <p class="amor-sign" lang="es"><span>More</span> <span>amor</span> <span>por</span> <span>favor</span></p>
+        <div><p class="footer-thanks tiza">{t.thanks[0]} <em>{t.thanks[1]}</em></p><svg class="wall-underline tiza" viewBox="0 0 300 16" aria-hidden="true" focusable="false"><path d="M4 10C70 3 170 2 296 7" /><path d="M40 13C110 9 190 9 270 12" /></svg></div>
+      </div>
       <div class="footer-top">
-        <a class="footer-brand" href={url(routes[lang].inicio)} aria-label={t.backHome}><img src={url('/media/logo-dark.svg')} alt="Calma Café · Feed your soul" width="950" height="540" /></a>
+        <a class="footer-brand" href={url(routes[lang].inicio)} aria-label={t.backHome}><img src={url('/media/logo-light.svg')} alt="Calma Café · Feed your soul" width="950" height="540" /></a>
         <div><span class="eyebrow">{t.whereWeAre}</span><span>{negocio.direccion.calle} <br />{negocio.direccion.edificio} <br />{negocio.direccion.codigoPostal} {negocio.localidad}, {negocio.isla}</span><a class="footer-link" href={negocio.mapas.url} target="_blank" rel="noopener noreferrer">{t.directions} <Icon name="arrow-up-right" /></a></div>
         {showHours && <div class="footer-hours"><span class="eyebrow">{t.visit.hours}</span><dl>{footerHours.map(row => <div><dt>{row.label}</dt><dd>{row.value}</dd></div>)}</dl><a class="footer-link" href={`${url(routes[lang].visitanos)}#horario`}>{t.visit.hoursView}</a></div>}
         <div><span class="eyebrow">{t.contact}</span><a class="footer-link" href={negocio.telefono.enlace}>{phone(lang, negocio.telefono.texto)}</a><a class="footer-link" href={negocio.whatsapp.url} target="_blank" rel="noopener noreferrer">WhatsApp <Icon name="arrow-up-right" /></a><a class="footer-link" href={negocio.instagram.url} target="_blank" rel="noopener noreferrer">{negocio.instagram.usuario} <Icon name="arrow-up-right" /></a></div>

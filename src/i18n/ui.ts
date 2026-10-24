@@ -34,6 +34,7 @@ type Notice = [title: string, text: string];
 export interface UI {
   skip: string; ogImageAlt: string; homeLabel: string; nav: Record<Page, string>; navLabel: string; mobileNavLabel: string;
   language: string; directions: string; call: string; openMenu: string; closeMenu: string; menu: string;
+  thanks: [string, string];
   whereWeAre: string; contact: string; backHome: string; backTop: string; legalNav: string; quickActions: string;
   legal: string; privacy: string; cookies: string; proposal: string; close: string; ok: string; onInstagram: string;
   notices: { legal: Notice; privacy: Notice; cookies: Notice };
@@ -79,6 +80,7 @@ export const ui: Record<Lang, UI> = {
     nav: { inicio: 'Inicio', carta: 'Carta', calma: 'Calma', visitanos: 'Visítanos' },
     navLabel: 'Navegación principal', mobileNavLabel: 'Navegación móvil', language: 'Idioma',
     directions: 'Cómo llegar', call: 'Llamar', openMenu: 'Abrir menú', closeMenu: 'Cerrar menú', menu: 'Menú',
+    thanks: ['Gracias por pasarte.', 'Vuelve pronto.'],
     whereWeAre: 'Dónde estamos', contact: 'Contacto', backHome: 'Volver al inicio', backTop: 'Volver arriba',
     legalNav: 'Información legal', quickActions: 'Acciones rápidas', legal: 'Aviso legal', privacy: 'Privacidad', cookies: 'Cookies',
     proposal: 'Diseño web y SEO por', close: 'Cerrar', ok: 'Entendido', onInstagram: 'en Instagram',
@@ -169,6 +171,7 @@ export const ui: Record<Lang, UI> = {
     nav: { inicio: 'Home', carta: 'Menu', calma: 'About', visitanos: 'Visit us' },
     navLabel: 'Main navigation', mobileNavLabel: 'Mobile navigation', language: 'Language',
     directions: 'Directions', call: 'Call', openMenu: 'Open menu', closeMenu: 'Close menu', menu: 'Menu',
+    thanks: ['Thanks for stopping by.', 'Come back soon.'],
     whereWeAre: 'Find us', contact: 'Contact', backHome: 'Back to home', backTop: 'Back to top',
     legalNav: 'Legal information', quickActions: 'Quick actions', legal: 'Legal notice', privacy: 'Privacy', cookies: 'Cookies',
     proposal: 'Web design and SEO by', close: 'Close', ok: 'OK', onInstagram: 'on Instagram',
@@ -260,6 +263,7 @@ export const ui: Record<Lang, UI> = {
     nav: { inicio: 'Start', carta: 'Speisekarte', calma: 'Über uns', visitanos: 'Besuch' },
     navLabel: 'Hauptnavigation', mobileNavLabel: 'Mobile Navigation', language: 'Sprache',
     directions: 'Route', call: 'Anrufen', openMenu: 'Menü öffnen', closeMenu: 'Menü schließen', menu: 'Menü',
+    thanks: ['Danke für deinen Besuch.', 'Komm bald wieder.'],
     whereWeAre: 'So findest du uns', contact: 'Kontakt', backHome: 'Zur Startseite', backTop: 'Nach oben',
     legalNav: 'Rechtliche Hinweise', quickActions: 'Schnellzugriff', legal: 'Impressum', privacy: 'Datenschutz', cookies: 'Cookies',
     proposal: 'Webdesign und SEO von', close: 'Schließen', ok: 'Verstanden', onInstagram: 'auf Instagram',
@@ -351,6 +355,7 @@ export const ui: Record<Lang, UI> = {
     nav: { inicio: 'Home', carta: 'Menukaart', calma: 'Over ons', visitanos: 'Bezoek' },
     navLabel: 'Hoofdnavigatie', mobileNavLabel: 'Mobiele navigatie', language: 'Taal',
     directions: 'Route', call: 'Bellen', openMenu: 'Menu openen', closeMenu: 'Menu sluiten', menu: 'Menu',
+    thanks: ['Bedankt voor je bezoek.', 'Kom snel terug.'],
     whereWeAre: 'Waar we zitten', contact: 'Contact', backHome: 'Terug naar home', backTop: 'Terug naar boven',
     legalNav: 'Juridische informatie', quickActions: 'Snelle acties', legal: 'Juridische informatie', privacy: 'Privacy', cookies: 'Cookies',
     proposal: 'Webdesign en SEO door', close: 'Sluiten', ok: 'Oké', onInstagram: 'op Instagram',

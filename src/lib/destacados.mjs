@@ -3,7 +3,7 @@
 // preferidos por orden y, si no queda ninguno con foto, usa el primero con foto de su sección. Todo sale de
 // carta.json, con el precio oficial: nunca se destaca un plato que ya no está en la carta.
 
-/** @typedef {{ src: string, width: number, height: number, widths: number[] }} Foto */
+/** @typedef {{ src: string, width: number, height: number, widths: number[], color?: string, lqip?: string }} Foto */
 /** @typedef {{ id: string, nombre: string, precio: string, descripcion: string | null, foto: Foto | null }} Plato */
 /** @typedef {{ menus: { grupos: { id: string, platos: Plato[] }[] }[] }} Carta */
 

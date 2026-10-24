@@ -177,7 +177,9 @@ if (tabs.length) {
   queueUpdate();
 
   // Cada foto declara los tamaños que existen (algunas originales miden menos de 800 px).
-  const webpSet = (dish: HTMLElement) => dish.dataset.photoWidths!.split(',').map(w => `${dish.dataset.photo}-${w}.webp ${w}w`).join(', ');
+  // Se pide AVIF si el navegador ya lo ha elegido para las fotos de la página (pesa un 40 % menos que WebP).
+  const ext = () => (document.querySelector<HTMLImageElement>('picture img')?.currentSrc.endsWith('.avif') ? 'avif' : 'webp');
+  const photoSet = (dish: HTMLElement, format = ext()) => dish.dataset.photoWidths!.split(',').map(w => `${dish.dataset.photo}-${w}.${format} ${w}w`).join(', ');
   // Al pasar por un plato, la foto en arco de su grupo cambia a ese plato.
   const canHover = window.matchMedia('(hover: hover)');
   const preview = (dish: HTMLElement) => {
@@ -192,7 +194,7 @@ if (tabs.length) {
     img.className = 'is-incoming';
     img.alt = dish.dataset.name!;
     img.sizes = '(max-width: 999px) 38vw, 420px';
-    img.srcset = webpSet(dish);
+    img.srcset = photoSet(dish);
     img.decode().catch(() => {}).finally(() => {
       if (figure.dataset.current !== src) return;
       arch.append(img);
@@ -207,23 +209,44 @@ if (tabs.length) {
     dish.addEventListener('focusin', () => preview(dish));
   });
 
-  // Foto ampliada con todos los detalles del plato.
+  // Foto ampliada con todos los detalles del plato. Mientras llega se ve el color medio de la foto y luego
+  // su miniatura difuminada, y la foto aparece con un fundido. La descarga empieza ya al tocar el nombre, antes del clic.
   const dishDialog = document.querySelector<HTMLDialogElement>('#dish-dialog')!;
-  document.querySelectorAll<HTMLButtonElement>('[data-dish-open]').forEach(button => button.addEventListener('click', () => {
+  const dialogSizes = '(max-width: 660px) 100vw, 620px';
+  const thumb = (dish: HTMLElement) => `${dish.dataset.photo}-${dish.dataset.photoWidths!.split(',')[0]}.${ext()}`;
+  const warm = (dish: HTMLElement) => {
+    if (dish.dataset.warm) return;
+    dish.dataset.warm = '1';
+    new Image().src = thumb(dish);
+    const img = new Image();
+    img.sizes = dialogSizes;
+    img.srcset = photoSet(dish);
+  };
+  document.querySelectorAll<HTMLButtonElement>('[data-dish-open]').forEach(button => {
     const dish = button.closest<HTMLElement>('.dish')!;
-    const img = dishDialog.querySelector<HTMLImageElement>('[data-dish-img]')!;
-    img.removeAttribute('src');
-    img.sizes = '(max-width: 660px) 100vw, 620px';
-    img.srcset = webpSet(dish);
-    img.alt = dish.dataset.name!;
-    dishDialog.querySelector('[data-dish-title]')!.textContent = dish.dataset.name!;
-    dishDialog.querySelector('[data-dish-price]')!.textContent = dish.querySelector('.dish-price')!.textContent;
-    const details = dishDialog.querySelector('[data-dish-details]')!;
-    details.replaceChildren(...[...dish.children].filter(child => !child.classList.contains('dish-line')).map(child => child.cloneNode(true)));
-    const diet = dish.querySelector('.dish-diet');
-    if (diet) details.prepend(diet.cloneNode(true));
-    openDialog(dishDialog);
-  }));
+    button.addEventListener('pointerdown', () => warm(dish), { passive: true });
+    button.addEventListener('click', () => {
+      const frame = dishDialog.querySelector<HTMLElement>('[data-dish-photo]')!;
+      const img = dishDialog.querySelector<HTMLImageElement>('[data-dish-img]')!;
+      frame.style.backgroundColor = dish.dataset.photoColor ?? '';
+      frame.style.setProperty('--thumb', `url("${thumb(dish)}")`);
+      img.classList.remove('is-loaded');
+      img.removeAttribute('src');
+      img.onload = () => img.classList.add('is-loaded');
+      img.sizes = dialogSizes;
+      dishDialog.querySelector<HTMLSourceElement>('[data-dish-avif]')!.sizes = dialogSizes;
+      dishDialog.querySelector<HTMLSourceElement>('[data-dish-avif]')!.srcset = photoSet(dish, 'avif');
+      img.srcset = photoSet(dish, 'webp');
+      img.alt = dish.dataset.name!;
+      dishDialog.querySelector('[data-dish-title]')!.textContent = dish.dataset.name!;
+      dishDialog.querySelector('[data-dish-price]')!.textContent = dish.querySelector('.dish-price')!.textContent;
+      const details = dishDialog.querySelector('[data-dish-details]')!;
+      details.replaceChildren(...[...dish.children].filter(child => !child.classList.contains('dish-line')).map(child => child.cloneNode(true)));
+      const diet = dish.querySelector('.dish-diet');
+      if (diet) details.prepend(diet.cloneNode(true));
+      openDialog(dishDialog);
+    });
+  });
 }
 
 // La firma caligráfica que queda fuera de pantalla espera a verse para escribirse.

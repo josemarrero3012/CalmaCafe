@@ -1,12 +1,15 @@
 ---
 import { url } from '../lib/base';
 // Foto de un plato de la carta oficial (optimizada por npm run carta).
-interface Foto { src: string; width: number; height: number; widths: number[]; }
+// Mientras carga se ve una miniatura difuminada de la propia foto, sobre su color medio (scripts/placeholder.mjs).
+interface Foto { src: string; width: number; height: number; widths: number[]; color?: string; lqip?: string; }
 interface Props { foto: Foto; alt: string; sizes: string; class?: string; eager?: boolean; }
 const { foto, alt, sizes, class: className, eager = false } = Astro.props;
 const srcset = (ext: string) => foto.widths.map(w => `${url(foto.src)}-${w}.${ext} ${w}w`).join(', ');
+const blur = foto.lqip && `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 ${foto.width} ${foto.height}'><filter id='b' color-interpolation-filters='sRGB'><feGaussianBlur stdDeviation='${Math.round(foto.width / 20)}'/><feComponentTransfer><feFuncA type='discrete' tableValues='1 1'/></feComponentTransfer></filter><image width='100%' height='100%' preserveAspectRatio='none' filter='url(#b)' href='data:image/webp;base64,${foto.lqip}'/></svg>`;
+const style = [foto.color && `background-color:${foto.color}`, blur && `background-image:url("data:image/svg+xml,${encodeURIComponent(blur)}");background-size:cover;background-position:center`].filter(Boolean).join(';');
 ---
 <picture class={className}>
   <source type="image/avif" srcset={srcset('avif')} sizes={sizes} />
-  <img src={`${url(foto.src)}-${foto.widths.at(-1)}.webp`} srcset={srcset('webp')} sizes={sizes} width={foto.width} height={foto.height} alt={alt} loading={eager ? 'eager' : 'lazy'} decoding="async" />
+  <img src={`${url(foto.src)}-${foto.widths.at(-1)}.webp`} srcset={srcset('webp')} sizes={sizes} width={foto.width} height={foto.height} alt={alt} loading={eager ? 'eager' : 'lazy'} decoding="async" style={style || undefined} />
 </picture>

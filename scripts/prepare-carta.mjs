@@ -3,6 +3,7 @@
 // y descarga y optimiza las fotos de los platos en public/media/carta/.
 // Uso: npm run carta   (volver a ejecutarlo cuando el local cambie su carta)
 import sharp from 'sharp';
+import { placeholder } from './placeholder.mjs';
 import { mkdir, writeFile, readFile, access } from 'node:fs/promises';
 
 const SOURCE = 'https://calma.buenacarta.com/';
@@ -168,7 +169,7 @@ async function photo(id, url) {
       await sharp(source).resize(w).webp({ quality: 78 }).toFile(`${target}.webp`);
     }
   }
-  return { src: `/media/carta/${id}`, width, height, widths };
+  return { src: `/media/carta/${id}`, width, height, widths, ...await placeholder(`${output}/${id}-${widths[0]}.webp`) };
 }
 
 const local = {

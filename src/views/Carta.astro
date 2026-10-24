@@ -67,14 +67,14 @@ const consultada = new Intl.DateTimeFormat(locale[lang].intl, { day: 'numeric', 
             {c.groupIntros[grupo.id] && <p class="carta-group-intro">{c.groupIntros[grupo.id]}</p>}
             {portada?.foto && <figure class="carta-feature" data-feature>
               <div class="carta-feature-frame">
-                <div class="carta-feature-arch"><DishPhoto foto={portada.foto} alt={tr(portada.nombre)} sizes="(max-width: 699px) 88vw, (max-width: 999px) 38vw, 420px" /></div>
+                <div class="carta-feature-arch"><DishPhoto foto={portada.foto} alt={tr(portada.nombre)} sizes="(max-width: 699px) 88vw, (max-width: 999px) 38vw, 420px" eager={mi === 0 && gi === 0} /></div>
                 <GroupDoodle grupo={grupo.id} />
               </div>
               <figcaption class="handwritten" data-feature-caption>{tr(portada.nombre)}</figcaption>
             </figure>}
           </div>
           <ul class="carta-list">
-            {grupo.platos.map(plato => refs.has(plato.id) ? <li class="dish dish--ref"><p class="dish-line"><span class="dish-name">{tr(plato.nombre)}</span><span class="dish-dots" aria-hidden="true"></span><a class="dish-ref" href={`#${refs.get(plato.id)!.grupoId}`}>{c.seeIn(tr(refs.get(plato.id)!.grupoNombre))} <span aria-hidden="true"><Icon name="arrow-right" /></span></a></p></li> : <li class="dish" data-photo={plato.foto ? url(plato.foto.src) : undefined} data-photo-widths={plato.foto ? plato.foto.widths.join(',') : undefined} data-name={tr(plato.nombre)}>
+            {grupo.platos.map(plato => refs.has(plato.id) ? <li class="dish dish--ref"><p class="dish-line"><span class="dish-name">{tr(plato.nombre)}</span><span class="dish-dots" aria-hidden="true"></span><a class="dish-ref" href={`#${refs.get(plato.id)!.grupoId}`}>{c.seeIn(tr(refs.get(plato.id)!.grupoNombre))} <span aria-hidden="true"><Icon name="arrow-right" /></span></a></p></li> : <li class="dish" data-photo={plato.foto ? url(plato.foto.src) : undefined} data-photo-widths={plato.foto ? plato.foto.widths.join(',') : undefined} data-photo-color={plato.foto?.color} data-name={tr(plato.nombre)}>
               <p class="dish-line">
                 {plato.foto
                   ? <button type="button" class="dish-name" data-dish-open>{tr(plato.nombre)}<span class="visually-hidden"> — {c.photo}</span><span class="dish-camera" aria-hidden="true"></span></button>
@@ -106,7 +106,7 @@ const consultada = new Intl.DateTimeFormat(locale[lang].intl, { day: 'numeric', 
 
   <dialog id="dish-dialog" class="dish-dialog" aria-labelledby="dish-dialog-title">
     <button class="icon-button dish-dialog-close" data-close aria-label={t.close}><Icon name="close" /></button>
-    <div class="dish-dialog-photo"><img alt="" data-dish-img /></div>
+    <div class="dish-dialog-photo" data-dish-photo><picture><source type="image/avif" data-dish-avif /><img alt="" data-dish-img /></picture></div>
     <div class="dish-dialog-body">
       <div class="dish-dialog-head"><p id="dish-dialog-title" class="dialog-title" data-dish-title></p><span class="dish-price" data-dish-price></span></div>
       <div data-dish-details></div>

@@ -39,7 +39,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#969477",
+                "lqip": "UklGRoAAAABXRUJQVlA4IHQAAABQAgCdASoQAAwAA4BaJbACdH8AgoDEgHP21kAA/gjx2rqdbre4flO8mJJ2pzTdAlPgzvbIVDM3+pyyYZl4N4KhS+aPIffGi3qj7atqWI+pQXT3GcaX/gzEbTQVMSoXjUdwLYRcfmePtY+ALPEioD3R1KdgAA=="
               }
             },
             {
@@ -64,7 +66,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#998e7d",
+                "lqip": "UklGRnoAAABXRUJQVlA4IG4AAAAwAgCdASoQAAwAA4BaJaACdIExGMBPihLOsAD8cq/Q7EpMwdV1Pw+eFHplqLN4UOk5Aj791JVwxFAH2gzeN27631GzZB/DtzcLCBPiQvJhGNHPweaRj6G3CVbJonAlBa9G4OOkyHE7rzzYqgAAAA=="
               },
               "alergenosAnadidos": [
                 "Gluten",
@@ -97,7 +101,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#a0876b",
+                "lqip": "UklGRnQAAABXRUJQVlA4IGgAAAAwAgCdASoQAAwAA4BaJbACdAE+QLtg4F9QAAD+ifdgZv0TBR+oLy+NW77pCQyd6QY4SbCERqyDgCjHdOnEDWsBlxpzgrG5ehqpgG2jIiVmM135a20MdKBvNygqWIH9bK0WUoKHB6qwAA=="
               }
             },
             {
@@ -125,7 +131,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#88735d",
+                "lqip": "UklGRnoAAABXRUJQVlA4IG4AAAAQAgCdASoQAAwAA4BaJbACdAYt9ODV4VKAAPuYuRZ8+b10sIKKOSLjZzR4DwZGZNVxn0sNSbJyMMAUQ7ErSoWU+hE13mJcLOW9SShvoQN13wUL8i412dD6U0D84d22MJ9+CGrO2lRnBnbw4K1AAA=="
               }
             },
             {
@@ -152,7 +160,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#ab8f7b",
+                "lqip": "UklGRnYAAABXRUJQVlA4IGoAAADwAQCdASoQAAwAA4BaJbACdAC9I+uPK4AA/mCwXV3/wteEVJEvkQecYbtlVCSOolAc5cQI1EGTP8Z3Ko8l/1lpaJzOBrMRCE4WY21nBsBihUt9GHEYaJGGTgLFlMtdMQ1gUSSBsqTImQAA"
               }
             },
             {
@@ -178,7 +188,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#836b58",
+                "lqip": "UklGRoYAAABXRUJQVlA4IHoAAAAQAgCdASoQAAwAA4BaJbACdAYrxdQa9VcAAP7PVopHdYN/I5Mg/s1t64VeNk6Jb4LuFSPfOaFA0UGXTBNkPtBLeJN8SoPKJYhlfRnb8L8lbhzmOUkWzl9YTEOHTWL8ABrX7aCMbnAFvOkCCKePjTzGglPyzoj65rjwAA=="
               }
             },
             {
@@ -205,7 +217,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#ab9785",
+                "lqip": "UklGRoIAAABXRUJQVlA4IHYAAAAwAgCdASoQAAwAA4BaJbACdAYs3qbTzJN2fAD+lMW2+fQQotQp4ly+CdC1c4mWsbEWZb5XJjYJoOb2xkscIS8dJrE9iATl7tk74ObUXBCjMoY/Eo6lYWTr9b1KF7mXFR5bF6A6CQlmKr71i/vLtf0mJg6hG4AA"
               },
               "alergenosAnadidos": [
                 "Huevos"
@@ -232,7 +246,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#ac978e",
+                "lqip": "UklGRnAAAABXRUJQVlA4IGQAAADQAQCdASoQAAwAA4BaJagCdAB1+2pFgAD82ELMw62Yt9LU5djQaY+sbXL458DgWQF4cHnzheREAhQ/bPfOzJwPpbxHESL846wWg/LRrSx6LZLaN7Jel1J+obCeoGHGy04qAAAA"
               },
               "alergenosAnadidos": [
                 "Gluten",
@@ -259,7 +275,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#988166",
+                "lqip": "UklGRnYAAABXRUJQVlA4IGoAAAAwAgCdASoQAAwAA4BaJaACdAYtpgB8KHbQAAD+h09D4KlGbvXInYINjvjO/eGjZQTfX9Tx6PzWtnx8eOEbP21dGgz3b2KW52cKp2D5ffmwuT3wmao78FhcZsB5oXxBvTY025sXrXaHAAAA"
               },
               "alergenosAnadidos": [
                 "Gluten"
@@ -286,7 +304,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#95867d",
+                "lqip": "UklGRoIAAABXRUJQVlA4IHYAAABwAgCdASoQAAwAA4BaJYgCdAYp5gKvzaLZblUAAOJeiuQglB5SDSxxUdcDk6Z2e8y62tEn2vcElyBwOf1X+jSDXr6DOO7iKXO7lOAa/zjwuklH/d3mXhrhABFGWLvUExDviPeWJ3cMOJVlugK4WXknJg3Zb+AA"
               }
             },
             {
@@ -310,7 +330,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#8c6b4b",
+                "lqip": "UklGRnIAAABXRUJQVlA4IGYAAABQAgCdASoQAAwAA4BaJbACdAYtVQyytnskPgAA/hg8MkOGtd7bz92i4FqlM9Dw6US/kybpddzPu6osTuthJvwM0hTHLThyTQXEl9n6fZZPrjl8s1hSeI/pognUIZ2SrkxNJqSAAAA="
               },
               "alergenosAnadidos": [
                 "Gluten",
@@ -342,7 +364,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#a88c6a",
+                "lqip": "UklGRoAAAABXRUJQVlA4IHQAAACQAgCdASoQAAwAA4BaJbACdAYt929kZPEmB5VHgAD9U97dX31J+unFm5zSbEV8Y4+/CNKtPbNhXUj3kFA238iI2EmVRTPo2ed+6kIIIZdwfVf3rS9ROKof3pyeSrDgfbQPsnKnr32Uq5pA/+q7eOZixgAAAA=="
               },
               "alergenosAnadidos": [
                 "Pescado",
@@ -373,7 +397,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#999189",
+                "lqip": "UklGRnYAAABXRUJQVlA4IGoAAAAwAgCdASoQAAwAA4BaJQBdgMV97exrw4A74ADN6V+88YsEj5YcxjVaBnUDurPfsFK/b8em9GgYKtR9Rwz5HccYj94azNI0GQDeocy6Ly7huYlu9Er+xIY1dr/fKCjvHr0Nm3i5T74+3oAA"
               },
               "alergenosAnadidos": [
                 "Frutos de cáscara"
@@ -400,7 +426,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#a59078",
+                "lqip": "UklGRngAAABXRUJQVlA4IGwAAABQAgCdASoQAAwAA4BaJbACdAYpHjaMh2sdJgAA/rYcoe1Gd2EVzfF67OWg84e6MS7uCIFHjwKV09bAIhpjhyyY7lqbf3Bo0j6zfvCEGFCvAxcId5xvyTx+qzERviQ0Ir3bSVRcnOSSEjpAgAA="
               },
               "alergenosAnadidos": [
                 "Gluten",
@@ -458,7 +486,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#795e43",
+                "lqip": "UklGRoIAAABXRUJQVlA4IHYAAAAwAgCdASoQAAwAA4BaJbACdAYxFUGU2toggAD+JmKUvZTwX3CuYqf047bK+cJDqcCYhnCcPpcdRWbHIe/sFDXoPIuK6nefc6/BjWu0BzzuE1ekxiH3fgxIguuCnEMqBPOWLb00embdZ7TKBjdNgfaeMiFcAAAA"
               }
             },
             {
@@ -479,7 +509,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#94744f",
+                "lqip": "UklGRoIAAABXRUJQVlA4IHYAAABQAgCdASoQAAwAA4BaJbACdAYwdttzZaCSogAA/Z0uf4l8bYemIVkjtEwlosP5dvboVj9687op+bAXiuxj3H2zjloC/OZUbYNqFpp0UPpLP+fCfSs2/lPsPYHLR8synwCoIjfZNQLTo7tGGVY0L3WgwxPokAAA"
               }
             }
           ],
@@ -538,7 +570,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#a28063",
+                "lqip": "UklGRnoAAABXRUJQVlA4IG4AAABQAgCdASoQAAwAA4BaJbACdAYuHbXXByd1oYAA/q3eQoO1uYLARTfP7OGqYvuzTdkn/pxdDc+dsjIDt7yvt/M4svxSMCZRdak/aV6Y9mMOfvn+TDMYB+ha2G3rKmAMyFXdgJHd6F1PYCdNwIcAAA=="
               },
               "alergenosAnadidos": [
                 "Gluten"
@@ -563,7 +597,9 @@
                   480,
                   800,
                   800
-                ]
+                ],
+                "color": "#967a53",
+                "lqip": "UklGRnIAAABXRUJQVlA4IGYAAAAwAgCdASoQAAwAA4BaJbACdAYstsamJI3oAADKEKK9+xmdHVPi8Qi6RCqiiXdrpPrZHghYTP1R7Cy/jkwbDJpMbQL1fFpNyvr4FaB4A79IL/mLaeqwEB/yyoAzb76OerFnTSjvAAA="
               }
             },
             {
@@ -591,7 +627,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#807264",
+                "lqip": "UklGRnIAAABXRUJQVlA4IGYAAABQAgCdASoQAAwAA4BaJYgCdAYsj2wjuwVp98AA/r5achVbSw6bN3CjnLUbA1so+OCXcZexjRiTTkRKG7N6LGa/vbzRvobgiFBi5JRGDBQMV2CTsW5+n9TYuY4rQnxgE0jrY60lgAA="
               }
             },
             {
@@ -620,7 +658,9 @@
                   160,
                   480,
                   767
-                ]
+                ],
+                "color": "#978569",
+                "lqip": "UklGRnwAAABXRUJQVlA4IHAAAABQAgCdASoQAAwAA4BaJbACdAEN+hI/LMgMlAAAzj2o5C79+/8xyH3miOrLIAWuWF2u5WQHSvyGcb7aueA4ZN5ov2HIrUleyBubde0cSkEfKN5+BGxQVQMm6lcM5hau+AG6gY4fFlkhYWaUwsQDz2AA"
               },
               "alergenosAnadidos": [
                 "Pescado"
@@ -670,7 +710,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#b1a297",
+                "lqip": "UklGRnoAAABXRUJQVlA4IG4AAAAwAgCdASoQAAwAA4BaJQBOgMVuzxVvL85mAAD+wDY/5t8lo5Am0CdAhCkPPJf3ewa9eGOuX+39UNsuFy76+IiO3y5gLVMBTjykvRywbUQ2zpLtj85iVXBM3LTswoKZqnf/C+DkQA0KLyHAzPgAAA=="
               }
             },
             {
@@ -737,7 +779,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#af774a",
+                "lqip": "UklGRoQAAABXRUJQVlA4IHgAAABQAgCdASoQAAwAA4BaJbACdFQAAv2/JcVYQAAA+OWr3fB5J/3F25JykGMynKSOw1hmVyD3OroaO58+Iakj3jS+2rspT06yO+5AvNHE00qiDVilvLK1bDywC5TKr79g9KbcQEou2Z9+FIF4+8rYsP3RLqvL8wKwAAA="
               }
             }
           ],
@@ -765,7 +809,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#997c5f",
+                "lqip": "UklGRnAAAABXRUJQVlA4IGQAAABwAgCdASoQAAwAA4BaJbACdAYstzTaoRHBos0QAM4ZfwBUst70+Y4cX9Re+4tO7W4EcEmQvA09nlpEaecyzNDc+r78zrHVFY3VMMDubGo1+yQ77uUs8sz5TKItwBwhf/fkAAAA"
               }
             },
             {
@@ -913,7 +959,9 @@
                   160,
                   480,
                   600
-                ]
+                ],
+                "color": "#a19888",
+                "lqip": "UklGRnoAAABXRUJQVlA4IG4AAABQAgCdASoQAAwAA4BaJbACdAYuly6mLXELNAAA/mvkJR8B5gHb0XmjwisskYdTrd/oYrhLjP25f5YCBFgSV1j6OaJV0ZBVo8uX7gAlP1aFLN1YrQkAzXACnWvvHX9+OqOUD4e2+P8aAsCmZwAAAA=="
               }
             },
             {
@@ -936,7 +984,9 @@
                   160,
                   480,
                   600
-                ]
+                ],
+                "color": "#baa386",
+                "lqip": "UklGRnwAAABXRUJQVlA4IHAAAAAwAgCdASoQAAwAA4BaJbACdAYwngFaS/zxgAD+14XV/ZOM0gBusxhEa5r7JLZRaDh3FRZB03JzQGUXX71biiXuAT5vQVOVZWRn6yGjd7YtQcJBzoLZLAwQg9Cul5QJanwGV0M/nKXVaEEukzWYAAAA"
               },
               "alergenosAnadidos": [
                 "Gluten"
@@ -987,7 +1037,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#a78b72",
+                "lqip": "UklGRn4AAABXRUJQVlA4IHIAAAAQAgCdASoQAAwAA4BaJbACdAYtpahnDJ+AAMsHJRGv/QVWCpdovXUyJx4ZuiCpE0PGXOiqGPz0AeRcG9iCEifp0abXx3FYQvOJnOZD2YFgJgBlUZJwgZQxlOmX48AoW5YK/QhNGZhxwCu9z6sGCN8AAAA="
               },
               "alergenosAnadidos": [
                 "Gluten"
@@ -1013,7 +1065,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#c0b0a1",
+                "lqip": "UklGRmgAAABXRUJQVlA4IFwAAABQAgCdASoQAAwAA4BaJZACdAEDfoxPz+V3lgAA/LO6/tKN8QsurMZhaZ+tdjtRIJYgLPOtewGvz3zf/TWzdJ5OfJST/2fBBeMY0AsgsNhugvYeNCw050uVvG7kAA=="
               },
               "alergenosAnadidos": [
                 "Gluten"
@@ -1039,7 +1093,9 @@
                   160,
                   480,
                   799
-                ]
+                ],
+                "color": "#897b70",
+                "lqip": "UklGRmoAAABXRUJQVlA4IF4AAADwAQCdASoQAAwAA4BaJQBOgBVZlyPO9AAA/odYcJ60dHvHhUHSUmjwFjGDXduGnNJM3IExe1UQcCg9Oo7DXchNTH1aGBYcmpB14wNeGbT0Y21jG2aeBDu35YO9AAAA"
               },
               "alergenosAnadidos": [
                 "Gluten"
@@ -1092,7 +1148,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#795e43",
+                "lqip": "UklGRoIAAABXRUJQVlA4IHYAAAAwAgCdASoQAAwAA4BaJbACdAYvNOeill7IQAD+JmIfh7WDnzRBs0IcW6q/cORFLLb+gVTASRMsF88AZrASPvhjh62K9SO42SGhQPWHePEEo1Gqx5UZ8UW4hjxL04z4qEkgmYUKHuQDh+MeYo31YMeXqPzCAAAA"
               }
             },
             {
@@ -1114,7 +1172,9 @@
                   480,
                   800,
                   800
-                ]
+                ],
+                "color": "#a17b58",
+                "lqip": "UklGRngAAABXRUJQVlA4IGwAAAAQAgCdASoQAAwAA4BaJbACdACld8GvGEVAAP14hUP4V/3gLzfFKI5wKRD/m0jdlpIDOR9eLJBiPncwVP8ZggXcC3I9eJIFDTzGwlwNmM3HaNFj1K7Tp2xu5bim17m8lPeaGaGFgpB3lUEAAAA="
               }
             }
           ],
@@ -1148,7 +1208,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#9d8871",
+                "lqip": "UklGRoIAAABXRUJQVlA4IHYAAAAwAgCdASoQAAwAA4BaJbACdAYvDjuomrgTQAD+6gBoU3fWF1G27jLOnm+sRMI80Q0qPbIMsowkXSgk3/k5LBTm7grKs12eantuOZiIjHpUGJpDf3btiU2m88vkLxtgrdUy/ktLTL7yFAK3FNgeaLXrjenIWQAA"
               }
             },
             {
@@ -1171,7 +1233,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#92836d",
+                "lqip": "UklGRm4AAABXRUJQVlA4IGIAAACQAgCdASoQAAwAA4BaJbACdEf/gfSIfxGZlELcAAD+zwkaUGiHfDLO3d9Ac8+JJ7ewBYZUWXqOVTk9p6CkAjnH9mD6sx5cDipUVVBSY7ZMq2dm/p5oHukhLRbw378siwAAAA=="
               },
               "alergenosAnadidos": [
                 "Gluten"
@@ -1295,7 +1359,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#969477",
+                "lqip": "UklGRoAAAABXRUJQVlA4IHQAAABQAgCdASoQAAwAA4BaJbACdH8AgoDEgHP21kAA/gjx2rqdbre4flO8mJJ2pzTdAlPgzvbIVDM3+pyyYZl4N4KhS+aPIffGi3qj7atqWI+pQXT3GcaX/gzEbTQVMSoXjUdwLYRcfmePtY+ALPEioD3R1KdgAA=="
               }
             },
             {
@@ -1321,7 +1387,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#a7926e",
+                "lqip": "UklGRnYAAABXRUJQVlA4IGoAAAAwAgCdASoQAAwAA4BaJbACdEf/gXhOkN8E4AD8yf7t7kTQxmMrzmNd6zClKx/Kjnv9V5270illKyXrZzVdQ35KbbkWdlEo6numUFNPMLjhntb2JaDR/3WvSaJTW9rgQUQrPUeo2lKT0AAA"
               }
             },
             {
@@ -1362,7 +1430,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#8c6b4b",
+                "lqip": "UklGRm4AAABXRUJQVlA4IGIAAADwAQCdASoQAAwAA4BaJbACdAYt84ApDYAA/SkLgKS+76+Tan12ZIJ4SdmXizy/RsQyP34TZ1uQ6dbbeHI09X6v/7KhgQMMUUi1Jy4hxT1+uHjq6IPrzVKPelr5RYezmlgAAA=="
               },
               "alergenosAnadidos": [
                 "Gluten",
@@ -1392,7 +1462,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#a3957c",
+                "lqip": "UklGRnAAAABXRUJQVlA4IGQAAABwAgCdASoQAAwAA4BaJbACdAYv/lWAoEAVhQwAAN97z33ncR568fPL4o85fTmM+Ab8Os/Ooi934NsuJiaH06ni9eQ2pPSwOaGmbhukmrXXhvCzkwMzNWlSRSYGsU2nTyFooAAA"
               },
               "alergenosAnadidos": [
                 "Huevos"
@@ -1419,7 +1491,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#ac978e",
+                "lqip": "UklGRnAAAABXRUJQVlA4IGQAAADQAQCdASoQAAwAA4BaJagCdAB1+2pFgAD82ELMw62Yt9LU5djQaY+sbXL458DgWQF4cHnzheREAhQ/bPfOzJwPpbxHESL846wWg/LRrSx6LZLaN7Jel1J+obCeoGHGy04qAAAA"
               }
             },
             {
@@ -1445,7 +1519,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#999189",
+                "lqip": "UklGRnYAAABXRUJQVlA4IGoAAAAwAgCdASoQAAwAA4BaJQBdgMV47exrw4A74ADN6WCO2Say90J41gjMGsBlUNRD9gpV6+uWp40DBVqPhwi/5yuLMfwUb8cJ9/Rn24lmsNNNX3adMevN6rOSJqzDDwFjUYoteGZ6SRI7LUAA"
               },
               "alergenosAnadidos": [
                 "Frutos de cáscara"
@@ -1472,7 +1548,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#a08d76",
+                "lqip": "UklGRoAAAABXRUJQVlA4IHQAAAAwAgCdASoQAAwAA4BaJbACdAYsPFcf/r6IAAD+BKshiK77XiFu1pijAAjW4h67cTVia+qTJMKix4d3ta/x/nlbk02PPJ1EF2UiLLL50cmy70vKHo2xXqOgptAIDrB42uHItGjcToGvXZvDXAN9xf+lbJwAAA=="
               },
               "alergenosAnadidos": [
                 "Gluten",
@@ -1500,7 +1578,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#a48f76",
+                "lqip": "UklGRnYAAABXRUJQVlA4IGoAAACQAgCdASoQAAwAA4BaJbACdH8AgnCrCBY+9GbmAAD+sivguJuemuQ7GQkYyIzyt1pnI8dndU3uZ6GLZa8dwEX5qB36y3xPvDcgSBBanElCzmoZnNIBJ9gyJOyBm5VQYfEtdOdJJ4ePAAAA"
               },
               "alergenosAnadidos": [
                 "Gluten",
@@ -1588,7 +1668,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#8b7e6c",
+                "lqip": "UklGRnoAAABXRUJQVlA4IG4AAAAQAgCdASoQAAwAA4BaJbACdH8AglBpQEoAAP7EXKc+qT6e0pFcxIpZ8iFmUyrJWY6GVOm2p/msXoV7c0JCsalAP+vDjkrJzkiCOrrhwMudJfC3CvAGcolEtRsNFdjipE+jNXUh5IyhbaNWqBJwAA=="
               }
             }
           ],
@@ -1618,7 +1700,9 @@
                   160,
                   480,
                   600
-                ]
+                ],
+                "color": "#a19888",
+                "lqip": "UklGRnoAAABXRUJQVlA4IG4AAABQAgCdASoQAAwAA4BaJbACdAYuly6mLXELNAAA/mvkJR8B5gHb0XmjwisskYdTrd/oYrhLjP25f5YCBFgSV1j6OaJV0ZBVo8uX7gAlP1aFLN1YrQkAzXACnWvvHX9+OqOUD4e2+P8aAsCmZwAAAA=="
               }
             },
             {
@@ -1641,7 +1725,9 @@
                   160,
                   480,
                   600
-                ]
+                ],
+                "color": "#baa386",
+                "lqip": "UklGRnwAAABXRUJQVlA4IHAAAAAwAgCdASoQAAwAA4BaJbACdAYwngFaS/zxgAD+14XV/ZOM0gBusxhEa5r7JLZRaDh3FRZB03JzQGUXX71biiXuAT5vQVOVZWRn6yGjd7YtQcJBzoLZLAwQg9Cul5QJanwGV0M/nKXVaEEukzWYAAAA"
               },
               "alergenosAnadidos": [
                 "Gluten"
@@ -1667,7 +1753,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#c0b0a1",
+                "lqip": "UklGRmgAAABXRUJQVlA4IFwAAABQAgCdASoQAAwAA4BaJZACdAEDfoxPz+V3lgAA/LO6/tKN8QsurMZhaZ+tdjtRIJYgLPOtewGvz3zf/TWzdJ5OfJST/2fBBeMY0AsgsNhugvYeNCw050uVvG7kAA=="
               },
               "alergenosAnadidos": [
                 "Gluten"
@@ -1722,7 +1810,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#a78b72",
+                "lqip": "UklGRn4AAABXRUJQVlA4IHIAAAAQAgCdASoQAAwAA4BaJbACdAYtpahnDJ+AAMsHJRGv/QVWCpdovXUyJx4ZuiCpE0PGXOiqGPz0AeRcG9iCEifp0abXx3FYQvOJnOZD2YFgJgBlUZJwgZQxlOmX48AoW5YK/QhNGZhxwCu9z6sGCN8AAAA="
               },
               "alergenosAnadidos": [
                 "Gluten"
@@ -1748,7 +1838,9 @@
                   160,
                   480,
                   799
-                ]
+                ],
+                "color": "#897b70",
+                "lqip": "UklGRmoAAABXRUJQVlA4IF4AAADwAQCdASoQAAwAA4BaJQBOgBVZlyPO9AAA/odYcJ60dHvHhUHSUmjwFjGDXduGnNJM3IExe1UQcCg9Oo7DXchNTH1aGBYcmpB14wNeGbT0Y21jG2aeBDu35YO9AAAA"
               },
               "alergenosAnadidos": [
                 "Gluten"
@@ -1801,7 +1893,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#795e43",
+                "lqip": "UklGRoIAAABXRUJQVlA4IHYAAAAwAgCdASoQAAwAA4BaJbACdAYvNOeill7IQAD+JmIfh7WDnzRBs0IcW6q/cORFLLb+gVTASRMsF88AZrASPvhjh62K9SO42SGhQPWHePEEo1Gqx5UZ8UW4hjxL04z4qEkgmYUKHuQDh+MeYo31YMeXqPzCAAAA"
               }
             },
             {
@@ -1823,7 +1917,9 @@
                   480,
                   800,
                   800
-                ]
+                ],
+                "color": "#a17c56",
+                "lqip": "UklGRnYAAABXRUJQVlA4IGoAAABwAgCdASoQAAwAA4BaJbACdAYvXlKN2lisn6mAAPsfRcWDyPE7BN4sIv1P4bdG4+kta2C9GHGWHS124nTh68Bh5fO0EdIdfpAOzFSiYtWySiDuhqBoiHW9GoSKbDlWbMEKvTdaXpptHbgA"
               }
             }
           ],
@@ -1851,7 +1947,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#997c5f",
+                "lqip": "UklGRnAAAABXRUJQVlA4IGQAAABQAgCdASoQAAwAA4BaJbACdAYq/htujQd2KYAAzhl+KnhpMHq/vlxR8JNkRrkCGnR1QmQ+hjlq8fhno/gV3RhbpIZCO2vxKXEibZtbRGo/IHoF+uQJtnLvZ53YLK4KO0Jft2AA"
               }
             },
             {
@@ -1989,7 +2087,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#959376",
+                "lqip": "UklGRoAAAABXRUJQVlA4IHQAAACQAgCdASoQAAwAA4BaJbACdH8AgpjDmn7UqdBeaAD+alYSjjIQuJt21Z3ctcthZjWwKS3svK3wyFlhnpeLaQa/EC6C1YSkC75DfShS7lttWt9wF7PCIVBGvYnJLCRPMajuBbf24/M8fax8AWeKD1B789aKAA=="
               },
               "alergenosAnadidos": [
                 "Gluten"
@@ -2016,7 +2116,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#9f8c77",
+                "lqip": "UklGRnwAAABXRUJQVlA4IHAAAABQAgCdASoQAAwAA4BaJbACdAYrTN4zAyuJbQAA/gSwUS21j733KbqtqMfqb6iWLX5UPx4xMWumsk7PPAGZqNLF/govFurrTJ0B4i7gDTorDvaYl86hOPHwNo7spwFZk5CAe9Drt4a4BvuA4nmDYAAA"
               },
               "alergenosAnadidos": [
                 "Gluten",
@@ -2044,7 +2146,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#a7926e",
+                "lqip": "UklGRnYAAABXRUJQVlA4IGoAAAAwAgCdASoQAAwAA4BaJbACdEf/gXhOkN8E4AD8yf7t7kTQxmMrzmNd6zClKx/Kjnv9V5270illKyXrZzVdQ35KbbkWdlEo6numUFNPMLjhntb2JaDR/3WvSaJTW9rgQUQrPUeo2lKT0AAA"
               },
               "alergenosAnadidos": [
                 "Gluten",
@@ -2071,7 +2175,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#8e6a4b",
+                "lqip": "UklGRnIAAABXRUJQVlA4IGYAAAAQAgCdASoQAAwAA4BaJbACdAYvrQyoVlwAAP4YPD/+lOrqZKdcGKUj8AwRFVUqXyVAJ8eHvswhRg/V7iPNHuCJslgJc/Dr2GaMejF0Qot8B2QId6qtM+nF3iv7cuj0JqSPr18AAAA="
               },
               "alergenosAnadidos": [
                 "Gluten"
@@ -2098,7 +2204,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#ad988f",
+                "lqip": "UklGRnAAAABXRUJQVlA4IGQAAAAwAgCdASoQAAwAA4BaJaACdAYu52pTI09uAAD81+56TDQjIDuELCF883W8syyhTB+hXxjD+tW/fNDczXDMvjLkc0V2ub2tizlzULvrR6aqt9Td6dunzK7FIV33V7CQqAZEwAAA"
               },
               "alergenosAnadidos": [
                 "Gluten",
@@ -2142,7 +2250,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#a3957c",
+                "lqip": "UklGRnAAAABXRUJQVlA4IGQAAABwAgCdASoQAAwAA4BaJbACdAYv/lWAoEAVhQwAAN97z33ncR568fPL4o85fTmM+Ab8Os/Ooi934NsuJiaH06ni9eQ2pPSwOaGmbhukmrXXhvCzkwMzNWlSRSYGsU2nTyFooAAA"
               },
               "alergenosAnadidos": [
                 "Gluten",
@@ -2170,7 +2280,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#a48f76",
+                "lqip": "UklGRnAAAABXRUJQVlA4IGQAAABwAgCdASoQAAwAA4BaJbACdH8AgniR39ZIHJ4AAP6zeYnWWgGNBRntvRTpdOQSgjAx95KFVrUSBNTcTe2WheEPpl+3p1QDkHXYdN5OXsbhAMyJ0wLYKyh+pOD1CbyIgPlSCoAA"
               },
               "alergenosAnadidos": [
                 "Gluten",
@@ -2214,7 +2326,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#736b60",
+                "lqip": "UklGRnIAAABXRUJQVlA4IGYAAAAQAgCdASoQAAwAA4BaJagAD4rumJoaulBAAP6IhfvF/VSMMit0fCcsvIyTSuXfSrQxHbeaFJTUNQa06IN8H3crZGuE8hUt1p+A7yS8/T0uyBPJeTLnJNAT/2nEZBYbX/lWjlYAAAA="
               },
               "alergenosAnadidos": [
                 "Gluten"
@@ -2242,7 +2356,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#baa386",
+                "lqip": "UklGRn4AAABXRUJQVlA4IHIAAADwAQCdASoQAAwAA4BaJbACdGaAAPEIKAAA/teF1f34EnRJo+70kw+REZBlt9awdje1DUlM1GqyRnDL0ZKcD69HcXBrZF7pl1WR3q4gu3qUEXvtI1uQRLoiIunl6GhZQD/WA0VMujcyJM6ucvASYrwwAAA="
               },
               "alergenosAnadidos": [
                 "Gluten"
@@ -2283,7 +2399,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#795e43",
+                "lqip": "UklGRoIAAABXRUJQVlA4IHYAAAAwAgCdASoQAAwAA4BaJbACdAYxFUGU2toggAD+JmKUvZTwX3CuYqf047bK+cJDqcCYhnCcPpcdRWbHIe/sFDXoPIuK6nefc6/BjWu0BzzuE1ekxiH3fgxIguuCnEMqBPOWLb00embdZ7TKBjdNgfaeMiFcAAAA"
               }
             }
           ],
@@ -2332,7 +2450,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#8f826f",
+                "lqip": "UklGRnoAAABXRUJQVlA4IG4AAAAwAgCdASoQAAwAA4BaJagCdAYwS9bsf5GKAAD+xDCSrR4EP17iZl6LSXYPMonzF+kOHBziMzEl8HiY479pHyLykrpMJFNBwwipX/vPi1vAwGHlw9sX4ITmwI11iTaH8ipISP7rFNp1bR+ybXAAAA=="
               },
               "alergenosAnadidos": [
                 "Gluten"
@@ -2410,7 +2530,9 @@
                   160,
                   480,
                   799
-                ]
+                ],
+                "color": "#8f806c",
+                "lqip": "UklGRmYAAABXRUJQVlA4IFoAAADwAQCdASoQAAwAA4BaJbAC7AELVj2hvsAA/s8OEH6RLl8ihdJicslcN30xPWGHThhfnp3TIed0cu8wtWepv+8gWHuxsg/OzjcKeGzejm3mHtcYbvYawUrgAAA="
               },
               "alergenosAnadidos": [
                 "Gluten"
@@ -2455,7 +2577,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#795e43",
+                "lqip": "UklGRoIAAABXRUJQVlA4IHYAAAAwAgCdASoQAAwAA4BaJbACdAYvNOeill7IQAD+JmIfh7WDnzRBs0IcW6q/cORFLLb+gVTASRMsF88AZrASPvhjh62K9SO42SGhQPWHePEEo1Gqx5UZ8UW4hjxL04z4qEkgmYUKHuQDh+MeYo31YMeXqPzCAAAA"
               }
             },
             {
@@ -2476,7 +2600,9 @@
                   160,
                   480,
                   600
-                ]
+                ],
+                "color": "#baa386",
+                "lqip": "UklGRnwAAABXRUJQVlA4IHAAAAAwAgCdASoQAAwAA4BaJbACdAYwngFaS/zxgAD+14XV/ZOM0gBusxhEa5r7JLZRaDh3FRZB03JzQGUXX71biiXuAT5vQVOVZWRn6yGjd7YtQcJBzoLZLAwQg9Cul5QJanwGV0M/nKXVaEEukzWYAAAA"
               }
             }
           ],
@@ -2521,7 +2647,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#997c5f",
+                "lqip": "UklGRnIAAABXRUJQVlA4IGYAAAAwAgCdASoQAAwAA4BaJbACdAYrTWXUfsZwAADOGX4qeQTxOBH5+wsrAIlYNfgJw3VDHA9Ul9kAF1eSaw5ZdGF1QTHc/88MvR7hjPTJOEsg386xqi8tAbw1yzKJ4DpfFtBRzhKIAAA="
               }
             },
             {
@@ -2625,7 +2753,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#988262",
+                "lqip": "UklGRowAAABXRUJQVlA4IIAAAABQAgCdASoQAAwAA4BaJbACdDiAN5IBPeL8KMAA4ner5nu2lza2i2Rxw6p8Bf4c0WVLtvYbtmod4ZJs249KXxMrCiK0L0eEhowMxuWUigiqumGBJb6bOGMfL66x+5ON6EHrBqp+3KpV1NWEV7oiKXdZ+vqWu0cjJ+JUPoITzbEAAA=="
               }
             },
             {
@@ -2646,7 +2776,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#958576",
+                "lqip": "UklGRn4AAABXRUJQVlA4IHIAAABwAgCdASoQAAwAA4BaJaACdAYwd2ZJgU7sLhwAAOJ9bvLs2tH0qfgjH7+X7b2HyA6GU3QUSl9BCcjllcQx8IgMS7tc8csN54JP4bIjzrQczHmbezTlH+HIdbdhr8osN6j198wxRh7+nF+9F0/CiQGAAAA="
               }
             },
             {
@@ -2667,7 +2799,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#997141",
+                "lqip": "UklGRmwAAABXRUJQVlA4IGAAAADwAQCdASoQAAwAA4BaJbACdAD0X6bRVwgA/qbHsph+aKSTd3BXJWt9GLp/NdDc0u/oQx56F1v1dYM436t74OGi3IT3woKRLNtrxdFfnr+vhesjkiu13nAhwL5nzXBAAAA="
               }
             },
             {
@@ -2688,7 +2822,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#76512b",
+                "lqip": "UklGRloAAABXRUJQVlA4IE4AAADwAQCdASoQAAwAA4BaJbACdADvBsaoOUAA/s97tkYHJ7suj/FX/rfwGakTd4QLwm+t/gy+BrEEq0SZ1lpJv37vcB+/eYCy3Ckbf8gAAAA="
               }
             },
             {
@@ -2709,7 +2845,9 @@
                   160,
                   480,
                   500
-                ]
+                ],
+                "color": "#d8e3e4",
+                "lqip": "UklGRm4AAABXRUJQVlA4IGIAAABwAgCdASoQAAwAA4BaJZACdH8AgrC/4PyBeHAAAP74uGLcwdCHLN4gKPOzvkB8G/BvrxD3kzJ2jkgFfe0f+8lIoTean759hnJxCq4G8y0xuaO7LXO/a23RXuLMqok/DgAAAA=="
               }
             },
             {
@@ -2730,7 +2868,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#7e5e40",
+                "lqip": "UklGRn4AAABXRUJQVlA4IHIAAABQAgCdASoQAAwAA4BaJbACdDiMwTLvnwlXVAAAyyBBZ1+0/z/b6i0qAooR6yAGWW9qlTj+nsSmlv77WgWmn185ouXaURtwYABq3/IfDdRplmhU2dPUZX2FvvGgykY2UO/4//Q2wLBFU5XuoNnonwf54AA="
               }
             },
             {
@@ -2770,7 +2910,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#8f6a47",
+                "lqip": "UklGRngAAABXRUJQVlA4IGwAAAAQAgCdASoQAAwAA4BaJbACdADiXKzOLSo4APacp8enDcrP5UR2/02BrjPZOKdnIiHp9A9Ai3qYvaxxtG5uFfYuPBEMP79cSnDbeDI+wJhr1b1br7+WMGQwQg025wZEGqWu1UzxFsVWhZiAAAA="
               },
               "alergenosAnadidos": [
                 "Lácteos"
@@ -2803,7 +2945,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#917252",
+                "lqip": "UklGRnoAAABXRUJQVlA4IG4AAAAwAgCdASoQAAwAA4BaJbACdAYvr2d1ftucAAD84neRfcIN1jxPmpQhen9Fq+N6GMokt9xsEYFMVv551AIGvBbcAS7AYlrrjch2Ntl2nOpsbV3swoVI28tFam7yEUN1mLeizgFk8ReKtnRSNCgAAA=="
               }
             },
             {
@@ -2824,7 +2968,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#8f7261",
+                "lqip": "UklGRm4AAABXRUJQVlA4IGIAAAAQAgCdASoQAAwAA4BaJbACdADc+zYIxor4APdQ4EghT4o7s7uaqr/yCtlV6hjBLnusTbY+3kRoT8CBRK32l3NEU+jVzoOjY3enK/5B2q0Q6jUbPhhw0nd0+r78ra8kqY2AAA=="
               }
             },
             {
@@ -2857,7 +3003,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#ab7c41",
+                "lqip": "UklGRmgAAABXRUJQVlA4IFwAAAAQAgCdASoQAAwAA4BaJbACdLoAAr2R4zkAAPw1Al7JMKs6MMUHmDz7ZCE9LI6D+0AhXrQM0xTh2rLdNI99DID+9hHnpIa12Esr0rWA1Fe9TLEwVP89QjpyYeAAAA=="
               }
             },
             {
@@ -2879,7 +3027,9 @@
                 "widths": [
                   160,
                   400
-                ]
+                ],
+                "color": "#8ab290",
+                "lqip": "UklGRowAAABXRUJQVlA4IIAAAADwAgCdASoQAAwAA4BaJagCdG1/FSBFqluZ0tRPPW4pAAD+SUCEZW/r95qzjO9O4W+KSiBuMDk3vPa/Q4/8fDyJiqSLa+j7fn+TxD8UhN4sxbVbC7n/4GMxu7s3cS+zd1nI8JgX9ilWQD+d9YAbNF2eoko6lI4jTntijPMu4gAAAA=="
               },
               "alergenosAnadidos": [
                 "Gluten"
@@ -2905,7 +3055,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#8b7a66",
+                "lqip": "UklGRm4AAABXRUJQVlA4IGIAAABQAgCdASoQAAwAA4BaJYgCdAYv/227wESLumAA/eFW2+OnJKysHRlYuVUEoGj/8fa565YrkRFfKsp7d0YsoNzKmfZ+r4J/BZx5H6R9/5fW/QvQskAsU7LYvVBCoXfIkfAAAA=="
               },
               "alergenosAnadidos": [
                 "Sulfitos"
@@ -2931,7 +3083,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#827668",
+                "lqip": "UklGRl4AAABXRUJQVlA4IFIAAAAQAgCdASoQAAwAA4BaJZACdAC9FlDZjmTAAP3b5B2/D7vk70PoTIMjxGLB0C84M9a7BsGHFE+KkASiHwP3fq/sBfYtaaCiY7UxiaClI5vbloAA"
               },
               "alergenosAnadidos": [
                 "Sulfitos"
@@ -2957,7 +3111,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#965f3b",
+                "lqip": "UklGRmgAAABXRUJQVlA4IFwAAABQAgCdASoQAAwAA4BaJbACdLoAngAEzBgu2wAA/uUu2IIVfCY8DBwwsQJ2M6VxUr+N1z5PuVevqtbXXBrksncm8Ehlkj/a0/PPOBGaTT6rVc292lkN93R0KOVgAA=="
               },
               "alergenosAnadidos": [
                 "Sulfitos"
@@ -2983,7 +3139,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#a3855d",
+                "lqip": "UklGRm4AAABXRUJQVlA4IGIAAAAQAgCdASoQAAwAA4BaJbACdAD7E3Bz0cMAAPWcdmI1vwc+fwlWD0TYSzm0GntqGm1uUqnvuJwQbCIunSMPDcdEvkGGeRq/8wxXmoFjw0SUPyxjpvznac+Dv081ZpjtYNVAAA=="
               },
               "alergenosAnadidos": [
                 "Sulfitos"
@@ -3009,7 +3167,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#895630",
+                "lqip": "UklGRm4AAABXRUJQVlA4IGIAAACQAgCdASoQAAwAA4BaJbACdLoAngAEwXjWnyPMAAD+7BL6CKTy9Pjqq9+m9rEN+FXsLf1rws6C9NuhOqK8jDVxJC2TcgtprefzZyF4bvZFy/Z03o2Bi8vm3u0sC99W6xeAAA=="
               },
               "alergenosAnadidos": [
                 "Sulfitos"
@@ -3041,7 +3201,9 @@
                 "widths": [
                   160,
                   400
-                ]
+                ],
+                "color": "#765945",
+                "lqip": "UklGRnYAAABXRUJQVlA4IGoAAAAQAgCdASoQAAwAA4BaJaACdAYsFOTCXIkAAP7u5mvOZ8VEUMsnI1vP9JHtuvK2xTlgStBodT64EMZ79+DSu/1FN4p4yapYhdB20aNCnEAmkDNi86MmqtlSCm9JtFgw/bY9jWBLZQJ5oAAA"
               }
             },
             {
@@ -3061,7 +3223,9 @@
                 "widths": [
                   160,
                   380
-                ]
+                ],
+                "color": "#59443d",
+                "lqip": "UklGRngAAABXRUJQVlA4IGwAAAAwAgCdASoQAAwAA4BaJZACdAEDE26a+KOGuAD5e4i16gSZWa6mGOoVvFBYc2L3EI7XJeCDT8ICC+SQxo4hRhDZM5a/zg9qTsDz/PgeqLRQ1h67TWc13KskejWd0+TqV0No62KBWuYTENAXgAA="
               }
             },
             {
@@ -3084,7 +3248,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#86664c",
+                "lqip": "UklGRoAAAABXRUJQVlA4IHQAAABQAgCdASoQAAwAA4BaJbACdAYvDzomoT68xHgA/uU0ylITxJ/pci+0SG+A0fixLhpu4zyztGOrNd+LXG+XvEKa2gmj3mO5k2rtSqdFav60L6U+MrIcUPBgw+qCszpxinvpA805P1Qzf3ZNPBppV8HXtoc8AA=="
               },
               "alergenosAnadidos": [
                 "Lácteos"
@@ -3110,7 +3276,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#8d684d",
+                "lqip": "UklGRnwAAABXRUJQVlA4IHAAAABwAgCdASoQAAwAA4BaJbACdGaAAr1oIih5NYwAAP7PfqYX3qD3IVHAmohBGIng0L0Ye4lgtT3nmhlc0yyAF4f0dKUL1hXmay/vfr50wwktS/l8eXiNuBXNqaIJJtW46ZGfpul2lRd8q9/V6V5S1gAA"
               },
               "alergenosAnadidos": [
                 "Lácteos"
@@ -3170,7 +3338,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#9c602c",
+                "lqip": "UklGRnAAAABXRUJQVlA4IGQAAACQAgCdASoQAAwAA4BaJbACdLoAAuPp9QLJk0EqAAD7yPn8SB27LsDT6bSVM2npB8YDurdfN9tPM8JftSH2xrUAyhJRSNPzH/mDdf0wLyp1z9MEOnuBEQHFh+r4vl8qLgc1AAAA"
               }
             },
             {
@@ -3196,7 +3366,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#8e745d",
+                "lqip": "UklGRloAAABXRUJQVlA4IE4AAAAwAgCdASoQAAwAA4BaJbACdAEDE3vSY0/yAADeV2diNA7BC8QQHka84KEZ5iaz6g3amcfocemQoepHXIaI98AbAx6I7X42Du6B3IuAAAA="
               }
             },
             {
@@ -3217,7 +3389,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#877063",
+                "lqip": "UklGRlwAAABXRUJQVlA4IFAAAADwAQCdASoQAAwAA4BaJbACdAC9CioV/vgA+GN4aNx+g7BtQJuxAcp/2KITyNm3CrFoDFKcH5iUckf6Cy76ZQqPaZsuaC2kRbkBfgWfXYAAAA=="
               }
             },
             {
@@ -3238,7 +3412,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#6a4720",
+                "lqip": "UklGRnwAAABXRUJQVlA4IHAAAAAQAgCdASoQAAwAA4BaJbACdAYuRSSddesgAP6qHkpLEV6djEWiPZfR2nY1RPVup3w9k78V4kLWgITEcXJI1wxCUL6qbWNF+uieVC70MK32dcLUnJM8hPKul/b20tpFJTwfrths0lSmusqrYxP/oAAA"
               }
             },
             {
@@ -3264,7 +3440,9 @@
                   160,
                   480,
                   800
-                ]
+                ],
+                "color": "#7e4e23",
+                "lqip": "UklGRoQAAABXRUJQVlA4IHgAAACQAgCdASoQAAwAA4BaJbACdG1/DyCRcAQLA9zkAAD+h9d6Ln1agC1fk2e4wkwkoCwAHNeL2e4KwKGRJH7+rkGvSxQQoeco3GYpAc2E8JHhQj/c9ZTlCYR9tSYbSfdRIwakXc4a30cMvt1sXCFNV+Do8oyeLrTCgAA="
               }
             },
             {

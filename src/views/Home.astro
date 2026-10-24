@@ -70,7 +70,7 @@ const doors = [
   </div></div>
 
   {/* La pared negra del local: su frase a tiza (se escribe al llegar), el aplique encendido y, en la pizarra,
-      platos de la carta de hoy con el cartel «More amor por favor» pegado. Los platos salen de destacados.mjs;
+      platos de la carta de hoy (el cartel «More amor por favor» va solo en el pie). Los platos salen de destacados.mjs;
       el filtro de tiza está en Layout. */}
   <section class="wall section" aria-labelledby="wall-title">
     <div class="wall-lamp" aria-hidden="true"><span></span></div>
@@ -83,7 +83,6 @@ const doors = [
         <p class="wall-note">{h.wallNote}</p>
       </div>
       <div class="wall-board" data-reveal>
-        <p class="amor-sign" lang="es"><span>More</span> <span>amor</span> <span>por</span> <span>favor</span></p>
         <h3 class="tiza">{h.boardTitle}</h3>
         <p class="wall-board-sub tiza">{h.boardSub}</p>
         <ul class="tiza">{tiza.map(plato => <li><span>{tc(lang, plato.nombre)}</span><i aria-hidden="true"></i><b>{price(lang, plato.precio)}</b></li>)}</ul>

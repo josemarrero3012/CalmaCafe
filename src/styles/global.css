@@ -607,6 +607,7 @@ main{overflow-x:clip}
 .timeline-photo picture{display:block;width:min(300px,70vw);padding:11px 11px 46px;background:#FFFEF9;box-shadow:0 14px 30px -14px rgba(30,26,26,.4);rotate:2deg}
 .timeline-photo picture img{aspect-ratio:4/5;object-fit:cover}
 .timeline-photo figcaption{margin-top:-40px;rotate:0deg;position:relative}
+.timeline-photo--left picture{rotate:-3deg}
 /* Inauguración: el sello va pegado a la esquina del hueco para la foto */
 .opening-visual{position:relative}
 .opening-visual .story-stamp{position:absolute;right:max(0px,calc(50% - 230px));top:-30px;width:150px;rotate:10deg;box-shadow:0 12px 24px -10px rgba(30,26,26,.45)}

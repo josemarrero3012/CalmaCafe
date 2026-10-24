@@ -39,7 +39,7 @@ export interface UI {
   notices: { legal: Notice; privacy: Notice; cookies: Notice };
   video: { label: string; play: string; playShort: string };
   home: {
-    title: string; description: string; place: string; h1: string; intro: string; seeMenu: string; pancakesAlt: string;
+    title: string; description: string; place: string; h1: string; intro: string; seeMenu: string; pancakesAlt: string; teamNote: string;
     strip: [string, string, string, string]; doorsTitle: string;
     doors: { carta: [string, string, string]; calma: [string, string, string]; visit: [string, string, string] };
     drinksEyebrow: string; drinksTitle: string; drinksIntro: string; coffee: string; matcha: string; chooseDrink: string; drinksHint: string; allDrinks: string;
@@ -92,7 +92,7 @@ export const ui: Record<Lang, UI> = {
       description: 'Brunch, café Lavazza, matcha y opciones veganas en la avenida de Tirajana, Maspalomas. Carta completa con precios y alérgenos.',
       place: 'Maspalomas, Gran Canaria', h1: 'Brunch y café <br />en <em>Maspalomas.</em>',
       intro: 'Granola, pancakes, tostas o el Calma Especial, que servimos en triassant (una mezcla de croissant y pan de cereales). Para beber, café Lavazza, matcha o ube latte. Estamos en la avenida de Tirajana y hay mesas dentro y fuera.',
-      seeMenu: 'Ver la carta', pancakesAlt: 'Pancakes de Calma Café con distintos acompañamientos',
+      seeMenu: 'Ver la carta', pancakesAlt: 'Pancakes de Calma Café con distintos acompañamientos', teamNote: 'Aquí podríamos poner una foto del equipo enseñando el local.',
       strip: ['Brunch', 'Café Lavazza', 'Matcha y ube', 'Vegano y vegetariano'],
       doorsTitle: 'La carta, el local y <em>cómo llegar.</em>',
       doors: {
@@ -181,7 +181,7 @@ export const ui: Record<Lang, UI> = {
       description: 'Brunch, Lavazza coffee, matcha and vegan options on Avenida de Tirajana, Maspalomas. Full menu with prices and allergens.',
       place: 'Maspalomas, Gran Canaria', h1: 'Brunch and coffee <br />in <em>Maspalomas.</em>',
       intro: 'Granola, pancakes, toasts or the Calma Special, which we serve on a triassant (a cross between a croissant and multigrain bread). To drink, Lavazza coffee, matcha or an ube latte. We’re on Avenida de Tirajana, with tables inside and out.',
-      seeMenu: 'See the menu', pancakesAlt: 'Calma Café pancakes with different toppings',
+      seeMenu: 'See the menu', pancakesAlt: 'Calma Café pancakes with different toppings', teamNote: 'A photo of the team showing you around could go here.',
       strip: ['Brunch', 'Lavazza coffee', 'Matcha and ube', 'Vegan and vegetarian'],
       doorsTitle: 'The menu, the café and <em>how to find us.</em>',
       doors: {
@@ -271,7 +271,7 @@ export const ui: Record<Lang, UI> = {
       description: 'Brunch, Lavazza-Kaffee, Matcha und vegane Gerichte in der Avenida de Tirajana, Maspalomas. Komplette Speisekarte mit Preisen und Allergenen.',
       place: 'Maspalomas, Gran Canaria', h1: 'Brunch und Kaffee <br />in <em>Maspalomas.</em>',
       intro: 'Granola, Pancakes, Toasts oder das Calma Special, das wir im Triassant servieren (einer Mischung aus Croissant und Mehrkornbrot). Dazu Lavazza-Kaffee, Matcha oder Ube Latte. Du findest uns in der Avenida de Tirajana, mit Tischen drinnen und draußen.',
-      seeMenu: 'Zur Speisekarte', pancakesAlt: 'Pancakes von Calma Café mit verschiedenen Toppings',
+      seeMenu: 'Zur Speisekarte', pancakesAlt: 'Pancakes von Calma Café mit verschiedenen Toppings', teamNote: 'Hier passt ein Foto vom Team, das das Café zeigt.',
       strip: ['Brunch', 'Lavazza-Kaffee', 'Matcha und Ube', 'Vegan und vegetarisch'],
       doorsTitle: 'Speisekarte, Café und <em>Anfahrt.</em>',
       doors: {
@@ -361,7 +361,7 @@ export const ui: Record<Lang, UI> = {
       description: 'Brunch, Lavazza-koffie, matcha en veganistische gerechten aan de Avenida de Tirajana, Maspalomas. Volledige menukaart met prijzen en allergenen.',
       place: 'Maspalomas, Gran Canaria', h1: 'Brunch en koffie <br />in <em>Maspalomas.</em>',
       intro: 'Granola, pancakes, toast of de Calma Special, die we op een triassant serveren (een mix van croissant en meergranenbrood). Om te drinken: Lavazza-koffie, matcha of ube latte. Je vindt ons aan de Avenida de Tirajana, met tafels binnen en buiten.',
-      seeMenu: 'Bekijk de menukaart', pancakesAlt: 'Pancakes van Calma Café met verschillende toppings',
+      seeMenu: 'Bekijk de menukaart', pancakesAlt: 'Pancakes van Calma Café met verschillende toppings', teamNote: 'Hier zou een foto van het team dat het café laat zien mooi staan.',
       strip: ['Brunch', 'Lavazza-koffie', 'Matcha en ube', 'Veganistisch en vegetarisch'],
       doorsTitle: 'De menukaart, het café en <em>de route.</em>',
       doors: {

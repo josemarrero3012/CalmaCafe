@@ -1,6 +1,6 @@
 {
   "fuente": "https://calma.buenacarta.com/",
-  "consultada": "2026-10-22",
+  "consultada": "2026-10-24",
   "local": {
     "direccion": "Avda. de Tirajana 3, Apt Aloe, Maspalomas (Las Palmas)",
     "telefono": "681667917",
@@ -514,6 +514,37 @@
               ]
             },
             {
+              "id": "93768",
+              "nombre": "Sándwich Pollo y pesto",
+              "descripcion": null,
+              "extras": [
+                {
+                  "nombre": "Una ensaladita o papas ajillo horneadas",
+                  "precio": "2,00 €"
+                }
+              ],
+              "opciones": [],
+              "notas": [],
+              "precio": "9,00 €",
+              "alergenos": [
+                "Gluten"
+              ],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/93768",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              },
+              "alergenosAnadidos": [
+                "Gluten"
+              ]
+            },
+            {
               "id": "729805",
               "nombre": "Sándwich albondigas y gorgonzola",
               "descripcion": null,
@@ -682,9 +713,35 @@
               "alergenosAnadidos": [
                 "Pescado"
               ]
+            },
+            {
+              "id": "164072",
+              "nombre": "Sándwich Atún picante",
+              "descripcion": null,
+              "extras": [
+                {
+                  "nombre": "Una ensaladita o papas ajillo horneadas",
+                  "precio": "2,00 €"
+                }
+              ],
+              "opciones": [],
+              "notas": [],
+              "precio": "9,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/164072",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
             }
           ],
-          "portada": "729805"
+          "portada": "93768"
         },
         {
           "id": "carta-extras",
@@ -1494,6 +1551,22 @@
               ]
             },
             {
+              "id": "94233",
+              "nombre": "Sándwich Vegetariano",
+              "descripcion": "Con guacamole champiñones. Añade una ensaladita o papas ajillo horneadas por 2€",
+              "extras": [],
+              "opciones": [],
+              "notas": [],
+              "precio": "9,00 €",
+              "alergenos": [
+                "Gluten",
+                "Lácteos",
+                "Semillas de sésamo"
+              ],
+              "dieta": "vegetariano",
+              "foto": null
+            },
+            {
               "id": "94234",
               "nombre": "Ensalada vegetariana de quinoa, verduras & aguacate",
               "descripcion": "Mezcla de ensalada, tomate, rábano, cebolla y quinoa, con pan",
@@ -2174,6 +2247,44 @@
               "alergenosAnadidos": [
                 "Gluten"
               ]
+            },
+            {
+              "id": "429056",
+              "nombre": "Pancakes Veganos",
+              "descripcion": null,
+              "extras": [
+                {
+                  "nombre": "Crema de frambuesa",
+                  "precio": "2,80 €"
+                },
+                {
+                  "nombre": "Crema de cacahuetes",
+                  "precio": "2,80 €"
+                },
+                {
+                  "nombre": "Fruta",
+                  "precio": "3,50 €"
+                },
+                {
+                  "nombre": "Jarabe de arce",
+                  "precio": "2,00 €"
+                }
+              ],
+              "opciones": [],
+              "notas": [],
+              "precio": "8,00 €",
+              "alergenos": [],
+              "dieta": null,
+              "foto": {
+                "src": "/media/carta/429056",
+                "width": 800,
+                "height": 600,
+                "widths": [
+                  160,
+                  480,
+                  800
+                ]
+              }
             }
           ],
           "portada": "188886"

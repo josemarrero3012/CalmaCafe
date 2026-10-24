@@ -30,18 +30,18 @@ const slides = photos.map((name, i) => ({ image: url(`/media/${name}-720.webp`),
     </div>
   </section>
 
-  {/* Historia del local como una línea del tiempo. Donde aún no hay fotos queda el hueco con una nota para el local. */}
+  {/* Historia del local como una línea del tiempo. Solo quedan huecos con nota para el local en la foto de la pareja y en la de la inauguración. */}
   <section class="story section" aria-labelledby="story-title">
     <div class="wrap">
       <div class="story-heading" data-reveal><p class="eyebrow">{s.eyebrow}</p><h2 id="story-title" set:html={s.title} /><p class="story-lead">{s.lead}</p></div>
       <ol class="timeline">
         <li class="timeline-item">
           <div class="story-copy" data-reveal><p class="eyebrow"><span class="story-number">01</span>{s.craft.label}</p><h3>{s.craft.title}</h3><p>{s.craft.text}</p></div>
-          <div class="story-visual" data-reveal><PhotoSlot label={c.slotLabel} note={s.craft.note} class="timeline-slot" /></div>
+          <figure class="story-visual timeline-photo timeline-photo--left" data-reveal><Photo name="plato-plancha" lang={lang} sizes="(max-width: 699px) 70vw, 300px" /><figcaption class="handwritten">{s.craft.caption}</figcaption></figure>
         </li>
         <li class="timeline-item">
           <div class="story-copy" data-reveal><p class="eyebrow"><span class="story-number">02</span>{s.search.label}</p><h3>{s.search.title}</h3><p>{s.search.text}</p></div>
-          <div class="story-visual" data-reveal><PhotoSlot label={c.slotLabel} note={s.search.note} class="timeline-slot timeline-slot--right" /></div>
+          <figure class="story-visual timeline-photo" data-reveal><Photo name="interior-ventanal" lang={lang} sizes="(max-width: 699px) 70vw, 300px" /><figcaption class="handwritten">{s.search.caption}</figcaption></figure>
         </li>
         <li class="timeline-item">
           <div class="story-copy" data-reveal><p class="eyebrow"><span class="story-number">03</span>{s.name.label}</p><h3>{s.name.title}</h3><p>{s.name.text}</p></div>

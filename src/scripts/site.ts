@@ -35,10 +35,14 @@ if (langSwitch) {
 }
 
 // Los [data-hours] solo se pintan cuando el horario real está confirmado (negocio.json).
-if (negocio.horario.confirmado && document.querySelector('[data-hours]')) {
+if (negocio.horario.confirmado && document.querySelector('[data-hours], [data-hours-state]')) {
   const updateHours = () => {
     const result = getOpeningStatus(new Date(), negocio.horario.semana, negocio.zonaHoraria, document.documentElement.lang);
     document.querySelectorAll('[data-hours]').forEach(el => { el.textContent = result.text; });
+    // Cartel de la cabecera: el estado en la primera línea y, si está cerrado, cuándo abre en la segunda
+    const [state, next = ''] = result.text.split(' · ');
+    document.querySelectorAll('[data-hours-state]').forEach(el => { el.textContent = state; });
+    document.querySelectorAll('[data-hours-next]').forEach(el => { el.textContent = next; });
     document.querySelectorAll('.status-dot').forEach(dot => { dot.classList.toggle('is-open', result.open); dot.classList.toggle('is-closed', !result.open); });
     const today = new Intl.DateTimeFormat('en-GB', { timeZone: negocio.zonaHoraria, weekday: 'short' }).format(new Date());
     const index = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(today);

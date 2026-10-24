@@ -48,6 +48,8 @@ export type PolaroidLineCarouselProps = {
   autoplay?: number
   /** Colour of the string and pegs. */
   string?: string
+  /** Hang filament bulbs along the string, one every `bulbs` px (0 = none). Uses the page's #guirnalda-bulb and #guirnalda-halo gradients. */
+  bulbs?: number
   background?: string
   ink?: string
   onChange?: (index: number) => void
@@ -279,6 +281,7 @@ export default function PolaroidLineCarousel({
   swing = 1,
   autoplay = 4500,
   string = "#8a7f72",
+  bulbs = 0,
   background = "var(--color-background, #efece6)",
   ink = "var(--color-foreground, #161513)",
   onChange,
@@ -490,6 +493,21 @@ export default function PolaroidLineCarousel({
       <style>{PL_CSS}</style>
       <svg className="pl-string" aria-hidden="true">
         <path ref={pathRef} fill="none" stroke={string} strokeWidth="1.5" strokeLinecap="round" />
+        {bulbs > 0 &&
+          Array.from({ length: Math.max(1, Math.round(size.w / bulbs)) }, (_, i) => i).map((i, _, all) => {
+            // Same curve as the string (frame() draws it with y0 = max(40, 20% of the height)).
+            const x = ((i + 0.5) * size.w) / all.length
+            const y = stringY(x, size.w, Math.max(40, size.h * 0.2), sag)
+            return (
+              <g key={i} className="pl-bulb" transform={"translate(" + x.toFixed(1) + " " + y.toFixed(1) + ") scale(1.5)"}>
+                <path d="M0 0v8" stroke={string} strokeWidth="1.4" />
+                <rect x="-3.5" y="7" width="7" height="6" rx="1" fill="#2B2724" />
+                <circle className="pl-glow" style={{ ["--n" as string]: i % 5 }} cx="0" cy="20" r="16" fill="url(#guirnalda-halo)" />
+                <ellipse cx="0" cy="20" rx="5.6" ry="7" fill="url(#guirnalda-bulb)" stroke="#fff9" strokeWidth=".6" />
+                <path d="M-1.6 16q1.6 4 0 7M1.6 16q-1.6 4 0 7" stroke="#B36B10" strokeWidth=".6" fill="none" />
+              </g>
+            )
+          })}
       </svg>
       {slides.map((sl, i) => (
         <div key={i} className="pl-card" data-i={i} data-on={i === active ? "1" : "0"} ref={(el) => void (cards.current[i] = el)} aria-hidden={i === active ? undefined : true}>

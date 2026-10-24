@@ -70,9 +70,9 @@ const doors = [
   </div></div>
 
   {/* La pared negra del local: su frase a tiza (se escribe al llegar), el aplique encendido y, en la pizarra,
-      platos de la carta de hoy con el cartel «More amor por favor» pegado. Los platos salen de destacados.mjs. */}
+      platos de la carta de hoy con el cartel «More amor por favor» pegado. Los platos salen de destacados.mjs;
+      el filtro de tiza está en Layout. */}
   <section class="wall section" aria-labelledby="wall-title">
-    <svg class="wall-defs" aria-hidden="true" focusable="false"><filter id="tiza" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="3" result="t" /><feDisplacementMap in="SourceGraphic" in2="t" scale="2.6" xChannelSelector="R" yChannelSelector="G" result="d" /><feTurbulence type="fractalNoise" baseFrequency="1.7" seed="8" result="p" /><feColorMatrix in="p" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -2.2 1.75" result="m" /><feComposite in="d" in2="m" operator="in" /></filter></svg>
     <div class="wall-lamp" aria-hidden="true"><span></span></div>
     <div class="wrap wall-grid">
       <div class="wall-copy" data-reveal>
@@ -127,7 +127,6 @@ const doors = [
   {/* «Dónde estamos» bajo el toldo mostaza del ventanal, con su guirnalda de bombillas */}
   <section class="visit-band section" aria-labelledby="visit-band-title">
     <div class="awning" aria-hidden="true"></div>
-    <svg class="wall-defs" aria-hidden="true" focusable="false"><radialGradient id="guirnalda-bulb" cx=".45" cy=".4" r=".7"><stop offset="0" stop-color="#FFFBE9" /><stop offset=".5" stop-color="#FFE2A0" /><stop offset="1" stop-color="#F0B450" /></radialGradient><radialGradient id="guirnalda-halo"><stop offset="0" stop-color="#FFD27A" stop-opacity=".55" /><stop offset="1" stop-color="#FFD27A" stop-opacity="0" /></radialGradient></svg>
     <Guirnalda class="guirnalda--wide" width={1440} swags={5} />
     <Guirnalda class="guirnalda--narrow" width={390} swags={2} sag={30} />
     <div class="wrap visit-band-grid">

@@ -45,10 +45,11 @@ const slides = photos.map((name, i) => ({ image: url(`/media/${name}-720.webp`),
         </li>
         <li class="timeline-item">
           <div class="story-copy" data-reveal><p class="eyebrow"><span class="story-number">03</span>{s.name.label}</p><h3>{s.name.title}</h3><p>{s.name.text}</p></div>
-          {/* «Alma» se convierte en «Calma» al verse (site.ts mide las letras). Sin JS o con movimiento reducido se ve «Calma». */}
+          {/* «Alma» se convierte en «Calma» al verse: una marca de corrección señala dónde va la C, la C cae en su sitio
+              y la A mayúscula rueda hasta ser minúscula (site.ts mide las letras). Sin JS o con movimiento reducido se ve «Calma». */}
           <figure class="story-visual alma-calma" data-reveal data-alma>
             <div class="alma-card">
-              <p class="alma-word" aria-hidden="true"><span class="aw aw-c">C</span><span class="aw aw-upper">A</span><span class="aw aw-lower">a</span><span class="aw">lma</span></p>
+              <p class="alma-word" aria-hidden="true"><svg class="alma-caret" viewBox="0 0 40 30" aria-hidden="true" focusable="false"><path pathLength="1" d="M5 27 C 11 19, 16 11, 20 4 C 24 11, 29 19, 35 27" /></svg><span class="aw aw-c"><span class="aw-in">C</span></span><span class="aw aw-swap"><span class="aw-A">A</span><span class="aw-a">a</span></span><span class="aw">lma</span></p>
               <p class="alma-sub" aria-hidden="true">Café · Feed your soul</p>
               <svg class="alma-flourish" viewBox="0 0 520 36" aria-hidden="true" focusable="false"><path d="M4 31 C 130 17 320 8 516 3 C 322 13 140 25 12 35 C 7 35 3 33 4 31 Z" /></svg>
               <button class="alma-replay" type="button" aria-label={s.name.replay} title={s.name.replay}><span aria-hidden="true">↻</span></button>
@@ -90,3 +91,5 @@ const slides = photos.map((name, i) => ({ image: url(`/media/${name}-720.webp`),
     <div class="wrap chalk-grid"><div class="chalk-copy" data-reveal><p class="eyebrow">{c.chalkEyebrow}</p><h2 id="chalk-title" class="handwritten chalk-write" lang="en">“Life is too <br />short to say <br />no to <span>cake!</span>”</h2><Lotus light /></div><figure class="chalk-photo" data-reveal><Photo name="pizarra-yawn" lang={lang} sizes="(max-width: 600px) 76vw, 340px" /><figcaption class="handwritten">{c.otherBoard}</figcaption></figure></div>
   </section>
 </Layout>
+
+<script>import '../scripts/timeline-vine';</script>

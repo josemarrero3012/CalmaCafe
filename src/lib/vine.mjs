@@ -30,9 +30,12 @@ export function vine({ cx, cy, r, base, end = 104, offset = 14, wobble = 4, scal
   // Línea central: contorno del arco desplazado hacia fuera, con un vaivén suave
   const straight = base - cy;
   const total = straight + r * rad(end);
+  // Puntos de la línea central y del contorno: los de siempre en los arcos, más en una enredadera larga (la de la
+  // cronología) para que el tallo no se vea a tramos rectos
+  const steps = Math.max(480, Math.ceil(total / 2)), segments = Math.max(120, Math.ceil(total / 8));
   const center = [];
-  for (let i = 0; i <= 480; i++) {
-    const s = (i / 480) * total;
+  for (let i = 0; i <= steps; i++) {
+    const s = (i / steps) * total;
     const o = (offset + wobble * Math.sin(s / (30 * scale))) * scale;
     if (s <= straight) center.push([cx - r - o, base - s]);
     else {
@@ -59,13 +62,13 @@ export function vine({ cx, cy, r, base, end = 104, offset = 14, wobble = 4, scal
   // grown(t) es la fracción de ese recorrido a la que queda el nudo t, para que cada hoja se abra cuando llega el tallo.
   const ext = 24 * scale;
   const first = at(0), tip = at(1);
-  const grow = d([[first.x - Math.cos(first.a) * ext, first.y - Math.sin(first.a) * ext], ...center.filter((_, i) => i % 6 === 0), [tip.x + Math.cos(tip.a) * ext * 2, tip.y + Math.sin(tip.a) * ext * 2]]);
+  const grow = d([[first.x - Math.cos(first.a) * ext, first.y - Math.sin(first.a) * ext], ...center.filter((_, i) => i % Math.max(6, Math.round(steps / 80)) === 0), [tip.x + Math.cos(tip.a) * ext * 2, tip.y + Math.sin(tip.a) * ext * 2]]);
   const grown = t => f(((ext + t * length) / (length + 3 * ext)) * 1000) / 1000;
 
   // Tallo: contorno a ambos lados de la línea central, con la base redondeada
   const sideA = [], sideB = [];
-  for (let k = 0; k <= 120; k++) {
-    const t = k / 120, { x, y, a } = at(t), w = width(t) / 2;
+  for (let k = 0; k <= segments; k++) {
+    const t = k / segments, { x, y, a } = at(t), w = width(t) / 2;
     const nx = -Math.sin(a), ny = Math.cos(a);
     sideA.push([x + nx * w, y + ny * w]);
     sideB.push([x - nx * w, y - ny * w]);

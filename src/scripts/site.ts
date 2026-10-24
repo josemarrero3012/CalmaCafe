@@ -234,13 +234,17 @@ document.querySelectorAll<SVGSVGElement>('.script-word').forEach(word => {
   if (word.getBoundingClientRect().top > window.innerHeight * 0.9) { word.classList.add('script-wait'); scriptObserver.observe(word); }
 });
 
-// Historia (Calma): «Alma» se convierte en «Calma». Cada letra guarda su ancho real (en em,
-// para que valga con cualquier tamaño de letra) y el CSS abre o cierra las ranuras al verse.
+// Historia (Calma): «Alma» se convierte en «Calma». Cada ranura guarda su ancho real (en em,
+// para que valga con cualquier tamaño de letra) y el CSS las abre o estrecha al verse. La ranura
+// de la A guarda también el ancho de la «a» minúscula (--wa), que es el que le queda al final.
 document.querySelectorAll<HTMLElement>('[data-alma]').forEach(figure => {
   const word = figure.querySelector<HTMLElement>('.alma-word')!;
   document.fonts.ready.then(() => {
     const size = parseFloat(getComputedStyle(word).fontSize);
     word.querySelectorAll<HTMLElement>('.aw').forEach(letter => letter.style.setProperty('--w', `${letter.scrollWidth / size}em`));
+    const swap = word.querySelector<HTMLElement>('.aw-swap')!;
+    swap.style.setProperty('--w', `${swap.querySelector<HTMLElement>('.aw-A')!.offsetWidth / size}em`);
+    swap.style.setProperty('--wa', `${swap.querySelector<HTMLElement>('.aw-a')!.offsetWidth / size}em`);
     figure.classList.add('alma-ready');
   });
   figure.querySelector('.alma-replay')!.addEventListener('click', () => figure.getAnimations({ subtree: true }).forEach(animation => { animation.cancel(); animation.play(); }));

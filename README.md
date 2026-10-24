@@ -10,7 +10,7 @@ Son cuatro páginas: Inicio, Carta, Calma (la historia del local) y Visítanos. 
 
 - La carta completa del local, con unos 130 platos, sus precios, extras y alérgenos, separada en Carta, Vegetariano, Vegano y Bebidas.
 - Un aviso de abierto o cerrado que usa la hora de Canarias.
-- Algunos detalles animados: la firma «Feed your soul» que se escribe sola, la taza del logo con su vapor y una tarjeta en la que «Alma» se convierte en «Calma», que es como empezó llamándose el café.
+- Algunos detalles animados: la firma «See you soon» que se escribe sola, la taza del logo con su vapor y una tarjeta en la que «Alma» se convierte en «Calma», que es como empezó llamándose el café.
 - El logo vectorizado a partir de la imagen original, en versión clara y oscura.
 
 Si el sistema tiene activado «reducir movimiento», las animaciones no se reproducen.

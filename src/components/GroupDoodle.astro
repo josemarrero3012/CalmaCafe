@@ -2,38 +2,25 @@
 import { url } from '../lib/base';
 // Dibujo a mano de cada sección de la carta, como una pegatina junto a la foto en arco.
 // La sección se reconoce por el final de su id (carta-brunch, vegano-algo-dulce…); si no hay dibujo, no pinta nada.
-// El sándwich es una ilustración aparte (public/media/dibujos), metida en la misma pegatina.
+// El sándwich, el huevo, el aguacate y las tortitas son ilustraciones aparte (public/media/dibujos), metidas en la misma
+// pegatina; el resto se dibuja aquí en SVG.
 interface Props { grupo: string; class?: string; }
 const { grupo, class: className } = Astro.props;
 const tipos = ['brunch-tardio-mas', 'para-los-ninos', 'algo-dulce', 'bebidas-frias', 'bebidas-calientes', 'extras', 'brunch'] as const;
 const tipo = tipos.find(t => grupo.endsWith(t));
+// Caja de cada ilustración dentro de la pegatina (viewBox 120×120), centrada y con la proporción de la imagen.
+const dibujos: Partial<Record<typeof tipos[number], { src: string; x: number; y: number; w: number; h: number }>> = {
+  'brunch': { src: 'huevo-240.webp', x: 20, y: 26, w: 80, h: 68 },
+  'brunch-tardio-mas': { src: 'sandwich-240.webp', x: 17, y: 27, w: 86, h: 66 },
+  'extras': { src: 'aguacate-240.webp', x: 28.5, y: 18, w: 63, h: 84 },
+  'algo-dulce': { src: 'tortitas-240.webp', x: 18, y: 27, w: 84, h: 67 },
+};
+const dibujo = tipo && dibujos[tipo];
 ---
 {tipo && <svg class:list={['group-doodle', className]} viewBox="0 0 120 120" aria-hidden="true" focusable="false" fill="none" stroke="#1E1A1A" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
   <circle cx="60" cy="60" r="56" fill="#FFFDF7" stroke="none" />
   <circle cx="60" cy="60" r="50" stroke="#CE9628" stroke-width="1.4" stroke-dasharray="1 6" />
-  {tipo === 'brunch' && <g>
-    {/* Huevo frito con su yema */}
-    <path d="M32 64 C 26 46, 44 34, 58 40 C 70 30, 92 40, 88 58 C 96 72, 80 88, 64 82 C 50 92, 30 82, 32 64 Z" fill="#FFFFFF" />
-    <circle cx="61" cy="61" r="12" fill="#CE9628" />
-    <path d="M55 56 C 57 53, 61 52, 64 53" stroke="#FFFDF7" stroke-width="2.2" />
-  </g>}
-  {tipo === 'brunch-tardio-mas' && <image href={url('/media/dibujos/sandwich-240.webp')} x="17" y="27" width="86" height="66" />}
-  {tipo === 'extras' && <g>
-    {/* Medio aguacate */}
-    <path d="M60 26 C 76 26, 84 50, 86 66 C 88 84, 76 96, 60 96 C 44 96, 32 84, 34 66 C 36 50, 44 26, 60 26 Z" fill="#365B52" />
-    <path d="M60 34 C 72 34, 78 54, 79 67 C 80 81, 72 89, 60 89 C 48 89, 40 81, 41 67 C 42 54, 48 34, 60 34 Z" fill="#D8E3A8" stroke-width="1.6" />
-    <circle cx="60" cy="70" r="11" fill="#7F5A32" />
-  </g>}
-  {tipo === 'algo-dulce' && <g>
-    {/* Torre de pancakes con sirope y una fresa */}
-    <path d="M30 82 C 30 76, 90 76, 90 82 C 90 88, 30 88, 30 82 Z" fill="#E9C98B" />
-    <path d="M32 70 C 32 64, 88 64, 88 70 C 88 76, 32 76, 32 70 Z" fill="#E9C98B" />
-    <path d="M34 58 C 34 52, 86 52, 86 58 C 86 64, 34 64, 34 58 Z" fill="#E9C98B" />
-    <path d="M40 54 C 50 50, 72 50, 80 55 C 80 62, 76 64, 74 70 M48 56 C 48 62, 46 64, 46 68" stroke="#7F5A32" stroke-width="3" />
-    <path d="M58 46 C 52 40, 56 32, 62 34 C 68 32, 70 40, 64 46 Z" fill="#C9808C" />
-    <path d="M60 34 L 58 28 M60 34 L 65 30" stroke="#365B52" />
-    <path d="M24 92 H 96" />
-  </g>}
+  {dibujo && <image href={url(`/media/dibujos/${dibujo.src}`)} x={dibujo.x} y={dibujo.y} width={dibujo.w} height={dibujo.h} />}
   {tipo === 'para-los-ninos' && <g>
     {/* Globo con su cordel */}
     <path d="M60 22 C 78 22, 86 38, 84 50 C 82 64, 70 72, 60 74 C 50 72, 38 64, 36 50 C 34 38, 42 22, 60 22 Z" fill="#C9808C" />

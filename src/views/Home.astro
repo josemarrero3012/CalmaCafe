@@ -8,7 +8,6 @@ import Lotus from '../components/Lotus.astro';
 import Seal from '../components/Seal.astro';
 import Vine from '../components/Vine.astro';
 import Sparkle from '../components/Sparkle.astro';
-import ScriptWord from '../components/ScriptWord.astro';
 import negocio from '../data/negocio.json';
 import carta from '../data/carta.json';
 import { locale, phone, price, routes, tc, ui, type Lang } from '../i18n/ui';
@@ -37,11 +36,9 @@ const doors = [
     <div class="hero-inner wrap">
       <div class="hero-copy">
         {/* El nombre del café es el titular; «Brunch y café en Maspalomas» va encima, dentro del mismo h1 para el SEO */}
-        <h1 id="hero-title"><span class="hero-tagline eyebrow enter"><span class="little-sun" aria-hidden="true"><Icon name="sun" /></span> {tagline}</span><span class="hero-name enter enter-2">Calma <em>Café</em><Sparkle class="hero-sparkle" /><Sparkle class="hero-sparkle hero-sparkle--small" /></span></h1>
-        <div class="hero-script enter enter-2">
-          <ScriptWord text="Feed your soul" class="script-hero" />
-          <svg class="hero-flourish" viewBox="0 0 520 36" aria-hidden="true" focusable="false"><path d="M4 31 C 130 17 320 8 516 3 C 322 13 140 25 12 35 C 7 35 3 33 4 31 Z" /></svg>
-        </div>
+        <h1 id="hero-title"><span class="hero-tagline eyebrow enter"><span class="little-sun" aria-hidden="true"><Icon name="sun" /></span> {tagline}</span><span class="hero-name enter enter-2"><img class="hero-logo" src={url('/media/logo-dark.svg')} alt="Calma Café" width="950" height="540" /><Sparkle class="hero-sparkle" /><Sparkle class="hero-sparkle hero-sparkle--small" /></span></h1>
+        {/* Segunda imagen del hero, a la derecha del logo: un rincón del local. Cuando haya foto de la pareja, puede ir aquí */}
+        <figure class="hero-local enter enter-2"><Photo name="interior-notas" lang={lang} sizes="(max-width: 699px) 200px, 190px" /><figcaption class="handwritten">{t.calma.captions[2]}</figcaption></figure>
         <p class="hero-intro enter enter-3">{h.intro}</p>
         <div class="hero-buttons enter enter-3"><a class="button button-green" href={url(routes[lang].carta)}>{h.seeMenu} <span aria-hidden="true"><Icon name="arrow-right" /></span></a><button class="video-open" type="button" aria-haspopup="dialog" aria-controls="video-dialog" aria-label={t.video.play}><span aria-hidden="true">▶︎</span> {t.video.playShort}</button><a class="text-link hero-directions" href={negocio.mapas.url} target="_blank" rel="noopener noreferrer">{t.directions} <span aria-hidden="true"><Icon name="arrow-up-right" /></span></a></div>
         {negocio.google.nota && <a class="hero-rating enter enter-3" href={negocio.mapas.ficha} target="_blank" rel="noopener noreferrer"><span class="hero-stars" aria-hidden="true">★★★★★</span> {h.rating(new Intl.NumberFormat(locale[lang].intl, { minimumFractionDigits: 1 }).format(negocio.google.nota))} <span aria-hidden="true"><Icon name="arrow-up-right" /></span></a>}

@@ -522,6 +522,85 @@
     "Sulfitos"
    ],
    "motivo": "el Aperol Spritz lleva prosecco"
+  },
+  "164072": {
+   "menu": "Carta",
+   "nombre": "Sándwich Atún picante",
+   "anadir": [
+    "Gluten",
+    "Pescado"
+   ],
+   "motivo": "sándwich (pan) y atún en el nombre"
+  },
+  "621656": {
+   "menu": "Carta",
+   "nombre": "Pancakes estilo americano",
+   "anadir": [
+    "Gluten",
+    "Huevos"
+   ],
+   "motivo": "pancakes con huevos revueltos"
+  },
+  "721406": {
+   "menu": "Carta",
+   "nombre": "Pancakes",
+   "anadir": [
+    "Gluten",
+    "Huevos",
+    "Lácteos"
+   ],
+   "motivo": "es el mismo plato «Pancakes» que en Brunch, que ya marca estos tres"
+  },
+  "728477": {
+   "menu": "Carta",
+   "nombre": "Pancake Manzana crumble",
+   "anadir": [
+    "Gluten"
+   ],
+   "motivo": "pancake (harina de trigo)"
+  },
+  "721669": {
+   "menu": "Vegetariano",
+   "nombre": "Pancakes",
+   "anadir": [
+    "Gluten",
+    "Huevos",
+    "Lácteos"
+   ],
+   "motivo": "es el mismo plato «Pancakes» de Carta, que ya marca estos tres"
+  },
+  "728478": {
+   "menu": "Vegetariano",
+   "nombre": "Pancake Manzana crumble",
+   "anadir": [
+    "Gluten"
+   ],
+   "motivo": "pancake (harina de trigo)"
+  },
+  "429056": {
+   "menu": "Vegano",
+   "nombre": "Pancakes Veganos",
+   "anadir": [
+    "Gluten"
+   ],
+   "motivo": "pancakes (harina de trigo)"
+  },
+  "721674": {
+   "menu": "Vegano",
+   "nombre": "Pancakes",
+   "anadir": [
+    "Gluten"
+   ],
+   "motivo": "pancakes (harina de trigo)"
+  },
+  "729805": {
+   "menu": "Carta",
+   "nombre": "Sándwich albondigas y gorgonzola",
+   "anadir": [
+    "Gluten",
+    "Lácteos"
+   ],
+   "motivo": "sándwich (pan) con gorgonzola"
   }
  }
 }

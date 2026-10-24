@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { destacados, huecos, listas } from '../src/lib/destacados.mjs';
+import { destacados, huecos, listas, pizarra } from '../src/lib/destacados.mjs';
 
 const carta = JSON.parse(await readFile('src/data/carta.json', 'utf8'));
 const ids = new Set(carta.menus.flatMap(m => m.grupos.flatMap(g => g.platos.map(p => p.id))));
@@ -24,7 +24,7 @@ const plato = (id, conFoto = true) => ({ id, nombre: `Plato ${id}`, precio: '1,0
 const prueba = grupos => ({ menus: [{ grupos: Object.entries(grupos).map(([id, platos]) => ({ id, platos })) }] });
 const completa = () => ({
   'carta-algo-dulce': huecos.dulce.ids.map(id => plato(id)),
-  'carta-brunch': huecos.salado.ids.map(id => plato(id)),
+  'carta-brunch': [...huecos.salado.ids, ...pizarra.ids.filter(id => !huecos.dulce.ids.includes(id))].map(id => plato(id)),
   'bebidas-bebidas-calientes': [...huecos.cafe.ids, ...listas.coffee].map(id => plato(id)),
   'bebidas-bebidas-frias': [...huecos.matcha.ids, ...listas.matcha].map(id => plato(id)),
 });
@@ -63,4 +63,15 @@ test('si la carta quita el Calma Ice Latte (17/10/2026), la lista de café se co
 test('una carta sin ninguna foto es una importación rota y se dice claramente', () => {
   const sinFotos = prueba({ 'carta-brunch': [plato('1', false)] });
   assert.throws(() => destacados(sinFotos), /ningún plato con foto/);
+});
+
+test('la pizarra lleva los cuatro platos elegidos y, si la carta quita uno, lo sustituye otro de Brunch', () => {
+  assert.deepEqual(destacados(carta).tiza.map(p => p.id), pizarra.ids);
+  const grupos = completa();
+  grupos['carta-algo-dulce'] = grupos['carta-algo-dulce'].filter(p => p.id !== '422600');
+  const { tiza, avisos } = destacados(prueba(grupos));
+  assert.equal(tiza.length, 4);
+  assert.ok(!tiza.some(p => p.id === '422600'));
+  assert.equal(new Set(tiza.map(p => p.id)).size, 4);
+  assert.match(avisos.join('\n'), /422600/);
 });

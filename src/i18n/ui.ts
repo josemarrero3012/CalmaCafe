@@ -54,10 +54,16 @@ export interface UI {
   calma: {
     title: string; description: string; h1: string; intro: string; chalkEyebrow: string; otherBoard: string;
     detailsEyebrow: string; detailsTitle: string; detailsText: string; captions: string[]; instagram: string;
+    /** Huecos de foto: etiqueta y nota para el local («aquí podríamos poner…») */
+    slotLabel: string; ownersNote: string;
+    gallery: { label: string; hint: string; previous: string; next: string; item: string };
     story: {
       eyebrow: string; title: string; lead: string;
-      dream: { label: string; title: string; text: string; caption: string };
+      craft: { label: string; title: string; text: string; note: string };
+      search: { label: string; title: string; text: string; note: string };
       name: { label: string; title: string; text: string; caption: string; replay: string };
+      opening: { label: string; title: string; text: string; caption: string; note: string };
+      today: { label: string; title: string; text: string; caption: string };
     };
   };
   visit: {
@@ -125,13 +131,18 @@ export const ui: Record<Lang, UI> = {
       chalkEyebrow: 'La pizarra del local', otherBoard: 'Y en la otra pizarra: «A yawn is a silent scream for coffee».',
       detailsEyebrow: 'El local', detailsTitle: 'Por <em>dentro.</em>',
       detailsText: 'Cojines mostaza, un tapiz hecho de tazas, bombillas sobre la barra de madera <br />y un ventanal que da a las palmeras.',
-      captions: ['El ventanal', 'Los cojines', 'El tablero de notas', 'La barra', 'El tapiz de tazas', 'Los cuadros', 'Las bombillas', 'Una mesa junto al tablero'],
+      captions: ['El ventanal', 'Los cojines', 'El tablero de notas', 'Las láminas de la pared', 'El tapiz de tazas', 'Los cuadros', 'Las bombillas', 'Una mesa junto al tablero'],
       instagram: 'Más fotos del local y de la carta en Instagram.',
+      slotLabel: 'Foto pendiente', ownersNote: 'Aquí podríamos poner una foto de la pareja en la barra.',
+      gallery: { label: 'Fotos del local', hint: 'Arrastra el hilo o usa las flechas.', previous: 'Foto anterior', next: 'Foto siguiente', item: 'Foto {n} de {total}' },
       story: {
         eyebrow: 'Nuestra historia', title: 'Quince años <em>pensándolo.</em>',
         lead: 'Guro pasó unos quince años imaginando su propia cafetería. Cuando por fin apareció el local, abrió Calma.',
-        dream: { label: 'El sueño', title: 'Años buscando el local', text: 'Antes de instalarse en Gran Canaria, Guro trabajó en cafeterías y cocinas en Noruega. Encontrar el local adecuado llevó años, y el 6 de septiembre de 2019 abrimos en Maspalomas.', caption: 'El día que abrimos.' },
+        craft: { label: 'Noruega', title: 'Entre cafeterías y cocinas', text: 'Antes de instalarse en Gran Canaria, Guro trabajó en cafeterías y cocinas en Noruega. El sueño de tener un café propio venía de lejos.', note: 'Aquí podríamos poner una foto de Guro de sus años en Noruega.' },
+        search: { label: 'Gran Canaria', title: 'Años buscando el local', text: 'Ya en Gran Canaria, encontrar el local adecuado llevó años. Al final apareció en la avenida de Tirajana, 3, en Maspalomas.', note: 'Si tenéis fotos del local antes de abrir, irían aquí.' },
         name: { label: 'El nombre', title: 'Una C delante de «Alma»', text: 'Guro quería un nombre con alma, así que al principio el café iba a llamarse Alma Café. Mientras se diseñaba el logotipo apareció «Calma», y gustó más: encajaba mejor con lo que Guro quería transmitir.', caption: 'Casi se llamó Alma Café.', replay: 'Ver la animación otra vez' },
+        opening: { label: '2019', title: 'Abrimos las puertas', text: 'El 6 de septiembre de 2019 Calma abrió en Maspalomas.', caption: 'El día que abrimos.', note: 'Una foto de la inauguración quedaría genial junto al sello.' },
+        today: { label: 'Hoy', title: 'Brunch, café y plantas', text: 'Hoy Calma es nuestro café de brunch en Maspalomas, con mesas dentro y fuera. Más abajo puedes recorrer el local foto a foto.', caption: 'La barra, hoy.' },
       },
     },
     visit: {
@@ -210,13 +221,18 @@ export const ui: Record<Lang, UI> = {
       chalkEyebrow: 'Our chalkboard', otherBoard: 'And on the other chalkboard: “A yawn is a silent scream for coffee”.',
       detailsEyebrow: 'The café', detailsTitle: 'Take a look <em>inside.</em>',
       detailsText: 'Mustard cushions, a wall hanging made of cups, light bulbs over the wooden counter <br />and a big window looking out onto palm trees.',
-      captions: ['The window', 'The cushions', 'The noticeboard', 'The counter', 'The cup wall hanging', 'The paintings', 'The light bulbs', 'A table by the noticeboard'],
+      captions: ['The window', 'The cushions', 'The noticeboard', 'The prints on the wall', 'The cup wall hanging', 'The paintings', 'The light bulbs', 'A table by the noticeboard'],
       instagram: 'More photos of the café and the food on Instagram.',
+      slotLabel: 'Photo to come', ownersNote: 'A photo of the couple at the counter could go here.',
+      gallery: { label: 'Photos of the café', hint: 'Drag the string or use the arrows.', previous: 'Previous photo', next: 'Next photo', item: 'Photo {n} of {total}' },
       story: {
         eyebrow: 'Our story', title: 'Fifteen years <em>in the making.</em>',
         lead: 'Guro spent about fifteen years imagining a café. When the right place finally turned up, Calma opened.',
-        dream: { label: 'The dream', title: 'Years looking for the right place', text: 'Before settling in Gran Canaria, Guro worked in cafés and kitchens in Norway. Finding the right space took years, and on 6 September 2019 we opened in Maspalomas.', caption: 'The day we opened.' },
+        craft: { label: 'Norway', title: 'Cafés and kitchens', text: 'Before settling in Gran Canaria, Guro worked in cafés and kitchens in Norway. The dream of opening a café went back a long way.', note: 'A photo of Guro from the Norway years could go here.' },
+        search: { label: 'Gran Canaria', title: 'Years looking for the right place', text: 'Once in Gran Canaria, finding the right space took years. In the end it turned up at Avenida de Tirajana, 3, in Maspalomas.', note: 'If you have photos of the place before it opened, they’d go here.' },
         name: { label: 'The name', title: 'A C in front of “Alma”', text: 'Guro wanted a name with soul (alma means soul in Spanish), so at first the café was going to be called Alma Café. While the logo was being designed, “Calma” came up, and it won: it fitted better with what Guro wanted to get across.', caption: 'It was almost called Alma Café.', replay: 'Play the animation again' },
+        opening: { label: '2019', title: 'Opening day', text: 'On 6 September 2019 Calma opened its doors in Maspalomas.', caption: 'The day we opened.', note: 'A photo from opening day would look great next to the stamp.' },
+        today: { label: 'Today', title: 'Brunch, coffee and plants', text: 'Today Calma is our brunch café in Maspalomas, with tables inside and out. Further down you can look around the café photo by photo.', caption: 'The counter today.' },
       },
     },
     visit: {
@@ -295,13 +311,18 @@ export const ui: Record<Lang, UI> = {
       chalkEyebrow: 'Unsere Kreidetafel', otherBoard: 'Und auf der anderen Tafel: „A yawn is a silent scream for coffee“.',
       detailsEyebrow: 'Das Café', detailsTitle: 'Ein Blick <em>hinein.</em>',
       detailsText: 'Senfgelbe Kissen, ein Wandteppich aus Tassen, Glühbirnen über der Holztheke <br />und ein großes Fenster mit Blick auf Palmen.',
-      captions: ['Das Fenster', 'Die Kissen', 'Die Pinnwand', 'Die Theke', 'Der Tassen-Wandteppich', 'Die Bilder', 'Die Glühbirnen', 'Ein Tisch an der Pinnwand'],
+      captions: ['Das Fenster', 'Die Kissen', 'Die Pinnwand', 'Die Drucke an der Wand', 'Der Tassen-Wandteppich', 'Die Bilder', 'Die Glühbirnen', 'Ein Tisch an der Pinnwand'],
       instagram: 'Mehr Fotos vom Café und vom Essen auf Instagram.',
+      slotLabel: 'Foto folgt', ownersNote: 'Hier passt ein Foto des Paares an der Theke.',
+      gallery: { label: 'Fotos vom Café', hint: 'Zieh an der Schnur oder nutze die Pfeile.', previous: 'Vorheriges Foto', next: 'Nächstes Foto', item: 'Foto {n} von {total}' },
       story: {
         eyebrow: 'Unsere Geschichte', title: 'Fünfzehn Jahre <em>lang geträumt.</em>',
         lead: 'Rund fünfzehn Jahre stellte sich Guro ein eigenes Café vor. Als sich endlich der passende Ort fand, öffnete Calma.',
-        dream: { label: 'Der Traum', title: 'Jahrelang auf der Suche', text: 'Vor dem Umzug nach Gran Canaria hat Guro in Norwegen in Cafés und Küchen gearbeitet. Den passenden Raum zu finden dauerte Jahre, und am 6. September 2019 haben wir in Maspalomas eröffnet.', caption: 'Der Tag, an dem wir eröffnet haben.' },
+        craft: { label: 'Norwegen', title: 'Zwischen Cafés und Küchen', text: 'Vor dem Umzug nach Gran Canaria hat Guro in Norwegen in Cafés und Küchen gearbeitet. Der Traum vom eigenen Café war schon lange da.', note: 'Hier könnte ein Foto von Guro aus der Zeit in Norwegen stehen.' },
+        search: { label: 'Gran Canaria', title: 'Jahrelang auf der Suche', text: 'Auf Gran Canaria dauerte es Jahre, den passenden Raum zu finden. Am Ende war es die Avenida de Tirajana 3 in Maspalomas.', note: 'Falls ihr Fotos vom Raum vor der Eröffnung habt, kämen sie hierher.' },
         name: { label: 'Der Name', title: 'Ein C vor „Alma“', text: 'Guro wollte einen Namen mit Seele (auf Spanisch „alma“), deshalb sollte das Café zuerst Alma Café heißen. Bei der Arbeit am Logo kam „Calma“ auf, und das gefiel besser: Es passte mehr zu dem, was Guro vermitteln wollte.', caption: 'Fast hätte es Alma Café geheißen.', replay: 'Animation noch einmal abspielen' },
+        opening: { label: '2019', title: 'Die Eröffnung', text: 'Am 6. September 2019 hat Calma in Maspalomas eröffnet.', caption: 'Der Tag, an dem wir eröffnet haben.', note: 'Ein Foto vom Eröffnungstag würde neben dem Stempel toll aussehen.' },
+        today: { label: 'Heute', title: 'Brunch, Kaffee und Pflanzen', text: 'Heute ist Calma unser Brunch-Café in Maspalomas, mit Tischen drinnen und draußen. Weiter unten kannst du dich Foto für Foto im Café umsehen.', caption: 'Die Theke heute.' },
       },
     },
     visit: {
@@ -380,13 +401,18 @@ export const ui: Record<Lang, UI> = {
       chalkEyebrow: 'Ons krijtbord', otherBoard: 'En op het andere krijtbord: ‘A yawn is a silent scream for coffee’.',
       detailsEyebrow: 'Het café', detailsTitle: 'Een kijkje <em>binnen.</em>',
       detailsText: 'Mosterdgele kussens, een wandkleed van kopjes, lampjes boven de houten bar <br />en een groot raam met uitzicht op palmbomen.',
-      captions: ['Het raam', 'De kussens', 'Het prikbord', 'De bar', 'Het wandkleed van kopjes', 'De schilderijen', 'De lampjes', 'Een tafeltje bij het prikbord'],
+      captions: ['Het raam', 'De kussens', 'Het prikbord', 'De prenten aan de muur', 'Het wandkleed van kopjes', 'De schilderijen', 'De lampjes', 'Een tafeltje bij het prikbord'],
       instagram: 'Meer foto’s van het café en het eten op Instagram.',
+      slotLabel: 'Foto volgt', ownersNote: 'Hier zou een foto van het stel aan de bar mooi staan.',
+      gallery: { label: 'Foto’s van het café', hint: 'Sleep aan het touw of gebruik de pijlen.', previous: 'Vorige foto', next: 'Volgende foto', item: 'Foto {n} van {total}' },
       story: {
         eyebrow: 'Ons verhaal', title: 'Vijftien jaar <em>over nagedacht.</em>',
         lead: 'Guro heeft zo’n vijftien jaar over een eigen café nagedacht. Toen eindelijk de juiste plek opdook, ging Calma open.',
-        dream: { label: 'De droom', title: 'Jaren zoeken naar de juiste plek', text: 'Voor de verhuizing naar Gran Canaria werkte Guro in Noorwegen in cafés en keukens. De juiste ruimte vinden duurde jaren, en op 6 september 2019 gingen we open in Maspalomas.', caption: 'De dag dat we opengingen.' },
+        craft: { label: 'Noorwegen', title: 'Tussen cafés en keukens', text: 'Voor de verhuizing naar Gran Canaria werkte Guro in Noorwegen in cafés en keukens. De droom van een eigen café bestond al lang.', note: 'Hier zou een foto van Guro uit de tijd in Noorwegen kunnen komen.' },
+        search: { label: 'Gran Canaria', title: 'Jaren zoeken naar de juiste plek', text: 'Op Gran Canaria duurde het jaren om de juiste ruimte te vinden. Uiteindelijk werd het de Avenida de Tirajana 3 in Maspalomas.', note: 'Hebben jullie foto’s van de ruimte van vóór de opening? Die passen hier.' },
         name: { label: 'De naam', title: 'Een C voor ‘Alma’', text: 'Guro wilde een naam met ziel (‘alma’ in het Spaans), dus eerst zou het café Alma Café heten. Tijdens het werk aan het logo kwam ‘Calma’ voorbij, en dat beviel beter: het paste meer bij wat Guro wilde uitstralen.', caption: 'Het heette bijna Alma Café.', replay: 'Animatie opnieuw afspelen' },
+        opening: { label: '2019', title: 'De opening', text: 'Op 6 september 2019 ging Calma open in Maspalomas.', caption: 'De dag dat we opengingen.', note: 'Een foto van de openingsdag zou mooi staan naast het stempel.' },
+        today: { label: 'Vandaag', title: 'Brunch, koffie en planten', text: 'Vandaag is Calma ons brunchcafé in Maspalomas, met tafels binnen en buiten. Verderop kun je foto voor foto rondkijken in het café.', caption: 'De bar nu.' },
       },
     },
     visit: {

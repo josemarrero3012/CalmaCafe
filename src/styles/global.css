@@ -439,19 +439,20 @@ main{overflow-x:clip}
 @media(max-width:699px){
   :root{--site-header-h:79px}
   .hero::before{right:-40vw;top:auto;bottom:10%;width:120vw}
-  .hero-inner{grid-template-columns:1fr;gap:0;padding-block:26px 56px;text-align:center}
+  .hero-inner{grid-template-columns:1fr;gap:0;padding-block:12px 56px;text-align:center}
   .hero-copy{display:contents}
-  .hero-tagline{justify-content:center;font-size:12px;gap:10px;margin-bottom:8px}
-  .little-sun{font-size:24px}
+  .hero-tagline{justify-content:center;font-size:11px;gap:10px;margin-bottom:2px}
+  .little-sun{font-size:20px}
   .hero h1{align-items:center}
   .hero-name{font-size:clamp(50px,15vw,64px)}
-  .hero-logo{width:min(230px,62vw)}
-  /* Orden en móvil: titular, el arco con las fotos, botones, texto, nota y la foto del local */
-  .hero h1{order:2}.hero-visual{order:4}.hero-buttons{order:5}.hero-intro{order:6}.hero-rating{order:7}.hero-local{order:8}
+  .hero-logo{width:min(170px,46vw,21svh)}
+  /* Orden en móvil: titular, botones, el arco con las fotos, texto, nota y la foto del local.
+     El arco se ajusta al alto de la pantalla para verse entero sobre la barra «Cómo llegar / Llamar» */
+  .hero h1{order:2}.hero-buttons{order:3}.hero-visual{order:4}.hero-intro{order:6}.hero-rating{order:7}.hero-local{order:8}
   .hero-copy>*,.hero-copy>h1{grid-column:auto}
   .hero-copy>.hero-rating{justify-self:center}
   .hero .hero-local{justify-self:center;width:min(72%,280px);margin:34px auto 0}
-  .hero-visual{width:min(74%,300px);margin:64px auto 30px;justify-self:center}
+  .hero-visual{width:min(64%,270px,calc((100svh - var(--site-header-h) - 26px - 64px - 12px - 18px - 21svh * .57 - 64px - 62px) * .74));margin:36px auto 26px;justify-self:center}
   .hero-visual::before{translate:14px 12px}
   .hero-visual .seal{width:78px;height:78px;top:-10px;right:-30px;box-shadow:0 8px 22px rgba(0,0,0,.28),inset 0 0 0 3px var(--mostaza),inset 0 0 0 4px rgba(30,26,26,.35)}
   .hero-visual .seal .seal-text{font-size:13px}
@@ -459,7 +460,7 @@ main{overflow-x:clip}
   .hero-photo figcaption{font-size:15px;margin-top:4px;white-space:normal;line-height:1.1}
   .video-open{min-height:48px;padding:8px 18px;font-size:14px}
   .hero-directions{display:none}
-  .hero-buttons{justify-content:center;margin-top:8px;gap:12px 24px}
+  .hero-buttons{justify-content:center;margin-top:12px;gap:12px 24px}
   .button-green{min-height:52px;padding-inline:24px;font-size:14px}
   .hero .text-link{font-size:14px}
   .hero-intro{margin:24px auto 0;font-size:16px;line-height:1.65}

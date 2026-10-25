@@ -50,7 +50,9 @@ const schema = buildSchema(negocio, { pageUrl: current ? abs(routes[lang][curren
       <meta property="og:url" content={abs(routes[lang][current])} />
       {langs.map(other => <link rel="alternate" hreflang={locale[other].html} href={abs(routes[other][current])} />)}
       <link rel="alternate" hreflang="x-default" href={abs(routes.es[current])} />
-    </> : <meta name="robots" content="noindex" />}
+    </> : null}
+    {/* Sin permiso del local para publicarla (negocio.json → buscadores) o en la 404: fuera de los buscadores. */}
+    {(!current || !negocio.buscadores.indexar) && <meta name="robots" content="noindex, nofollow" />}
     <link rel="icon" type="image/svg+xml" href={url('/favicon.svg')} />
     <link rel="preload" href={url('/fonts/fraunces.woff2')} as="font" type="font/woff2" crossorigin />
     <link rel="preload" href={url('/fonts/dm-sans.woff2')} as="font" type="font/woff2" crossorigin />

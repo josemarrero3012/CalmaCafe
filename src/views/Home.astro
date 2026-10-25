@@ -104,14 +104,14 @@ const doors = [
   </section>
 
   <section class="team-section section" aria-labelledby="team-title">
-    <div class="wrap team-grid" data-choice="none">
+    <div class="wrap team-grid" data-choice="coffee">
       <div class="team-photos" data-reveal>
         <svg class="team-vine" viewBox="0 0 555 510" aria-hidden="true" focusable="false"><Vine id="team-vine" cx={300} cy={250} r={215} base={520} end={128} scale={0.78} line={2} still /></svg>
         <figure class="team-card team-card--coffee" data-team-pick="coffee"><DishPhoto foto={latteFrio.foto} alt={tc(lang, latteFrio.nombre)} sizes="(max-width: 600px) 62vw, 340px" /><figcaption class="handwritten">{h.coffee}</figcaption></figure>
         <figure class="team-card team-card--matcha" data-team-pick="matcha"><DishPhoto foto={matchaLatte.foto} alt={tc(lang, matchaLatte.nombre)} sizes="(max-width: 600px) 62vw, 340px" /><figcaption class="handwritten">{h.matcha}</figcaption></figure>
       </div>
       <div class="team-copy" data-reveal><p class="eyebrow">{h.drinksEyebrow}</p><h2 id="team-title" set:html={h.drinksTitle} /><p>{h.drinksIntro}</p>
-        <div class="team-choices" role="group" aria-label={h.chooseDrink}><button type="button" class="team-choice" data-team="coffee" aria-pressed="false">{h.coffee}</button><button type="button" class="team-choice" data-team="matcha" aria-pressed="false">{h.matcha}</button></div>
+        <div class="team-choices" role="group" aria-label={h.chooseDrink}><button type="button" class="team-choice" data-team="coffee" aria-pressed="true">{h.coffee}</button><button type="button" class="team-choice" data-team="matcha" aria-pressed="false">{h.matcha}</button></div>
         <div class="team-results">
           <p class="team-hint handwritten"><span aria-hidden="true">↑ </span>{h.drinksHint}</p>
           {Object.entries(bebidas).map(([team, lista]) => <ul class="team-result" data-team-panel={team}>

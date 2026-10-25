@@ -275,3 +275,11 @@ if (!reducedMotion.matches) {
 reducedMotion.addEventListener('change', () => {
   if (reducedMotion.matches) { revealElements.forEach(el => el.classList.add('is-visible')); }
 });
+
+// Inicio: el logo de la cabecera aparece cuando el logo del hero sale de la pantalla (en móvil lo oculta el CSS).
+const heroLogo = document.querySelector('.hero-logo');
+if (heroLogo) {
+  new IntersectionObserver(([entry]) => {
+    document.body.classList.toggle('brand-visible', !entry.isIntersecting && entry.boundingClientRect.top < 0);
+  }, { rootMargin: '-80px 0px 0px 0px' }).observe(heroLogo);
+}

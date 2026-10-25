@@ -53,7 +53,7 @@ if (negocio.horario.confirmado && document.querySelector('[data-hours], [data-ho
   document.addEventListener('visibilitychange', () => { if (!document.hidden) updateHours(); });
 }
 
-// Inicio: ¿café o matcha? Se ven las dos fotos hasta elegir (con el botón o tocando la foto); luego solo la elegida y su lista de bebidas.
+// Inicio: ¿café o matcha? Empieza con el café elegido (su foto y su lista, sin hueco vacío); con los botones se cambia al matcha y vuelta.
 const teamGrid = document.querySelector<HTMLElement>('.team-grid');
 const chooseTeam = (team: string) => {
   teamGrid!.dataset.choice = team;

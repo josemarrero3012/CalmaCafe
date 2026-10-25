@@ -26,6 +26,10 @@
   },
   "email": null,
   "dominio": null,
+  "buscadores": {
+    "indexar": false,
+    "nota": "Prototipo enseñado al local sin su permiso todavía: todas las páginas llevan noindex. Poner true cuando acepten (y, si puede ser, con su dominio)."
+  },
   "instagram": {
     "usuario": "@calmacafegc",
     "url": "https://www.instagram.com/calmacafegc/"

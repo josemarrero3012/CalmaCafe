@@ -7,7 +7,9 @@ import MenuIllustration from '../components/MenuIllustration.astro';
 import GroupDoodle from '../components/GroupDoodle.astro';
 import Lotus from '../components/Lotus.astro';
 import carta from '../data/carta.json';
-import { locale, price, tc, ui, type Lang } from '../i18n/ui';
+import negocio from '../data/negocio.json';
+import { locale, price, routes, tc, ui, type Lang } from '../i18n/ui';
+import { buildMenuSchema } from '../lib/schema.mjs';
 import { contar, repetidos } from '../lib/carta';
 import '../styles/carta.css';
 interface Props { lang: Lang; }
@@ -18,9 +20,11 @@ const tr = (es: string) => tc(lang, es);
 const total = contar;
 const unit = (menuId: string, n: number) => (menuId === 'bebidas' ? c.drink(n) : c.dish(n));
 const totalPlatos = carta.menus.reduce((n, menu) => n + total(menu), 0);
+// La carta entera como Menu (schema.org) para buscadores, en el idioma de la página.
+const menuSchema = buildMenuSchema(carta, { name: `${t.nav.carta} · ${negocio.nombre}`, url: Astro.site ? new URL(url(routes[lang].carta), Astro.site).href : undefined, lang: locale[lang].html, tr, skip: (menu: (typeof carta.menus)[number]) => new Set(repetidos(menu).keys()) });
 const consultada = new Intl.DateTimeFormat(locale[lang].intl, { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(carta.consultada));
 ---
-<Layout lang={lang} current="carta" title={c.title} description={c.description}>
+<Layout lang={lang} current="carta" title={c.title} description={c.description} schemas={[menuSchema]}>
   <section class="carta-hero page-top" aria-labelledby="carta-title">
     <div class="wrap carta-hero-grid">
       <div class="carta-hero-copy">

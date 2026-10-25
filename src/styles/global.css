@@ -381,6 +381,8 @@ main{overflow-x:clip}
 .mobile-bottom{transition:translate .35s var(--ease)}
 .mobile-bottom.is-tucked{translate:0 110%}
 @media(max-width:699px){body[data-page=carta] .site-header{transition:translate .35s var(--ease)}body[data-page=carta].header-tucked .site-header{translate:0 -100%}}
+/* Inicio en móvil: el logo grande del hero ya está en pantalla, así que el de la cabecera espera a que el hero quede atrás */
+@media(max-width:699px){.js body[data-page=inicio] .brand{opacity:0;visibility:hidden;translate:0 -6px;transition:opacity .35s var(--ease),translate .35s var(--ease),visibility 0s .35s}.js body[data-page=inicio].brand-visible .brand{opacity:1;visibility:visible;translate:0 0;transition:opacity .35s var(--ease),translate .35s var(--ease)}}
 @media(max-width:1199px){.header-phone{font-size:14px}}
 @media(max-width:999px){.visit-band-grid{grid-template-columns:1fr;gap:30px}.visit-band-actions .button{width:auto}}
 @media(max-width:699px){

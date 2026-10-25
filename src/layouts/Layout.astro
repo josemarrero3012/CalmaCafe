@@ -9,8 +9,9 @@ import { scheduleSummary } from '../lib/hours.mjs';
 import { buildSchema } from '../lib/schema.mjs';
 import { langs, locale, phone, routes, ui, type Lang, type Page } from '../i18n/ui';
 // Sin `current` (página 404): no hay versiones traducidas, así que el selector de idioma lleva a cada inicio.
-interface Props { lang: Lang; title: string; description: string; current?: Page; }
-const { lang, title, description, current } = Astro.props;
+// `schemas`: datos estructurados propios de la página (la carta en Carta, las preguntas frecuentes en Visítanos).
+interface Props { lang: Lang; title: string; description: string; current?: Page; schemas?: object[]; }
+const { lang, title, description, current, schemas = [] } = Astro.props;
 const t = ui[lang];
 const pages = (Object.keys(routes[lang]) as Page[]).map(id => ({ id, href: url(routes[lang][id]), label: t.nav[id] }));
 const ariaCurrent = (id: Page) => (id === current ? 'page' : undefined);
@@ -54,6 +55,7 @@ const schema = buildSchema(negocio, { pageUrl: current ? abs(routes[lang][curren
     <link rel="preload" href={url('/fonts/fraunces.woff2')} as="font" type="font/woff2" crossorigin />
     <link rel="preload" href={url('/fonts/dm-sans.woff2')} as="font" type="font/woff2" crossorigin />
     <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+    {schemas.map(extra => <script type="application/ld+json" set:html={JSON.stringify(extra)} />)}
     <script is:inline>document.documentElement.classList.add('js')</script>
   </head>
   <body data-page={current ?? 'error'}>

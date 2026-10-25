@@ -37,3 +37,48 @@ export function buildSchema(negocio, { pageUrl, menuUrl, imageUrl } = {}) {
   }
   return schema;
 }
+
+/** Preguntas frecuentes de Visítanos como FAQPage, con las mismas respuestas que se ven en la página. */
+export function buildFaqSchema(faq) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faq.map(([question, answer]) => ({ '@type': 'Question', name: question, acceptedAnswer: { '@type': 'Answer', text: answer } })),
+  };
+}
+
+const diets = { vegetariano: 'https://schema.org/VegetarianDiet', vegano: 'https://schema.org/VeganDiet' };
+
+/**
+ * La carta como Menu: una sección por menú (Carta, Vegetariano…) y dentro sus grupos con los platos.
+ * `tr` traduce nombres y descripciones; `skip` dice qué platos son repeticiones de otra sección (lib/carta).
+ */
+/** @param {{ name: string, url?: string, lang: string, tr?: (es: string) => string, skip?: (menu: any) => Set<string> }} options */
+export function buildMenuSchema(carta, { name, url, lang, tr = es => es, skip }) {
+  const item = plato => ({
+    '@type': 'MenuItem',
+    name: tr(plato.nombre),
+    ...(plato.descripcion ? { description: tr(plato.descripcion) } : {}),
+    offers: { '@type': 'Offer', price: plato.precio.replace(/[^\d,]/g, '').replace(',', '.'), priceCurrency: 'EUR' },
+    ...(diets[plato.dieta] ? { suitableForDiet: diets[plato.dieta] } : {}),
+  });
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Menu',
+    name,
+    inLanguage: lang,
+    ...(url ? { url } : {}),
+    hasMenuSection: carta.menus.map(menu => {
+      const repes = skip ? skip(menu) : new Set();
+      return {
+        '@type': 'MenuSection',
+        name: tr(menu.nombre),
+        hasMenuSection: menu.grupos.map(grupo => ({
+          '@type': 'MenuSection',
+          name: tr(grupo.nombre),
+          hasMenuItem: grupo.platos.filter(plato => !repes.has(plato.id)).map(item),
+        })),
+      };
+    }),
+  };
+}

@@ -19,6 +19,24 @@ export const formatRanges = ranges => ranges.map(([from, to]) => `${from.replace
 export const closedLabel = lang => text[lang].closed;
 export const kitchenLabel = lang => text[lang].kitchen;
 
+/**
+ * Horario «de siempre» para una frase: la primera franja de los días abiertos (si todos abren igual)
+ * y el único día de cierre. Si el horario es más variado devuelve null y la frase no se muestra.
+ * `ranges` cambia las horas (la cocina en la Carta) sin cambiar los días.
+ * @param {Record<string, string[][]>} schedule
+ * @param {string} lang
+ * @param {string[][] | null} [ranges]
+ */
+export function usualHours(schedule, lang, ranges = null) {
+  const open = weekOrder.filter(day => (schedule[day] || []).length);
+  const closed = weekOrder.filter(day => !(schedule[day] || []).length);
+  const same = open.every(day => JSON.stringify(schedule[day]) === JSON.stringify(schedule[open[0]]));
+  if (!open.length || !same || closed.length !== 1) return null;
+  const day = ranges ?? schedule[open[0]];
+  const clean = time => time.replace(/^0/, '');
+  return { from: clean(day[0][0]), to: clean(day.at(-1)[1]), closed: dayName(lang, closed[0]) };
+}
+
 /** Une los días consecutivos (lunes primero) con el mismo horario: [{ days: [3,4,5,6,0], ranges }]. */
 export function groupSchedule(schedule) {
   const groups = [];

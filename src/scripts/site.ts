@@ -155,7 +155,9 @@ if (tabs.length) {
       link.classList.toggle('is-current', current);
       // En escritorio se desliza la fila de secciones; en móvil, la fila única de menús y secciones.
       const row = getComputedStyle(nav).overflowX === 'visible' ? nav.parentElement! : nav;
-      if (current && changed && row.scrollWidth > row.clientWidth) {
+      // Hasta que la barra no se queda fija arriba, la fila se ve desde el principio («Todo», «Vegetariano»…):
+      // al cargar en móvil, centrar «Brunch» escondía los menús.
+      if (current && changed && barStuck() && row.scrollWidth > row.clientWidth) {
         const rowBox = row.getBoundingClientRect();
         const box = link.getBoundingClientRect();
         row.scrollTo({ left: row.scrollLeft + box.left - rowBox.left - (rowBox.width - box.width) / 2, behavior: reducedMotion.matches ? 'auto' : 'smooth' });
@@ -163,6 +165,7 @@ if (tabs.length) {
     });
   };
   const bar = document.querySelector<HTMLElement>('.carta-index-bar');
+  const barStuck = () => !!bar && bar.getBoundingClientRect().top <= (parseFloat(getComputedStyle(bar).top) || 0) + 1;
   let ticking = false;
   const updateCurrent = () => {
     ticking = false;
@@ -282,4 +285,16 @@ if (heroLogo) {
   new IntersectionObserver(([entry]) => {
     document.body.classList.toggle('brand-visible', !entry.isIntersecting && entry.boundingClientRect.top < 0);
   }, { rootMargin: '-80px 0px 0px 0px' }).observe(heroLogo);
+}
+
+// Franja «Propuesta de Aterna Studio»: aparece al llegar con ?propuesta (el enlace del mensaje al local) y se
+// recuerda durante la visita. En la propia página de la propuesta no hace falta.
+const proposalBanner = document.querySelector<HTMLElement>('.proposal-banner');
+if (proposalBanner && !location.pathname.endsWith('/propuesta/')) {
+  let show = new URLSearchParams(location.search).has('propuesta');
+  try {
+    if (show) sessionStorage.setItem('propuesta', '1');
+    else show = sessionStorage.getItem('propuesta') === '1';
+  } catch { /* sin almacenamiento: solo en la página con ?propuesta */ }
+  proposalBanner.hidden = !show;
 }

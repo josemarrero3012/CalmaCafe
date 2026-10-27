@@ -1,0 +1,14 @@
+---
+// Cierre de página: una frase, el horario de siempre y dos botones (van en el slot), para no acabar en un callejón sin salida
+import Lotus from './Lotus.astro';
+interface Props { id: string; title: string; text?: string | null; }
+const { id, title, text } = Astro.props;
+---
+<section class="closing section" aria-labelledby={id}>
+  <div class="wrap closing-inner" data-reveal>
+    <Lotus class="closing-lotus" />
+    <h2 id={id} set:html={title} />
+    {text && <p>{text}</p>}
+    <div class="closing-actions"><slot /></div>
+  </div>
+</section>

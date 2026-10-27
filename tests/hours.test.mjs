@@ -27,7 +27,7 @@ test('sin horarios confirmados no se inventa una apertura', () => {
 });
 
 import negocio from '../src/data/negocio.json' with { type: 'json' };
-import { groupSchedule, scheduleSummary } from '../src/lib/hours.mjs';
+import { groupSchedule, scheduleSummary, usualHours } from '../src/lib/hours.mjs';
 test('el estado se traduce a los cuatro idiomas', () => {
   const closed = new Date('2026-01-06T10:00:00Z'); // martes
   assert.equal(getOpeningStatus(closed, schedule, 'Atlantic/Canary', 'en').text, 'Closed · opens tomorrow at 09:00');
@@ -44,4 +44,12 @@ test('horario real: 9:00–15:00 todos los días salvo el martes, que cierra', (
   assert.equal(getOpeningStatus(new Date('2026-10-14T13:59:00Z'), week).open, true); // miércoles 14:59 en Canarias
   assert.equal(getOpeningStatus(new Date('2026-10-14T14:00:00Z'), week).open, false); // 15:00
   assert.deepEqual(scheduleSummary(week, 'es').map(r => `${r.label} ${r.value}`), ['lun 9:00–15:00', 'mar Cerrado', 'mié–dom 9:00–15:00']);
+});
+
+test('usualHours: la frase del cierre sale del horario y se calla si es irregular', () => {
+  const semana = { 0: [['09:00', '15:00']], 1: [['09:00', '15:00']], 2: [], 3: [['09:00', '15:00']], 4: [['09:00', '15:00']], 5: [['09:00', '15:00']], 6: [['09:00', '15:00']] };
+  assert.deepEqual(usualHours(semana, 'es'), { from: '9:00', to: '15:00', closed: 'martes' });
+  assert.deepEqual(usualHours(semana, 'en', [['09:00', '14:30']]), { from: '9:00', to: '14:30', closed: 'Tuesday' });
+  assert.equal(usualHours({ ...semana, 6: [['10:00', '15:00']] }, 'es'), null);
+  assert.equal(usualHours({ ...semana, 1: [] }, 'es'), null);
 });

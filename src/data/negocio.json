@@ -58,7 +58,8 @@
   },
   "google": {
     "nota": 4.8,
-    "fuente": "Ficha de Google, 15 de octubre de 2026 (4,8 con 909 reseñas). Se muestra solo la nota, con enlace a la ficha: el total cambia cada semana.",
+    "resenasMinimo": 900,
+    "fuente": "Ficha de Google, 15 de octubre de 2026 (4,8 con 909 reseñas). Se muestra la nota y «más de 900 reseñas», redondeado hacia abajo para que no se quede viejo; comprobarlo el día que se envíe la web.",
     "VERIFICAR": "Revisar la nota de vez en cuando. Para mostrar reseñas: tres reseñas reales con autor, fecha, enlace y permiso del local.",
     "resenas": []
   },

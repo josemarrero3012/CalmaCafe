@@ -40,31 +40,35 @@ export interface UI {
   notices: { legal: Notice; privacy: Notice; cookies: Notice };
   video: { label: string; play: string; playShort: string };
   home: {
-    title: string; description: string; place: string; h1: string; intro: string; seeMenu: string; pancakesAlt: string; teamNote: string;
-    strip: [string, string, string, string]; doorsTitle: string;
-    doors: { carta: [string, string, string]; calma: [string, string, string]; visit: [string, string, string] };
+    title: string; description: string; place: string; h1: string; intro: string; seeMenu: string; pancakesAlt: string;
+    strip: [string, string, string, string];
+    /** «El local»: título, entradilla corta y enlace a la historia (las fotos y su texto salen de calma) */
+    local: { eyebrow: string; title: string; text: string; link: string };
     drinksEyebrow: string; drinksTitle: string; drinksIntro: string; coffee: string; matcha: string; chooseDrink: string; drinksHint: string; allDrinks: string;
-    wallEyebrow: string; wallNote: string; boardTitle: string; boardSub: string; boardLink: string;
-    tables: string; callNumber: string; reviews: string; rating: (nota: string) => string;
+    wallEyebrow: string; wallNote: string; boardTitle: string; boardSub: string; boardLink: string; boardNote: string;
+    tables: string; callNumber: string; reviews: string; rating: (nota: string) => string; reviewsCount: (n: number) => string;
   };
   carta: {
     title: string; description: string; eyebrow: (n: number) => string; h1: string; aside: string; tabs: string; sections: (menu: string) => string;
     intros: Record<string, string>; groupIntros: Record<string, string>; allTab: string; seeIn: (grupo: string) => string; dish: (n: number) => string; drink: (n: number) => string; photo: string;
     vegan: string; vegetarian: string; choose: string; add: string; allergens: string;
     allergyTitle: string; allergyText: string; checked: (date: string) => string; source: string; translated?: string;
+    /** Cierre de la página: título y horario de cocina (desde, hasta, día de cierre) */
+    close: { title: string; text: (from: string, to: string, closed: string) => string };
   };
   calma: {
     title: string; description: string; h1: string; intro: string; chalkEyebrow: string; otherBoard: string;
     detailsEyebrow: string; detailsTitle: string; detailsText: string; captions: string[]; instagram: string;
     /** Huecos de foto: etiqueta y nota para el local («aquí podríamos poner…») */
-    slotLabel: string; ownersNote: string;
+    /** Cierre de la página: título y horario (desde, hasta, día de cierre) */
+    close: { title: string; text: (from: string, to: string, closed: string) => string };
     gallery: { label: string; hint: string; previous: string; next: string; item: string };
     story: {
       eyebrow: string; title: string; lead: string;
       craft: { label: string; title: string; text: string; caption: string };
       search: { label: string; title: string; text: string; caption: string };
       name: { label: string; title: string; text: string; caption: string; replay: string };
-      opening: { label: string; title: string; text: string; caption: string; note: string };
+      opening: { label: string; title: string; text: string; caption: string };
       today: { label: string; title: string; text: string; caption: string };
     };
   };
@@ -94,20 +98,15 @@ export const ui: Record<Lang, UI> = {
       title: 'Calma Café · Brunch y café en Maspalomas',
       description: 'Brunch, café Lavazza, matcha y opciones veganas en la avenida de Tirajana, Maspalomas. Carta completa con precios y alérgenos.',
       place: 'Maspalomas, Gran Canaria', h1: 'Brunch y café <br />en <em>Maspalomas.</em>',
-      intro: 'Granola, pancakes, tostas o el Calma Especial, que servimos en triassant (una mezcla de croissant y pan de cereales). Para beber, café Lavazza, matcha o ube latte. Estamos en la avenida de Tirajana y hay mesas dentro y fuera.',
-      seeMenu: 'Ver la carta', pancakesAlt: 'Pancakes de Calma Café con distintos acompañamientos', teamNote: 'Aquí podríamos poner una foto del equipo enseñando el local.',
+      intro: 'Brunch dulce o salado, café Lavazza y matcha en un local lleno de plantas, en la avenida de Tirajana.',
+      seeMenu: 'Ver la carta', pancakesAlt: 'Pancakes de Calma Café con distintos acompañamientos',
       strip: ['Brunch', 'Café Lavazza', 'Matcha y ube', 'Vegano y vegetariano'],
-      doorsTitle: 'La carta, el local y <em>cómo llegar.</em>',
-      doors: {
-        carta: ['La carta', '{n} platos y bebidas, con precios y alérgenos. También hay carta vegetariana y vegana.', 'Ver la carta'],
-        calma: ['Calma', 'Quiénes somos y cómo es el local por dentro.', 'Conócenos'],
-        visit: ['Visítanos', 'Estamos en {calle}, Maspalomas. Aquí tienes el horario, el teléfono y el mapa.', 'Cómo llegar'],
-      },
+      local: { eyebrow: 'El local', title: 'Un local lleno de <em>plantas.</em>', text: 'Guro lo abrió en 2019, después de unos quince años imaginándolo.', link: 'Conoce nuestra historia' },
       drinksEyebrow: 'Para beber', drinksTitle: '¿Café o <em>matcha?</em>',
       drinksIntro: 'Café Lavazza, matcha japonés y ube. Si no conoces el ube, es una batata morada de Filipinas que recuerda a la vainilla.',
       coffee: 'Café', matcha: 'Matcha y ube', chooseDrink: 'Elige tu bebida', drinksHint: 'Elige el tuyo', allDrinks: 'Todas las bebidas',
-      wallEyebrow: 'La pared del local', wallNote: 'Lo tenemos escrito a tiza en la pared negra del local, junto a la mesa redonda.', boardTitle: 'Hoy en la pizarra', boardSub: 'platos de la carta de hoy', boardLink: 'Ver la carta entera',
-      tables: 'Mesas dentro y fuera.', callNumber: 'Llamar al {tel}', reviews: 'Reseñas en Google', rating: nota => `${nota} en Google`,
+      wallEyebrow: 'Escrito en nuestra pared', wallNote: 'Lo verás a tiza junto a la mesa redonda.', boardTitle: 'Si es tu primera vez', boardSub: 'cuatro platos para empezar', boardLink: 'Ver la carta entera', boardNote: 'en triassant, mezcla de croissant y pan de cereales',
+      tables: 'Mesas dentro y fuera.', callNumber: 'Llamar al {tel}', reviews: 'Reseñas en Google', rating: nota => `${nota} en Google`, reviewsCount: n => `más de ${n} reseñas`,
     },
     carta: {
       title: 'La carta · Calma Café, Maspalomas',
@@ -126,6 +125,7 @@ export const ui: Record<Lang, UI> = {
       allergyTitle: '¿Alergias o intolerancias?',
       allergyText: 'Avísanos antes de pedir. Los alérgenos salen de la carta digital del local, y aquí hemos añadido los que se deducen de los ingredientes de cada plato. Si un plato no muestra ninguno, pregúntanos.',
       checked: date => `Carta consultada el ${date}`, source: 'Carta digital de Calma',
+      close: { title: '¿Ya sabes qué <em>vas a pedir?</em>', text: (from, to, closed) => `Cocina de ${from} a ${to}, todos los días menos el ${closed}.` },
     },
     calma: {
       title: 'Café de brunch con plantas en Maspalomas · Calma Café',
@@ -137,7 +137,7 @@ export const ui: Record<Lang, UI> = {
       detailsText: 'Cojines mostaza, un tapiz hecho de tazas, bombillas sobre la barra de madera <br />y un ventanal que da a las palmeras.',
       captions: ['El ventanal', 'Los cojines', 'El tablero de notas', 'Las láminas de la pared', 'El tapiz de tazas', 'Los cuadros', 'Las bombillas', 'Una mesa junto al tablero'],
       instagram: 'Más fotos del local y de la carta en Instagram.',
-      slotLabel: 'Foto pendiente', ownersNote: 'Aquí podríamos poner una foto de la pareja en la barra.',
+      close: { title: 'Ven a <em>conocernos.</em>', text: (from, to, closed) => `Abrimos de ${from} a ${to}, todos los días menos el ${closed}.` },
       gallery: { label: 'Fotos del local', hint: 'Arrastra el hilo o usa las flechas.', previous: 'Foto anterior', next: 'Foto siguiente', item: 'Foto {n} de {total}' },
       story: {
         eyebrow: 'Nuestra historia', title: 'Quince años <em>pensándolo.</em>',
@@ -145,7 +145,7 @@ export const ui: Record<Lang, UI> = {
         craft: { label: 'Noruega', title: 'Entre cafeterías y cocinas', text: 'Antes de instalarse en Gran Canaria, Guro trabajó en cafeterías y cocinas en Noruega. El sueño de tener un café propio venía de lejos.', caption: 'Años de cocina en cada plato.' },
         search: { label: 'Gran Canaria', title: 'Años buscando el local', text: 'Ya en Gran Canaria, encontrar el local adecuado llevó años. Al final apareció en la avenida de Tirajana, 3, en Maspalomas.', caption: 'Y al final, este ventanal.' },
         name: { label: 'El nombre', title: 'Una C delante de «Alma»', text: 'Guro quería un nombre con alma, así que al principio el café iba a llamarse Alma Café. Mientras se diseñaba el logotipo apareció «Calma», y gustó más. Con una letra de más, el nombre decía justo lo que Guro buscaba: calma.', caption: 'Casi se llamó Alma Café.', replay: 'Ver la animación otra vez' },
-        opening: { label: '2019', title: 'Abrimos las puertas', text: 'El 6 de septiembre de 2019 Calma abrió en Maspalomas.', caption: 'El día que abrimos.', note: 'Una foto de la inauguración quedaría genial junto al sello.' },
+        opening: { label: '2019', title: 'Abrimos las puertas', text: 'El 6 de septiembre de 2019 Calma abrió en Maspalomas.', caption: 'El día que abrimos.' },
         today: { label: 'Hoy', title: 'Brunch, café y plantas', text: 'Desde entonces seguimos en el mismo sitio, con el brunch, el café y los dulces caseros de siempre. Más abajo puedes ver cómo es por dentro, foto a foto.', caption: 'La barra, hoy.' },
       },
     },
@@ -185,20 +185,15 @@ export const ui: Record<Lang, UI> = {
       title: 'Calma Café · Brunch and coffee in Maspalomas',
       description: 'Brunch, Lavazza coffee, matcha and vegan options on Avenida de Tirajana, Maspalomas. Full menu with prices and allergens.',
       place: 'Maspalomas, Gran Canaria', h1: 'Brunch and coffee <br />in <em>Maspalomas.</em>',
-      intro: 'Granola, pancakes, toasts or the Calma Special, which we serve on a triassant (a cross between a croissant and multigrain bread). To drink, Lavazza coffee, matcha or an ube latte. We’re on Avenida de Tirajana, with tables inside and out.',
-      seeMenu: 'See the menu', pancakesAlt: 'Calma Café pancakes with different toppings', teamNote: 'A photo of the team showing you around could go here.',
+      intro: 'Sweet or savoury brunch, Lavazza coffee and matcha in a café full of plants on Avenida de Tirajana.',
+      seeMenu: 'See the menu', pancakesAlt: 'Calma Café pancakes with different toppings',
       strip: ['Brunch', 'Lavazza coffee', 'Matcha and ube', 'Vegan and vegetarian'],
-      doorsTitle: 'The menu, the café and <em>how to find us.</em>',
-      doors: {
-        carta: ['The menu', '{n} dishes and drinks, with prices and allergens. There’s a vegetarian and a vegan menu too.', 'See the menu'],
-        calma: ['About', 'Who we are and what the café looks like inside.', 'Meet us'],
-        visit: ['Visit us', 'We’re at {calle}, Maspalomas. Here are our opening hours, phone number and a map.', 'Directions'],
-      },
+      local: { eyebrow: 'The café', title: 'A café full of <em>plants.</em>', text: 'Guro opened it in 2019, after some fifteen years of imagining it.', link: 'Read our story' },
       drinksEyebrow: 'To drink', drinksTitle: 'Coffee or <em>matcha?</em>',
       drinksIntro: 'Lavazza coffee, Japanese matcha and ube. If you haven’t tried ube, it’s a purple sweet potato from the Philippines that tastes a little like vanilla.',
       coffee: 'Coffee', matcha: 'Matcha and ube', chooseDrink: 'Choose your drink', drinksHint: 'Pick yours', allDrinks: 'All drinks',
-      wallEyebrow: 'Our café wall', wallNote: 'It’s chalked on the black wall inside the café, right by the round table.', boardTitle: 'On the board today', boardSub: 'dishes from today’s menu', boardLink: 'See the whole menu',
-      tables: 'Tables inside and out.', callNumber: 'Call {tel}', reviews: 'Reviews on Google', rating: nota => `${nota} on Google`,
+      wallEyebrow: 'Written on our wall', wallNote: 'You’ll find it in chalk by the round table.', boardTitle: 'First time here?', boardSub: 'four dishes to start with', boardLink: 'See the whole menu', boardNote: 'on a triassant, a cross between croissant and multigrain bread',
+      tables: 'Tables inside and out.', callNumber: 'Call {tel}', reviews: 'Reviews on Google', rating: nota => `${nota} on Google`, reviewsCount: n => `${n}+ reviews`,
     },
     carta: {
       title: 'Menu · Calma Café, Maspalomas',
@@ -217,6 +212,7 @@ export const ui: Record<Lang, UI> = {
       allergyTitle: 'Allergies or intolerances?',
       allergyText: 'Let us know before you order. The allergens come from the café’s digital menu, and we’ve added the ones that follow from each dish’s ingredients. If a dish shows none, please ask us.',
       checked: date => `Menu checked on ${date}`, source: 'Calma’s digital menu',
+      close: { title: 'Know what <em>you’re having?</em>', text: (from, to, closed) => `Kitchen open ${from}–${to}, every day except ${closed}.` },
       translated: 'Translated from the café’s Spanish menu. Prices and allergens are the same as in the original.',
     },
     calma: {
@@ -229,7 +225,7 @@ export const ui: Record<Lang, UI> = {
       detailsText: 'Mustard cushions, a wall hanging made of cups, light bulbs over the wooden counter <br />and a big window looking out onto palm trees.',
       captions: ['The window', 'The cushions', 'The noticeboard', 'The prints on the wall', 'The cup wall hanging', 'The paintings', 'The light bulbs', 'A table by the noticeboard'],
       instagram: 'More photos of the café and the food on Instagram.',
-      slotLabel: 'Photo to come', ownersNote: 'A photo of the couple at the counter could go here.',
+      close: { title: 'Come and <em>say hello.</em>', text: (from, to, closed) => `Open ${from}–${to}, every day except ${closed}.` },
       gallery: { label: 'Photos of the café', hint: 'Drag the string or use the arrows.', previous: 'Previous photo', next: 'Next photo', item: 'Photo {n} of {total}' },
       story: {
         eyebrow: 'Our story', title: 'Fifteen years <em>in the making.</em>',
@@ -237,7 +233,7 @@ export const ui: Record<Lang, UI> = {
         craft: { label: 'Norway', title: 'Cafés and kitchens', text: 'Before settling in Gran Canaria, Guro worked in cafés and kitchens in Norway. The dream of opening a café went back a long way.', caption: 'Years of kitchen work on every plate.' },
         search: { label: 'Gran Canaria', title: 'Years looking for the right place', text: 'Once in Gran Canaria, finding the right space took years. In the end it turned up at Avenida de Tirajana, 3, in Maspalomas.', caption: 'And in the end, this window.' },
         name: { label: 'The name', title: 'A C in front of “Alma”', text: 'Guro wanted a name with soul (alma means soul in Spanish), so at first the café was going to be called Alma Café. While the logo was being designed, “Calma” came up, and it won. One extra letter, and the name said exactly what Guro was after: calm.', caption: 'It was almost called Alma Café.', replay: 'Play the animation again' },
-        opening: { label: '2019', title: 'Opening day', text: 'On 6 September 2019 Calma opened its doors in Maspalomas.', caption: 'The day we opened.', note: 'A photo from opening day would look great next to the stamp.' },
+        opening: { label: '2019', title: 'Opening day', text: 'On 6 September 2019 Calma opened its doors in Maspalomas.', caption: 'The day we opened.' },
         today: { label: 'Today', title: 'Brunch, coffee and plants', text: 'We’ve been in the same spot ever since, serving brunch, coffee and homemade cakes. Scroll down to see what it looks like inside, photo by photo.', caption: 'The counter today.' },
       },
     },
@@ -277,20 +273,15 @@ export const ui: Record<Lang, UI> = {
       title: 'Calma Café · Brunch und Kaffee in Maspalomas',
       description: 'Brunch, Lavazza-Kaffee, Matcha und vegane Gerichte in der Avenida de Tirajana, Maspalomas. Komplette Speisekarte mit Preisen und Allergenen.',
       place: 'Maspalomas, Gran Canaria', h1: 'Brunch und Kaffee <br />in <em>Maspalomas.</em>',
-      intro: 'Granola, Pancakes, Toasts oder das Calma Special, das wir im Triassant servieren (einer Mischung aus Croissant und Mehrkornbrot). Dazu Lavazza-Kaffee, Matcha oder Ube Latte. Du findest uns in der Avenida de Tirajana, mit Tischen drinnen und draußen.',
-      seeMenu: 'Zur Speisekarte', pancakesAlt: 'Pancakes von Calma Café mit verschiedenen Toppings', teamNote: 'Hier passt ein Foto vom Team im Café.',
+      intro: 'Süßer oder herzhafter Brunch, Lavazza-Kaffee und Matcha in einem Café voller Pflanzen an der Avenida de Tirajana.',
+      seeMenu: 'Zur Speisekarte', pancakesAlt: 'Pancakes von Calma Café mit verschiedenen Toppings',
       strip: ['Brunch', 'Lavazza-Kaffee', 'Matcha und Ube', 'Vegan und vegetarisch'],
-      doorsTitle: 'Speisekarte, Café und <em>Anfahrt.</em>',
-      doors: {
-        carta: ['Speisekarte', '{n} Gerichte und Getränke mit Preisen und Allergenen. Es gibt auch eine vegetarische und eine vegane Karte.', 'Zur Speisekarte'],
-        calma: ['Über uns', 'Wer wir sind und wie es bei uns drinnen aussieht.', 'Lern uns kennen'],
-        visit: ['Anfahrt', '{calle}, Maspalomas. Hier findest du Öffnungszeiten, Telefon und Karte.', 'Route'],
-      },
+      local: { eyebrow: 'Das Café', title: 'Ein Café voller <em>Pflanzen.</em>', text: 'Eröffnet hat Guro das Café 2019, nach rund fünfzehn Jahren voller Pläne.', link: 'Unsere Geschichte' },
       drinksEyebrow: 'Zum Trinken', drinksTitle: 'Kaffee oder <em>Matcha?</em>',
       drinksIntro: 'Lavazza-Kaffee, japanischer Matcha und Ube. Falls du Ube nicht kennst: eine violette Süßkartoffel von den Philippinen, die ein bisschen nach Vanille schmeckt.',
       coffee: 'Kaffee', matcha: 'Matcha und Ube', chooseDrink: 'Wähle dein Getränk', drinksHint: 'Wähl deins', allDrinks: 'Alle Getränke',
-      wallEyebrow: 'Unsere Wand im Café', wallNote: 'So steht es mit Kreide an der schwarzen Wand im Café, gleich beim runden Tisch.', boardTitle: 'Heute an der Tafel', boardSub: 'Gerichte von der heutigen Karte', boardLink: 'Zur ganzen Karte',
-      tables: 'Tische drinnen und draußen.', callNumber: '{tel} anrufen', reviews: 'Bewertungen auf Google', rating: nota => `${nota} auf Google`,
+      wallEyebrow: 'An unserer Wand', wallNote: 'Du findest es mit Kreide geschrieben beim runden Tisch.', boardTitle: 'Zum ersten Mal hier?', boardSub: 'vier Gerichte für den Anfang', boardLink: 'Zur ganzen Karte', boardNote: 'im Triassant, aus Croissant und Mehrkornbrot',
+      tables: 'Tische drinnen und draußen.', callNumber: '{tel} anrufen', reviews: 'Bewertungen auf Google', rating: nota => `${nota} auf Google`, reviewsCount: n => `über ${n} Bewertungen`,
     },
     carta: {
       title: 'Speisekarte · Calma Café, Maspalomas',
@@ -309,6 +300,7 @@ export const ui: Record<Lang, UI> = {
       allergyTitle: 'Allergien oder Unverträglichkeiten?',
       allergyText: 'Sag uns bitte vor der Bestellung Bescheid. Die Allergene stammen aus der digitalen Speisekarte des Cafés; dazu haben wir die ergänzt, die sich aus den Zutaten der Gerichte ergeben. Steht bei einem Gericht nichts, frag uns bitte.',
       checked: date => `Speisekarte abgerufen am ${date}`, source: 'Digitale Speisekarte von Calma',
+      close: { title: 'Schon <em>ausgesucht?</em>', text: (from, to, closed) => `Küche von ${from} bis ${to} Uhr, täglich außer ${closed}.` },
       translated: 'Übersetzt aus der spanischen Speisekarte des Cafés. Preise und Allergene entsprechen dem Original.',
     },
     calma: {
@@ -321,7 +313,7 @@ export const ui: Record<Lang, UI> = {
       detailsText: 'Senfgelbe Kissen, ein Wandteppich aus Tassen, Glühbirnen über der Holztheke <br />und ein großes Fenster mit Blick auf Palmen.',
       captions: ['Das Fenster', 'Die Kissen', 'Die Pinnwand', 'Die Drucke an der Wand', 'Der Tassen-Wandteppich', 'Die Bilder', 'Die Glühbirnen', 'Ein Tisch an der Pinnwand'],
       instagram: 'Mehr Fotos vom Café und vom Essen auf Instagram.',
-      slotLabel: 'Foto folgt', ownersNote: 'Hier passt ein Foto des Paares an der Theke.',
+      close: { title: 'Komm <em>vorbei.</em>', text: (from, to, closed) => `Geöffnet von ${from} bis ${to} Uhr, täglich außer ${closed}.` },
       gallery: { label: 'Fotos vom Café', hint: 'Zieh an der Schnur oder nutze die Pfeile.', previous: 'Vorheriges Foto', next: 'Nächstes Foto', item: 'Foto {n} von {total}' },
       story: {
         eyebrow: 'Unsere Geschichte', title: 'Fünfzehn Jahre <em>lang geträumt.</em>',
@@ -329,7 +321,7 @@ export const ui: Record<Lang, UI> = {
         craft: { label: 'Norwegen', title: 'Zwischen Cafés und Küchen', text: 'Vor dem Umzug nach Gran Canaria hat Guro in Norwegen in Cafés und Küchen gearbeitet. Der Traum vom eigenen Café war schon lange da.', caption: 'Jahre in der Küche, auf jedem Teller.' },
         search: { label: 'Gran Canaria', title: 'Jahrelang auf der Suche', text: 'Auf Gran Canaria dauerte es Jahre, den passenden Raum zu finden. Am Ende war es die Avenida de Tirajana 3 in Maspalomas.', caption: 'Und am Ende: dieses Fenster.' },
         name: { label: 'Der Name', title: 'Ein C vor „Alma“', text: 'Guro wollte einen Namen mit Seele (auf Spanisch „alma“), deshalb sollte das Café zuerst Alma Café heißen. Bei der Arbeit am Logo kam „Calma“ auf, und das gefiel besser. Ein Buchstabe mehr, und der Name sagte genau, worum es Guro ging: Ruhe („calma“).', caption: 'Fast hätte es Alma Café geheißen.', replay: 'Animation noch einmal abspielen' },
-        opening: { label: '2019', title: 'Die Eröffnung', text: 'Am 6. September 2019 hat Calma in Maspalomas eröffnet.', caption: 'Der Tag, an dem wir eröffnet haben.', note: 'Ein Foto vom Eröffnungstag würde neben dem Stempel toll aussehen.' },
+        opening: { label: '2019', title: 'Die Eröffnung', text: 'Am 6. September 2019 hat Calma in Maspalomas eröffnet.', caption: 'Der Tag, an dem wir eröffnet haben.' },
         today: { label: 'Heute', title: 'Brunch, Kaffee und Pflanzen', text: 'Seitdem sind wir am selben Ort, mit Brunch, Kaffee und hausgemachtem Kuchen. Weiter unten siehst du Foto für Foto, wie es bei uns drinnen aussieht.', caption: 'Die Theke heute.' },
       },
     },
@@ -369,20 +361,15 @@ export const ui: Record<Lang, UI> = {
       title: 'Calma Café · Brunch en koffie in Maspalomas',
       description: 'Brunch, Lavazza-koffie, matcha en veganistische gerechten aan de Avenida de Tirajana, Maspalomas. Volledige menukaart met prijzen en allergenen.',
       place: 'Maspalomas, Gran Canaria', h1: 'Brunch en koffie <br />in <em>Maspalomas.</em>',
-      intro: 'Granola, pancakes, toast of de Calma Special, die we op een triassant serveren (een mix van croissant en meergranenbrood). Om te drinken: Lavazza-koffie, matcha of ube latte. Je vindt ons aan de Avenida de Tirajana, met tafels binnen en buiten.',
-      seeMenu: 'Bekijk de menukaart', pancakesAlt: 'Pancakes van Calma Café met verschillende toppings', teamNote: 'Hier zou een foto van het team dat het café laat zien mooi staan.',
+      intro: 'Zoete of hartige brunch, Lavazza-koffie en matcha in een café vol planten aan de Avenida de Tirajana.',
+      seeMenu: 'Bekijk de menukaart', pancakesAlt: 'Pancakes van Calma Café met verschillende toppings',
       strip: ['Brunch', 'Lavazza-koffie', 'Matcha en ube', 'Veganistisch en vegetarisch'],
-      doorsTitle: 'De menukaart, het café en <em>de route.</em>',
-      doors: {
-        carta: ['Menukaart', '{n} gerechten en drankjes met prijzen en allergenen. Er is ook een vegetarische en een veganistische kaart.', 'Bekijk de menukaart'],
-        calma: ['Over ons', 'Wie we zijn en hoe het café er vanbinnen uitziet.', 'Leer ons kennen'],
-        visit: ['Bezoek ons', '{calle}, Maspalomas. Hier vind je onze openingstijden, ons telefoonnummer en de kaart.', 'Route'],
-      },
+      local: { eyebrow: 'Het café', title: 'Een café vol <em>planten.</em>', text: 'Guro opende het in 2019, na zo’n vijftien jaar erover te dromen.', link: 'Ons verhaal' },
       drinksEyebrow: 'Om te drinken', drinksTitle: 'Koffie of <em>matcha?</em>',
       drinksIntro: 'Lavazza-koffie, Japanse matcha en ube. Ken je ube nog niet? Het is een paarse zoete aardappel uit de Filipijnen die een beetje naar vanille smaakt.',
       coffee: 'Koffie', matcha: 'Matcha en ube', chooseDrink: 'Kies je drankje', drinksHint: 'Kies de jouwe', allDrinks: 'Alle drankjes',
-      wallEyebrow: 'Onze muur in het café', wallNote: 'Zo staat het met krijt op de zwarte muur in het café, vlak bij de ronde tafel.', boardTitle: 'Vandaag op het bord', boardSub: 'gerechten van de kaart van vandaag', boardLink: 'Bekijk de hele kaart',
-      tables: 'Tafels binnen en buiten.', callNumber: 'Bel {tel}', reviews: 'Reviews op Google', rating: nota => `${nota} op Google`,
+      wallEyebrow: 'Op onze muur', wallNote: 'Je vindt het met krijt geschreven bij de ronde tafel.', boardTitle: 'Voor het eerst hier?', boardSub: 'vier gerechten om mee te beginnen', boardLink: 'Bekijk de hele kaart', boardNote: 'op een triassant, een mix van croissant en meergranenbrood',
+      tables: 'Tafels binnen en buiten.', callNumber: 'Bel {tel}', reviews: 'Reviews op Google', rating: nota => `${nota} op Google`, reviewsCount: n => `meer dan ${n} reviews`,
     },
     carta: {
       title: 'Menukaart · Calma Café, Maspalomas',
@@ -401,6 +388,7 @@ export const ui: Record<Lang, UI> = {
       allergyTitle: 'Allergieën of intoleranties?',
       allergyText: 'Laat het ons weten voordat je bestelt. De allergenen komen van de digitale menukaart van het café, aangevuld met wat uit de ingrediënten van elk gerecht volgt. Staat er bij een gerecht niets, vraag het ons dan.',
       checked: date => `Menukaart geraadpleegd op ${date}`, source: 'Digitale menukaart van Calma',
+      close: { title: 'Weet je al <em>wat je neemt?</em>', text: (from, to, closed) => `Keuken open van ${from} tot ${to}, elke dag behalve op ${closed}.` },
       translated: 'Vertaald uit de Spaanse menukaart van het café. Prijzen en allergenen zijn gelijk aan het origineel.',
     },
     calma: {
@@ -413,7 +401,7 @@ export const ui: Record<Lang, UI> = {
       detailsText: 'Mosterdgele kussens, een wandkleed van kopjes, lampjes boven de houten bar <br />en een groot raam met uitzicht op palmbomen.',
       captions: ['Het raam', 'De kussens', 'Het prikbord', 'De prenten aan de muur', 'Het wandkleed van kopjes', 'De schilderijen', 'De lampjes', 'Een tafeltje bij het prikbord'],
       instagram: 'Meer foto’s van het café en het eten op Instagram.',
-      slotLabel: 'Foto volgt', ownersNote: 'Hier zou een foto van het stel aan de bar mooi staan.',
+      close: { title: 'Kom <em>langs.</em>', text: (from, to, closed) => `Open van ${from} tot ${to}, elke dag behalve op ${closed}.` },
       gallery: { label: 'Foto’s van het café', hint: 'Sleep aan het touw of gebruik de pijlen.', previous: 'Vorige foto', next: 'Volgende foto', item: 'Foto {n} van {total}' },
       story: {
         eyebrow: 'Ons verhaal', title: 'Vijftien jaar <em>over nagedacht.</em>',
@@ -421,7 +409,7 @@ export const ui: Record<Lang, UI> = {
         craft: { label: 'Noorwegen', title: 'Tussen cafés en keukens', text: 'Voor de verhuizing naar Gran Canaria werkte Guro in Noorwegen in cafés en keukens. De droom van een eigen café bestond al lang.', caption: 'Jaren keukenervaring op elk bord.' },
         search: { label: 'Gran Canaria', title: 'Jaren zoeken naar de juiste plek', text: 'Op Gran Canaria duurde het jaren om de juiste ruimte te vinden. Uiteindelijk werd het de Avenida de Tirajana 3 in Maspalomas.', caption: 'En uiteindelijk: dit raam.' },
         name: { label: 'De naam', title: 'Een C voor ‘Alma’', text: 'Guro wilde een naam met ziel (‘alma’ in het Spaans), dus eerst zou het café Alma Café heten. Tijdens het werk aan het logo kwam ‘Calma’ voorbij, en dat beviel beter. Eén letter erbij, en de naam zei precies waar het Guro om ging: rust (‘calma’).', caption: 'Het heette bijna Alma Café.', replay: 'Animatie opnieuw afspelen' },
-        opening: { label: '2019', title: 'De opening', text: 'Op 6 september 2019 ging Calma open in Maspalomas.', caption: 'De dag dat we opengingen.', note: 'Een foto van de openingsdag zou mooi staan naast het stempel.' },
+        opening: { label: '2019', title: 'De opening', text: 'Op 6 september 2019 ging Calma open in Maspalomas.', caption: 'De dag dat we opengingen.' },
         today: { label: 'Vandaag', title: 'Brunch, koffie en planten', text: 'Sindsdien zitten we op dezelfde plek, met brunch, koffie en huisgemaakt gebak. Verderop zie je foto voor foto hoe het er binnen uitziet.', caption: 'De bar nu.' },
       },
     },

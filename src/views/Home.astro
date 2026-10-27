@@ -9,7 +9,6 @@ import Seal from '../components/Seal.astro';
 import Vine from '../components/Vine.astro';
 import Sparkle from '../components/Sparkle.astro';
 import Guirnalda from '../components/Guirnalda.astro';
-import PhotoSlot from '../components/PhotoSlot.astro';
 import negocio from '../data/negocio.json';
 import carta from '../data/carta.json';
 import { locale, phone, price, routes, tc, ui, type Lang } from '../i18n/ui';
@@ -26,11 +25,15 @@ const dulceAlt = dulce.id === huecos.dulce.ids[0] ? h.pancakesAlt : tc(lang, dul
 // Frase de la cabecera sin el salto de línea ni el punto final: «Brunch y café en Maspalomas»
 const tagline = h.h1.replace(/<[^>]+>/g, '').replace(/\.$/, '');
 const fill = (text: string) => text.replace('{n}', String(carta.menus.reduce((n, menu) => n + contar(menu), 0))).replace('{calle}', negocio.direccion.calle).replace('{tel}', phone(lang, negocio.telefono.texto));
-const doors = [
-  { href: url(routes[lang].carta), dish: especial, text: h.doors.carta },
-  { href: url(routes[lang].calma), photo: 'interior-cojines', text: h.doors.calma },
-  { href: url(routes[lang].visitanos), photo: 'interior-ventanal', text: h.doors.visit },
+// «El local»: tres polaroids del local con los pies de foto del carrusel de la página Calma (ventanal, cojines, tapiz)
+const localPhotos = [
+  { name: 'interior-ventanal', caption: t.calma.captions[0] },
+  { name: 'interior-cojines', caption: t.calma.captions[1] },
+  { name: 'interior-tapiz', caption: t.calma.captions[4] },
 ] as const;
+const rating = negocio.google.nota ? new Intl.NumberFormat(locale[lang].intl, { minimumFractionDigits: 1 }).format(negocio.google.nota) : null;
+// Total de reseñas redondeado hacia abajo («más de 900»): sigue siendo cierto aunque la ficha sume más
+const reviews = negocio.google.resenasMinimo ? h.reviewsCount(negocio.google.resenasMinimo) : null;
 ---
 <Layout lang={lang} current="inicio" title={h.title} description={h.description}>
   {/* Hero editorial sobre papel: el texto a la izquierda y el local dentro de un arco, como las fotos de la carta */}
@@ -39,11 +42,9 @@ const doors = [
       <div class="hero-copy">
         {/* El nombre del café es el titular; «Brunch y café en Maspalomas» va encima, dentro del mismo h1 para el SEO */}
         <h1 id="hero-title"><span class="hero-tagline eyebrow enter"><span class="little-sun" aria-hidden="true"><Icon name="sun" /></span> {tagline}</span><span class="hero-name enter enter-2"><img class="hero-logo" src={url('/media/logo-dark.svg')} alt="Calma Café" width="950" height="540" /><Sparkle class="hero-sparkle" /><Sparkle class="hero-sparkle hero-sparkle--small" /></span></h1>
-        {/* Segunda imagen del hero, a la derecha del logo: hueco para una foto del equipo enseñando el local, con nota para el cliente */}
-        <PhotoSlot label={t.calma.slotLabel} note={h.teamNote} class="hero-local enter enter-2" />
         <p class="hero-intro enter enter-3">{h.intro}</p>
-        <div class="hero-buttons enter enter-3"><a class="button button-green" href={url(routes[lang].carta)}>{h.seeMenu} <span aria-hidden="true"><Icon name="arrow-right" /></span></a><button class="video-open" type="button" aria-haspopup="dialog" aria-controls="video-dialog" aria-label={t.video.play}><span aria-hidden="true">▶︎</span> {t.video.playShort}</button><a class="text-link hero-directions" href={negocio.mapas.url} target="_blank" rel="noopener noreferrer">{t.directions} <span aria-hidden="true"><Icon name="arrow-up-right" /></span></a></div>
-        {negocio.google.nota && <a class="hero-rating enter enter-3" href={negocio.mapas.ficha} target="_blank" rel="noopener noreferrer"><span class="hero-stars" aria-hidden="true">★★★★★</span> {h.rating(new Intl.NumberFormat(locale[lang].intl, { minimumFractionDigits: 1 }).format(negocio.google.nota))} <span aria-hidden="true"><Icon name="arrow-up-right" /></span></a>}
+        <div class="hero-buttons enter enter-3"><a class="button button-green" href={url(routes[lang].carta)}>{h.seeMenu} <span aria-hidden="true"><Icon name="arrow-right" /></span></a><button class="video-open" type="button" aria-haspopup="dialog" aria-controls="video-dialog" aria-label={t.video.play}><span aria-hidden="true">▶︎</span> {t.video.playShort} · 10 s</button></div>
+        {rating && <a class="hero-rating enter enter-3" href={negocio.mapas.ficha} target="_blank" rel="noopener noreferrer"><span class="hero-stars" aria-hidden="true">★★★★★</span> {h.rating(rating)}{reviews && <span class="hero-reviews">· {reviews}</span>} <span class="hero-rating-arrow" aria-hidden="true"><Icon name="arrow-up-right" /></span></a>}
       </div>
       <div class="hero-visual enter enter-visual">
         <div class="hero-arch"><Photo name="interior-barra" lang={lang} sizes="(max-width: 699px) 80vw, 460px" eager priority /></div>
@@ -85,20 +86,24 @@ const doors = [
       <div class="wall-board" data-reveal>
         <h3 class="tiza">{h.boardTitle}</h3>
         <p class="wall-board-sub tiza">{h.boardSub}</p>
-        <ul class="tiza">{tiza.map(plato => <li><span>{tc(lang, plato.nombre)}</span><i aria-hidden="true"></i><b>{price(lang, plato.precio)}</b></li>)}</ul>
+        <ul class="tiza">{tiza.map(plato => <li><span>{tc(lang, plato.nombre)}{plato.id === huecos.salado.ids[0] && <small>{h.boardNote}</small>}</span><i aria-hidden="true"></i><b>{price(lang, plato.precio)}</b></li>)}</ul>
         <a class="wall-link tiza" href={url(routes[lang].carta)}>{h.boardLink} <span aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
 
-  <section id="descubre" class="doors section" aria-labelledby="doors-title">
-    <div class="wrap">
-      <div class="section-heading" data-reveal><h2 id="doors-title" set:html={h.doorsTitle} /></div>
-      <div class="doors-grid">
-        {doors.map((door, i) => <a class="door" href={door.href} data-reveal>
-          <div class="door-image">{'dish' in door ? <DishPhoto foto={door.dish.foto} alt={tc(lang, door.dish.nombre)} sizes="(max-width: 699px) 88vw, 30vw" /> : <Photo name={door.photo} lang={lang} sizes="(max-width: 699px) 88vw, 30vw" />}<span class="food-number">0{i + 1}</span></div>
-          <h3>{door.text[0]}</h3><p>{fill(door.text[1])}</p><span class="text-link">{door.text[2]} <span aria-hidden="true"><Icon name="arrow-right" /></span></span>
-        </a>)}
+  {/* El local en tres polaroids, con la entrada a la historia y al vídeo */}
+  <section class="local-section section" aria-labelledby="local-title">
+    <div class="wrap local-grid">
+      <div class="local-copy" data-reveal>
+        <p class="eyebrow">{h.local.eyebrow}</p>
+        <h2 id="local-title" set:html={h.local.title} />
+        <p class="local-sub" set:html={t.calma.detailsText} />
+        <p class="local-text">{h.local.text}</p>
+        <div class="local-actions"><a class="button button-green" href={url(routes[lang].calma)}>{h.local.link} <span aria-hidden="true"><Icon name="arrow-right" /></span></a><button class="video-open" type="button" aria-haspopup="dialog" aria-controls="video-dialog" aria-label={t.video.play}><span aria-hidden="true">▶︎</span> {t.video.playShort} · 10 s</button></div>
+      </div>
+      <div class="local-photos" data-reveal>
+        {localPhotos.map(photo => <figure class="local-photo"><Photo name={photo.name} lang={lang} sizes="(max-width: 699px) 58vw, 300px" /><figcaption class="handwritten">{photo.caption}</figcaption></figure>)}
       </div>
     </div>
   </section>

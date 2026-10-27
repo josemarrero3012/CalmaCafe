@@ -6,9 +6,11 @@ import DishPhoto from '../components/DishPhoto.astro';
 import MenuIllustration from '../components/MenuIllustration.astro';
 import GroupDoodle from '../components/GroupDoodle.astro';
 import Lotus from '../components/Lotus.astro';
+import Closing from '../components/Closing.astro';
 import carta from '../data/carta.json';
 import negocio from '../data/negocio.json';
-import { locale, price, routes, tc, ui, type Lang } from '../i18n/ui';
+import { locale, phone, price, routes, tc, ui, type Lang } from '../i18n/ui';
+import { usualHours } from '../lib/hours.mjs';
 import { buildMenuSchema } from '../lib/schema.mjs';
 import { contar, repetidos } from '../lib/carta';
 import '../styles/carta.css';
@@ -22,6 +24,8 @@ const unit = (menuId: string, n: number) => (menuId === 'bebidas' ? c.drink(n) :
 const totalPlatos = carta.menus.reduce((n, menu) => n + total(menu), 0);
 // La carta entera como Menu (schema.org) para buscadores, en el idioma de la página.
 const menuSchema = buildMenuSchema(carta, { name: `${t.nav.carta} · ${negocio.nombre}`, url: Astro.site ? new URL(url(routes[lang].carta), Astro.site).href : undefined, lang: locale[lang].html, tr, skip: (menu: (typeof carta.menus)[number]) => new Set(repetidos(menu).keys()) });
+// «Cocina de 9:00 a 14:30, todos los días menos el martes» para el cierre de la página
+const hours = usualHours(negocio.horario.semana as Record<string, string[][]>, lang, negocio.horario.cocina);
 const consultada = new Intl.DateTimeFormat(locale[lang].intl, { day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(carta.consultada));
 ---
 <Layout lang={lang} current="carta" title={c.title} description={c.description} schemas={[menuSchema]}>
@@ -107,6 +111,11 @@ const consultada = new Intl.DateTimeFormat(locale[lang].intl, { day: 'numeric', 
       <p class="carta-source">{c.translated && <span>{c.translated}</span>}{c.checked(consultada)} · <a class="text-link" href={carta.fuente} target="_blank" rel="noopener noreferrer">{c.source} <span aria-hidden="true"><Icon name="arrow-up-right" /></span></a></p>
     </div>
   </section>
+
+  <Closing id="closing-title" title={c.close.title} text={hours && c.close.text(hours.from, hours.to, hours.closed)}>
+    <a class="button button-green" href={negocio.mapas.url} target="_blank" rel="noopener noreferrer">{t.directions} <span aria-hidden="true"><Icon name="arrow-up-right" /></span></a>
+    <a class="text-link" href={negocio.telefono.enlace}>{phone(lang, negocio.telefono.texto)}</a>
+  </Closing>
 
   <dialog id="dish-dialog" class="dish-dialog" aria-labelledby="dish-dialog-title">
     <button class="icon-button dish-dialog-close" data-close aria-label={t.close}><Icon name="close" /></button>

@@ -1,0 +1,75 @@
+---
+// Página privada para el local: qué es esta web, lo que hace y no se ve, y cómo seguimos.
+// Solo en español, fuera de los buscadores (Layout sin `current` → noindex), del menú y del sitemap.
+// Se llega desde el mensaje con …/?propuesta, que enseña la franja de arriba en todas las páginas.
+import { url } from '../lib/base';
+import Icon from '../components/Icon.astro';
+import Layout from '../layouts/Layout.astro';
+import Lotus from '../components/Lotus.astro';
+import Photo from '../components/Photo.astro';
+import ScriptWord from '../components/ScriptWord.astro';
+import carta from '../data/carta.json';
+import { contar } from '../lib/carta';
+import { routes } from '../i18n/ui';
+
+// Contacto de Aterna Studio para el botón final; cambiar aquí si se prefiere Instagram o WhatsApp.
+const contacto = { texto: 'Escribidnos', url: 'https://aternastudio.com/' };
+// Cifras de la carta de hoy, para que no se queden viejas: platos con alérgenos en la carta digital y platos a los que la web añade los que faltan.
+type Plato = { id: string; alergenos: string[]; alergenosAnadidos?: string[] };
+const platos = [...new Map(carta.menus.flatMap(menu => menu.grupos.flatMap(grupo => grupo.platos as unknown as Plato[])).map(plato => [plato.id, plato])).values()];
+const marcados = platos.filter(plato => plato.alergenos.some(a => !plato.alergenosAnadidos?.includes(a))).length;
+const completados = platos.filter(plato => plato.alergenosAnadidos?.length).length;
+const total = carta.menus.reduce((n, menu) => n + contar(menu), 0);
+
+const cards = [
+  { title: 'La carta se actualiza sola.', text: 'Cada mañana, antes de abrir, la web copia vuestra carta digital. Si cambiáis un precio allí, al día siguiente está aquí.' },
+  { title: 'Para los turistas que os buscan.', text: `Español, inglés, alemán y neerlandés, con la carta traducida plato a plato (${total} platos y bebidas). Preparada para búsquedas como «brunch Gran Canaria» o «café Maspalomas».` },
+  { title: 'Alérgenos en toda la carta.', text: `Vuestra carta digital marca los alérgenos en ${marcados} platos. La web añade los que faltan en ${completados} más, a partir de los ingredientes, y recuerda que os pregunten.` },
+  { title: 'Abierto o cerrado, en directo.', text: 'Con la hora de Canarias: dice si estáis abiertos y, si no, cuándo abrís.' },
+  { title: 'Rápida y sin cookies.', text: 'Sin cookies ni analítica de terceros, así que no hace falta el aviso de cookies. El mapa de Google solo se carga si alguien lo pide.' },
+];
+const next = [
+  'Una sesión de fotos en el local: vosotros en la barra, el equipo, la puerta y el rótulo.',
+  'Repasar los textos juntos y, si queréis, añadir el noruego.',
+  'Vuestro dominio, con la ficha de Google apuntando a la web.',
+];
+const steps = ['Nos decís qué os gusta y qué cambiaríais.', 'Hacemos las fotos y ajustamos los textos.', 'La publicamos con vuestro dominio.'];
+---
+<Layout lang="es" title="Propuesta para Calma Café · Aterna Studio" description="Qué incluye la web que hemos preparado para Calma Café y cómo seguimos.">
+  <section class="manifesto section page-top" aria-labelledby="proposal-title">
+    <div class="wrap manifesto-grid">
+      <div class="manifesto-copy">
+        <p class="eyebrow enter">Propuesta de Aterna Studio para Calma Café</p>
+        <h1 id="proposal-title" class="page-title enter enter-2">Hemos hecho la web de Calma <em>antes de conoceros.</em></h1>
+        <div class="manifesto-bottom enter enter-3"><Lotus /><p>Con vuestra carta real, vuestros precios y vuestra pared negra. Es una propuesta: todo se puede cambiar.</p></div>
+        <p class="proposal-trust enter enter-3">No está en Google. La web lleva una etiqueta que la mantiene fuera de los buscadores hasta que nos digáis que sí, y si no os interesa, la retiramos.</p>
+        <div class="proposal-actions enter enter-4"><a class="button button-green" href={url(routes.es.inicio)}>Ver la web <span aria-hidden="true"><Icon name="arrow-right" /></span></a></div>
+      </div>
+      <div class="manifesto-photo enter enter-visual"><Photo name="interior-barra" lang="es" sizes="(max-width: 699px) 84vw, 400px" eager priority /></div>
+    </div>
+  </section>
+
+  <section class="proposal-section section" aria-labelledby="proposal-hidden-title">
+    <div class="wrap">
+      <div class="section-heading" data-reveal><div><p class="eyebrow">Por dentro</p><h2 id="proposal-hidden-title">Lo que <em>no se ve.</em></h2></div></div>
+      <ul class="proposal-cards" data-reveal>{cards.map((card, i) => <li><span class="story-number">0{i + 1}</span><h3>{card.title}</h3><p>{card.text}</p></li>)}</ul>
+    </div>
+  </section>
+
+  <section class="proposal-next section" aria-labelledby="proposal-next-title">
+    <div class="wrap proposal-next-grid">
+      <div data-reveal>
+        <p class="eyebrow">Lo que falta</p>
+        <h2 id="proposal-next-title">Lo que haríamos <em>con vosotros.</em></h2>
+        <ul class="proposal-list">{next.map(item => <li>{item}</li>)}</ul>
+      </div>
+      <div data-reveal>
+        <p class="eyebrow">Cómo seguimos</p>
+        <ol class="proposal-steps">{steps.map(step => <li>{step}</li>)}</ol>
+        <div class="proposal-actions"><a class="button button-green" href={contacto.url} target="_blank" rel="noopener">{contacto.texto} <span aria-hidden="true"><Icon name="arrow-up-right" /></span></a></div>
+        <p class="proposal-sign">José Manuel · Aterna Studio</p>
+        <ScriptWord text="See you soon" class="script-proposal" />
+      </div>
+    </div>
+  </section>
+</Layout>

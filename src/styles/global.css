@@ -501,7 +501,8 @@ main{overflow-x:clip}
 .hero-photo{position:absolute;z-index:2;left:-26%;bottom:9%;width:58%;padding:10px 10px 14px;background:#FFFDF7;box-shadow:0 22px 40px -12px rgba(30,26,26,.45);rotate:-7deg}
 .hero-photo--salty{left:auto;right:-16%;bottom:-4%;width:42%;rotate:6deg}
 .hero-photo picture{aspect-ratio:4/3.3;overflow:hidden}
-.hero-photo figcaption{margin-top:8px;color:var(--pizarra);font-size:24px;text-align:center;white-space:nowrap;rotate:-2deg}
+.hero-photo figcaption{margin-top:8px;padding-inline:2px;color:var(--pizarra);font-size:24px;text-align:center;white-space:normal;overflow-wrap:anywhere;text-wrap:balance;line-height:1.15}
+.hero-photo-price{display:inline-block;white-space:nowrap}
 .hero-photo--salty figcaption{font-size:19px}
 .video-open{display:inline-flex;align-items:center;gap:10px;min-height:58px;padding:10px 24px;border:1px solid rgba(30,26,26,.45);border-radius:5px;background:transparent;color:var(--pizarra);font-size:15px;font-weight:550;white-space:nowrap;transition:transform .4s var(--ease),border-color .4s var(--ease)}
 .video-open:hover{border-color:var(--pizarra)}

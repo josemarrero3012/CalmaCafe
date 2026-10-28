@@ -2,8 +2,8 @@
 import { url } from '../lib/base';
 // Dibujo a mano de cada sección de la carta, como una pegatina junto a la foto en arco.
 // La sección se reconoce por el final de su id (carta-brunch, vegano-algo-dulce…); si no hay dibujo, no pinta nada.
-// El sándwich, el huevo, el aguacate y las tortitas son ilustraciones aparte (public/media/dibujos), metidas en la misma
-// pegatina; el resto se dibuja aquí en SVG.
+// El sándwich, el huevo, el aguacate, las tortitas, la taza y el vaso son ilustraciones aparte (public/media/dibujos),
+// metidas en la misma pegatina; el globo de los niños se dibuja aquí en SVG.
 interface Props { grupo: string; class?: string; }
 const { grupo, class: className } = Astro.props;
 const tipos = ['brunch-tardio-mas', 'para-los-ninos', 'algo-dulce', 'bebidas-frias', 'bebidas-calientes', 'extras', 'brunch'] as const;
@@ -14,6 +14,8 @@ const dibujos: Partial<Record<typeof tipos[number], { src: string; x: number; y:
   'brunch-tardio-mas': { src: 'sandwich-240.webp', x: 17, y: 27, w: 86, h: 66 },
   'extras': { src: 'aguacate-240.webp', x: 28.5, y: 18, w: 63, h: 84 },
   'algo-dulce': { src: 'tortitas-240.webp', x: 18, y: 27, w: 84, h: 67 },
+  'bebidas-calientes': { src: 'taza-240.webp', x: 28.9, y: 18, w: 62.3, h: 84 },
+  'bebidas-frias': { src: 'vaso-240.webp', x: 32, y: 18, w: 56, h: 84 },
 };
 const dibujo = tipo && dibujos[tipo];
 ---
@@ -27,22 +29,5 @@ const dibujo = tipo && dibujos[tipo];
     <path d="M48 34 C 52 30, 56 29, 60 29" stroke="#FFFDF7" stroke-width="2.4" />
     <path d="M56 74 L 64 74 L 60 80 Z" fill="#C9808C" />
     <path d="M60 80 C 52 88, 68 92, 58 100" stroke-width="1.8" />
-  </g>}
-  {tipo === 'bebidas-frias' && <g>
-    {/* Vaso con hielo y pajita */}
-    <path d="M40 36 H 80 L 74 94 H 46 Z" fill="#AFC7C7" fill-opacity=".55" />
-    <path d="M43 56 H 77 L 74 94 H 46 Z" fill="#E9C98B" stroke="none" opacity=".85" />
-    <path d="M40 36 H 80 L 74 94 H 46 Z" />
-    <rect x="48" y="44" width="11" height="11" rx="2" fill="#FFFDF7" stroke-width="1.6" transform="rotate(-12 53 49)" />
-    <rect x="62" y="48" width="10" height="10" rx="2" fill="#FFFDF7" stroke-width="1.6" transform="rotate(10 67 53)" />
-    <path d="M66 36 L 74 18 H 86" stroke="#C9808C" stroke-width="3.4" />
-  </g>}
-  {tipo === 'bebidas-calientes' && <g>
-    {/* Taza humeante */}
-    <path d="M34 54 H 80 V 72 C 80 84, 70 92, 57 92 C 44 92, 34 84, 34 72 Z" fill="#FFFFFF" />
-    <path d="M80 60 C 92 60, 92 76, 79 76" />
-    <path d="M38 58 H 76" stroke="#7F5A32" stroke-width="4" />
-    <path d="M26 96 H 90" />
-    <path d="M48 46 C 44 40, 52 36, 48 28 M58 46 C 54 40, 62 36, 58 28 M68 46 C 64 40, 72 36, 68 28" stroke="#CE9628" stroke-width="2.2" />
   </g>}
 </svg>}

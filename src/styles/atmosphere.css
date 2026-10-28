@@ -1,0 +1,61 @@
+/* The supplied artwork is bundled by Vite, so paths also work under /CalmaCafe. */
+:root {
+  --calma-background: url('../assets/calma-background.webp');
+  --paper-grain: url('../assets/paper-grain.svg');
+}
+body, .site-header { background-image: var(--paper-grain); }
+.hero {
+  background-image: var(--calma-background);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/* Remove the former synthetic wash; the supplied painting already includes it. */
+.hero::before { content: none; }
+.manifesto,
+.carta-hero.page-top,
+.visit,
+.local-section,
+.details-section,
+.visit-band,
+.closing {
+  background-image: linear-gradient(#faf6ef40, #faf6ef40), var(--calma-background);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/* Longer reading sections use only a quiet wash near their top, fading into paper. */
+.story {
+  background-image: linear-gradient(to bottom, #f0ebe270, #f0ebe2 720px), var(--calma-background);
+  background-position: center top;
+  background-size: 100% 100%, 100% auto;
+  background-repeat: no-repeat;
+}
+.carta-menu { background-image: var(--paper-grain); }
+.carta-hero.page-top {
+  background-image: linear-gradient(#faf6ef66, #faf6ef66), var(--calma-background);
+  background-position: center 38%;
+}
+.local-section, .details-section {
+  background-image: linear-gradient(#faf6ef99, #faf6ef99), var(--calma-background);
+  background-position: center 60%;
+}
+.team-section {
+  background-color: #c5d2c5;
+  background-image: linear-gradient(#c5d2c5e6, #c5d2c5e6), var(--calma-background);
+  background-position: center;
+  background-size: cover;
+}
+.site-footer {
+  background-image: var(--paper-grain), radial-gradient(ellipse at 90% 0, #365b524d, transparent 65%);
+}
+@media (max-width: 699px) {
+  /* Keep the artwork proportional, with the clear left half behind the text. */
+  .hero { background-position: 28% center; }
+  .manifesto, .carta-hero.page-top, .visit, .closing { background-position: 22% center; }
+  .local-section, .details-section, .visit-band { background-position: 72% center; }
+  .story { background-size: 100% 100%, auto 720px; }
+}
+@media print {
+  body, .site-header, main section, .site-footer { background-image: none !important; }
+}

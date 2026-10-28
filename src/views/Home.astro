@@ -55,8 +55,8 @@ const strip = h.strip(cocina[0][0].replace(/^0/, ''), cocina.at(-1)![1].replace(
         <svg class="hero-vine" viewBox="0 0 400 530" aria-hidden="true" focusable="false"><Vine id="hero-vine" cx={200} cy={200} r={200} base={470} /></svg>
         <svg class="hero-vine" viewBox="0 0 400 530" aria-hidden="true" focusable="false"><g transform="translate(400 0) scale(-1 1)"><Vine id="hero-vine-right" cx={200} cy={200} r={200} base={500} end={44} scale={0.8} offset={16} leaves={11} pairs={[3, 8]} tendrils={[6]} still /></g></svg>
         <Seal />
-        <figure class="hero-photo"><DishPhoto foto={dulce.foto} alt={dulceAlt} sizes="(max-width: 699px) 150px, 260px" eager /><figcaption class="handwritten">{tc(lang, dulce.nombre)} · {price(lang, dulce.precio)}</figcaption></figure>
-        <figure class="hero-photo hero-photo--salty"><DishPhoto foto={especial.foto} alt={tc(lang, especial.nombre)} sizes="(max-width: 699px) 130px, 200px" eager /><figcaption class="handwritten">{tc(lang, especial.nombre)} · {price(lang, especial.precio)}</figcaption></figure>
+        <figure class="hero-photo"><DishPhoto foto={dulce.foto} alt={dulceAlt} sizes="(max-width: 699px) 150px, 260px" eager /><figcaption class="handwritten">{tc(lang, dulce.nombre)} <span class="hero-photo-price">· {price(lang, dulce.precio)}</span></figcaption></figure>
+        <figure class="hero-photo hero-photo--salty"><DishPhoto foto={especial.foto} alt={tc(lang, especial.nombre)} sizes="(max-width: 699px) 130px, 200px" eager /><figcaption class="handwritten">{tc(lang, especial.nombre)} <span class="hero-photo-price">· {price(lang, especial.precio)}</span></figcaption></figure>
       </div>
     </div>
   </section>

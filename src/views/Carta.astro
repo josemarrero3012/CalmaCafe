@@ -84,6 +84,8 @@ const consultada = new Intl.DateTimeFormat(locale[lang].intl, { day: 'numeric', 
           <ul class="carta-list">
             {grupo.platos.map(plato => refs.has(plato.id) ? <li class="dish dish--ref"><p class="dish-line"><span class="dish-name">{tr(plato.nombre)}</span><span class="dish-dots" aria-hidden="true"></span><a class="dish-ref" href={`#${refs.get(plato.id)!.grupoId}`}>{c.seeIn(tr(refs.get(plato.id)!.grupoNombre))} <span aria-hidden="true"><Icon name="arrow-right" /></span></a></p></li> : <li class="dish" data-photo={plato.foto ? url(plato.foto.src) : undefined} data-photo-widths={plato.foto ? plato.foto.widths.join(',') : undefined} data-name={tr(plato.nombre)}>
               <p class="dish-line">
+                {/* Miniatura solo en móvil (en escritorio la foto grande acompaña al leer); se carga al acercarse */}
+                {plato.foto && <button type="button" class="dish-thumb" data-dish-open tabindex="-1" aria-hidden="true"><img src={url(`${plato.foto.src}-${plato.foto.widths[0]}.webp`)} alt="" width="56" height="56" loading="lazy" decoding="async" /></button>}
                 {plato.foto
                   ? <button type="button" class="dish-name" data-dish-open>{tr(plato.nombre)}<span class="visually-hidden"> — {c.photo}</span><span class="dish-camera" aria-hidden="true"></span></button>
                   : <span class="dish-name">{tr(plato.nombre)}</span>}

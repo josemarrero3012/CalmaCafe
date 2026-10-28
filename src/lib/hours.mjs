@@ -66,14 +66,16 @@ export function getOpeningStatus(date, schedule, timeZone = 'Atlantic/Canary', l
   const day = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(parts.weekday);
   const minute = Number(parts.hour) * 60 + Number(parts.minute);
   const minutes = t => Number(t.split(':')[0]) * 60 + Number(t.split(':')[1]);
+  // «9:00», como en el resto de la web, y no «09:00»
+  const clean = t => t.replace(/^0/, '');
   const today = schedule[day] || [];
   for (const [start, end] of today) {
     if (minute >= minutes(start) && minute < minutes(end)) return { open: true, text: words.open };
-    if (minute < minutes(start)) return { open: false, text: words.at(start) };
+    if (minute < minutes(start)) return { open: false, text: words.at(clean(start)) };
   }
   for (let offset = 1; offset <= 7; offset++) {
     const next = (day + offset) % 7;
-    if (schedule[next]?.length) return { open: false, text: offset === 1 ? words.tomorrow(schedule[next][0][0]) : words.day(dayName(text[lang] ? lang : 'es', next), schedule[next][0][0]) };
+    if (schedule[next]?.length) return { open: false, text: offset === 1 ? words.tomorrow(clean(schedule[next][0][0])) : words.day(dayName(text[lang] ? lang : 'es', next), clean(schedule[next][0][0])) };
   }
   return { open: false, text: words.unknown };
 }

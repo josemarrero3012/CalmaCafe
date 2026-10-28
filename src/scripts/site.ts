@@ -298,3 +298,22 @@ if (proposalBanner && !location.pathname.endsWith('/propuesta/')) {
   } catch { /* sin almacenamiento: solo en la página con ?propuesta */ }
   proposalBanner.hidden = !show;
 }
+
+// Aviso de idioma: si el navegador prefiere inglés, alemán, neerlandés o español y la página está en otro, se ofrece
+// la misma página en ese idioma (sin redirigir). Si se cierra, no vuelve a salir en esta visita ni en las siguientes.
+const langHint = document.querySelector<HTMLElement>('.lang-hint');
+if (langHint) {
+  let dismissed = false;
+  try { dismissed = localStorage.getItem('calma-lang-hint') === 'no'; } catch { /* sin almacenamiento */ }
+  const pageLang = document.documentElement.lang;
+  const wanted = navigator.languages.map(l => l.slice(0, 2).toLowerCase()).find(l => ['es', 'en', 'de', 'nl'].includes(l));
+  const link = wanted && wanted !== pageLang ? langHint.querySelector<HTMLElement>(`[data-lang-hint="${wanted}"]`) : null;
+  if (link && !dismissed) {
+    link.hidden = false;
+    langHint.hidden = false;
+    langHint.querySelector('.lang-hint-close')!.addEventListener('click', () => {
+      langHint.hidden = true;
+      try { localStorage.setItem('calma-lang-hint', 'no'); } catch { /* sin almacenamiento */ }
+    });
+  }
+}

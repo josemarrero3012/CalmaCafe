@@ -66,7 +66,7 @@ test('una carta sin ninguna foto es una importación rota y se dice claramente',
 });
 
 test('la pizarra lleva los cuatro platos elegidos y, si la carta quita uno, lo sustituye otro de Brunch', () => {
-  assert.deepEqual(destacados(carta).tiza.map(p => p.id), pizarra.ids);
+  assert.deepEqual(destacados(prueba(completa())).tiza.map(p => p.id), pizarra.ids);
   const grupos = completa();
   grupos['carta-algo-dulce'] = grupos['carta-algo-dulce'].filter(p => p.id !== '422600');
   const { tiza, avisos } = destacados(prueba(grupos));
@@ -74,4 +74,12 @@ test('la pizarra lleva los cuatro platos elegidos y, si la carta quita uno, lo s
   assert.ok(!tiza.some(p => p.id === '422600'));
   assert.equal(new Set(tiza.map(p => p.id)).size, 4);
   assert.match(avisos.join('\n'), /422600/);
+});
+
+// La carta real cambia mediante el workflow diario: comprobar invariantes, no IDs fijos.
+test('la pizarra actual solo muestra platos disponibles, sin duplicados', () => {
+  const { tiza } = destacados(carta);
+  assert.equal(tiza.length, pizarra.largo);
+  assert.equal(new Set(tiza.map(p => p.id)).size, tiza.length);
+  assert.ok(tiza.every(p => ids.has(p.id)));
 });

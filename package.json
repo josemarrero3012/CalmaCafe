@@ -1,7 +1,7 @@
 {
   "name": "calma-cafe",
   "version": "1.0.0",
-  "description": "Calma Café · Feed your soul · Demo fase 1",
+  "description": "Prototipo web oficial presentado a Calma Café · Aterna Studio",
   "type": "module",
   "engines": {
     "node": ">=22.12.0"
@@ -14,7 +14,8 @@
     "caligrafia": "node scripts/prepare-script.mjs",
     "carta": "node scripts/prepare-carta.mjs",
     "test": "node --test tests/*.test.mjs",
-    "qa": "node scripts/qa.mjs"
+    "qa": "node scripts/qa.mjs",
+    "check": "astro check"
   },
   "private": true,
   "overrides": {
@@ -40,5 +41,10 @@
     "opentype.js": "^2.0.0",
     "playwright": "^1.63.0",
     "potrace": "^2.1.8"
+  },
+  "homepage": "https://josemarrero3012.github.io/CalmaCafe/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/josemarrero3012/CalmaCafe.git"
   }
 }

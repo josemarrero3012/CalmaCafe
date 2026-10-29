@@ -3,12 +3,15 @@ import AxeBuilder from '@axe-core/playwright';
 import assert from 'node:assert/strict';
 import { mkdir, writeFile, readFile } from 'node:fs/promises';
 
-const base = process.env.QA_URL || 'http://localhost:4321';
+const base = (process.env.QA_URL || 'http://localhost:4321/CalmaCafe').replace(/\/$/, '');
+const origin = new URL(base).origin;
+const sitePath = new URL(base).pathname.replace(/\/$/, '');
+const output = process.env.QA_OUTPUT_DIR || 'reports/qa';
 // Cada sección es una página independiente; «home» conserva el nombre de las capturas anteriores.
 const pages = [['/', 'home'], ['/carta/', 'carta'], ['/calma/', 'calma'], ['/visitanos/', 'visitanos']];
 // Versiones traducidas: mismas comprobaciones generales (las interacciones por nombre se prueban en español).
 const translated = ['en', 'de', 'nl'].flatMap(lang => ({ en: ['', 'menu/', 'about/', 'visit/'], de: ['', 'speisekarte/', 'ueber-uns/', 'besuch/'], nl: ['', 'menukaart/', 'over-ons/', 'bezoek/'] })[lang].map((slug, i) => [`/${lang}/${slug}`, `${lang}-${['home', 'carta', 'calma', 'visitanos'][i]}`, lang]));
-await mkdir('docs/capturas', { recursive: true });
+await mkdir(output, { recursive: true });
 const browser = await chromium.launch({ headless: true, args: ['--no-sandbox'] });
 const report = [];
 const carta = JSON.parse(await readFile('src/data/carta.json', 'utf8'));
@@ -31,7 +34,7 @@ try {
       assert.equal(await page.locator('html').getAttribute('lang'), lang, `${path}: idioma del documento`);
       assert.equal(await page.locator('link[rel="alternate"][hreflang]').count(), 5, `${path}: hreflang de los cuatro idiomas y x-default`);
       for (const href of await page.locator('.lang-switch a').evaluateAll(links => links.map(a => a.getAttribute('href')))) {
-        assert.ok((await page.request.get(base + href)).ok(), `${path}: el selector de idioma enlaza a ${href}`);
+        assert.ok((await page.request.get(origin + href)).ok(), `${path}: el selector de idioma enlaza a ${href}`);
       }
       assert.equal(await page.locator('.desktop-nav [aria-current="page"]').count(), 1, `${path}: sección actual marcada`);
       assert.equal(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), true, `${path} ${width}: overflow horizontal`);
@@ -77,7 +80,7 @@ try {
         // Cada tamaño de foto que la carta declara debe existir (la vista previa y la ampliación los piden).
         const photoUrls = await page.locator('.dish[data-photo]').evaluateAll(dishes => dishes.flatMap(d => d.dataset.photoWidths.split(',').map(w => `${d.dataset.photo}-${w}.webp`)));
         const missing = [];
-        for (const url of new Set(photoUrls)) if (!(await page.request.head(base + url)).ok()) missing.push(url);
+        for (const url of new Set(photoUrls)) if (!(await page.request.head(origin + url)).ok()) missing.push(url);
         assert.deepEqual(missing, [], 'Fotos de la carta inexistentes');
       }
       // Recorrer la página para que las imágenes lazy se carguen antes de la captura.
@@ -90,11 +93,16 @@ try {
       await page.waitForLoadState('networkidle');
       await page.evaluate(() => { if (document.activeElement instanceof HTMLElement) document.activeElement.blur(); });
       await page.evaluate(() => window.scrollTo(0, 0));
+      // Cargar también imágenes lazy fuera del viewport antes de comprobar los archivos.
+      await page.locator('img').evaluateAll(imgs => Promise.all(imgs.map(img => {
+        img.loading = 'eager';
+        return img.decode().catch(() => {});
+      })));
       const broken = await page.locator('img').evaluateAll(imgs => imgs.filter(i => i.checkVisibility() && (!i.complete || i.naturalWidth === 0)).map(i => i.src));
       assert.deepEqual(broken, [], `${path}: imágenes rotas`);
       const axe = await new AxeBuilder({ page }).withTags(['wcag2a','wcag2aa','wcag21aa','best-practice']).analyze();
-      if (lang === 'es' || name.endsWith('home')) await page.screenshot({ path: `docs/capturas/${name}-${width}.png`, fullPage: true });
-      if (name === 'home') await page.screenshot({ path: `docs/capturas/hero-${width}.png` });
+      if (lang === 'es' || name.endsWith('home')) await page.screenshot({ path: `${output}/${name}-${width}.png`, fullPage: true });
+      if (name === 'home') await page.screenshot({ path: `${output}/hero-${width}.png` });
       report.push({ page: path, width, errors: [...errors], externalRequestsBeforeMapClick: [...externalRequests], accessibility: axe.violations.map(v => ({ id: v.id, impact: v.impact, description: v.description, nodes: v.nodes.map(n => ({ target: n.target, summary: n.failureSummary })) })) });
       assert.deepEqual(externalRequests, [], 'No deben existir peticiones externas antes de cargar el mapa');
       page.off('pageerror', onError);
@@ -112,7 +120,7 @@ try {
       assert.equal(await page.locator('#mobile-menu').evaluate(d => d.open), true);
       await page.keyboard.press('Tab');
       assert.equal(await page.evaluate(() => document.activeElement.closest('#mobile-menu') !== null), true);
-      await page.locator('#mobile-menu a[href="/visitanos/"]').click();
+      await page.locator(`#mobile-menu a[href="${sitePath}/visitanos/"]`).click();
       await page.waitForURL(`${base}/visitanos/`);
       assert.equal(await page.locator('#mobile-menu').evaluate(d => d.open), false);
       assert.equal(await page.evaluate(() => scrollY), 0, 'La sección se abre arriba, sin desplazamiento');
@@ -141,7 +149,7 @@ try {
   await animated.waitForFunction(() => [...document.querySelectorAll('.script-word path')].every(p => parseFloat(getComputedStyle(p).strokeDashoffset) <= 0.01), { timeout: 10_000 });
   await animated.keyboard.press('Escape');
   await animated.waitForFunction(() => document.querySelector('video').paused && !document.querySelector('#video-dialog').open);
-  await animated.locator('.desktop-nav a[href="/calma/"]').click();
+  await animated.locator(`.desktop-nav a[href="${sitePath}/calma/"]`).click();
   await animated.waitForURL(`${base}/calma/`);
   await animated.locator('#chalk-title').scrollIntoViewIfNeeded();
   await animated.waitForFunction(() => document.querySelector('#chalk-title').classList.contains('is-visible'), null, { timeout: 5_000 });
@@ -159,7 +167,7 @@ try {
   }
   await animated.close();
 } finally {
-  await writeFile('docs/capturas/qa-report.json', JSON.stringify(report, null, 2));
+  await writeFile(`${output}/qa-report.json`, JSON.stringify(report, null, 2));
   await browser.close();
 }
 console.log(JSON.stringify(report.map(r => ({ page: r.page, width: r.width, errors: r.errors.length, axe: r.accessibility.map(a => a.id) }))));

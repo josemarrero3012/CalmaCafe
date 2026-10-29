@@ -28,7 +28,7 @@
   "dominio": null,
   "buscadores": {
     "indexar": false,
-    "nota": "Prototipo enseñado al local sin su permiso todavía: todas las páginas llevan noindex. Poner true cuando acepten (y, si puede ser, con su dominio)."
+    "nota": "Prototipo oficial presentado al negocio. Mantener noindex hasta acordar la publicación definitiva; noindex no restringe el acceso al sitio."
   },
   "instagram": {
     "usuario": "@calmacafegc",

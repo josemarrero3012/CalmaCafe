@@ -17,7 +17,7 @@ Comprobada el **5 de octubre de 2026**, en la compilación estática servida loc
 
 Medición Lighthouse móvil con red simulada (RTT 150 ms, 1.638,4 Kbps) y ralentización de CPU ×4. Viewport 412 × 823, DPR 1,75. El objetivo local de ≥90 en las cuatro categorías y LCP <2,5 s se alcanza en esta ejecución; no es una medición de campo ni una garantía del futuro alojamiento.
 
-[Informe HTML](capturas/lighthouse-mobile.report.html) · [JSON completo](capturas/lighthouse-mobile.report.json) · [Resumen de métricas](lighthouse-summary.json).
+[Informe HTML](https://github.com/josemarrero3012/CalmaCafe/blob/8db7abaec5018bb824bc59bcafc2326a22686182/docs/capturas/lighthouse-mobile.report.html) · [JSON completo](https://github.com/josemarrero3012/CalmaCafe/blob/8db7abaec5018bb824bc59bcafc2326a22686182/docs/capturas/lighthouse-mobile.report.json) · [Resumen de métricas](https://github.com/josemarrero3012/CalmaCafe/blob/8db7abaec5018bb824bc59bcafc2326a22686182/docs/lighthouse-summary.json).
 
 La nota SEO evalúa únicamente lo presente en esta Home. Canonical, hreflang absolutos, Open Graph, sitemap y robots ya están hechos (ver `docs/AUDITORIA.md`); quedan el dominio definitivo y las páginas legales.
 

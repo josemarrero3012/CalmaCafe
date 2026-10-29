@@ -1,5 +1,7 @@
 # Alérgenos y carta: verificación del 15 de octubre de 2026
 
+> Verificación histórica. Los recuentos corresponden a la fecha indicada; la carta vigente y sus anotaciones están en `src/data/carta.json` y `src/data/alergenos-anadidos.json`. Los platos retirados dejan de tener anotaciones activas.
+
 Resumen de la comparación entre la carta digital oficial ([calma.buenacarta.com](https://calma.buenacarta.com/)) y esta web, lo que se ha cambiado y lo que sigue pendiente de que el local corrija.
 
 ## 1. Verificación

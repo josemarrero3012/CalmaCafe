@@ -68,7 +68,7 @@ const schema = buildSchema(negocio, { pageUrl: current ? abs(routes[lang][curren
     {/* Aviso de idioma para turistas: si el móvil está en otro de los cuatro idiomas, site.ts muestra el enlace a esa versión.
         No redirige: solo lo ofrece, y se puede cerrar. */}
     {current && <div class="lang-hint" hidden>{langs.filter(other => other !== lang).map(other => <a href={url(routes[other][current])} hreflang={locale[other].html} lang={locale[other].html} data-lang-hint={other} hidden><Flag lang={other} />{ui[other].alsoIn} <span aria-hidden="true">→</span></a>)}<button type="button" class="lang-hint-close" aria-label={t.close}><Icon name="close" /></button></div>}
-    {/* Franja para el local, solo con ?propuesta en la dirección (site.ts); lleva a la página privada /propuesta/ */}
+    {/* Franja para el local, solo con ?propuesta en la dirección (site.ts); lleva a la página de presentación /propuesta/ (pública mediante URL) */}
     <a class="proposal-banner" href={url('/propuesta/')} lang="es" hidden><span>Propuesta de Aterna Studio para Calma</span> <b>Ver qué incluye <span aria-hidden="true">→</span></b></a>
     <header class="site-header">
       <div class="header-inner wrap">

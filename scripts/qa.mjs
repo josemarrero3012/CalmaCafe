@@ -61,7 +61,7 @@ try {
         assert.equal(await page.locator('#menu-carta').isVisible(), false);
         assert.equal(await page.locator('[data-tab="vegano"]').getAttribute('aria-selected'), 'true');
         assert.match(page.url(), /#vegano$/);
-        await page.locator('#menu-vegano [data-dish-open]').first().click();
+        await page.locator('#menu-vegano .dish-name[data-dish-open]').first().click();
         assert.equal(await page.locator('#dish-dialog').evaluate(d => d.open), true);
         assert.equal(await page.locator('[data-dish-title]').innerText(), await page.locator('#menu-vegano .dish[data-photo]').first().getAttribute('data-name'));
         await page.keyboard.press('Escape');
@@ -141,14 +141,17 @@ try {
   await noJS.close();
   const animated = await browser.newPage({ viewport: { width: 1440, height: 1000 }, reducedMotion: 'no-preference' });
   await animated.goto(base);
-  assert.ok(await scriptHidden(animated) > 0, 'La caligrafía empieza sin escribir');
   // «Ver el local» abre el vídeo en una ventana; al cerrarla se pausa.
-  await animated.getByRole('button', { name: 'Reproducir vídeo del local' }).click();
+  await animated.getByRole('button', { name: 'Reproducir vídeo del local' }).first().click();
   await animated.waitForFunction(() => !document.querySelector('video').paused, { timeout: 15_000 });
   assert.equal(await animated.locator('video').evaluate(v => v.muted), true);
-  await animated.waitForFunction(() => [...document.querySelectorAll('.script-word path')].every(p => parseFloat(getComputedStyle(p).strokeDashoffset) <= 0.01), { timeout: 10_000 });
   await animated.keyboard.press('Escape');
   await animated.waitForFunction(() => document.querySelector('video').paused && !document.querySelector('#video-dialog').open);
+  // La firma animada está en Visítanos; Inicio ya no incluye caligrafía.
+  await animated.goto(`${base}/visitanos/`);
+  assert.ok(await scriptHidden(animated) > 0, 'La caligrafía empieza sin escribir');
+  await animated.locator('.script-word').scrollIntoViewIfNeeded();
+  await animated.waitForFunction(() => [...document.querySelectorAll('.script-word path')].every(p => parseFloat(getComputedStyle(p).strokeDashoffset) <= 0.01), { timeout: 10_000 });
   await animated.locator(`.desktop-nav a[href="${sitePath}/calma/"]`).click();
   await animated.waitForURL(`${base}/calma/`);
   await animated.locator('#chalk-title').scrollIntoViewIfNeeded();

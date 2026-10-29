@@ -128,7 +128,7 @@ const strip = h.strip(cocina[0][0].replace(/^0/, ''), cocina.at(-1)![1].replace(
         <p class="local-text">{h.local.text}</p>
         <div class="local-actions"><a class="button button-green" href={url(routes[lang].calma)}>{h.local.link} <span aria-hidden="true"><Icon name="arrow-right" /></span></a><button class="video-open" type="button" aria-haspopup="dialog" aria-controls="video-dialog" aria-label={t.video.play}><span aria-hidden="true">▶︎</span> {t.video.playShort} · 10 s</button></div>
       </div>
-      <div class="local-photos" data-reveal>
+      <div class="local-photos" role="region" aria-label={ui[lang].calma.gallery.label} tabindex="0" data-reveal>
         {localPhotos.map(photo => <figure class="local-photo"><Photo name={photo.name} lang={lang} sizes="(max-width: 699px) 58vw, 300px" /><figcaption class="handwritten">{photo.caption}</figcaption></figure>)}
       </div>
     </div>

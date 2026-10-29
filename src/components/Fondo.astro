@@ -1,0 +1,17 @@
+---
+// Fondo con profundidad de una sección (piezas de scripts/prepare-fondo.mjs): sombras de palmera desenfocadas que
+// entran por las esquinas de arriba y matas de hojas pintadas en las de abajo. Va detrás del contenido (estilos .fondo-*
+// en global.css); la sección que lo lleva queda posicionada y aislada para que no se salga de ella.
+import { url } from '../lib/base';
+type Lado = 'izq' | 'der' | 'ambas';
+interface Props { sombra?: Lado; hojas?: Lado; eager?: boolean; class?: string; }
+const { sombra, hojas, eager = false, class: className } = Astro.props;
+const lados = (lado?: Lado): ('izq' | 'der')[] => (lado === 'ambas' ? ['izq', 'der'] : lado ? [lado] : []);
+// La mata grande va a la izquierda y la pequeña, volteada, a la derecha
+const mata = { izq: 'hojas-a', der: 'hojas-b' } as const;
+const medidas = { 'hojas-a': [440, 420], 'hojas-b': [360, 330] } as const;
+---
+<div class:list={['fondo', className]} aria-hidden="true">
+  {lados(sombra).map(lado => <span class={`fondo-sombra fondo-sombra--${lado}`}></span>)}
+  {lados(hojas).map(lado => <img class={`fondo-hojas fondo-hojas--${lado}`} src={url(`/media/fondo/${mata[lado]}.svg`)} alt="" width={medidas[mata[lado]][0]} height={medidas[mata[lado]][1]} loading={eager ? 'eager' : 'lazy'} decoding="async" />)}
+</div>

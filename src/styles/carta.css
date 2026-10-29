@@ -1,5 +1,5 @@
 /* Carta completa: pestañas por menú, grupos editoriales con foto en arco y lista tipográfica */
-.carta-hero{padding-bottom:28px;background:var(--papel)}
+.carta-hero{padding-bottom:28px}
 /* Menos aire arriba que el resto de páginas: la carta es lo que se viene a ver */
 .carta-hero.page-top{padding-top:clamp(40px,4.5vw,72px)}
 /* El titular ocupa casi todo el ancho y el dibujo queda pegado a él, sin hueco en medio */

@@ -4,6 +4,7 @@ import Layout from '../layouts/Layout.astro';
 import Photo from '../components/Photo.astro';
 import Closing from '../components/Closing.astro';
 import Lotus from '../components/Lotus.astro';
+import Fondo from '../components/Fondo.astro';
 import PolaroidLineCarousel from '../components/ui/polaroid-line-carousel';
 import negocio from '../data/negocio.json';
 import alts from '../data/fotos.json';
@@ -23,7 +24,9 @@ const slides = photos.map((name, i) => ({ image: url(`/media/${name}-720.webp`),
 <Layout lang={lang} current="calma" title={c.title} description={c.description}>
   {/* Cabecera: quiénes son, con el local dentro del arco (cuando haya foto de Guro y Leo, va aquí) */}
   <section class="manifesto section page-top" aria-labelledby="manifesto-title">
+    <Fondo sombra="izq" eager />
     <div class="wrap manifesto-grid">
+      <span class="pincelada" aria-hidden="true"></span>
       <div class="manifesto-copy">
         <p class="eyebrow enter">Hola. Hello. Hei. Hoi.</p>
         <h1 id="manifesto-title" class="page-title enter enter-2" set:html={c.h1} />
@@ -35,6 +38,7 @@ const slides = photos.map((name, i) => ({ image: url(`/media/${name}-720.webp`),
 
   {/* Historia del local como una línea del tiempo. */}
   <section class="story section" aria-labelledby="story-title">
+    <Fondo sombra="der" />
     <div class="wrap">
       <div class="story-heading" data-reveal><p class="eyebrow">{s.eyebrow}</p><h2 id="story-title" set:html={s.title} /><p class="story-lead">{s.lead}</p></div>
       <ol class="timeline">

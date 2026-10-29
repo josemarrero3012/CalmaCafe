@@ -779,3 +779,46 @@ main{overflow-x:clip}
 .lang-hint a .flag,.lang-hint a svg{width:18px;height:auto}
 .lang-hint-close{display:grid;place-items:center;width:36px;height:36px;margin-left:6px;border-radius:50%}
 .lang-hint-close svg{width:16px;height:16px}
+/* Fondo con profundidad (piezas de scripts/prepare-fondo.mjs). El grano del papel va en todo lo claro, también en el
+   salvia y en el toldo; las sombras de palmera, las matas de hojas (Fondo.astro) y la pincelada clara detrás de las
+   fotos, solo donde hay sitio. Todo va detrás del contenido y no recibe clics. */
+body,.hero,.local-section,.story,.visit-band{background-image:url('/media/fondo/papel.webp');background-size:256px}
+.team-section{background-image:url('/media/fondo/papel.webp');background-size:256px}
+:where(section,div):has(>.fondo){position:relative;isolation:isolate}
+.fondo{position:absolute;inset:0;z-index:-3;overflow:hidden;pointer-events:none}
+.fondo-sombra{position:absolute;top:-4%;width:min(54vw,780px);aspect-ratio:1;background:url('/media/fondo/sombra-hojas.webp') 0 0/100% 100% no-repeat;transform-origin:0 0}
+.fondo-sombra--izq{left:-5%}
+.fondo-sombra--der{right:-5%;scale:-1 1;transform-origin:50% 0}
+.fondo-hojas{position:absolute;bottom:-3%;width:clamp(170px,17vw,320px);height:auto}
+.fondo-hojas--izq{left:-2.2%}
+.fondo-hojas--der{right:-2%;scale:-1 1}
+.pincelada{position:absolute;z-index:-2;pointer-events:none;background:url('/media/fondo/pincelada.webp') center/100% 100% no-repeat}
+/* Hero: la pincelada asoma por los lados del arco y la sombra de la palmera se mece muy despacio */
+.hero::before{opacity:.35}
+.hero .fondo-hojas{width:clamp(200px,19vw,360px);bottom:-5%}
+.hero-visual .pincelada{inset:-8% -46% 4% -40%}
+@media(prefers-reduced-motion:no-preference){.hero .fondo-sombra{animation:brisa 11s ease-in-out infinite alternate}}
+@keyframes brisa{to{rotate:1.6deg;translate:6px 4px}}
+@media(max-width:699px){
+  .fondo-sombra{width:96vw;top:-2%}
+  .fondo-sombra--izq{left:-18%}
+  .fondo-sombra--der{right:-18%}
+  .fondo-hojas{width:clamp(112px,32vw,150px);bottom:-2%}
+  .hero-visual .pincelada{inset:2% -22% 6% -22%}
+}
+.local-photos{position:relative}
+.local-photos .pincelada{inset:-4% -10% 2% -12%}
+@media(max-width:699px){.local-photos .pincelada{display:none}}
+/* Pincelada detrás del dibujo de la Carta, del arco de Nosotros y del mapa de Visítanos */
+.carta-hero-grid>.pincelada{right:-3%;top:-4%;width:min(560px,46vw);height:108%}
+.manifesto-grid{position:relative}
+.manifesto-grid>.pincelada{right:-4%;top:-6%;width:min(600px,48vw);height:112%}
+.visit-map{position:relative}
+.visit-map>.pincelada{inset:-6% -12% -4% -12%}
+@media(max-width:699px){
+  .carta-hero-grid>.pincelada{display:none}
+  .manifesto-grid>.pincelada{inset:auto -10% -4% -10%;width:auto;height:min(118vw,470px)}
+  .visit-map>.pincelada{inset:-5% -8% -3% -8%}
+}
+/* Con el margen estrecho (portátiles), la mata izquierda del hero asoma desde abajo, sin pisar las estrellas */
+@media(min-width:700px) and (max-width:1599px){.hero .fondo-hojas--izq{width:220px;left:-50px;bottom:-62px}}

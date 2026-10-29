@@ -14,6 +14,7 @@ import { usualHours } from '../lib/hours.mjs';
 import { buildMenuSchema } from '../lib/schema.mjs';
 import { contar, repetidos } from '../lib/carta';
 import '../styles/carta.css';
+import Fondo from '../components/Fondo.astro';
 interface Props { lang: Lang; }
 const { lang } = Astro.props;
 const t = ui[lang];
@@ -30,7 +31,9 @@ const consultada = new Intl.DateTimeFormat(locale[lang].intl, { day: 'numeric', 
 ---
 <Layout lang={lang} current="carta" title={c.title} description={c.description} schemas={[menuSchema]}>
   <section class="carta-hero page-top" aria-labelledby="carta-title">
+    <Fondo sombra="der" eager />
     <div class="wrap carta-hero-grid">
+      <span class="pincelada" aria-hidden="true"></span>
       <div class="carta-hero-copy">
         <p class="eyebrow enter">{c.eyebrow(totalPlatos)}</p>
         <h1 id="carta-title" class="page-title enter enter-2" set:html={c.h1} />

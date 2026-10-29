@@ -2,6 +2,7 @@
 import Icon from '../components/Icon.astro';
 import Layout from '../layouts/Layout.astro';
 import Lotus from '../components/Lotus.astro';
+import Fondo from '../components/Fondo.astro';
 import ScriptWord from '../components/ScriptWord.astro';
 import negocio from '../data/negocio.json';
 import { phone, ui, type Lang } from '../i18n/ui';
@@ -18,7 +19,7 @@ const horario = `${scheduleSummary(semana, lang).map(({ label, value }) => `${la
 const faq = v.faq.map(([question, answer]) => [question, answer.replace('{horario}', horario)] as [string, string]);
 ---
 <Layout lang={lang} current="visitanos" title={v.title} description={v.description} schemas={[buildFaqSchema(faq)]}>
-  <section class="visit section page-top" aria-labelledby="visit-title"><div class="wrap visit-grid"><div class="visit-copy">
+  <section class="visit section page-top" aria-labelledby="visit-title"><Fondo sombra="der" eager /><div class="wrap visit-grid"><div class="visit-copy">
     <p class="eyebrow enter">{v.eyebrow}</p>
     <h1 id="visit-title" class="page-title enter enter-2" set:html={v.h1} />
     <p class="enter enter-3">{v.intro}</p>
@@ -34,8 +35,8 @@ const faq = v.faq.map(([question, answer]) => [question, answer.replace('{horari
       <div><dt>{v.contact}</dt><dd><a class="visit-link" href={negocio.telefono.enlace}>{phone(lang, negocio.telefono.texto)}</a><a href={negocio.whatsapp.url} target="_blank" rel="noopener noreferrer">WhatsApp <Icon name="arrow-up-right" /></a><a href={negocio.instagram.url} target="_blank" rel="noopener noreferrer">{negocio.instagram.usuario} <Icon name="arrow-up-right" /></a></dd></div>
     </dl>
     <div class="visit-script enter enter-4"><ScriptWord text="See you soon" class="script-visit" /></div>
-  </div><div class="visit-map enter enter-visual"><div class="map-placeholder" id="map-container"><div class="map-art" aria-hidden="true"><span class="map-road road-one"></span><span class="map-road road-two"></span><span class="map-road road-three"></span><span class="map-pin"><Lotus /></span></div><div class="map-overlay"><span class="eyebrow">{negocio.direccion.calle}</span><p class="map-place">{negocio.direccion.edificio} · {negocio.localidad}</p><button id="load-map" class="button button-light" type="button" data-map-title={v.mapTitle} data-map-fallback={v.mapFallback}>{v.loadMap} <span aria-hidden="true"><Icon name="arrow-up-right" /></span></button><p class="map-disclosure">{v.mapNote}</p></div></div><p class="map-caption">{v.mapCaption}</p></div></div></section>
-  <section class="visit-faq section" aria-labelledby="faq-title"><div class="wrap">
+  </div><div class="visit-map enter enter-visual"><span class="pincelada" aria-hidden="true"></span><div class="map-placeholder" id="map-container"><div class="map-art" aria-hidden="true"><span class="map-road road-one"></span><span class="map-road road-two"></span><span class="map-road road-three"></span><span class="map-pin"><Lotus /></span></div><div class="map-overlay"><span class="eyebrow">{negocio.direccion.calle}</span><p class="map-place">{negocio.direccion.edificio} · {negocio.localidad}</p><button id="load-map" class="button button-light" type="button" data-map-title={v.mapTitle} data-map-fallback={v.mapFallback}>{v.loadMap} <span aria-hidden="true"><Icon name="arrow-up-right" /></span></button><p class="map-disclosure">{v.mapNote}</p></div></div><p class="map-caption">{v.mapCaption}</p></div></div></section>
+  <section class="visit-faq section" aria-labelledby="faq-title"><Fondo hojas="der" /><div class="wrap">
     <h2 id="faq-title" data-reveal>{v.faqTitle}</h2>
     <dl class="faq-list" data-reveal>{faq.map(([question, answer]) => <div><dt>{question}</dt><dd>{answer}</dd></div>)}</dl>
   </div></section>
